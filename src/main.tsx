@@ -240,16 +240,16 @@ function PortfolioSkeleton() {
 
         <section className="content-section capabilities-section">
           <RevealBlock className="section-heading">
-            <TypedText as="h2" text={pageText.capabilitiesTitle as string} speed={32} />
-            <TypedText as="p" text={pageText.capabilitiesBody as string} delay={500} speed={18} />
+            <h2>{pageText.capabilitiesTitle as string}</h2>
+            <p>{pageText.capabilitiesBody as string}</p>
           </RevealBlock>
 
           <div className="capability-grid">
-            {capabilities.map(([number, title, description], index) => (
+            {capabilities.map(([number, title, description]) => (
               <RevealBlock key={title} className="capability-card">
                 <span className="card-number">{number}</span>
-                <TypedText as="h2" text={title} delay={index * 180} speed={24} />
-                <TypedText as="p" text={description} delay={500 + index * 180} speed={14} />
+                <h2>{title}</h2>
+                <p>{description}</p>
               </RevealBlock>
             ))}
           </div>
@@ -257,8 +257,8 @@ function PortfolioSkeleton() {
 
         <section id="flow" className="content-section flow-section">
           <RevealBlock className="section-heading">
-            <TypedText as="h2" text={pageText.flowTitle as string} speed={32} />
-            <TypedText as="p" text={pageText.flowBody as string} delay={450} speed={18} />
+            <h2>{pageText.flowTitle as string}</h2>
+            <p>{pageText.flowBody as string}</p>
           </RevealBlock>
 
           <RevealBlock className="system-flow" aria-label={pageText.flowTitle as string}>
@@ -273,16 +273,16 @@ function PortfolioSkeleton() {
 
         <section id="projects" className="content-section projects-section">
           <RevealBlock className="section-heading">
-            <TypedText as="h2" text={pageText.projectsTitle as string} speed={32} />
-            <TypedText as="p" text={pageText.projectsBody as string} delay={450} speed={18} />
+            <h2>{pageText.projectsTitle as string}</h2>
+            <p>{pageText.projectsBody as string}</p>
           </RevealBlock>
 
           <div className="project-grid">
-            {projects.map(([title, meta, description], index) => (
+            {projects.map(([title, meta, description]) => (
               <RevealBlock key={title} className="project-card">
                 <span className="project-meta">{meta}</span>
-                <TypedText as="h2" text={title} delay={index * 120} speed={24} />
-                <TypedText as="p" text={description} delay={500 + index * 120} speed={14} />
+                <h2>{title}</h2>
+                <p>{description}</p>
               </RevealBlock>
             ))}
           </div>
@@ -290,8 +290,8 @@ function PortfolioSkeleton() {
 
         <section id="contact" className="content-section contact-section">
           <RevealBlock className="contact-panel">
-            <TypedText as="h2" text={pageText.contactTitle as string} speed={28} />
-            <TypedText as="p" text={pageText.contactBody as string} delay={700} speed={18} />
+            <h2>{pageText.contactTitle as string}</h2>
+            <p>{pageText.contactBody as string}</p>
           </RevealBlock>
         </section>
       </main>
