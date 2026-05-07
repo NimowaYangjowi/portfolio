@@ -1,18 +1,10 @@
-import { StrictMode, useEffect, useMemo, useRef, useState } from 'react';
+import { StrictMode, useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { useTranslation } from 'react-i18next';
 import './i18n';
 import './styles.css';
 
 type SupportedLanguage = 'ko' | 'en';
-
-type TypedTextProps = {
-  text: string;
-  className?: string;
-  as?: 'h1' | 'h2' | 'p' | 'span';
-  delay?: number;
-  speed?: number;
-};
 
 type Pillar = {
   label: string;
@@ -40,7 +32,6 @@ type OperationItem = {
 };
 
 type PageContent = {
-  nav: string[];
   languageLabel: string;
   heroTitle: string;
   heroBody: string;
@@ -61,9 +52,6 @@ type PageContent = {
   contactTitle: string;
   contactBody: string;
 };
-
-const prefersReducedMotion = () =>
-  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function useInView<T extends HTMLElement>() {
   const ref = useRef<T | null>(null);
@@ -94,54 +82,6 @@ function useInView<T extends HTMLElement>() {
   return { ref, isVisible };
 }
 
-function TypedText({
-  text,
-  className = '',
-  as: Component = 'p',
-  delay = 0,
-  speed = 26,
-}: TypedTextProps) {
-  const { ref, isVisible } = useInView<HTMLSpanElement>();
-  const [visibleText, setVisibleText] = useState('');
-
-  useEffect(() => {
-    if (!isVisible) {
-      return;
-    }
-
-    if (prefersReducedMotion()) {
-      setVisibleText(text);
-      return;
-    }
-
-    let index = 0;
-    let intervalId = 0;
-    const timeoutId = window.setTimeout(() => {
-      intervalId = window.setInterval(() => {
-        index += 1;
-        setVisibleText(text.slice(0, index));
-
-        if (index >= text.length) {
-          window.clearInterval(intervalId);
-        }
-      }, speed);
-    }, delay);
-
-    return () => {
-      window.clearTimeout(timeoutId);
-      window.clearInterval(intervalId);
-    };
-  }, [delay, isVisible, speed, text]);
-
-  const isTyping = isVisible && visibleText.length < text.length && !prefersReducedMotion();
-
-  return (
-    <Component className={`typed-text ${className} ${isTyping ? 'is-typing' : ''}`}>
-      <span ref={ref}>{visibleText || '\u00a0'}</span>
-    </Component>
-  );
-}
-
 function RevealBlock({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   const { ref, isVisible } = useInView<HTMLDivElement>();
 
@@ -154,7 +94,6 @@ function RevealBlock({ children, className = '' }: { children: React.ReactNode; 
 
 const content = {
   ko: {
-    nav: ['소개', '강점', '사례', '제품', '운영', '연락'],
     languageLabel: '언어 전환',
     heroTitle: '고객의 복잡한 일을\n기술과 제품 흐름으로 바꾸는\n한지우입니다.',
     heroBody:
@@ -258,7 +197,6 @@ const content = {
       '기술 구조, 고객 맥락, 운영 복구까지 함께 보는 사람으로 읽히는 포트폴리오를 만들고 있습니다.',
   },
   en: {
-    nav: ['Intro', 'Pillars', 'Cases', 'Build', 'Ops', 'Contact'],
     languageLabel: 'Switch language',
     heroTitle: 'I turn customer workflows\ninto technical systems\nthat keep running.',
     heroBody:
@@ -365,10 +303,6 @@ function PortfolioSkeleton() {
   const currentLanguage: SupportedLanguage = i18n.resolvedLanguage === 'en' ? 'en' : 'ko';
   const pageText = content[currentLanguage];
 
-  const navItems = pageText.nav;
-
-  const sectionIds = useMemo(() => ['intro', 'pillars', 'cases', 'build', 'operations', 'contact'], []);
-
   useEffect(() => {
     const hash = window.location.hash.slice(1);
 
@@ -418,7 +352,7 @@ function PortfolioSkeleton() {
       <main>
         <section id="intro" className="hero-section content-section">
           <RevealBlock className="hero-stack">
-            <TypedText as="h1" className="hero-title" text={pageText.heroTitle} speed={34} />
+            <h1 className="hero-title">{pageText.heroTitle}</h1>
             <p className="hero-copy">{pageText.heroBody}</p>
             <div className="hero-tags" aria-label="Portfolio positioning">
               {pageText.heroTags.map((tag) => (
@@ -520,18 +454,6 @@ function PortfolioSkeleton() {
         </section>
       </main>
 
-      <nav className="bottom-nav" aria-label="Portfolio sections">
-        <span className="nav-dots" aria-hidden="true">
-          <i />
-          <i />
-          <i />
-        </span>
-        {navItems.map((item, index) => (
-          <a key={item} href={`#${sectionIds[index]}`}>
-            {item}
-          </a>
-        ))}
-      </nav>
     </div>
   );
 }
