@@ -255,7 +255,7 @@ button {
 }
 
 .pillar-card {
-  min-height: 330px;
+  min-height: 280px;
 }
 
 .build-card {
@@ -297,7 +297,6 @@ button {
   line-height: 1.7;
 }
 
-.pillar-card strong,
 .build-card strong {
   display: block;
   min-height: 58px;
