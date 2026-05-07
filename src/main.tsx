@@ -167,21 +167,24 @@ const content = {
     pillars: [
       {
         label: '01',
-        title: 'Technical Knowledge',
-        description: 'API, SDK, 데이터 구조, 결제/정산, worker 흐름을 구현 가능한 요구사항으로 정리합니다.',
-        proof: 'Redprint system map, S2S data mapping, Stripe/ledger/worker',
+        title: '기술 커뮤니케이션',
+        description:
+          'API와 SDK 개발, 여러 플랫폼 연동 과정에서 각 부서의 기술 요구사항을 파악하고 내부/외부 커뮤니케이션이 매끄럽게 이어지도록 조율합니다.',
+        proof: 'API/SDK, platform integration, technical requirements, stakeholder alignment',
       },
       {
         label: '02',
-        title: 'Customer Success',
-        description: '고객이 말로 다 설명하지 못한 업무 흐름을 찾아내고, 글로벌 이해관계자와 실행 조건을 맞춥니다.',
+        title: '고객성공',
+        description:
+          '고객의 문제를 파악하고 상황에 맞는 솔루션을 제시합니다. 기술 이슈를 쉬운 언어로 설명하며, 필요할 때는 커스텀 솔루션을 직접 제작해 제공합니다.',
         proof: 'Samsung 30+ offices, Bitmango, Woowa, SEA enterprise accounts',
       },
       {
         label: '03',
-        title: 'Product Building',
-        description: '요구사항을 문서에만 남기지 않고 내부 콘솔, 운영 가이드, 실제 제품 흐름으로 옮깁니다.',
-        proof: 'Redprint, OneLink Management Console, S2S Event Guide',
+        title: '풀스택 프로젝트 빌딩',
+        description:
+          '프론트엔드, 백엔드, 데이터베이스를 아우르는 풀스택 프로젝트를 설계하고 운영했습니다. 배포, 스토리지, 결제, 분산락, rate limiting, 에러 대응 자동화, worker failover까지 직접 구축했습니다.',
+        proof: 'Vercel/Railway, Upstash Redis, R2, Stripe, Sentry-Slack-Agent, HetrixTools',
       },
     ],
     casesTitle: '고객의 일을 실행 가능한 기술 과제로 바꾼 사례',
