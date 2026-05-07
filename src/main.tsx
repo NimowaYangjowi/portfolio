@@ -14,6 +14,55 @@ type TypedTextProps = {
   speed?: number;
 };
 
+type Pillar = {
+  label: string;
+  title: string;
+  description: string;
+  proof: string;
+};
+
+type CaseStudy = {
+  title: string;
+  meta: string;
+  description: string;
+  points: string[];
+};
+
+type BuildItem = {
+  number: string;
+  title: string;
+  detail: string;
+  impact: string;
+};
+
+type OperationItem = {
+  title: string;
+  description: string;
+};
+
+type PageContent = {
+  nav: string[];
+  languageLabel: string;
+  heroTitle: string;
+  heroBody: string;
+  heroTags: string[];
+  pillarsTitle: string;
+  pillarsBody: string;
+  pillars: Pillar[];
+  casesTitle: string;
+  casesBody: string;
+  cases: CaseStudy[];
+  buildTitle: string;
+  buildBody: string;
+  flow: string[];
+  buildItems: BuildItem[];
+  operationsTitle: string;
+  operationsBody: string;
+  operations: OperationItem[];
+  contactTitle: string;
+  contactBody: string;
+};
+
 const prefersReducedMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -106,74 +155,223 @@ function RevealBlock({ children, className = '' }: { children: React.ReactNode; 
 
 const content = {
   ko: {
-    nav: ['소개', '흐름', '프로젝트', '연락'],
+    nav: ['소개', '강점', '고객사례', '빌드', '운영', '연락'],
     languageLabel: '언어 전환',
-    heroTitle: '안녕하세요.\n 기술과 사람을 연결하는 \n한지우입니다.\n',
+    heroTitle: '고객의 업무 문제를\n기술과 제품으로 바꾸는\n한지우입니다.',
     heroBody:
-      '단순한 화면 구현이 아니라 등록, 업로드, 탐색, 결제, 정산, 운영 복구까지 이어지는 제품 흐름을 보여주는 포트폴리오입니다.',
-    capabilitiesTitle: '핵심 구현 단위',
-    capabilitiesBody:
-      '각 섹션은 사용자가 실제로 보는 화면과 그 뒤에서 데이터를 지키는 구조를 함께 설명합니다.',
-    capabilities: [
-      ['01', '복구 가능한 등록 흐름', '긴 작성 과정에서 사용자가 입력한 내용을 잃지 않도록 draft와 업로드 상태를 관리합니다.'],
-      ['02', '미디어 업로드 파이프라인', '이미지와 영상 파일이 준비됐는지 확인한 뒤 다음 단계로 넘기는 구조입니다.'],
-      ['03', '결제와 정산 제어층', '구매, 판매자 정산, 운영자 검증이 같은 돈의 흐름 안에서 이어지게 만듭니다.'],
+      'API, 데이터, 운영 정책, 제품 화면을 연결해 고객이 실제로 쓰는 도구와 시스템을 만듭니다.',
+    heroTags: ['Technical Operator', 'Customer Success', 'Product Builder'],
+    pillarsTitle: '세 가지 증거 축',
+    pillarsBody:
+      '이 포트폴리오는 기술을 아는 사람, 고객을 이해하는 사람, 실제 제품을 만드는 사람이라는 세 신호를 동시에 보여줍니다.',
+    pillars: [
+      {
+        label: '01',
+        title: 'Technical Knowledge',
+        description: 'API, SDK, 데이터 구조, 결제/정산, worker 흐름을 요구사항과 구현 단위로 풀어냅니다.',
+        proof: 'Redprint system map, S2S data mapping, Stripe/ledger/worker',
+      },
+      {
+        label: '02',
+        title: 'Customer Success',
+        description: '고객의 숨은 업무 흐름을 발견하고 글로벌 이해관계자와 실행 조건을 맞춥니다.',
+        proof: 'Samsung 30+ offices, Bitmango, Woowa, SEA enterprise accounts',
+      },
+      {
+        label: '03',
+        title: 'Product Building',
+        description: '요구사항을 문서에서 끝내지 않고 내부 콘솔, 운영 가이드, 실제 제품 흐름으로 만듭니다.',
+        proof: 'Redprint, OneLink Management Console, S2S Event Guide',
+      },
     ],
-    flowTitle: '시스템 흐름',
-    flowBody: '화면 하나씩 보여주는 대신 서비스가 움직이는 순서를 먼저 보여줍니다.',
-    flow: ['Upload', 'Process', 'Explore', 'Checkout', 'Admin'],
-    projectsTitle: '프로젝트 상세',
-    projectsBody: '카드는 결과물이 아니라 해결한 문제를 기준으로 묶었습니다.',
-    projects: [
-      ['등록 위자드', 'multi-step workflow', '중간 저장, 업로드 준비 상태, 제출 전 검증을 하나의 사용자 흐름으로 묶었습니다.'],
-      ['탐색 피드', 'adaptive marketplace layout', '상품 카드가 화면 크기에 맞춰 읽기 좋은 밀도로 배치되도록 설계했습니다.'],
-      ['운영자 원장', 'ledger reconciliation', '운영자가 정산 상태와 이상 거래를 따라갈 수 있는 검증 화면을 만들었습니다.'],
-      ['worker 복구', 'queue retry and heartbeat', '백그라운드 작업이 실패해도 다시 이어갈 수 있도록 상태를 추적합니다.'],
+    casesTitle: '고객 문제를 기술 실행으로 바꾼 사례',
+    casesBody:
+      '고객성공 경험을 단순한 계정 관리가 아니라 workflow discovery, technical translation, rollout impact 관리로 보여줍니다.',
+    cases: [
+      {
+        title: 'Samsung 글로벌 운영',
+        meta: '30+ offices',
+        description: 'HQ, 지역 CSM, product, engineering 사이에서 요구사항과 release impact를 맞춘 경험입니다.',
+        points: ['글로벌 이해관계자 정렬', '파트너/플랫폼 요구사항 정리', '릴리즈 영향 관리'],
+      },
+      {
+        title: 'OneLink Management Console',
+        meta: 'API workflow',
+        description: '비개발자 마케팅 운영자가 복잡한 링크 create/update/get/delete 작업을 안전하게 처리하도록 만든 콘솔입니다.',
+        points: ['API-heavy 업무 단순화', '운영자 실수 감소', '내부 도구 제품화'],
+      },
+      {
+        title: 'S2S Event Guide',
+        meta: 'data mapping',
+        description: '공식 문서와 고객 데이터 구조 사이의 빈칸을 mapping, 전송 조건, 실패 처리 기준으로 메운 가이드입니다.',
+        points: ['AFID-CUID mapping', '전송 조건 정의', '보안/모니터링 기준'],
+      },
     ],
-    contactTitle: '함께 제품을 끝까지 굴러가게 만들고 싶습니다.',
-    contactBody: '화면의 첫인상부터 실패했을 때의 복구 흐름까지 챙기는 개발자로 보여주는 것이 목표입니다.',
+    buildTitle: '실제로 굴러가는 제품 빌드',
+    buildBody:
+      'Redprint는 화면만 만든 프로젝트가 아니라 등록, 업로드, 탐색, 결제, 정산, 운영 복구가 이어지는 마켓플레이스 시스템입니다.',
+    flow: ['Upload', 'Process', 'Explore', 'Checkout', 'Admin', 'Recover'],
+    buildItems: [
+      {
+        number: '01',
+        title: '복구 가능한 등록 흐름',
+        detail: 'multi-step workflow, draft persistence, media readiness gate',
+        impact: '긴 제출 과정에서도 사용자의 작업이 사라지지 않습니다.',
+      },
+      {
+        number: '02',
+        title: '대용량 미디어 파이프라인',
+        detail: 'R2 presigned upload, verification, queue orchestration',
+        impact: '무거운 파일도 서버를 막지 않고 안정적으로 처리합니다.',
+      },
+      {
+        number: '03',
+        title: '결제부터 정산까지의 돈 흐름',
+        detail: 'Stripe webhook, ledger posting, idempotency guard',
+        impact: '구매자, 판매자, 운영자가 돈의 상태를 설명할 수 있습니다.',
+      },
+      {
+        number: '04',
+        title: 'Worker 복구 시스템',
+        detail: 'queue, lease, retry, heartbeat, failover',
+        impact: '사용자가 화면을 떠나도 오래 걸리는 작업을 이어갑니다.',
+      },
+    ],
+    operationsTitle: '운영자가 직접 판단할 수 있는 구조',
+    operationsBody:
+      '운영은 admin page만 뜻하지 않습니다. 고객 업무를 API, 데이터, 정책, 조치 화면으로 바꾸는 일까지 포함합니다.',
+    operations: [
+      {
+        title: 'Customer-facing Operations',
+        description: '고객의 업무 흐름을 듣고 API/data mapping, 실행 조건, 실패 처리 기준으로 번역합니다.',
+      },
+      {
+        title: 'Admin Operations Hub',
+        description: '심사, 정산, 지원, 스토리지, worker 상태를 운영자가 직접 확인하고 조치하는 조종석입니다.',
+      },
+      {
+        title: 'Worker Operations Plane',
+        description: '미디어 처리, 결제 복구, 정산 예약, cleanup을 화면 밖에서 이어가는 백그라운드 시스템입니다.',
+      },
+    ],
+    contactTitle: '고객 문제를 끝까지 굴러가는 시스템으로 만들고 싶습니다.',
+    contactBody:
+      '기술 구조, 고객 맥락, 운영 복구까지 함께 보는 사람으로 읽히는 포트폴리오를 목표로 합니다.',
   },
   en: {
-    nav: ['Intro', 'Flow', 'Projects', 'Contact'],
+    nav: ['Intro', 'Pillars', 'Cases', 'Build', 'Ops', 'Contact'],
     languageLabel: 'Switch language',
-    heroTitle: 'A marketplace system\nusers create,\nbuy,\nand operators verify.',
+    heroTitle: 'I turn customer workflows\ninto technical systems\nthat keep running.',
     heroBody:
-      'A portfolio built around product flow: creation, upload, discovery, checkout, finance, admin review, and recovery.',
-    capabilitiesTitle: 'Core Build Units',
-    capabilitiesBody:
-      'Each section connects the screen users see with the system behavior that protects the data behind it.',
-    capabilities: [
-      ['01', 'Recoverable creation flow', 'Draft state and upload readiness keep long submissions from falling apart.'],
-      ['02', 'Media upload pipeline', 'Image and video assets are checked before users move into the next step.'],
-      ['03', 'Payment and ledger layer', 'Purchase, seller payout, and admin review stay inside one money flow.'],
+      'I connect APIs, data, operating policy, and product surfaces into tools people can actually use.',
+    heroTags: ['Technical Operator', 'Customer Success', 'Product Builder'],
+    pillarsTitle: 'Three Proof Pillars',
+    pillarsBody:
+      'The page is built to show technical depth, customer-facing judgment, and real product building at the same time.',
+    pillars: [
+      {
+        label: '01',
+        title: 'Technical Knowledge',
+        description: 'I break API, SDK, data, payment, ledger, and worker behavior into executable requirements.',
+        proof: 'Redprint system map, S2S data mapping, Stripe/ledger/worker',
+      },
+      {
+        label: '02',
+        title: 'Customer Success',
+        description: 'I uncover hidden customer workflows and align global stakeholders around execution conditions.',
+        proof: 'Samsung 30+ offices, Bitmango, Woowa, SEA enterprise accounts',
+      },
+      {
+        label: '03',
+        title: 'Product Building',
+        description: 'I turn requirements into internal consoles, implementation guides, and working product flows.',
+        proof: 'Redprint, OneLink Management Console, S2S Event Guide',
+      },
     ],
-    flowTitle: 'System Flow',
-    flowBody: 'Instead of showing isolated screens, the page shows how the service moves.',
-    flow: ['Upload', 'Process', 'Explore', 'Checkout', 'Admin'],
-    projectsTitle: 'Project Details',
-    projectsBody: 'Cards are grouped by the problem solved, not by surface names.',
-    projects: [
-      ['Creation wizard', 'multi-step workflow', 'Draft saving, media readiness, and final validation work as one user path.'],
-      ['Explore feed', 'adaptive marketplace layout', 'Marketplace cards stay readable across screen sizes and content density.'],
-      ['Admin ledger', 'ledger reconciliation', 'Operators can trace payout status and suspicious entries from one review surface.'],
-      ['Worker recovery', 'queue retry and heartbeat', 'Background jobs carry state so failed work can continue safely.'],
+    casesTitle: 'Customer Problems Turned Into Technical Execution',
+    casesBody:
+      'Customer success is framed as workflow discovery, technical translation, and rollout impact management.',
+    cases: [
+      {
+        title: 'Samsung Global Operations',
+        meta: '30+ offices',
+        description: 'Aligned HQ, regional CSMs, product, and engineering around requirements and release impact.',
+        points: ['Global stakeholder alignment', 'Partner/platform requirements', 'Release impact management'],
+      },
+      {
+        title: 'OneLink Management Console',
+        meta: 'API workflow',
+        description: 'A console for non-developer marketing operators to safely create, update, get, and delete links.',
+        points: ['Simplified API-heavy work', 'Reduced operator error', 'Productized internal tooling'],
+      },
+      {
+        title: 'S2S Event Guide',
+        meta: 'data mapping',
+        description: 'Bridged official docs and customer data structures with mapping, conditions, and failure handling.',
+        points: ['AFID-CUID mapping', 'Transmission rules', 'Security and monitoring'],
+      },
     ],
-    contactTitle: 'I want to help build products that keep running.',
-    contactBody: 'The goal is to show craft from the first impression to the recovery path after something fails.',
+    buildTitle: 'Product Build Evidence',
+    buildBody:
+      'Redprint is a marketplace system across creation, upload, discovery, checkout, finance, admin operations, and recovery.',
+    flow: ['Upload', 'Process', 'Explore', 'Checkout', 'Admin', 'Recover'],
+    buildItems: [
+      {
+        number: '01',
+        title: 'Recoverable creation flow',
+        detail: 'multi-step workflow, draft persistence, media readiness gate',
+        impact: 'Long submissions do not fall apart when the session gets messy.',
+      },
+      {
+        number: '02',
+        title: 'Large media pipeline',
+        detail: 'R2 presigned upload, verification, queue orchestration',
+        impact: 'Heavy files move without blocking the application server.',
+      },
+      {
+        number: '03',
+        title: 'Checkout-to-ledger money flow',
+        detail: 'Stripe webhook, ledger posting, idempotency guard',
+        impact: 'Buyers, sellers, and operators can explain where money sits.',
+      },
+      {
+        number: '04',
+        title: 'Worker recovery system',
+        detail: 'queue, lease, retry, heartbeat, failover',
+        impact: 'Long-running jobs continue after users leave the screen.',
+      },
+    ],
+    operationsTitle: 'Operator-Ready Systems',
+    operationsBody:
+      'Operations means turning customer workflows into APIs, data mapping, policy, and action surfaces.',
+    operations: [
+      {
+        title: 'Customer-facing Operations',
+        description: 'Customer workflows become API/data mapping, execution conditions, and failure handling rules.',
+      },
+      {
+        title: 'Admin Operations Hub',
+        description: 'Review, finance, support, storage, and worker states become surfaces operators can act from.',
+      },
+      {
+        title: 'Worker Operations Plane',
+        description: 'Media, checkout recovery, payout planning, and cleanup keep moving outside the user screen.',
+      },
+    ],
+    contactTitle: 'I want to turn customer problems into systems that keep running.',
+    contactBody:
+      'The goal is a portfolio that reads as technical, customer-aware, and serious about operational recovery.',
   },
-} satisfies Record<SupportedLanguage, Record<string, unknown>>;
+} satisfies Record<SupportedLanguage, PageContent>;
 
 function PortfolioSkeleton() {
   const { i18n } = useTranslation();
   const currentLanguage: SupportedLanguage = i18n.resolvedLanguage === 'en' ? 'en' : 'ko';
   const pageText = content[currentLanguage];
 
-  const navItems = pageText.nav as string[];
-  const capabilities = pageText.capabilities as string[][];
-  const flow = pageText.flow as string[];
-  const projects = pageText.projects as string[][];
+  const navItems = pageText.nav;
 
-  const sectionIds = useMemo(() => ['intro', 'flow', 'projects', 'contact'], []);
+  const sectionIds = useMemo(() => ['intro', 'pillars', 'cases', 'build', 'operations', 'contact'], []);
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
@@ -224,56 +422,96 @@ function PortfolioSkeleton() {
       <main>
         <section id="intro" className="hero-section content-section">
           <RevealBlock className="hero-stack">
-            <TypedText as="h1" className="hero-title" text={pageText.heroTitle as string} speed={34} />
-            <p className="hero-copy">{pageText.heroBody as string}</p>
+            <TypedText as="h1" className="hero-title" text={pageText.heroTitle} speed={34} />
+            <p className="hero-copy">{pageText.heroBody}</p>
+            <div className="hero-tags" aria-label="Portfolio positioning">
+              {pageText.heroTags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
           </RevealBlock>
         </section>
 
-        <section className="content-section capabilities-section">
+        <section id="pillars" className="content-section pillars-section">
           <RevealBlock className="section-heading">
-            <h2>{pageText.capabilitiesTitle as string}</h2>
-            <p>{pageText.capabilitiesBody as string}</p>
+            <h2>{pageText.pillarsTitle}</h2>
+            <p>{pageText.pillarsBody}</p>
           </RevealBlock>
 
-          <div className="capability-grid">
-            {capabilities.map(([number, title, description]) => (
-              <RevealBlock key={title} className="capability-card">
-                <span className="card-number">{number}</span>
-                <h2>{title}</h2>
-                <p>{description}</p>
+          <div className="pillar-grid">
+            {pageText.pillars.map((pillar) => (
+              <RevealBlock key={pillar.title} className="pillar-card">
+                <span className="card-number">{pillar.label}</span>
+                <h2>{pillar.title}</h2>
+                <p>{pillar.description}</p>
+                <strong>{pillar.proof}</strong>
               </RevealBlock>
             ))}
           </div>
         </section>
 
-        <section id="flow" className="content-section flow-section">
+        <section id="cases" className="content-section cases-section">
           <RevealBlock className="section-heading">
-            <h2>{pageText.flowTitle as string}</h2>
-            <p>{pageText.flowBody as string}</p>
+            <h2>{pageText.casesTitle}</h2>
+            <p>{pageText.casesBody}</p>
           </RevealBlock>
 
-          <RevealBlock className="system-flow" aria-label={pageText.flowTitle as string}>
-            {flow.map((step, index) => (
+          <div className="case-stack">
+            {pageText.cases.map((caseStudy) => (
+              <RevealBlock key={caseStudy.title} className="case-card">
+                <div>
+                  <span className="project-meta">{caseStudy.meta}</span>
+                  <h2>{caseStudy.title}</h2>
+                  <p>{caseStudy.description}</p>
+                </div>
+                <ul>
+                  {caseStudy.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              </RevealBlock>
+            ))}
+          </div>
+        </section>
+
+        <section id="build" className="content-section build-section">
+          <RevealBlock className="section-heading">
+            <h2>{pageText.buildTitle}</h2>
+            <p>{pageText.buildBody}</p>
+          </RevealBlock>
+
+          <RevealBlock className="system-flow" aria-label={pageText.buildTitle}>
+            {pageText.flow.map((step, index) => (
               <div className="flow-step" key={step}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <strong>{step}</strong>
               </div>
             ))}
           </RevealBlock>
+
+          <div className="build-grid">
+            {pageText.buildItems.map((item) => (
+              <RevealBlock key={item.title} className="build-card">
+                <span className="card-number">{item.number}</span>
+                <h2>{item.title}</h2>
+                <p>{item.detail}</p>
+                <strong>{item.impact}</strong>
+              </RevealBlock>
+            ))}
+          </div>
         </section>
 
-        <section id="projects" className="content-section projects-section">
+        <section id="operations" className="content-section operations-section">
           <RevealBlock className="section-heading">
-            <h2>{pageText.projectsTitle as string}</h2>
-            <p>{pageText.projectsBody as string}</p>
+            <h2>{pageText.operationsTitle}</h2>
+            <p>{pageText.operationsBody}</p>
           </RevealBlock>
 
-          <div className="project-grid">
-            {projects.map(([title, meta, description]) => (
-              <RevealBlock key={title} className="project-card">
-                <span className="project-meta">{meta}</span>
-                <h2>{title}</h2>
-                <p>{description}</p>
+          <div className="operations-list">
+            {pageText.operations.map((operation) => (
+              <RevealBlock key={operation.title} className="operation-row">
+                <h2>{operation.title}</h2>
+                <p>{operation.description}</p>
               </RevealBlock>
             ))}
           </div>
@@ -281,8 +519,8 @@ function PortfolioSkeleton() {
 
         <section id="contact" className="content-section contact-section">
           <RevealBlock className="contact-panel">
-            <h2>{pageText.contactTitle as string}</h2>
-            <p>{pageText.contactBody as string}</p>
+            <h2>{pageText.contactTitle}</h2>
+            <p>{pageText.contactBody}</p>
           </RevealBlock>
         </section>
       </main>

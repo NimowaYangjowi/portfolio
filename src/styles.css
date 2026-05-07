@@ -151,7 +151,7 @@ button {
   min-height: 328px;
   margin: 0;
   color: #111827;
-  font-size: 54px;
+  font-size: 52px;
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: 0;
@@ -167,9 +167,33 @@ button {
   line-height: 1.75;
 }
 
-.capabilities-section,
-.flow-section,
-.projects-section,
+.hero-tags {
+  display: flex;
+  max-width: 680px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 26px auto 0;
+}
+
+.hero-tags span {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  color: #0f766e;
+  padding: 0 14px;
+  font-size: 12px;
+  font-weight: 900;
+  box-shadow: 0 12px 38px rgba(15, 23, 42, 0.06);
+}
+
+.pillars-section,
+.cases-section,
+.build-section,
+.operations-section,
 .contact-section {
   flex-direction: column;
   gap: 46px;
@@ -197,17 +221,18 @@ button {
   line-height: 1.7;
 }
 
-.capability-grid,
-.project-grid {
+.pillar-grid,
+.build-grid {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
-.capability-card,
-.project-card {
-  min-height: 270px;
+.pillar-card,
+.build-card,
+.case-card,
+.operation-row {
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.72);
@@ -220,11 +245,21 @@ button {
     box-shadow 220ms ease;
 }
 
-.capability-card:hover,
-.project-card:hover {
+.pillar-card:hover,
+.build-card:hover,
+.case-card:hover,
+.operation-row:hover {
   border-color: rgba(45, 212, 191, 0.48);
   transform: translateY(-4px);
   box-shadow: 0 30px 90px rgba(15, 23, 42, 0.1);
+}
+
+.pillar-card {
+  min-height: 330px;
+}
+
+.build-card {
+  min-height: 300px;
 }
 
 .card-number,
@@ -237,8 +272,10 @@ button {
   letter-spacing: 0;
 }
 
-.capability-card h2,
-.project-card h2 {
+.pillar-card h2,
+.build-card h2,
+.case-card h2,
+.operation-row h2 {
   min-height: 64px;
   margin: 24px 0 0;
   color: #111827;
@@ -248,8 +285,10 @@ button {
   letter-spacing: 0;
 }
 
-.capability-card p,
-.project-card p {
+.pillar-card p,
+.build-card p,
+.case-card p,
+.operation-row p {
   min-height: 110px;
   margin: 18px 0 0;
   color: #64748b;
@@ -258,10 +297,67 @@ button {
   line-height: 1.7;
 }
 
+.pillar-card strong,
+.build-card strong {
+  display: block;
+  min-height: 58px;
+  margin-top: 18px;
+  color: #0f766e;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.55;
+}
+
+.case-stack,
+.operations-list {
+  display: grid;
+  width: 100%;
+  gap: 16px;
+}
+
+.case-card {
+  display: grid;
+  min-height: 220px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.75fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.case-card h2,
+.operation-row h2 {
+  min-height: auto;
+  margin-top: 16px;
+}
+
+.case-card p,
+.operation-row p {
+  min-height: auto;
+}
+
+.case-card ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-card li {
+  position: relative;
+  min-height: 34px;
+  border-left: 3px solid #2dd4bf;
+  background: rgba(45, 212, 191, 0.08);
+  color: #334155;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
 .system-flow {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 1px;
   overflow: hidden;
   border: 1px solid rgba(15, 23, 42, 0.08);
@@ -292,18 +388,30 @@ button {
   font-weight: 900;
 }
 
-.project-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.project-card {
-  min-height: 250px;
-}
-
 .project-meta {
   color: #b45309;
   font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
   font-weight: 800;
+}
+
+.build-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.operation-row {
+  display: grid;
+  min-height: 150px;
+  grid-template-columns: minmax(220px, 0.42fr) minmax(0, 0.58fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.operation-row h2 {
+  margin: 0;
+}
+
+.operation-row p {
+  margin: 0;
 }
 
 .contact-panel {
@@ -422,9 +530,14 @@ button {
     font-size: 44px;
   }
 
-  .capability-grid,
-  .project-grid,
+  .pillar-grid,
+  .build-grid,
   .system-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .case-card,
+  .operation-row {
     grid-template-columns: 1fr;
   }
 
@@ -459,8 +572,10 @@ button {
     font-size: 28px;
   }
 
-  .capability-card,
-  .project-card {
+  .pillar-card,
+  .build-card,
+  .case-card,
+  .operation-row {
     padding: 22px;
   }
 
