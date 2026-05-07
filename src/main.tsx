@@ -108,7 +108,6 @@ const content = {
   ko: {
     nav: ['소개', '흐름', '프로젝트', '연락'],
     languageLabel: '언어 전환',
-    heroKicker: 'REDPRINT PORTFOLIO',
     heroTitle: '사용자가 만들고,\n구매하고,\n운영자가 검증하는\n마켓플레이스 시스템.',
     heroBody:
       '단순한 화면 구현이 아니라 등록, 업로드, 탐색, 결제, 정산, 운영 복구까지 이어지는 제품 흐름을 보여주는 포트폴리오입니다.',
@@ -137,7 +136,6 @@ const content = {
   en: {
     nav: ['Intro', 'Flow', 'Projects', 'Contact'],
     languageLabel: 'Switch language',
-    heroKicker: 'REDPRINT PORTFOLIO',
     heroTitle: 'A marketplace system\nusers create,\nbuy,\nand operators verify.',
     heroBody:
       'A portfolio built around product flow: creation, upload, discovery, checkout, finance, admin review, and recovery.',
@@ -226,15 +224,8 @@ function PortfolioSkeleton() {
       <main>
         <section id="intro" className="hero-section content-section">
           <RevealBlock className="hero-stack">
-            <span className="section-kicker">{pageText.heroKicker as string}</span>
             <TypedText as="h1" className="hero-title" text={pageText.heroTitle as string} speed={34} />
-            <TypedText
-              as="p"
-              className="hero-copy"
-              text={pageText.heroBody as string}
-              delay={1100}
-              speed={18}
-            />
+            <p className="hero-copy">{pageText.heroBody as string}</p>
           </RevealBlock>
         </section>
 
