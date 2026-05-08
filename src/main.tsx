@@ -7,6 +7,7 @@ import { Button } from './components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
 import { ArrowUpRight, BriefcaseBusiness, Code2, Mail, PanelsTopLeft, Sparkles } from './components/ui/icons';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
+import TextType from './components/TextType';
 import './styles.css';
 
 type Feature = {
@@ -188,26 +189,6 @@ const projectDetails: ProjectDetail[] = [
   },
 ];
 
-function Header() {
-  return (
-    <header className="site-header">
-      <nav className="nav-pill" aria-label="Portfolio navigation">
-        <a href="#intro" className="brand-mark" aria-label="맨 위로 이동">
-          <span />
-          <span />
-          <span />
-        </a>
-        <div className="nav-links">
-          <Button href="#skill" variant="ghost" size="sm">기술</Button>
-          <Button href="#career" variant="ghost" size="sm">경력</Button>
-          <Button href="#project" variant="ghost" size="sm">프로젝트</Button>
-          <Button href="#contact" variant="ghost" size="sm">연락</Button>
-        </div>
-      </nav>
-    </header>
-  );
-}
-
 function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
     <Reveal className="section-heading">
@@ -371,8 +352,6 @@ function ProjectCard({ project, index }: { project: ProjectDetail; index: number
 function App() {
   return (
     <div className="page">
-      <Header />
-
       <main>
         <section id="intro" className="hero-section">
           <div className="hero-content">
@@ -380,15 +359,20 @@ function App() {
               <Sparkles size={15} aria-hidden="true" />
               Enterprise CS · Product Builder
             </Badge>
-            <h1 className="hero-rise hero-rise-1">
-              안녕하세요,
-              <br />
-              고객의 복잡한 일을
-              <br />
-              기술과 제품 플로우로 바꾸는
-              <br />
-              한지우입니다.
-            </h1>
+            <TextType
+              as="h1"
+              className="hero-title hero-rise hero-rise-1"
+              text={'안녕하세요,\n고객의 복잡한 일을\n기술과 제품 플로우로 바꾸는\n한지우입니다.'}
+              typingSpeed={58}
+              initialDelay={300}
+              pauseDuration={1800}
+              loop={false}
+              showCursor
+              cursorCharacter="|"
+              cursorClassName="hero-cursor"
+              cursorBlinkDuration={0.55}
+              variableSpeed={{ min: 34, max: 86 }}
+            />
             <p className="hero-rise hero-rise-2">
               Customer Success를 기반으로 기술 디스커버리, 구현 전략, 제품/엔지니어링 협업까지 연결합니다.
               고객이 겪는 모호한 문제를 실행 가능한 기술 계획과 운영 시스템으로 바꿉니다.
