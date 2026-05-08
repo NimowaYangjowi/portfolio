@@ -409,82 +409,96 @@ button {
   box-shadow: 0 1px 0 rgba(var(--color-primary), 0.12);
 }
 
-.career-timeline {
-  position: relative;
+.experience-list {
   display: grid;
-  width: min(100%, 860px);
+  width: min(100%, 900px);
   margin: 0 auto;
-  gap: 22px;
+  gap: 54px;
 }
 
-.career-timeline::before {
-  content: "";
-  position: absolute;
-  top: 18px;
-  bottom: 18px;
-  left: 119px;
-  width: 2px;
-  background: linear-gradient(
-    180deg,
-    rgba(var(--color-primary), 0),
-    rgba(var(--color-primary), 0.72) 10%,
-    rgba(var(--color-secondary), 0.86) 50%,
-    rgba(var(--color-primary), 0.72) 88%,
-    rgba(var(--color-primary), 0)
-  );
-}
-
-.timeline-item {
-  position: relative;
+.experience-entry {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: 32px;
-}
-
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  top: 28px;
-  left: 108px;
-  width: 24px;
-  height: 24px;
-  border: 7px solid rgb(var(--background-rgb));
-  border-radius: 999px;
-  background: rgba(var(--color-secondary), 1);
-  box-shadow: 0 0 0 1px rgba(var(--color-primary), 0.42);
-}
-
-.timeline-date {
+  gap: 22px;
+  border-top: 1px solid rgba(var(--foreground-rgb), 0.12);
   padding-top: 30px;
+}
+
+.experience-company-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.experience-period {
+  margin: 0 0 8px;
   color: rgba(var(--color-primary), 1);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.4;
 }
 
-.timeline-card {
-  padding: 28px;
-}
-
-.timeline-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.timeline-meta svg {
-  width: 18px;
-  height: 18px;
-  color: rgba(var(--color-primary), 0.6);
-}
-
-.experience-role {
+.experience-company {
   margin: 0;
   color: rgb(var(--foreground-rgb));
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.08;
+}
+
+.experience-summary {
+  max-width: 740px;
+  margin: 0;
+  color: rgba(var(--foreground-rgb), 0.72);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.experience-role-list {
+  display: grid;
+  gap: 28px;
+}
+
+.experience-role-block {
+  display: grid;
+  gap: 14px;
+}
+
+.experience-role-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.experience-role-title {
+  margin: 0;
+  color: rgb(var(--foreground-rgb));
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+
+.experience-role-period {
+  flex: 0 0 auto;
+  color: rgba(var(--foreground-rgb), 0.52);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.experience-role-subtitle {
+  margin: -6px 0 0;
+  color: rgba(var(--foreground-rgb), 0.62);
   font-size: 15px;
   font-weight: 700;
   line-height: 1.6;
+}
+
+.experience-detail-list {
+  margin-top: 0;
 }
 
 .badge-row {
@@ -644,22 +658,17 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .career-timeline::before {
-    left: 11px;
+  .experience-list {
+    width: min(100%, 760px);
   }
 
-  .timeline-item {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding-left: 36px;
+  .experience-role-heading {
+    display: grid;
+    gap: 4px;
   }
 
-  .timeline-item::before {
-    left: 0;
-  }
-
-  .timeline-date {
-    padding-top: 0;
+  .experience-role-period {
+    flex: initial;
   }
 }
 
@@ -687,9 +696,30 @@ button {
   }
 
   .feature-card,
-  .project-card,
-  .timeline-card {
+  .project-card {
     padding: 22px;
+  }
+
+  .experience-list {
+    gap: 42px;
+  }
+
+  .experience-entry {
+    gap: 20px;
+    padding-top: 24px;
+  }
+
+  .experience-company-row {
+    display: grid;
+    gap: 14px;
+  }
+
+  .experience-company {
+    font-size: 28px;
+  }
+
+  .experience-summary {
+    font-size: 16px;
   }
 
   .ui-tabs-list {

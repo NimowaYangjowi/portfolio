@@ -1,11 +1,10 @@
 import { StrictMode, useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import type { ReactNode } from 'react';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './components/ui/accordion';
 import { Badge } from './components/ui/badge';
 import { Button } from './components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
-import { ArrowUpRight, BriefcaseBusiness, Code2, Mail, PanelsTopLeft, Sparkles } from './components/ui/icons';
+import { ArrowUpRight, Code2, Mail, PanelsTopLeft, Sparkles } from './components/ui/icons';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import TextType from './components/TextType';
 import './styles.css';
@@ -21,14 +20,19 @@ type SkillGroup = {
   skills: string[];
 };
 
-type Experience = {
-  category: '업무 경험' | '프로젝트';
+type ExperienceRole = {
   period: string;
   title: string;
-  subtitle: string;
-  role?: string;
+  subtitle?: string;
   skills: string[];
   details: string[];
+};
+
+type Experience = {
+  company: string;
+  period: string;
+  summary: string;
+  roles: ExperienceRole[];
 };
 
 type ProjectDetail = {
@@ -84,67 +88,70 @@ const skillGroups: SkillGroup[] = [
 
 const experiences: Experience[] = [
   {
-    category: '업무 경험',
-    period: '2024.08 - 현재',
-    title: 'AppsFlyer',
-    subtitle: 'Enterprise Customer Success · SEA business',
-    role: 'Senior Customer Success Manager (enterprise)',
-    skills: ['Enterprise CS', 'Technical Discovery', 'Implementation Strategy', 'Executive Communication'],
-    details: [
-      '프리미엄 엔터프라이즈 계정의 온보딩, 요구사항 정리, 구현 계획, 이슈 에스컬레이션을 end-to-end로 담당했습니다.',
-      '$3M+ ARR 포트폴리오에서 맞춤형 기술 솔루션, EBR, adoption strategy를 지원하며 98% client retention을 유지했습니다.',
-      'Samsung Electronics, Garena, Jazz Pakistan, Zalora, HSBC, Bank of the Philippine Islands, UnionBank, Citi Bank 등을 담당하고 있습니다.',
+    company: 'AppsFlyer',
+    period: '2019.04 - 현재',
+    summary:
+      'Enterprise Customer Success와 Customer Engagement를 거치며 대형 고객의 온보딩, 기술 구현, 제품 피드백, adoption strategy를 연결했습니다.',
+    roles: [
+      {
+        period: '2024.08 - 현재',
+        title: 'Senior Customer Success Manager (enterprise)',
+        subtitle: 'Enterprise Customer Success · SEA business',
+        skills: ['Enterprise CS', 'Technical Discovery', 'Implementation Strategy', 'Executive Communication'],
+        details: [
+          '프리미엄 엔터프라이즈 계정의 온보딩, 요구사항 정리, 구현 계획, 이슈 에스컬레이션을 end-to-end로 담당했습니다.',
+          '$3M+ ARR 포트폴리오에서 맞춤형 기술 솔루션, EBR, adoption strategy를 지원하며 98% client retention을 유지했습니다.',
+          'Samsung Electronics, Garena, Jazz Pakistan, Zalora, HSBC, Bank of the Philippine Islands, UnionBank, Citi Bank 등을 담당하고 있습니다.',
+        ],
+      },
+      {
+        period: '2022.11 - 2024.08',
+        title: 'Senior Customer Success Manager (enterprise)',
+        subtitle: 'Enterprise Customer Success',
+        skills: ['SDK', 'API Integration', 'Data Discrepancy', 'Product Feedback'],
+        details: [
+          'SDK implementation, API integration, data discrepancy, platform configuration 이슈에서 고객 개발팀의 기술 의사결정을 도왔습니다.',
+          'Product, Engineering, Security 팀과 고객 blocker를 해결하고 현장 피드백을 제품 개선 논의로 연결했습니다.',
+          'Samsung Korea HQ primary liaison으로 30+ offices를 가진 글로벌 고객의 주요 구현과 adoption 전략을 리드했습니다.',
+        ],
+      },
+      {
+        period: '2021.01 - 2022.11',
+        title: 'Customer Success Manager',
+        skills: ['Customer Success', 'Technical Guides', 'APAC Playbooks', 'Training'],
+        details: [
+          'Woowa Brothers, Netmarble, Com2us, Bitmango, Bithumb 등 엔터프라이즈 고객을 담당했습니다.',
+          '내부와 고객이 함께 쓰는 기술 가이드, troubleshooting playbook, best practice 자료를 만들어 APAC 구현 품질을 맞췄습니다.',
+          'Bangkok, London, Sao Paulo 글로벌 워크숍을 운영하고 Berlin, Sao Paulo 지역 CSM과 전략을 맞췄습니다.',
+        ],
+      },
+      {
+        period: '2019.04 - 2020.12',
+        title: 'Customer Engagement Manager',
+        skills: ['Customer Engagement', 'Enablement', 'Training', 'Support'],
+        details: [
+          '고객의 초기 사용 맥락을 파악하고 제품 활용을 돕는 engagement 업무를 담당했습니다.',
+          '고객 문의와 반복 이슈를 정리해 이후 Customer Success와 technical enablement 업무의 기반을 만들었습니다.',
+        ],
+      },
     ],
   },
   {
-    category: '업무 경험',
-    period: '2022.11 - 2024.08',
-    title: 'AppsFlyer',
-    subtitle: 'Enterprise Customer Success',
-    role: 'Senior Customer Success Manager (enterprise)',
-    skills: ['SDK', 'API Integration', 'Data Discrepancy', 'Product Feedback'],
-    details: [
-      'SDK implementation, API integration, data discrepancy, platform configuration 이슈에서 고객 개발팀의 기술 의사결정을 도왔습니다.',
-      'Product, Engineering, Security 팀과 고객 blocker를 해결하고 현장 피드백을 제품 개선 논의로 연결했습니다.',
-      'Samsung Korea HQ primary liaison으로 30+ offices를 가진 글로벌 고객의 주요 구현과 adoption 전략을 리드했습니다.',
-    ],
-  },
-  {
-    category: '업무 경험',
-    period: '2021.01 - 2022.11',
-    title: 'AppsFlyer',
-    subtitle: 'Customer Success Manager',
-    role: 'Customer Success Manager',
-    skills: ['Customer Success', 'Technical Guides', 'APAC Playbooks', 'Training'],
-    details: [
-      'Woowa Brothers, Netmarble, Com2us, Bitmango, Bithumb 등 엔터프라이즈 고객을 담당했습니다.',
-      '내부와 고객이 함께 쓰는 기술 가이드, troubleshooting playbook, best practice 자료를 만들어 APAC 구현 품질을 맞췄습니다.',
-      'Bangkok, London, Sao Paulo 글로벌 워크숍을 운영하고 Berlin, Sao Paulo 지역 CSM과 전략을 맞췄습니다.',
-    ],
-  },
-  {
-    category: '업무 경험',
-    period: '2019.04 - 2020.12',
-    title: 'AppsFlyer',
-    subtitle: 'Customer Engagement',
-    role: 'Customer Engagement Manager',
-    skills: ['Customer Engagement', 'Enablement', 'Training', 'Support'],
-    details: [
-      '고객의 초기 사용 맥락을 파악하고 제품 활용을 돕는 engagement 업무를 담당했습니다.',
-      '고객 문의와 반복 이슈를 정리해 이후 Customer Success와 technical enablement 업무의 기반을 만들었습니다.',
-    ],
-  },
-  {
-    category: '프로젝트',
-    period: '2024 - 현재',
-    title: 'Redprint',
-    subtitle: '마켓플레이스 시스템 개발 프로젝트',
-    role: 'Product Builder',
-    skills: ['TypeScript', 'Next.js', 'PostgreSQL', 'Redis', 'R2', 'Sentry'],
-    details: [
-      '등록, 업로드, 탐색, 결제, 정산, 운영 복구가 이어지는 marketplace system을 설계하고 구현했습니다.',
-      'multi-step workflow, draft persistence, media readiness gate로 긴 제출 과정이 복구 가능하도록 만들었습니다.',
-      'queue, lease, heartbeat, failover 구조로 tagging, transcoding, scheduled maintenance 같은 비동기 작업을 운영했습니다.',
+    company: 'Gameberry',
+    period: '2017.09 - 2019.03',
+    summary:
+      'Business Development로 광고 플랫폼 연동, 파트너 온보딩, 게임 제품 운영을 경험하며 수익과 연결되는 플랫폼 구조를 다뤘습니다.',
+    roles: [
+      {
+        period: '2017.09 - 2019.03',
+        title: 'Business Development',
+        skills: ['DSP/SSP', 'Ad Exchange', 'Affiliate Network', 'Partner Integration', 'QA & Launch'],
+        details: [
+          'Managed platform adoption for DSP/SSP/Ad Exchange integrations, troubleshooting technical onboarding issues and optimizing partner-side configurations for performance and operational stability.',
+          'Worked across QA, launch, and ongoing operations for gaming products, building practical understanding of software delivery, production support, and revenue-linked platform behavior.',
+          'Operated on the supply side of affiliate and ad network ecosystems, developing hands-on understanding of traffic routing, partner integrations, and seller-side revenue mechanics.',
+        ],
+      },
     ],
   },
 ];
@@ -285,40 +292,38 @@ function SkillTabs() {
   );
 }
 
-function ExperienceCard({ experience }: { experience: Experience }) {
+function ExperienceEntry({ experience }: { experience: Experience }) {
   return (
-    <Reveal className="timeline-item">
-      <div className="timeline-date">{experience.period}</div>
-      <Card className="timeline-card">
-        <CardHeader>
-          <div className="timeline-meta">
-            <Badge variant={experience.category === '프로젝트' ? 'accent' : 'outline'}>{experience.category}</Badge>
-            {experience.category === '프로젝트' ? <PanelsTopLeft aria-hidden="true" /> : <BriefcaseBusiness aria-hidden="true" />}
-          </div>
-          <CardTitle>{experience.title}</CardTitle>
-          <CardDescription>{experience.subtitle}</CardDescription>
-          {experience.role ? <p className="experience-role">{experience.role}</p> : null}
-        </CardHeader>
-        <CardContent>
-          <div className="badge-row">
-            {experience.skills.map((skill) => (
-              <Badge key={skill} variant="default">{skill}</Badge>
-            ))}
-          </div>
-          <Accordion type="single" collapsible>
-            <AccordionItem value={`${experience.period}-${experience.title}`}>
-              <AccordionTrigger>주요 업무 내용 보기</AccordionTrigger>
-              <AccordionContent>
-                <ul className="detail-list">
-                  {experience.details.map((detail) => (
-                    <li key={detail}>{detail}</li>
-                  ))}
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </CardContent>
-      </Card>
+    <Reveal className="experience-entry">
+      <div className="experience-company-row">
+        <div>
+          <p className="experience-period">{experience.period}</p>
+          <h3 className="experience-company">{experience.company}</h3>
+        </div>
+        <Badge variant="outline">Experience</Badge>
+      </div>
+      <p className="experience-summary">{experience.summary}</p>
+      <div className="experience-role-list">
+        {experience.roles.map((role) => (
+          <section className="experience-role-block" key={`${experience.company}-${role.period}-${role.title}`}>
+            <div className="experience-role-heading">
+              <h4 className="experience-role-title">{role.title}</h4>
+              <span className="experience-role-period">{role.period}</span>
+            </div>
+            {role.subtitle ? <p className="experience-role-subtitle">{role.subtitle}</p> : null}
+            <div className="badge-row">
+              {role.skills.map((skill) => (
+                <Badge key={skill} variant="default">{skill}</Badge>
+              ))}
+            </div>
+            <ul className="detail-list experience-detail-list">
+              {role.details.map((detail) => (
+                <li key={detail}>{detail}</li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
     </Reveal>
   );
 }
@@ -398,9 +403,9 @@ function App() {
 
         <section id="career" className="section">
           <SectionHeading eyebrow="경력 사항" title="고객성공을 중심으로 기술과 제품 실행 경험을 쌓아왔습니다." />
-          <div className="career-timeline">
+          <div className="experience-list">
             {experiences.map((experience) => (
-              <ExperienceCard experience={experience} key={`${experience.category}-${experience.period}-${experience.title}`} />
+              <ExperienceEntry experience={experience} key={experience.company} />
             ))}
           </div>
         </section>
