@@ -1,6 +1,12 @@
 import { StrictMode, useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import type { ReactNode } from 'react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './components/ui/accordion';
+import { Badge } from './components/ui/badge';
+import { Button } from './components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
+import { ArrowUpRight, BriefcaseBusiness, Code2, Mail, PanelsTopLeft, Sparkles } from './components/ui/icons';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import './styles.css';
 
 type Feature = {
@@ -22,7 +28,6 @@ type Experience = {
   role?: string;
   skills: string[];
   details: string[];
-  links?: { label: string; href: string }[];
 };
 
 type ProjectDetail = {
@@ -187,10 +192,17 @@ function Header() {
   return (
     <header className="site-header">
       <nav className="nav-pill" aria-label="Portfolio navigation">
-        <a href="#skill">기술</a>
-        <a href="#career">경력</a>
-        <a href="#project">프로젝트</a>
-        <a href="#blog">블로그</a>
+        <a href="#intro" className="brand-mark" aria-label="맨 위로 이동">
+          <span />
+          <span />
+          <span />
+        </a>
+        <div className="nav-links">
+          <Button href="#skill" variant="ghost" size="sm">기술</Button>
+          <Button href="#career" variant="ghost" size="sm">경력</Button>
+          <Button href="#project" variant="ghost" size="sm">프로젝트</Button>
+          <Button href="#contact" variant="ghost" size="sm">연락</Button>
+        </div>
       </nav>
     </header>
   );
@@ -199,7 +211,7 @@ function Header() {
 function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
     <Reveal className="section-heading">
-      <p className="section-eyebrow">{eyebrow}</p>
+      <Badge variant="outline">{eyebrow}</Badge>
       {title ? <h2 className="section-title">{title}</h2> : null}
     </Reveal>
   );
@@ -244,12 +256,115 @@ function Reveal({ children, className = '' }: { children: ReactNode; className?:
   );
 }
 
+function FeatureCard({ feature }: { feature: Feature }) {
+  return (
+    <Reveal>
+      <Card className="feature-card">
+        <div className="feature-visual" aria-hidden="true">
+          <span>{feature.iconLabel}</span>
+        </div>
+        <CardHeader>
+          <CardTitle>{feature.title}</CardTitle>
+          <CardDescription>{feature.description}</CardDescription>
+        </CardHeader>
+      </Card>
+    </Reveal>
+  );
+}
+
 function SkillBadge({ label }: { label: string }) {
   return (
-    <span className="skill-badge">
-      <span className="skill-icon">{label.slice(0, 2).toUpperCase()}</span>
-      <span>{label}</span>
-    </span>
+    <Badge className="skill-badge" variant="accent">
+      <span className="skill-icon" aria-hidden="true">{label.slice(0, 2).toUpperCase()}</span>
+      {label}
+    </Badge>
+  );
+}
+
+function SkillTabs() {
+  return (
+    <Tabs defaultValue={skillGroups[0].title} className="skill-tabs">
+      <TabsList aria-label="Skill categories">
+        {skillGroups.map((group) => (
+          <TabsTrigger key={group.title} value={group.title}>{group.title}</TabsTrigger>
+        ))}
+      </TabsList>
+      {skillGroups.map((group) => (
+        <TabsContent key={group.title} value={group.title}>
+          <div className="skill-grid">
+            {group.skills.map((skill) => (
+              <Reveal className="skill-reveal" key={`${group.title}-${skill}`}>
+                <SkillBadge label={skill} />
+              </Reveal>
+            ))}
+          </div>
+        </TabsContent>
+      ))}
+    </Tabs>
+  );
+}
+
+function ExperienceCard({ experience }: { experience: Experience }) {
+  return (
+    <Reveal className="timeline-item">
+      <div className="timeline-date">{experience.period}</div>
+      <Card className="timeline-card">
+        <CardHeader>
+          <div className="timeline-meta">
+            <Badge variant={experience.category === '프로젝트' ? 'accent' : 'outline'}>{experience.category}</Badge>
+            {experience.category === '프로젝트' ? <PanelsTopLeft aria-hidden="true" /> : <BriefcaseBusiness aria-hidden="true" />}
+          </div>
+          <CardTitle>{experience.title}</CardTitle>
+          <CardDescription>{experience.subtitle}</CardDescription>
+          {experience.role ? <p className="experience-role">{experience.role}</p> : null}
+        </CardHeader>
+        <CardContent>
+          <div className="badge-row">
+            {experience.skills.map((skill) => (
+              <Badge key={skill} variant="default">{skill}</Badge>
+            ))}
+          </div>
+          <Accordion type="single" collapsible>
+            <AccordionItem value={`${experience.period}-${experience.title}`}>
+              <AccordionTrigger>주요 업무 내용 보기</AccordionTrigger>
+              <AccordionContent>
+                <ul className="detail-list">
+                  {experience.details.map((detail) => (
+                    <li key={detail}>{detail}</li>
+                  ))}
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </CardContent>
+      </Card>
+    </Reveal>
+  );
+}
+
+function ProjectCard({ project, index }: { project: ProjectDetail; index: number }) {
+  return (
+    <Reveal>
+      <Card className="project-card">
+        <CardHeader>
+          <Badge variant="outline">Project {String(index + 1).padStart(2, '0')}</Badge>
+          <CardTitle>{project.title}</CardTitle>
+          <CardDescription>{project.subtitle}</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="badge-row">
+            {project.skills.map((skill) => (
+              <Badge key={skill} variant="accent">{skill}</Badge>
+            ))}
+          </div>
+          <ul className="detail-list">
+            {project.details.map((detail) => (
+              <li key={detail}>{detail}</li>
+            ))}
+          </ul>
+        </CardContent>
+      </Card>
+    </Reveal>
   );
 }
 
@@ -261,6 +376,10 @@ function App() {
       <main>
         <section id="intro" className="hero-section">
           <div className="hero-content">
+            <Badge variant="accent" className="hero-badge">
+              <Sparkles size={15} aria-hidden="true" />
+              Enterprise CS · Product Builder
+            </Badge>
             <h1 className="hero-rise hero-rise-1">
               안녕하세요,
               <br />
@@ -281,62 +400,23 @@ function App() {
           <SectionHeading eyebrow="핵심 역량" title="고객의 문제를 듣고, 기술의 언어로 정리하고, 실행 가능한 시스템으로 만듭니다." />
           <div className="feature-grid">
             {features.map((feature) => (
-              <Reveal className="feature-card" key={feature.title}>
-                <div className="feature-image" aria-hidden="true">
-                  <span>{feature.iconLabel}</span>
-                </div>
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
-              </Reveal>
+              <FeatureCard feature={feature} key={feature.title} />
             ))}
           </div>
         </section>
 
         <section id="skill" className="section">
           <SectionHeading eyebrow="기술 스택 및 도구" title="아래의 기술과 업무 도구를 사용할 수 있습니다." />
-          <div className="skill-tabs" aria-label="Skill categories">
-            {skillGroups.map((group) => (
-              <span key={group.title}>{group.title}</span>
-            ))}
-          </div>
-          <div className="skill-grid">
-            {skillGroups.flatMap((group) =>
-              group.skills.map((skill) => (
-                <Reveal className="skill-reveal" key={`${group.title}-${skill}`}>
-                  <SkillBadge label={skill} />
-                </Reveal>
-              )),
-            )}
-          </div>
+          <Reveal>
+            <SkillTabs />
+          </Reveal>
         </section>
 
         <section id="career" className="section">
           <SectionHeading eyebrow="경력 사항" title="고객성공을 중심으로 기술과 제품 실행 경험을 쌓아왔습니다." />
           <div className="career-timeline">
             {experiences.map((experience) => (
-              <Reveal className="timeline-item" key={`${experience.category}-${experience.period}-${experience.title}`}>
-                <div className="timeline-marker" aria-hidden="true" />
-                <div className="timeline-date">{experience.period}</div>
-                <article className="timeline-content">
-                  <p className="experience-category">{experience.category}</p>
-                  <h3>{experience.title}</h3>
-                  <p className="experience-subtitle">{experience.subtitle}</p>
-                  {experience.role ? <p className="experience-role">{experience.role}</p> : null}
-                  <div className="experience-skills">
-                    {experience.skills.map((skill) => (
-                      <span key={skill}>{skill}</span>
-                    ))}
-                  </div>
-                  <details>
-                    <summary>주요 업무 내용 보기</summary>
-                    <ul>
-                      {experience.details.map((detail) => (
-                        <li key={detail}>{detail}</li>
-                      ))}
-                    </ul>
-                  </details>
-                </article>
-              </Reveal>
+              <ExperienceCard experience={experience} key={`${experience.category}-${experience.period}-${experience.title}`} />
             ))}
           </div>
         </section>
@@ -344,45 +424,42 @@ function App() {
         <section id="project" className="section">
           <SectionHeading eyebrow="프로젝트 상세" title="주요 프로젝트의 세부 사항을 확인해보세요" />
           <div className="project-grid">
-            {projectDetails.map((project) => (
-              <Reveal className="project-card" key={project.title}>
-                <h3>{project.title}</h3>
-                <p>{project.subtitle}</p>
-                <div className="experience-skills">
-                  {project.skills.map((skill) => (
-                    <span key={skill}>{skill}</span>
-                  ))}
-                </div>
-                <ul>
-                  {project.details.map((detail) => (
-                    <li key={detail}>{detail}</li>
-                  ))}
-                </ul>
-              </Reveal>
+            {projectDetails.map((project, index) => (
+              <ProjectCard project={project} index={index} key={project.title} />
             ))}
           </div>
         </section>
 
         <section id="blog" className="section empty-section">
           <SectionHeading eyebrow="블로그" title="" />
-          <div className="empty-box" aria-label="No matching blog content" />
+          <Card className="empty-card" aria-label="No matching blog content">
+            <Code2 aria-hidden="true" />
+          </Card>
         </section>
 
         <section id="education" className="section empty-section">
           <SectionHeading eyebrow="교육 및 어학" title="" />
-          <div className="empty-box" aria-label="No matching education content" />
+          <Card className="empty-card" aria-label="No matching education content">
+            <PanelsTopLeft aria-hidden="true" />
+          </Card>
         </section>
 
         <section id="contact" className="thanks-section">
-          <p>감사합니다</p>
+          <Badge variant="outline">감사합니다</Badge>
           <h2>
             더 궁금한 점이 있다면
             <br />
             편하게 연락주세요
           </h2>
           <div className="contact-links">
-            <a href="mailto:jiwoohan92@gmail.com">이메일</a>
-            <a href="https://www.linkedin.com/in/jiwoo-han-557289143/">LinkedIn</a>
+            <Button href="mailto:jiwoohan92@gmail.com" size="lg">
+              <Mail size={18} aria-hidden="true" />
+              이메일
+            </Button>
+            <Button href="https://www.linkedin.com/in/jiwoo-han-557289143/" size="lg" variant="secondary">
+              LinkedIn
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </Button>
           </div>
         </section>
       </main>
