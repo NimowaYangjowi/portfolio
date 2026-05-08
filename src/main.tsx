@@ -1,5 +1,6 @@
-import { StrictMode } from 'react';
+import { StrictMode, useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
+import type { ReactNode } from 'react';
 import './styles.css';
 
 type Feature = {
@@ -197,9 +198,48 @@ function Header() {
 
 function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
-    <div className="section-heading">
+    <Reveal className="section-heading">
       <p className="section-eyebrow">{eyebrow}</p>
       {title ? <h2 className="section-title">{title}</h2> : null}
+    </Reveal>
+  );
+}
+
+function useInView<T extends HTMLElement>() {
+  const ref = useRef<T | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const element = ref.current;
+
+    if (!element) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { rootMargin: '0px 0px -4% 0px', threshold: 0.08 },
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, isVisible };
+}
+
+function Reveal({ children, className = '' }: { children: ReactNode; className?: string }) {
+  const { ref, isVisible } = useInView<HTMLDivElement>();
+
+  return (
+    <div ref={ref} className={`reveal ${isVisible ? 'reveal-visible' : ''} ${className}`}>
+      {children}
     </div>
   );
 }
@@ -221,7 +261,7 @@ function App() {
       <main>
         <section id="intro" className="hero-section">
           <div className="hero-content">
-            <h1>
+            <h1 className="hero-rise hero-rise-1">
               안녕하세요,
               <br />
               고객의 복잡한 일을
@@ -230,7 +270,7 @@ function App() {
               <br />
               한지우입니다.
             </h1>
-            <p>
+            <p className="hero-rise hero-rise-2">
               Customer Success를 기반으로 기술 디스커버리, 구현 전략, 제품/엔지니어링 협업까지 연결합니다.
               고객이 겪는 모호한 문제를 실행 가능한 기술 계획과 운영 시스템으로 바꿉니다.
             </p>
@@ -241,13 +281,13 @@ function App() {
           <SectionHeading eyebrow="핵심 역량" title="고객의 문제를 듣고, 기술의 언어로 정리하고, 실행 가능한 시스템으로 만듭니다." />
           <div className="feature-grid">
             {features.map((feature) => (
-              <article className="feature-card" key={feature.title}>
+              <Reveal className="feature-card" key={feature.title}>
                 <div className="feature-image" aria-hidden="true">
                   <span>{feature.iconLabel}</span>
                 </div>
                 <h3>{feature.title}</h3>
                 <p>{feature.description}</p>
-              </article>
+              </Reveal>
             ))}
           </div>
         </section>
@@ -261,41 +301,43 @@ function App() {
           </div>
           <div className="skill-grid">
             {skillGroups.flatMap((group) =>
-              group.skills.map((skill) => <SkillBadge key={`${group.title}-${skill}`} label={skill} />),
+              group.skills.map((skill) => (
+                <Reveal className="skill-reveal" key={`${group.title}-${skill}`}>
+                  <SkillBadge label={skill} />
+                </Reveal>
+              )),
             )}
           </div>
         </section>
 
         <section id="career" className="section">
           <SectionHeading eyebrow="경력 사항" title="고객성공을 중심으로 기술과 제품 실행 경험을 쌓아왔습니다." />
-          <div className="experience-layout">
-            <p className="experience-label">업무 경험</p>
-            <div className="experience-list">
-              {experiences.map((experience) => (
-                <article className="experience-card" key={`${experience.category}-${experience.period}-${experience.title}`}>
-                  <div className="experience-period">{experience.period}</div>
-                  <div className="experience-body">
-                    <p className="experience-category">{experience.category}</p>
-                    <h3>{experience.title}</h3>
-                    <p className="experience-subtitle">{experience.subtitle}</p>
-                    {experience.role ? <p className="experience-role">{experience.role}</p> : null}
-                    <div className="experience-skills">
-                      {experience.skills.map((skill) => (
-                        <span key={skill}>{skill}</span>
-                      ))}
-                    </div>
-                    <details>
-                      <summary>주요 업무 내용 보기</summary>
-                      <ul>
-                        {experience.details.map((detail) => (
-                          <li key={detail}>{detail}</li>
-                        ))}
-                      </ul>
-                    </details>
+          <div className="career-timeline">
+            {experiences.map((experience) => (
+              <Reveal className="timeline-item" key={`${experience.category}-${experience.period}-${experience.title}`}>
+                <div className="timeline-marker" aria-hidden="true" />
+                <div className="timeline-date">{experience.period}</div>
+                <article className="timeline-content">
+                  <p className="experience-category">{experience.category}</p>
+                  <h3>{experience.title}</h3>
+                  <p className="experience-subtitle">{experience.subtitle}</p>
+                  {experience.role ? <p className="experience-role">{experience.role}</p> : null}
+                  <div className="experience-skills">
+                    {experience.skills.map((skill) => (
+                      <span key={skill}>{skill}</span>
+                    ))}
                   </div>
+                  <details>
+                    <summary>주요 업무 내용 보기</summary>
+                    <ul>
+                      {experience.details.map((detail) => (
+                        <li key={detail}>{detail}</li>
+                      ))}
+                    </ul>
+                  </details>
                 </article>
-              ))}
-            </div>
+              </Reveal>
+            ))}
           </div>
         </section>
 
@@ -303,7 +345,7 @@ function App() {
           <SectionHeading eyebrow="프로젝트 상세" title="주요 프로젝트의 세부 사항을 확인해보세요" />
           <div className="project-grid">
             {projectDetails.map((project) => (
-              <article className="project-card" key={project.title}>
+              <Reveal className="project-card" key={project.title}>
                 <h3>{project.title}</h3>
                 <p>{project.subtitle}</p>
                 <div className="experience-skills">
@@ -316,7 +358,7 @@ function App() {
                     <li key={detail}>{detail}</li>
                   ))}
                 </ul>
-              </article>
+              </Reveal>
             ))}
           </div>
         </section>
