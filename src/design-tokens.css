@@ -1,0 +1,144 @@
+:root {
+  /*
+   * Image reference:
+   * soft Japanese editorial mobile UI, light device surface, muted gray field,
+   * a coral-red rising-sun circle, hairline dividers, airy numeric navigation.
+   */
+
+  /* Primitive color tokens */
+  --color-gray-0: #ffffff;
+  --color-gray-25: #f8f8f7;
+  --color-gray-50: #f2f3f2;
+  --color-gray-100: #e7e8e6;
+  --color-gray-200: #d9dad8;
+  --color-gray-300: #c7c9c7;
+  --color-gray-500: #8d908f;
+  --color-gray-600: #6f7473;
+  --color-gray-700: #4b5050;
+  --color-gray-900: #202326;
+  --color-coral-400: #ef5b72;
+  --color-coral-500: #e95169;
+  --color-coral-600: #d93f5a;
+  --color-cyan-300: #77e7ee;
+  --color-shadow-cool: 206 208 205;
+  --color-shadow-ink: 32 35 38;
+
+  /* Semantic color tokens */
+  --color-page-bg: var(--color-gray-100);
+  --color-page-bg-soft: var(--color-gray-50);
+  --color-surface-device: rgba(248, 248, 247, 0.94);
+  --color-surface-panel: rgba(242, 243, 242, 0.74);
+  --color-surface-raised: rgba(255, 255, 255, 0.78);
+  --color-line-subtle: rgba(255, 255, 255, 0.72);
+  --color-line-muted: rgba(32, 35, 38, 0.1);
+  --color-text-strong: var(--color-gray-900);
+  --color-text-body: var(--color-gray-700);
+  --color-text-muted: var(--color-gray-500);
+  --color-text-faint: rgba(111, 116, 115, 0.36);
+  --color-brand-sun: var(--color-coral-500);
+  --color-brand-sun-hover: var(--color-coral-600);
+  --color-status-led: var(--color-cyan-300);
+  --color-page-gradient-start: var(--color-gray-0);
+  --color-page-gradient-mid: var(--color-gray-50);
+  --color-page-gradient-end: var(--color-gray-100);
+  --color-text-inverse: var(--color-gray-0);
+  --color-text-inverse-muted: var(--color-gray-200);
+  --color-accent-strong: var(--color-brand-sun);
+  --color-accent-hover: var(--color-brand-sun-hover);
+  --color-accent-soft: rgba(233, 81, 105, 0.1);
+  --color-accent-border: rgba(233, 81, 105, 0.26);
+  --color-accent-border-strong: rgba(233, 81, 105, 0.5);
+  --color-accent-focus: rgba(233, 81, 105, 0.35);
+  --color-glass-bg: rgba(255, 255, 255, 0.74);
+  --color-chip-bg: rgba(255, 255, 255, 0.76);
+  --color-card-bg: rgba(255, 255, 255, 0.72);
+  --color-flow-bg: rgba(255, 255, 255, 0.78);
+  --color-modal-bg: var(--color-gray-50);
+  --color-modal-bar-bg: rgba(242, 243, 242, 0.92);
+  --color-overlay-bg: rgba(32, 35, 38, 0.42);
+  --color-inverse-surface: var(--color-gray-900);
+  --color-separator-bg: rgba(32, 35, 38, 0.08);
+  --color-index-bg: rgba(32, 35, 38, 0.06);
+  --color-meta-warm: var(--color-coral-600);
+  --color-flow-entry-border: rgba(119, 231, 238, 0.34);
+  --color-flow-process-border: var(--color-accent-border);
+  --color-flow-decision-border: rgba(217, 63, 90, 0.3);
+  --color-flow-decision-bg: rgba(233, 81, 105, 0.08);
+  --color-flow-output-border: rgba(32, 35, 38, 0.18);
+  --color-flow-output-bg: rgba(242, 243, 242, 0.92);
+  --color-flow-recovery-border: rgba(217, 63, 90, 0.22);
+  --color-flow-recovery-bg: rgba(233, 81, 105, 0.08);
+  --color-flow-recovery-text: var(--color-coral-600);
+
+  /* Typography tokens */
+  --font-sans:
+    "Avenir Next", "Inter", "Noto Sans JP", "Pretendard", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display:
+    "Avenir Next", "Inter", "Helvetica Neue", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+  --font-ja: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "Pretendard", sans-serif;
+  --font-size-caption: 12px;
+  --font-size-body: 15px;
+  --font-size-title: 42px;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --line-height-tight: 1.12;
+  --line-height-body: 1.7;
+  --letter-spacing-ui: 0.24em;
+  --letter-spacing-display: 0.18em;
+  --letter-spacing-vertical-ja: 0.18em;
+
+  /* Layout and spacing tokens */
+  --size-device-width: 420px;
+  --size-device-height: 760px;
+  --size-hero-sun: clamp(210px, 46vw, 340px);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Radius tokens */
+  --radius-none: 0;
+  --radius-control: 8px;
+  --radius-pill: 999px;
+  --radius-device: 54px;
+  --radius-circle: 50%;
+
+  /* Border and divider tokens */
+  --border-hairline: 1px solid var(--color-line-subtle);
+  --border-subtle: 1px solid var(--color-line-muted);
+  --divider-vertical: 1px solid rgba(255, 255, 255, 0.86);
+
+  /* Shadow tokens */
+  --shadow-device:
+    0 44px 64px rgba(var(--color-shadow-ink), 0.2),
+    0 14px 30px rgba(var(--color-shadow-ink), 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  --shadow-device-top: 0 7px 18px rgba(var(--color-shadow-ink), 0.14);
+  --shadow-soft: 0 22px 54px rgba(var(--color-shadow-ink), 0.1);
+  --shadow-floating: 18px 18px 44px rgba(var(--color-shadow-cool), 0.7);
+  --shadow-inset-light: inset 0 1px 3px rgba(255, 255, 255, 0.8);
+  --shadow-glass: 0 12px 40px rgba(var(--color-shadow-ink), 0.08);
+  --shadow-chip: 0 12px 38px rgba(var(--color-shadow-ink), 0.06);
+  --shadow-card: 0 24px 80px rgba(var(--color-shadow-ink), 0.07);
+  --shadow-card-hover: 0 30px 90px rgba(var(--color-shadow-ink), 0.1);
+  --shadow-panel: 0 30px 100px rgba(var(--color-shadow-ink), 0.18);
+  --shadow-modal: 0 36px 110px rgba(var(--color-shadow-ink), 0.34);
+
+  /* Blur and opacity tokens */
+  --blur-glass: 18px;
+  --opacity-disabled: 0.36;
+  --opacity-secondary: 0.64;
+
+  /* Motion tokens */
+  --motion-fast: 160ms;
+  --motion-medium: 260ms;
+  --motion-slow: 520ms;
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
