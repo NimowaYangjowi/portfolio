@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { Badge } from './components/ui/badge';
 import { Button } from './components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
-import { ArrowUpRight, FlowerBadge, FlowerBurst, FlowerCluster, FlowerDaisy, Mail, Sparkles } from './components/ui/icons';
+import { ArrowUpRight, FlowerBadge, FlowerCluster, FlowerDaisy, FlowerFiveTraced, Mail, Sparkles } from './components/ui/icons';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import ClickSpark from './components/ClickSpark';
 import TextType from './components/TextType';
@@ -327,7 +327,7 @@ function ExperienceEntry({ experience }: { experience: Experience }) {
               <ul className="detail-list experience-detail-list">
                 {role.details.map((detail) => (
                   <li key={detail}>
-                    <FlowerBurst className="experience-bullet-icon" size={12} />
+                    <FlowerFiveTraced className="experience-bullet-icon" size={13} />
                     <span>{detail}</span>
                   </li>
                 ))}

@@ -91,6 +91,26 @@ export function FlowerCluster({ size = 18, ...props }: IconProps) {
     <svg
       width={size}
       height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <ellipse cx="12" cy="5.2" rx="3.2" ry="4.2" transform="rotate(12 12 5.2)" />
+      <ellipse cx="18" cy="9.2" rx="3.1" ry="4.1" transform="rotate(68 18 9.2)" />
+      <ellipse cx="16" cy="16.2" rx="3.1" ry="4.1" transform="rotate(140 16 16.2)" />
+      <ellipse cx="8" cy="16.2" rx="3.1" ry="4.1" transform="rotate(220 8 16.2)" />
+      <ellipse cx="6" cy="9.2" rx="3.1" ry="4.1" transform="rotate(292 6 9.2)" />
+      <circle cx="12" cy="12" r="2" fill="rgb(var(--background-rgb))" />
+    </svg>
+  );
+}
+
+export function FlowerFiveTraced({ size = 18, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
       viewBox="0 0 512 512"
       fill="currentColor"
       aria-hidden="true"
