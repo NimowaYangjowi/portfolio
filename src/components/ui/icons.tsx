@@ -138,16 +138,15 @@ export function FlowerDaisy({ size = 18, ...props }: IconProps) {
       {...props}
     >
       {Array.from({ length: 10 }, (_, index) => (
-        <ellipse
-          cx="12"
-          cy="4.5"
+        <path
+          d="M12 1.85c1.72 0 3.06 1.2 3.06 2.93 0 2.4-1.4 4.62-3.06 5.78-1.66-1.16-3.06-3.38-3.06-5.78 0-1.73 1.34-2.93 3.06-2.93Z"
           key={index}
-          rx="2.35"
-          ry="4.25"
+          stroke="rgb(var(--background-rgb))"
+          strokeWidth="0.72"
           transform={`rotate(${index * 36} 12 12)`}
         />
       ))}
-      <circle cx="12" cy="12" r="3" fill="rgb(var(--background-rgb))" />
+      <circle cx="12" cy="12" r="3.15" fill="rgb(var(--background-rgb))" />
     </svg>
   );
 }
