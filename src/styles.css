@@ -10,6 +10,7 @@
   --color-primary: 10, 10, 10;
   --color-secondary: 250, 203, 0;
   --brand-pink-rgb: 250, 203, 0;
+  --brand-aura-pink-rgb: 240, 107, 168;
   --brand-blue-rgb: 120, 186, 230;
   --brand-purple-rgb: 201, 184, 234;
   --gradient-gradient-aura: linear-gradient(255deg, rgb(250, 203, 14), rgb(240, 107, 168) 30%, rgb(var(--brand-purple-rgb)) 48%, rgb(120, 186, 230) 65%, rgb(255, 255, 255));
@@ -481,36 +482,31 @@ button {
 }
 
 .skill-badge {
-  --skill-gradient-x: 0;
-
   min-height: 42px;
-  background-image: var(--gradient-gradient-aura);
-  background-position: var(--skill-gradient-x) center;
-  background-repeat: no-repeat;
-  background-size: 760px 42px;
+  background: rgba(var(--color-secondary), 0.3);
   padding-left: 7px;
   padding-right: 14px;
   font-size: 13px;
 }
 
 .skill-grid .skill-reveal:nth-child(2) .skill-badge {
-  --skill-gradient-x: -110px;
+  background: rgba(var(--brand-aura-pink-rgb), 0.22);
 }
 
 .skill-grid .skill-reveal:nth-child(3) .skill-badge {
-  --skill-gradient-x: -220px;
+  background: rgba(var(--brand-purple-rgb), 0.42);
 }
 
 .skill-grid .skill-reveal:nth-child(4) .skill-badge {
-  --skill-gradient-x: -340px;
+  background: rgba(var(--brand-blue-rgb), 0.28);
 }
 
 .skill-grid .skill-reveal:nth-child(5) .skill-badge {
-  --skill-gradient-x: -460px;
+  background: rgba(var(--brand-coral-rgb), 0.16);
 }
 
 .skill-grid .skill-reveal:nth-child(6) .skill-badge {
-  --skill-gradient-x: -520px;
+  background: rgba(var(--surface-card-rgb), 0.86);
 }
 
 .skill-icon {
