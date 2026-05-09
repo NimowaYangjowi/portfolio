@@ -16,9 +16,9 @@
   --color-gray-600: #6f7473;
   --color-gray-700: #4b5050;
   --color-gray-900: #202326;
-  --color-coral-400: #ef5b72;
-  --color-coral-500: #e95169;
-  --color-coral-600: #d93f5a;
+  --color-coral-400: #ff642f;
+  --color-coral-500: #facb00;
+  --color-coral-600: #e6ba00;
   --color-cyan-300: #77e7ee;
   --color-shadow-cool: 206 208 205;
   --color-shadow-ink: 32 35 38;
@@ -45,10 +45,10 @@
   --color-text-inverse-muted: var(--color-gray-200);
   --color-accent-strong: var(--color-brand-sun);
   --color-accent-hover: var(--color-brand-sun-hover);
-  --color-accent-soft: rgba(233, 81, 105, 0.1);
-  --color-accent-border: rgba(233, 81, 105, 0.26);
-  --color-accent-border-strong: rgba(233, 81, 105, 0.5);
-  --color-accent-focus: rgba(233, 81, 105, 0.35);
+  --color-accent-soft: rgba(250, 203, 0, 0.1);
+  --color-accent-border: rgba(250, 203, 0, 0.26);
+  --color-accent-border-strong: rgba(250, 203, 0, 0.5);
+  --color-accent-focus: rgba(250, 203, 0, 0.35);
   --color-glass-bg: rgba(255, 255, 255, 0.74);
   --color-chip-bg: rgba(255, 255, 255, 0.76);
   --color-card-bg: rgba(255, 255, 255, 0.72);
@@ -62,12 +62,12 @@
   --color-meta-warm: var(--color-coral-600);
   --color-flow-entry-border: rgba(119, 231, 238, 0.34);
   --color-flow-process-border: var(--color-accent-border);
-  --color-flow-decision-border: rgba(217, 63, 90, 0.3);
-  --color-flow-decision-bg: rgba(233, 81, 105, 0.08);
+  --color-flow-decision-border: rgba(230, 186, 0, 0.3);
+  --color-flow-decision-bg: rgba(250, 203, 0, 0.08);
   --color-flow-output-border: rgba(32, 35, 38, 0.18);
   --color-flow-output-bg: rgba(242, 243, 242, 0.92);
-  --color-flow-recovery-border: rgba(217, 63, 90, 0.22);
-  --color-flow-recovery-bg: rgba(233, 81, 105, 0.08);
+  --color-flow-recovery-border: rgba(230, 186, 0, 0.22);
+  --color-flow-recovery-bg: rgba(250, 203, 0, 0.08);
   --color-flow-recovery-text: var(--color-coral-600);
 
   /* Typography tokens */

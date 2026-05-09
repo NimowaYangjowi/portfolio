@@ -8,13 +8,13 @@
   --surface-strong-rgb: 235, 230, 214;
   --surface-dark-rgb: 26, 58, 58;
   --color-primary: 10, 10, 10;
-  --color-secondary: 232, 185, 74;
-  --brand-pink-rgb: 255, 77, 139;
+  --color-secondary: 250, 203, 0;
+  --brand-pink-rgb: 250, 203, 0;
   --brand-teal-rgb: 26, 58, 58;
   --brand-lavender-rgb: 184, 164, 237;
   --brand-peach-rgb: 255, 176, 132;
   --brand-mint-rgb: 164, 212, 197;
-  --brand-coral-rgb: 255, 107, 90;
+  --brand-coral-rgb: 255, 100, 47;
   --color-hero-text: 10, 10, 10;
   --color-border: rgba(var(--foreground-rgb), 0.12);
   --color-muted: rgba(58, 58, 58, 0.78);
