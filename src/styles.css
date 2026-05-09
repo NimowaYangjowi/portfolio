@@ -377,9 +377,13 @@ button {
   color: rgb(var(--foreground-rgb));
 }
 
+.feature-card .ui-card-header {
+  align-content: start;
+}
+
 .feature-title-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   min-height: 2.8em;
 }
