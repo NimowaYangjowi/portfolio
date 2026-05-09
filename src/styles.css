@@ -377,6 +377,18 @@ button {
   color: rgb(var(--foreground-rgb));
 }
 
+.feature-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 2.8em;
+}
+
+.feature-title-icon {
+  flex: 0 0 auto;
+  color: rgb(var(--foreground-rgb));
+}
+
 .feature-visual {
   position: relative;
   display: flex;
@@ -520,10 +532,6 @@ button {
   color: rgb(var(--foreground-rgb));
 }
 
-.experience-entry:nth-child(even) .experience-marker {
-  color: rgb(154, 154, 154);
-}
-
 .experience-body {
   display: grid;
   gap: 22px;
@@ -605,6 +613,20 @@ button {
 
 .experience-detail-list {
   margin-top: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+.experience-detail-list li {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+}
+
+.experience-bullet-icon {
+  margin-top: 7px;
+  color: rgb(var(--foreground-rgb));
 }
 
 .badge-row {

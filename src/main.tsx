@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { Badge } from './components/ui/badge';
 import { Button } from './components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
-import { ArrowUpRight, FlowerBurst, FlowerCluster, Mail, Sparkles } from './components/ui/icons';
+import { ArrowUpRight, FlowerBadge, FlowerBurst, FlowerCluster, Mail, Sparkles } from './components/ui/icons';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import ClickSpark from './components/ClickSpark';
 import TextType from './components/TextType';
@@ -253,7 +253,10 @@ function FeatureCard({ feature }: { feature: Feature }) {
           <span>{feature.iconLabel}</span>
         </div>
         <CardHeader>
-          <CardTitle>{feature.title}</CardTitle>
+          <div className="feature-title-row">
+            <FlowerBadge className="feature-title-icon" size={22} />
+            <CardTitle>{feature.title}</CardTitle>
+          </div>
           <CardDescription>{feature.description}</CardDescription>
         </CardHeader>
       </Card>
@@ -293,13 +296,11 @@ function SkillTabs() {
   );
 }
 
-function ExperienceEntry({ experience, index }: { experience: Experience; index: number }) {
-  const MarkerIcon = index % 2 === 0 ? FlowerBurst : FlowerCluster;
-
+function ExperienceEntry({ experience }: { experience: Experience }) {
   return (
     <Reveal className="experience-entry">
       <span className="experience-marker" aria-hidden="true">
-        <MarkerIcon size={24} />
+        <FlowerCluster size={24} />
       </span>
       <div className="experience-body">
         <div className="experience-company-row">
@@ -325,7 +326,10 @@ function ExperienceEntry({ experience, index }: { experience: Experience; index:
               </div>
               <ul className="detail-list experience-detail-list">
                 {role.details.map((detail) => (
-                  <li key={detail}>{detail}</li>
+                  <li key={detail}>
+                    <FlowerBurst className="experience-bullet-icon" size={12} />
+                    <span>{detail}</span>
+                  </li>
                 ))}
               </ul>
             </section>
@@ -413,8 +417,8 @@ function App() {
           <section id="career" className="section">
             <SectionHeading eyebrow="경력 사항" title="고객성공을 중심으로 기술과 제품 실행 경험을 쌓아왔습니다." />
             <div className="experience-list">
-              {experiences.map((experience, index) => (
-                <ExperienceEntry experience={experience} index={index} key={experience.company} />
+              {experiences.map((experience) => (
+                <ExperienceEntry experience={experience} key={experience.company} />
               ))}
             </div>
           </section>

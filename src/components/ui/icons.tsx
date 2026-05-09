@@ -106,6 +106,27 @@ export function FlowerCluster({ size = 18, ...props }: IconProps) {
   );
 }
 
+export function FlowerBadge({ size = 18, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <ellipse cx="12" cy="4.8" rx="3.35" ry="4.35" />
+      <ellipse cx="18.25" cy="8.4" rx="3.35" ry="4.35" transform="rotate(60 18.25 8.4)" />
+      <ellipse cx="18.25" cy="15.6" rx="3.35" ry="4.35" transform="rotate(120 18.25 15.6)" />
+      <ellipse cx="12" cy="19.2" rx="3.35" ry="4.35" />
+      <ellipse cx="5.75" cy="15.6" rx="3.35" ry="4.35" transform="rotate(60 5.75 15.6)" />
+      <ellipse cx="5.75" cy="8.4" rx="3.35" ry="4.35" transform="rotate(120 5.75 8.4)" />
+      <circle cx="12" cy="12" r="3.1" fill="rgb(var(--background-rgb))" />
+    </svg>
+  );
+}
+
 export function PanelsTopLeft(props: IconProps) {
   return (
     <IconBase {...props}>
