@@ -395,7 +395,7 @@ function App() {
         </section>
 
         <section id="skill" className="section">
-          <SectionHeading eyebrow="기술 스택 및 도구" title="문제 해결을 위해 기술적 구현을 넘어 비즈니스 솔루션을 설계하고 실행합니다." />
+          <SectionHeading eyebrow="전문영역 및 스킬셋, Expertise & skillset" title="문제 해결을 위해 기술적 구현을 넘어 비즈니스 솔루션을 설계하고 실행합니다." />
           <Reveal>
             <SkillTabs />
           </Reveal>
