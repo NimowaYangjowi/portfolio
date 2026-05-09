@@ -101,7 +101,7 @@ void i18n.use(initReactI18next).init({
         content: {
           heroTitle: '안녕하세요,\n고객의 복잡한 일을\n기술과 제품 플로우로 바꾸는\n한지우입니다.',
           heroDescription:
-            'Customer Success를 기반으로 기술 디스커버리, 구현 전략, 제품/엔지니어링 협업까지 연결합니다. 고객이 겪는 모호한 문제를 실행 가능한 기술 계획과 운영 시스템으로 바꿉니다.',
+            '한국과 동남아시아 시장에서 엔터프라이즈 고객의 온보딩, 교육, 기능 adoption, 비즈니스 리뷰를 담당해왔습니다. 고객이 겪는 복잡한 문제를 쉽게 풀어내고, 제품과 기술팀이 실행할 수 있는 솔루션으로 연결합니다.',
           sections: {
             feature: {
               eyebrow: '핵심 역량',
@@ -275,7 +275,7 @@ void i18n.use(initReactI18next).init({
         content: {
           heroTitle: "Hello,\nI'm Jiwoo Han.\nI turn complex customer work\ninto technology and product flows.",
           heroDescription:
-            'I connect Customer Success with technical discovery, implementation strategy, and product/engineering collaboration. I turn ambiguous customer problems into executable technical plans and operating systems.',
+            'I have supported enterprise customers across Korea and Southeast Asia through onboarding, education, feature adoption, and business reviews. I translate complex customer problems into clear, actionable solutions that product and engineering teams can execute.',
           sections: {
             feature: {
               eyebrow: 'Core Strengths',
