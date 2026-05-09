@@ -199,7 +199,7 @@ const projectDetails: ProjectDetail[] = [
 function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
     <Reveal className="section-heading">
-      <Badge variant="outline">{eyebrow}</Badge>
+      <p className="section-eyebrow">{eyebrow}</p>
       {title ? <h2 className="section-title">{title}</h2> : null}
     </Reveal>
   );
