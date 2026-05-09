@@ -179,35 +179,16 @@ void i18n.use(initReactI18next).init({
                 'Customer Engagement 와 Enterprise Customer Success를 거치며 대형 고객의 온보딩, 기술 구현, 제품 피드백, adoption strategy를 연결했습니다.',
               roles: [
                 {
-                  period: '2024.08 - 현재',
+                  period: '2021.01 - 현재',
                   title: 'Senior Customer Success Manager (enterprise)',
-                  subtitle: 'Enterprise Customer Success · SEA business',
-                  skills: ['Enterprise CS', 'Technical Discovery', 'Implementation Strategy', 'Executive Communication'],
+                  subtitle: 'Enterprise Customer Success · Premium accounts',
+                  skills: ['Enterprise CS', 'Technical Discovery', 'SDK/API', 'Product Feedback', 'Expansion'],
                   details: [
-                    '프리미엄 엔터프라이즈 계정의 온보딩, 요구사항 정리, 구현 계획, 이슈 에스컬레이션을 end-to-end로 담당했습니다.',
-                    '복수의 프리미엄 엔터프라이즈 포트폴리오에서 맞춤형 기술 솔루션, EBR, adoption strategy를 지원하며 장기적인 고객 관계를 유지했습니다.',
-                    'Electronics, gaming, e-commerce, fintech, banking 영역의 APAC/SEA 엔터프라이즈 고객을 담당하고 있습니다.',
-                  ],
-                },
-                {
-                  period: '2022.11 - 2024.08',
-                  title: 'Senior Customer Success Manager (enterprise)',
-                  subtitle: 'Enterprise Customer Success',
-                  skills: ['SDK', 'API Integration', 'Data Discrepancy', 'Product Feedback'],
-                  details: [
-                    'SDK implementation, API integration, data discrepancy, platform configuration 이슈에서 고객 개발팀의 기술 의사결정을 도왔습니다.',
-                    'Product, Engineering, Security 팀과 고객 blocker를 해결하고 현장 피드백을 제품 개선 논의로 연결했습니다.',
-                    '글로벌 HQ와 여러 지역 오피스가 연결된 엔터프라이즈 고객의 주요 구현과 adoption 전략을 리드했습니다.',
-                  ],
-                },
-                {
-                  period: '2021.01 - 2022.11',
-                  title: 'Customer Success Manager',
-                  skills: ['Customer Success', 'Technical Guides', 'APAC Playbooks', 'Training'],
-                  details: [
-                    'Food delivery, gaming, fintech/crypto 영역의 한국 엔터프라이즈 고객을 담당했습니다.',
-                    '내부와 고객이 함께 쓰는 기술 가이드, troubleshooting playbook, best practice 자료를 만들어 APAC 구현 품질을 맞췄습니다.',
-                    'Bangkok, London, Sao Paulo 글로벌 워크숍을 운영하고 Berlin, Sao Paulo 지역 CSM과 전략을 맞췄습니다.',
+                    '프리미엄 계정의 온보딩, 기술 디스커버리, 요구사항 정리, 구현 계획, 이슈 에스컬레이션, 임원 이해관계자 커뮤니케이션까지 엔터프라이즈 engagement를 end-to-end로 담당했습니다.',
+                    'SDK implementation, API integration, data discrepancy, platform configuration 영역에서 trusted technical advisor로서 고객팀의 아키텍처 의사결정을 도왔습니다.',
+                    'Product, Engineering, Security 팀과 협업해 복잡한 고객 blocker를 해결하고, 현장 피드백을 제품 개선으로 연결하며 실제 구현 니즈가 roadmap 결정에 반영되도록 조율했습니다.',
+                    '맞춤형 기술 솔루션, Executive Business Review, adoption strategy를 통해 pre-sales와 expansion 논의를 지원했고, $3M+ ARR 포트폴리오에서 98% client retention 유지에 기여했습니다.',
+                    '내부 팀과 고객이 함께 쓰는 technical guide, troubleshooting playbook, best-practice 자료를 만들어 CS 조직 전반의 구현 일관성을 높였습니다.',
                   ],
                 },
                 {
@@ -372,35 +353,16 @@ void i18n.use(initReactI18next).init({
                 'Across Customer Engagement and Enterprise Customer Success, I connected enterprise onboarding, technical implementation, product feedback, and adoption strategy.',
               roles: [
                 {
-                  period: 'Aug 2024 - Present',
+                  period: 'Jan 2021 - Present',
                   title: 'Senior Customer Success Manager (enterprise)',
-                  subtitle: 'Enterprise Customer Success · SEA business',
-                  skills: ['Enterprise CS', 'Technical Discovery', 'Implementation Strategy', 'Executive Communication'],
+                  subtitle: 'Enterprise Customer Success · Premium accounts',
+                  skills: ['Enterprise CS', 'Technical Discovery', 'SDK/API', 'Product Feedback', 'Expansion'],
                   details: [
-                    'Owned onboarding, requirements clarification, implementation planning, and issue escalation for premium enterprise accounts end-to-end.',
-                    'Supported custom technical solutions, EBRs, and adoption strategy across multiple premium enterprise portfolios while maintaining long-term customer relationships.',
-                    'Manage APAC/SEA enterprise customers across electronics, gaming, e-commerce, fintech, and banking.',
-                  ],
-                },
-                {
-                  period: 'Nov 2022 - Aug 2024',
-                  title: 'Senior Customer Success Manager (enterprise)',
-                  subtitle: 'Enterprise Customer Success',
-                  skills: ['SDK', 'API Integration', 'Data Discrepancy', 'Product Feedback'],
-                  details: [
-                    'Helped customer engineering teams make technical decisions around SDK implementation, API integration, data discrepancy, and platform configuration issues.',
-                    'Worked with Product, Engineering, and Security teams to resolve customer blockers and turn field feedback into product improvement discussions.',
-                    'Led major implementations and adoption strategies for enterprise customers spanning global HQs and multiple regional offices.',
-                  ],
-                },
-                {
-                  period: 'Jan 2021 - Nov 2022',
-                  title: 'Customer Success Manager',
-                  skills: ['Customer Success', 'Technical Guides', 'APAC Playbooks', 'Training'],
-                  details: [
-                    'Managed Korean enterprise customers across food delivery, gaming, and fintech/crypto.',
-                    'Created technical guides, troubleshooting playbooks, and best-practice materials for both internal teams and customers to align APAC implementation quality.',
-                    'Ran global workshops in Bangkok, London, and Sao Paulo, and aligned strategy with CSMs in Berlin and Sao Paulo.',
+                    'Owned enterprise engagements end to end, covering onboarding, technical discovery, requirements gathering, implementation planning, issue escalation, and executive stakeholder communication for premium accounts.',
+                    'Acted as a trusted technical advisor on SDK implementation, API integration, data discrepancies, and platform configuration, helping customer teams make architecture decisions.',
+                    'Partnered with Product, Engineering, and Security teams to resolve complex customer blockers, translate field feedback into product improvements, and align roadmap decisions with real implementation needs.',
+                    'Supported pre-sales and expansion discussions with tailored technical solutions, Executive Business Reviews, and adoption strategies that helped maintain 98% client retention across a $3M+ ARR portfolio.',
+                    'Created internal and customer-facing technical guides, troubleshooting playbooks, and best-practice materials that improved implementation consistency across the whole CS organization.',
                   ],
                 },
                 {
