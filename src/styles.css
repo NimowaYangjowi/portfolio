@@ -485,15 +485,15 @@ button {
 }
 
 .skill-grid .skill-reveal:nth-child(4n + 1) .skill-badge {
-  background: rgb(var(--brand-lavender-rgb));
+  background: rgba(var(--color-secondary), 0.3);
 }
 
 .skill-grid .skill-reveal:nth-child(4n + 2) .skill-badge {
-  background: rgb(var(--brand-mint-rgb));
+  background: rgba(var(--color-secondary), 0.18);
 }
 
 .skill-grid .skill-reveal:nth-child(4n + 3) .skill-badge {
-  background: rgb(var(--brand-peach-rgb));
+  background: rgba(var(--brand-coral-rgb), 0.14);
 }
 
 .skill-grid .skill-reveal:nth-child(4n) .skill-badge {
