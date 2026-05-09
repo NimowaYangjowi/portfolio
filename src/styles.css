@@ -667,6 +667,10 @@ button {
   list-style: none;
   padding-left: 0;
 }
+.experience-shared-detail-list {
+  margin-top: 6px;
+}
+
 
 .experience-detail-list li {
   display: grid;

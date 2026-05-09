@@ -34,8 +34,8 @@ type ExperienceRole = {
   period: string;
   title: string;
   subtitle?: string;
-  skills: string[];
-  details: string[];
+  skills?: string[];
+  details?: string[];
 };
 
 type Experience = {
@@ -43,6 +43,7 @@ type Experience = {
   period: string;
   summary: string;
   roles: ExperienceRole[];
+  details?: string[];
 };
 
 type ProjectDetail = {
@@ -278,22 +279,36 @@ function ExperienceEntry({ experience }: { experience: Experience }) {
                 <span className="experience-role-period">{role.period}</span>
               </div>
               {role.subtitle ? <p className="experience-role-subtitle">{role.subtitle}</p> : null}
-              <div className="badge-row">
-                {role.skills.map((skill) => (
-                  <Badge key={skill} variant="default">{skill}</Badge>
-                ))}
-              </div>
-              <ul className="detail-list experience-detail-list">
-                {role.details.map((detail) => (
-                  <li key={detail}>
-                    <FlowerFiveTraced className="experience-bullet-icon" size={13} />
-                    <span>{detail}</span>
-                  </li>
-                ))}
-              </ul>
+              {role.skills?.length ? (
+                <div className="badge-row">
+                  {role.skills.map((skill) => (
+                    <Badge key={skill} variant="default">{skill}</Badge>
+                  ))}
+                </div>
+              ) : null}
+              {role.details?.length ? (
+                <ul className="detail-list experience-detail-list">
+                  {role.details.map((detail) => (
+                    <li key={detail}>
+                      <FlowerFiveTraced className="experience-bullet-icon" size={13} />
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </section>
           ))}
         </div>
+        {experience.details?.length ? (
+          <ul className="detail-list experience-detail-list experience-shared-detail-list">
+            {experience.details.map((detail) => (
+              <li key={detail}>
+                <FlowerFiveTraced className="experience-bullet-icon" size={13} />
+                <span>{detail}</span>
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </div>
     </Reveal>
   );

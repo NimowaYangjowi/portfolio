@@ -176,31 +176,31 @@ void i18n.use(initReactI18next).init({
               company: 'AppsFlyer',
               period: '2019.04 - 현재',
               summary:
-                'Customer Engagement 와 Enterprise Customer Success를 거치며 대형 고객의 온보딩, 기술 구현, 제품 피드백, adoption strategy를 연결했습니다.',
+                '한국에서 5년간 경력을 쌓고 현재는 방콕에서 동남아시아 엔터프라이즈 고객사를 대상으로 고객성공 업무를 하고 있습니다. 고객사의 온보딩, 교육, 새로운 기능 adoption 및 베타 프로그램을 진행하고, 정기적인 비즈니스 리뷰를 통해 알맞은 솔루션을 제공합니다.',
               roles: [
                 {
-                  period: '2021.01 - 현재',
+                  period: '2024.08 - 현재',
+                  title: 'Senior Customer Success Manager (enterprise) – SEA business',
+                },
+                {
+                  period: '2022.11 - 2024.08',
                   title: 'Senior Customer Success Manager (enterprise)',
-                  subtitle: 'Enterprise Customer Success · Premium accounts',
-                  skills: ['Enterprise CS', 'Technical Discovery', 'SDK/API', 'Product Feedback', 'Expansion'],
-                  details: [
-                    '프리미엄 계정의 온보딩, 기술 디스커버리, 요구사항 정리, 구현 계획, 이슈 에스컬레이션, 임원 이해관계자 커뮤니케이션까지 엔터프라이즈 engagement를 end-to-end로 담당했습니다.',
-                    'SDK implementation, API integration, data discrepancy, platform configuration 영역에서 trusted technical advisor로서 고객팀의 아키텍처 의사결정을 도왔습니다.',
-                    'Product, Engineering, Security 팀과 협업해 복잡한 고객 blocker를 해결하고, 현장 피드백을 제품 개선으로 연결하며 실제 구현 니즈가 roadmap 결정에 반영되도록 조율했습니다.',
-                    '맞춤형 기술 솔루션, Executive Business Review, adoption strategy를 통해 pre-sales와 expansion 논의를 지원했고, $3M+ ARR 포트폴리오에서 98% client retention 유지에 기여했습니다.',
-                    '내부 팀과 고객이 함께 쓰는 technical guide, troubleshooting playbook, best-practice 자료를 만들어 CS 조직 전반의 구현 일관성을 높였습니다.',
-                  ],
+                },
+                {
+                  period: '2021.01 - 2022.11',
+                  title: 'Customer Success Manager',
                 },
                 {
                   period: '2019.04 - 2020.12',
                   title: 'Customer Engagement Manager',
-                  skills: ['Customer Engagement', 'Enablement', 'Training', 'Support'],
-                  details: [
-                    'Intercom과 Zendesk를 활용해 많은 고객을 관리하고, 이를 효율적으로 운영할 수 있는 온보딩 플로우를 설계했습니다.',
-                    '고객의 니즈, 행동, 온보딩 진행 단계에 따라 적절한 안내 메시지가 자동으로 전달되도록 단계별 인게이지먼트 캠페인을 기획하고 운영했습니다.',
-                    '신규 유저의 제품 이해도와 사용 전환을 높이기 위해 온보딩 웨비나를 정기적으로 진행했습니다.',
-                  ],
                 },
+              ],
+              details: [
+                '프리미엄 계정의 온보딩, 기술 디스커버리, 요구사항 정리, 구현 계획, 이슈 에스컬레이션, 임원 이해관계자 커뮤니케이션까지 엔터프라이즈 engagement를 end-to-end로 담당했습니다.',
+                'SDK implementation, API integration, data discrepancy, platform configuration 영역에서 trusted technical advisor로서 고객팀의 아키텍처 의사결정을 도왔습니다.',
+                'Product, Engineering, Security 팀과 협업해 복잡한 고객 blocker를 해결하고, 현장 피드백을 제품 개선으로 연결하며 실제 구현 니즈가 roadmap 결정에 반영되도록 조율했습니다.',
+                '맞춤형 기술 솔루션, Executive Business Review, adoption strategy를 통해 pre-sales와 expansion 논의를 지원했고, $3M+ ARR 포트폴리오에서 98% client retention 유지에 기여했습니다.',
+                '내부 팀과 고객이 함께 쓰는 technical guide, troubleshooting playbook, best-practice 자료를 만들어 CS 조직 전반의 구현 일관성을 높였습니다.',
               ],
             },
             {
@@ -350,31 +350,31 @@ void i18n.use(initReactI18next).init({
               company: 'AppsFlyer',
               period: 'Apr 2019 - Present',
               summary:
-                'Across Customer Engagement and Enterprise Customer Success, I connected enterprise onboarding, technical implementation, product feedback, and adoption strategy.',
+                'After building five years of experience in Korea, I now work from Bangkok with Southeast Asian enterprise customers. I support customer onboarding, education, new feature adoption, beta programs, and regular business reviews to provide the right solutions for each account.',
               roles: [
                 {
-                  period: 'Jan 2021 - Present',
+                  period: 'Aug 2024 - Present',
+                  title: 'Senior Customer Success Manager (enterprise) – SEA business',
+                },
+                {
+                  period: 'Nov 2022 - Aug 2024',
                   title: 'Senior Customer Success Manager (enterprise)',
-                  subtitle: 'Enterprise Customer Success · Premium accounts',
-                  skills: ['Enterprise CS', 'Technical Discovery', 'SDK/API', 'Product Feedback', 'Expansion'],
-                  details: [
-                    'Owned enterprise engagements end to end, covering onboarding, technical discovery, requirements gathering, implementation planning, issue escalation, and executive stakeholder communication for premium accounts.',
-                    'Acted as a trusted technical advisor on SDK implementation, API integration, data discrepancies, and platform configuration, helping customer teams make architecture decisions.',
-                    'Partnered with Product, Engineering, and Security teams to resolve complex customer blockers, translate field feedback into product improvements, and align roadmap decisions with real implementation needs.',
-                    'Supported pre-sales and expansion discussions with tailored technical solutions, Executive Business Reviews, and adoption strategies that helped maintain 98% client retention across a $3M+ ARR portfolio.',
-                    'Created internal and customer-facing technical guides, troubleshooting playbooks, and best-practice materials that improved implementation consistency across the whole CS organization.',
-                  ],
+                },
+                {
+                  period: 'Jan 2021 - Nov 2022',
+                  title: 'Customer Success Manager',
                 },
                 {
                   period: 'Apr 2019 - Dec 2020',
                   title: 'Customer Engagement Manager',
-                  skills: ['Customer Engagement', 'Enablement', 'Training', 'Support'],
-                  details: [
-                    'Designed onboarding flows across Intercom and Zendesk to manage a high volume of customers more efficiently.',
-                    'Planned and operated stage-based engagement campaigns that automatically delivered relevant guidance based on customer needs, behavior, and onboarding progress.',
-                    'Ran recurring onboarding webinars to improve new user education and activation.',
-                  ],
                 },
+              ],
+              details: [
+                'Owned enterprise engagements end to end, covering onboarding, technical discovery, requirements gathering, implementation planning, issue escalation, and executive stakeholder communication for premium accounts.',
+                'Acted as a trusted technical advisor on SDK implementation, API integration, data discrepancies, and platform configuration, helping customer teams make architecture decisions.',
+                'Partnered with Product, Engineering, and Security teams to resolve complex customer blockers, translate field feedback into product improvements, and align roadmap decisions with real implementation needs.',
+                'Supported pre-sales and expansion discussions with tailored technical solutions, Executive Business Reviews, and adoption strategies that helped maintain 98% client retention across a $3M+ ARR portfolio.',
+                'Created internal and customer-facing technical guides, troubleshooting playbooks, and best-practice materials that improved implementation consistency across the whole CS organization.',
               ],
             },
             {
