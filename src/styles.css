@@ -497,9 +497,28 @@ button {
 
 .experience-entry {
   display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
   gap: 22px;
   border-top: 1px solid rgb(229, 229, 229);
   padding-top: 30px;
+}
+
+.experience-marker {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  color: rgb(var(--foreground-rgb));
+}
+
+.experience-entry:nth-child(even) .experience-marker {
+  color: rgb(154, 154, 154);
+}
+
+.experience-body {
+  display: grid;
+  gap: 22px;
 }
 
 .experience-company-row {
@@ -775,8 +794,14 @@ button {
   }
 
   .experience-entry {
+    grid-template-columns: 24px minmax(0, 1fr);
     gap: 20px;
     padding-top: 24px;
+  }
+
+  .experience-marker {
+    width: 24px;
+    height: 24px;
   }
 
   .experience-company-row {

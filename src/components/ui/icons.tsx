@@ -70,6 +70,42 @@ export function Mail(props: IconProps) {
   );
 }
 
+export function FlowerBurst({ size = 18, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M12 2.8c1.76 0 3.18 2.42 3.18 4.12 0 .43-.08.82-.24 1.16.32-.18.72-.28 1.16-.28 1.7 0 4.12 1.42 4.12 3.18s-2.42 3.18-4.12 3.18c-.44 0-.84-.1-1.16-.28.16.34.24.73.24 1.16 0 1.7-1.42 4.12-3.18 4.12s-3.18-2.42-3.18-4.12c0-.43.08-.82.24-1.16-.32.18-.72.28-1.16.28-1.7 0-4.12-1.42-4.12-3.18S6.2 7.8 7.9 7.8c.44 0 .84.1 1.16.28a2.7 2.7 0 0 1-.24-1.16C8.82 5.22 10.24 2.8 12 2.8Z" />
+      <circle cx="12" cy="11" r="2.4" fill="rgb(var(--background-rgb))" />
+    </svg>
+  );
+}
+
+export function FlowerCluster({ size = 18, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <ellipse cx="12" cy="5.2" rx="3.2" ry="4.2" transform="rotate(12 12 5.2)" />
+      <ellipse cx="18" cy="9.2" rx="3.1" ry="4.1" transform="rotate(68 18 9.2)" />
+      <ellipse cx="16" cy="16.2" rx="3.1" ry="4.1" transform="rotate(140 16 16.2)" />
+      <ellipse cx="8" cy="16.2" rx="3.1" ry="4.1" transform="rotate(220 8 16.2)" />
+      <ellipse cx="6" cy="9.2" rx="3.1" ry="4.1" transform="rotate(292 6 9.2)" />
+      <circle cx="12" cy="12" r="2" fill="rgb(var(--background-rgb))" />
+    </svg>
+  );
+}
+
 export function PanelsTopLeft(props: IconProps) {
   return (
     <IconBase {...props}>

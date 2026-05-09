@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { Badge } from './components/ui/badge';
 import { Button } from './components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
-import { ArrowUpRight, Mail, Sparkles } from './components/ui/icons';
+import { ArrowUpRight, FlowerBurst, FlowerCluster, Mail, Sparkles } from './components/ui/icons';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import TextType from './components/TextType';
 import './styles.css';
@@ -292,37 +292,44 @@ function SkillTabs() {
   );
 }
 
-function ExperienceEntry({ experience }: { experience: Experience }) {
+function ExperienceEntry({ experience, index }: { experience: Experience; index: number }) {
+  const MarkerIcon = index % 2 === 0 ? FlowerBurst : FlowerCluster;
+
   return (
     <Reveal className="experience-entry">
-      <div className="experience-company-row">
-        <div>
-          <p className="experience-period">{experience.period}</p>
-          <h3 className="experience-company">{experience.company}</h3>
+      <span className="experience-marker" aria-hidden="true">
+        <MarkerIcon size={24} />
+      </span>
+      <div className="experience-body">
+        <div className="experience-company-row">
+          <div>
+            <p className="experience-period">{experience.period}</p>
+            <h3 className="experience-company">{experience.company}</h3>
+          </div>
+          <Badge variant="outline">Experience</Badge>
         </div>
-        <Badge variant="outline">Experience</Badge>
-      </div>
-      <p className="experience-summary">{experience.summary}</p>
-      <div className="experience-role-list">
-        {experience.roles.map((role) => (
-          <section className="experience-role-block" key={`${experience.company}-${role.period}-${role.title}`}>
-            <div className="experience-role-heading">
-              <h4 className="experience-role-title">{role.title}</h4>
-              <span className="experience-role-period">{role.period}</span>
-            </div>
-            {role.subtitle ? <p className="experience-role-subtitle">{role.subtitle}</p> : null}
-            <div className="badge-row">
-              {role.skills.map((skill) => (
-                <Badge key={skill} variant="default">{skill}</Badge>
-              ))}
-            </div>
-            <ul className="detail-list experience-detail-list">
-              {role.details.map((detail) => (
-                <li key={detail}>{detail}</li>
-              ))}
-            </ul>
-          </section>
-        ))}
+        <p className="experience-summary">{experience.summary}</p>
+        <div className="experience-role-list">
+          {experience.roles.map((role) => (
+            <section className="experience-role-block" key={`${experience.company}-${role.period}-${role.title}`}>
+              <div className="experience-role-heading">
+                <h4 className="experience-role-title">{role.title}</h4>
+                <span className="experience-role-period">{role.period}</span>
+              </div>
+              {role.subtitle ? <p className="experience-role-subtitle">{role.subtitle}</p> : null}
+              <div className="badge-row">
+                {role.skills.map((skill) => (
+                  <Badge key={skill} variant="default">{skill}</Badge>
+                ))}
+              </div>
+              <ul className="detail-list experience-detail-list">
+                {role.details.map((detail) => (
+                  <li key={detail}>{detail}</li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
       </div>
     </Reveal>
   );
@@ -404,8 +411,8 @@ function App() {
         <section id="career" className="section">
           <SectionHeading eyebrow="경력 사항" title="고객성공을 중심으로 기술과 제품 실행 경험을 쌓아왔습니다." />
           <div className="experience-list">
-            {experiences.map((experience) => (
-              <ExperienceEntry experience={experience} key={experience.company} />
+            {experiences.map((experience, index) => (
+              <ExperienceEntry experience={experience} index={index} key={experience.company} />
             ))}
           </div>
         </section>
