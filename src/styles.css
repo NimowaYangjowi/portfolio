@@ -395,7 +395,7 @@ button {
 .feature-title-icon {
   flex: 0 0 auto;
   margin-top: 4px;
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--brand-aura-pink-rgb));
 }
 
 .feature-visual {
@@ -543,7 +543,7 @@ button {
   height: 28px;
   align-items: center;
   justify-content: center;
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--brand-aura-pink-rgb));
   transform: translateY(-3px);
 }
 
@@ -641,7 +641,7 @@ button {
 
 .experience-bullet-icon {
   margin-top: 6px;
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--brand-aura-pink-rgb));
 }
 
 .badge-row {
@@ -737,7 +737,35 @@ button {
 .project-title-icon {
   flex: 0 0 auto;
   margin-top: 3px;
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--brand-aura-pink-rgb));
+}
+
+.feature-grid > .reveal:nth-child(4n + 1) .feature-title-icon,
+.experience-list > .experience-entry:nth-child(4n + 1) .experience-marker,
+.experience-detail-list li:nth-child(4n + 1) .experience-bullet-icon,
+.project-grid > .reveal:nth-child(4n + 1) .project-title-icon {
+  color: rgb(var(--brand-aura-pink-rgb));
+}
+
+.feature-grid > .reveal:nth-child(4n + 2) .feature-title-icon,
+.experience-list > .experience-entry:nth-child(4n + 2) .experience-marker,
+.experience-detail-list li:nth-child(4n + 2) .experience-bullet-icon,
+.project-grid > .reveal:nth-child(4n + 2) .project-title-icon {
+  color: rgb(var(--brand-blue-rgb));
+}
+
+.feature-grid > .reveal:nth-child(4n + 3) .feature-title-icon,
+.experience-list > .experience-entry:nth-child(4n + 3) .experience-marker,
+.experience-detail-list li:nth-child(4n + 3) .experience-bullet-icon,
+.project-grid > .reveal:nth-child(4n + 3) .project-title-icon {
+  color: rgb(var(--brand-peach-rgb));
+}
+
+.feature-grid > .reveal:nth-child(4n + 4) .feature-title-icon,
+.experience-list > .experience-entry:nth-child(4n + 4) .experience-marker,
+.experience-detail-list li:nth-child(4n + 4) .experience-bullet-icon,
+.project-grid > .reveal:nth-child(4n + 4) .project-title-icon {
+  color: rgb(var(--brand-purple-rgb));
 }
 
 .project-card .ui-badge-outline,
