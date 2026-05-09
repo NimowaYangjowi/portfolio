@@ -16,6 +16,7 @@ type ClickSparkProps = {
   duration?: number;
   easing?: 'linear' | 'ease-in' | 'ease-in-out' | 'ease-out' | string;
   extraScale?: number;
+  shouldSpark?: (event: MouseEvent<HTMLDivElement>) => boolean;
   children: ReactNode;
 };
 
@@ -27,10 +28,12 @@ export default function ClickSpark({
   duration = 400,
   easing = 'ease-out',
   extraScale = 1.0,
+  shouldSpark,
   children,
 }: ClickSparkProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const sparksRef = useRef<Spark[]>([]);
+  const animationFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -53,7 +56,10 @@ export default function ClickSpark({
       }
 
       const ctx = canvas.getContext('2d');
-      ctx?.setTransform(dpr, 0, 0, dpr, 0, 0);
+      if (ctx) {
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, width, height);
+      }
     };
 
     const handleResize = () => {
@@ -88,14 +94,28 @@ export default function ClickSpark({
   );
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas?.getContext('2d');
-    if (!canvas || !ctx) return undefined;
+    return () => {
+      if (animationFrameRef.current !== null) {
+        cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = null;
+      }
+    };
+  }, []);
 
-    let animationId: number;
+  const drawSparks = useCallback(
+    (timestamp: number) => {
+      const canvas = canvasRef.current;
+      const ctx = canvas?.getContext('2d');
 
-    const draw = (timestamp: number) => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (!canvas || !ctx) {
+        animationFrameRef.current = null;
+        return;
+      }
+
+      const width = canvas.clientWidth;
+      const height = canvas.clientHeight;
+
+      ctx.clearRect(0, 0, width, height);
 
       sparksRef.current = sparksRef.current.filter((spark) => {
         const elapsed = timestamp - spark.startTime;
@@ -122,19 +142,21 @@ export default function ClickSpark({
         return true;
       });
 
-      animationId = requestAnimationFrame(draw);
-    };
+      if (sparksRef.current.length === 0) {
+        ctx.clearRect(0, 0, width, height);
+        animationFrameRef.current = null;
+        return;
+      }
 
-    animationId = requestAnimationFrame(draw);
-
-    return () => {
-      cancelAnimationFrame(animationId);
-    };
-  }, [sparkColor, sparkSize, sparkRadius, duration, easeFunc, extraScale]);
+      animationFrameRef.current = requestAnimationFrame(drawSparks);
+    },
+    [duration, easeFunc, extraScale, sparkColor, sparkRadius, sparkSize],
+  );
 
   const handleClick = (event: MouseEvent<HTMLDivElement>) => {
     const canvas = canvasRef.current;
     if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (shouldSpark && !shouldSpark(event)) return;
 
     const rect = canvas.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -148,6 +170,10 @@ export default function ClickSpark({
     }));
 
     sparksRef.current.push(...newSparks);
+
+    if (animationFrameRef.current === null) {
+      animationFrameRef.current = requestAnimationFrame(drawSparks);
+    }
   };
 
   return (

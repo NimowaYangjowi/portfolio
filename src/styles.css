@@ -57,9 +57,52 @@ button {
 }
 
 .page {
+  position: relative;
   min-height: 100vh;
   background:
     linear-gradient(180deg, rgb(var(--background-rgb)) 0%, rgb(var(--background-rgb)) 58%, rgb(var(--surface-soft-rgb)) 100%);
+}
+
+.language-toggle {
+  position: fixed;
+  top: 22px;
+  right: 24px;
+  z-index: 20;
+  display: inline-flex;
+  gap: 4px;
+  border: 1px solid rgba(var(--foreground-rgb), 0.12);
+  border-radius: 999px;
+  background: rgba(var(--background-rgb), 0.82);
+  padding: 5px;
+  box-shadow: 0 12px 34px rgba(var(--foreground-rgb), 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.language-button {
+  min-height: 34px;
+  border-radius: 999px;
+  background: transparent;
+  padding: 0 12px;
+  color: rgba(58, 58, 58, 0.82);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.language-button-active {
+  background: rgb(var(--foreground-rgb));
+  color: rgb(var(--background-rgb));
+  box-shadow: 0 6px 14px rgba(var(--foreground-rgb), 0.12);
+}
+
+.language-button:focus-visible {
+  outline: 3px solid rgba(var(--brand-lavender-rgb), 0.72);
+  outline-offset: 2px;
 }
 
 .hero-rise {
@@ -144,10 +187,6 @@ button {
   width: min(100%, 940px);
 }
 
-.hero-badge {
-  margin-bottom: 24px;
-}
-
 .hero-content h1,
 .hero-title {
   display: block;
@@ -158,11 +197,8 @@ button {
   font-weight: 500;
   line-height: 1.03;
   letter-spacing: 0;
+  white-space: pre-line;
   word-break: keep-all;
-}
-
-.hero-cursor {
-  color: rgb(var(--color-hero-text));
 }
 
 .hero-content p {
