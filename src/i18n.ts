@@ -215,8 +215,8 @@ void i18n.use(initReactI18next).init({
                   skills: ['DSP/SSP', 'Ad Exchange', 'Affiliate Network', 'Partner Integration', 'QA & Launch'],
                   details: [
                     'DSP/SSP/Ad Exchange 연동을 위한 플랫폼 도입을 관리하고, 기술 온보딩 이슈를 해결하며 파트너 측 설정을 성과와 운영 안정성에 맞게 최적화했습니다.',
-                    '게임 제품의 QA, 출시, 운영 전반에 참여하며 소프트웨어 전달 과정, 프로덕션 지원, 수익과 연결되는 플랫폼 동작을 실무로 익혔습니다.',
-                    'Affiliate 및 ad network 생태계의 공급 측 업무를 맡아 트래픽 라우팅, 파트너 연동, 판매자 측 수익 구조를 다뤘습니다.',
+                    'Affiliate 및 ad network 생태계의 공급 측 업무를 맡아 트래픽 라우팅, 파트너 연동, DSP 측을 관리했습니다.',
+                    '앱 개발의 QA, 출시, 운영 전반에 참여하며 소프트웨어 전달 과정, 프로덕션 지원, 수익을 관리했고 이후 앱의 매각을 담당했습니다.',
                   ],
                 },
               ],
@@ -389,8 +389,8 @@ void i18n.use(initReactI18next).init({
                   skills: ['DSP/SSP', 'Ad Exchange', 'Affiliate Network', 'Partner Integration', 'QA & Launch'],
                   details: [
                     'Managed platform adoption for DSP/SSP/Ad Exchange integrations, troubleshooting technical onboarding issues and optimizing partner-side configurations for performance and operational stability.',
-                    'Worked across QA, launch, and ongoing operations for gaming products, building practical understanding of software delivery, production support, and revenue-linked platform behavior.',
-                    'Operated on the supply side of affiliate and ad network ecosystems, developing hands-on understanding of traffic routing, partner integrations, and seller-side revenue mechanics.',
+                    'Managed supply-side operations in the affiliate and ad network ecosystem, including traffic routing, partner integrations, and DSP-side coordination.',
+                    'Worked across QA, launch, and operations for app development, managing software delivery, production support, revenue operations, and the later sale of the app.',
                   ],
                 },
               ],
