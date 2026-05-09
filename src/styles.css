@@ -622,7 +622,7 @@ button {
 
 .experience-role-list {
   display: grid;
-  gap: 28px;
+  gap: 16px;
 }
 
 .experience-role-block {
