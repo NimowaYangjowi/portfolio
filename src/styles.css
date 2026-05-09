@@ -480,14 +480,36 @@ button {
 }
 
 .skill-badge {
+  --skill-gradient-x: 0;
+
   min-height: 42px;
   background-image: var(--gradient-gradient-aura);
-  background-attachment: fixed;
-  background-position: center;
-  background-size: 100vw 100vh;
+  background-position: var(--skill-gradient-x) center;
+  background-repeat: no-repeat;
+  background-size: 760px 42px;
   padding-left: 7px;
   padding-right: 14px;
   font-size: 13px;
+}
+
+.skill-grid .skill-reveal:nth-child(2) .skill-badge {
+  --skill-gradient-x: -110px;
+}
+
+.skill-grid .skill-reveal:nth-child(3) .skill-badge {
+  --skill-gradient-x: -220px;
+}
+
+.skill-grid .skill-reveal:nth-child(4) .skill-badge {
+  --skill-gradient-x: -340px;
+}
+
+.skill-grid .skill-reveal:nth-child(5) .skill-badge {
+  --skill-gradient-x: -460px;
+}
+
+.skill-grid .skill-reveal:nth-child(6) .skill-badge {
+  --skill-gradient-x: -520px;
 }
 
 .skill-icon {
