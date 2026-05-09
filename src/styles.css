@@ -719,6 +719,18 @@ button {
   color: rgb(var(--foreground-rgb));
 }
 
+.project-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.project-title-icon {
+  flex: 0 0 auto;
+  margin-top: 3px;
+  color: rgb(var(--foreground-rgb));
+}
+
 .project-card .ui-badge-outline,
 .project-card .ui-badge-accent {
   border-color: rgba(var(--foreground-rgb), 0.14);

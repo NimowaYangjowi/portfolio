@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { Badge } from './components/ui/badge';
 import { Button } from './components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
-import { ArrowUpRight, FlowerBadge, FlowerBurst, FlowerCluster, Mail, Sparkles } from './components/ui/icons';
+import { ArrowUpRight, FlowerBadge, FlowerBurst, FlowerCluster, FlowerDaisy, Mail, Sparkles } from './components/ui/icons';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import ClickSpark from './components/ClickSpark';
 import TextType from './components/TextType';
@@ -340,13 +340,15 @@ function ExperienceEntry({ experience }: { experience: Experience }) {
   );
 }
 
-function ProjectCard({ project, index }: { project: ProjectDetail; index: number }) {
+function ProjectCard({ project }: { project: ProjectDetail }) {
   return (
     <Reveal>
       <Card className="project-card">
         <CardHeader>
-          <Badge variant="outline">Project {String(index + 1).padStart(2, '0')}</Badge>
-          <CardTitle>{project.title}</CardTitle>
+          <div className="project-title-row">
+            <FlowerDaisy className="project-title-icon" size={24} />
+            <CardTitle>{project.title}</CardTitle>
+          </div>
           <CardDescription>{project.subtitle}</CardDescription>
         </CardHeader>
         <CardContent>
@@ -426,8 +428,8 @@ function App() {
           <section id="project" className="section">
             <SectionHeading eyebrow="프로젝트 상세" title="주요 프로젝트의 세부 사항을 확인해보세요" />
             <div className="project-grid">
-              {projectDetails.map((project, index) => (
-                <ProjectCard project={project} index={index} key={project.title} />
+              {projectDetails.map((project) => (
+                <ProjectCard project={project} key={project.title} />
               ))}
             </div>
           </section>

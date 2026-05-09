@@ -127,6 +127,31 @@ export function FlowerBadge({ size = 18, ...props }: IconProps) {
   );
 }
 
+export function FlowerDaisy({ size = 18, ...props }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      {Array.from({ length: 10 }, (_, index) => (
+        <ellipse
+          cx="12"
+          cy="4.5"
+          key={index}
+          rx="2.35"
+          ry="4.25"
+          transform={`rotate(${index * 36} 12 12)`}
+        />
+      ))}
+      <circle cx="12" cy="12" r="3" fill="rgb(var(--background-rgb))" />
+    </svg>
+  );
+}
+
 export function PanelsTopLeft(props: IconProps) {
   return (
     <IconBase {...props}>
