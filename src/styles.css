@@ -112,7 +112,7 @@ button {
 }
 
 .hero-cursor {
-  color: rgba(var(--color-secondary), 1);
+  color: rgb(var(--color-hero-text));
 }
 
 .hero-content p {
@@ -313,8 +313,8 @@ button {
   overflow: hidden;
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(var(--color-primary), 0.13), rgba(var(--color-secondary), 0.5)),
-    rgba(var(--color-secondary), 0.12);
+    linear-gradient(135deg, rgba(var(--color-primary), 0.13), rgba(var(--color-primary), 0.035)),
+    rgba(var(--color-primary), 0.04);
 }
 
 .feature-visual::after {
@@ -574,7 +574,7 @@ button {
 .project-card {
   min-height: 360px;
   padding: 30px;
-  background: linear-gradient(180deg, rgba(var(--color-secondary), 0.1), rgba(var(--background-rgb), 1));
+  background: linear-gradient(180deg, rgba(var(--color-primary), 0.055), rgba(var(--background-rgb), 1));
 }
 
 .empty-section {
@@ -589,7 +589,7 @@ button {
   justify-content: center;
   margin: 0 auto;
   border-style: dashed;
-  background: rgba(var(--color-secondary), 0.12);
+  background: rgba(var(--color-primary), 0.04);
 }
 
 .empty-card svg {
