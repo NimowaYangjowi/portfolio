@@ -105,7 +105,7 @@ void i18n.use(initReactI18next).init({
           sections: {
             feature: {
               eyebrow: '핵심 역량',
-              title: '고객의 문제를 듣고, 기술의 언어로 정리하고, 실행 가능한 시스템으로 만듭니다.',
+              title: '맥락을 정확히 이해하고, 제품·기술·비즈니스가 함께 움직일 수 있는 실행안을 제시합니다.',
             },
             skill: {
               eyebrow: '전문영역 및 스킬셋',
