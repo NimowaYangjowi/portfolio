@@ -6,6 +6,7 @@ import { Button } from './components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
 import { ArrowUpRight, FlowerBurst, FlowerCluster, Mail, Sparkles } from './components/ui/icons';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
+import ClickSpark from './components/ClickSpark';
 import TextType from './components/TextType';
 import './styles.css';
 
@@ -363,7 +364,8 @@ function ProjectCard({ project, index }: { project: ProjectDetail; index: number
 
 function App() {
   return (
-    <div className="page">
+    <ClickSpark sparkColor="rgba(10, 10, 10, 0.82)" sparkSize={16} sparkRadius={22} duration={420}>
+      <div className="page">
       <main>
         <section id="intro" className="hero-section">
           <div className="hero-content">
@@ -441,7 +443,8 @@ function App() {
           </div>
         </section>
       </main>
-    </div>
+      </div>
+    </ClickSpark>
   );
 }
 
