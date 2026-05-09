@@ -14,9 +14,9 @@
 |---|---|---|
 | OneLink Management Console | API-heavy marketing workflow를 비개발자도 안전하게 실행할 수 있는 내부 콘솔로 바꾼 경험 | Admin Operations Hub, Product Build Evidence |
 | AppsFlyer S2S Event Guide | 공식 문서와 고객 데이터 구조 사이의 빈칸을 AFID-CUID mapping, 전송 조건, 실패 처리, 보안/모니터링 기준으로 메운 경험 | Source Trace, Technical Knowledge pillar |
-| Samsung 글로벌 운영 | 30+ offices, HQ, regional CSM, product/engineering 사이의 요구사항과 release impact를 맞춘 경험 | Customer-facing Case Studies |
-| Bitmango/Woowa adoption 사례 | 사용량 병목과 고객 업무 흐름을 찾아 재사용 가능한 해결책으로 만든 경험 | Customer Success pillar |
-| SEA Enterprise 계정 운영 | Garena, Zalora, HSBC, BPI, UnionBank 등 복잡한 enterprise 환경에서 기술 이슈와 비즈니스 우선순위를 함께 다룬 경험 | Hero, Proof Pillars |
+| 글로벌 엔터프라이즈 운영 | 여러 지역 오피스, HQ, regional CSM, product/engineering 사이의 요구사항과 release impact를 맞춘 경험 | Customer-facing Case Studies |
+| 국내 엔터프라이즈 adoption 사례 | 사용량 병목과 고객 업무 흐름을 찾아 재사용 가능한 해결책으로 만든 경험 | Customer Success pillar |
+| SEA Enterprise 계정 운영 | gaming, e-commerce, fintech, banking 등 복잡한 enterprise 환경에서 기술 이슈와 비즈니스 우선순위를 함께 다룬 경험 | Hero, Proof Pillars |
 
 쉽게 말하면, 이 표는 “고객과 일해봤다”를 넘어서 “고객의 일을 시스템으로 바꿔봤다”는 증거다.
 

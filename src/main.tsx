@@ -46,7 +46,7 @@ const features: Feature[] = [
   {
     title: '엔터프라이즈 고객성공',
     description:
-      'Samsung Electronics, Garena, HSBC, Woowa Brothers 등 대형 고객의 온보딩, adoption, EBR, stakeholder communication을 담당했습니다.',
+      'APAC과 SEA의 electronics, gaming, fintech, e-commerce, banking 영역 엔터프라이즈 고객의 온보딩, adoption, EBR, stakeholder communication을 담당했습니다.',
     iconLabel: 'CS',
   },
   {
@@ -100,8 +100,8 @@ const experiences: Experience[] = [
         skills: ['Enterprise CS', 'Technical Discovery', 'Implementation Strategy', 'Executive Communication'],
         details: [
           '프리미엄 엔터프라이즈 계정의 온보딩, 요구사항 정리, 구현 계획, 이슈 에스컬레이션을 end-to-end로 담당했습니다.',
-          '$3M+ ARR 포트폴리오에서 맞춤형 기술 솔루션, EBR, adoption strategy를 지원하며 98% client retention을 유지했습니다.',
-          'Samsung Electronics, Garena, Jazz Pakistan, Zalora, HSBC, Bank of the Philippine Islands, UnionBank, Citi Bank 등을 담당하고 있습니다.',
+          '복수의 프리미엄 엔터프라이즈 포트폴리오에서 맞춤형 기술 솔루션, EBR, adoption strategy를 지원하며 장기적인 고객 관계를 유지했습니다.',
+          'Electronics, gaming, e-commerce, fintech, banking 영역의 APAC/SEA 엔터프라이즈 고객을 담당하고 있습니다.',
         ],
       },
       {
@@ -112,7 +112,7 @@ const experiences: Experience[] = [
         details: [
           'SDK implementation, API integration, data discrepancy, platform configuration 이슈에서 고객 개발팀의 기술 의사결정을 도왔습니다.',
           'Product, Engineering, Security 팀과 고객 blocker를 해결하고 현장 피드백을 제품 개선 논의로 연결했습니다.',
-          'Samsung Korea HQ primary liaison으로 30+ offices를 가진 글로벌 고객의 주요 구현과 adoption 전략을 리드했습니다.',
+          '글로벌 HQ와 여러 지역 오피스가 연결된 엔터프라이즈 고객의 주요 구현과 adoption 전략을 리드했습니다.',
         ],
       },
       {
@@ -120,7 +120,7 @@ const experiences: Experience[] = [
         title: 'Customer Success Manager',
         skills: ['Customer Success', 'Technical Guides', 'APAC Playbooks', 'Training'],
         details: [
-          'Woowa Brothers, Netmarble, Com2us, Bitmango, Bithumb 등 엔터프라이즈 고객을 담당했습니다.',
+          'Food delivery, gaming, fintech/crypto 영역의 한국 엔터프라이즈 고객을 담당했습니다.',
           '내부와 고객이 함께 쓰는 기술 가이드, troubleshooting playbook, best practice 자료를 만들어 APAC 구현 품질을 맞췄습니다.',
           'Bangkok, London, Sao Paulo 글로벌 워크숍을 운영하고 Berlin, Sao Paulo 지역 CSM과 전략을 맞췄습니다.',
         ],

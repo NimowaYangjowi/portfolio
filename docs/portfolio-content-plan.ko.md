@@ -48,7 +48,7 @@ Redprint를 설명할 때는 아래 문장을 보조 문장으로 쓴다.
 
 3. **Customer-facing Case Studies**
    - 역할: 고객성공 경험이 단순 계정 관리가 아니라 technical discovery와 implementation이었다는 점을 보여준다.
-   - 화면 내용: Samsung 글로벌 운영, OneLink Management Console, S2S Event Guide, Bitmango/Woowa adoption 사례.
+   - 화면 내용: 글로벌 엔터프라이즈 운영, OneLink Management Console, S2S Event Guide, 국내 엔터프라이즈 adoption 사례.
    - 쉬운 설명: 고객과 이야기만 한 것이 아니라, 고객의 업무를 쪼개서 기술 흐름과 실행 계획으로 바꾼 증거를 보여주는 장이다.
 
 4. **Product Build Evidence**
@@ -71,7 +71,7 @@ Redprint를 설명할 때는 아래 문장을 보조 문장으로 쓴다.
 | 축 | 보여줄 메시지 | 화면에서 보일 증거 |
 |---|---|---|
 | Technical Knowledge | API, SDK, 데이터 구조, 결제/정산, worker 흐름을 이해하고 설명할 수 있다. | Redprint system map, S2S data mapping, Stripe/ledger/worker 구현 |
-| Customer Success | 고객의 숨은 업무 흐름을 발견하고, 글로벌 이해관계자를 맞춰 실행해본 경험이 있다. | Samsung 30+ offices, Bitmango, Woowa, SEA enterprise accounts, `$3M+ ARR`, 약 `98% retention` |
+| Customer Success | 고객의 숨은 업무 흐름을 발견하고, 글로벌 이해관계자를 맞춰 실행해본 경험이 있다. | 글로벌/국내 enterprise accounts, APAC/SEA account operations, adoption bottleneck 해결 경험 |
 | Product Building | 요구사항을 문서에서 끝내지 않고 실제 도구와 제품 흐름으로 만든다. | Redprint, OneLink Management Console, S2S Event Guide |
 
 쉽게 말하면, “기술을 안다”, “고객을 안다”, “직접 만든다”를 따로 보여줘야 한다. 세 가지가 동시에 보이면 일반 CSM이나 일반 개발자보다 훨씬 선명한 포지션이 된다.
@@ -82,7 +82,7 @@ Redprint를 설명할 때는 아래 문장을 보조 문장으로 쓴다.
 - Customer-facing technical operator: SDK, API, 데이터 구조, 제품 제약을 고객과 개발 조직이 이해할 수 있는 언어로 번역한다.
 - OneLink Management Console: API-heavy marketing workflow를 비개발자도 안전하게 다룰 수 있는 내부 콘솔로 바꾼 사례다.
 - S2S Event Guide: 공식 문서와 고객 데이터 구조 사이의 빈칸을 AFID-CUID mapping, 전송 조건, 실패 처리, 보안/모니터링 기준으로 메운 사례다.
-- Samsung/Bitmango/Woowa/SEA footprints: 대형 고객, 글로벌 협업, adoption bottleneck, 데이터 기반 운영 개선을 보여주는 고객성공 근거다.
+- 글로벌/국내/SEA enterprise footprints: 대형 고객, 글로벌 협업, adoption bottleneck, 데이터 기반 운영 개선을 보여주는 고객성공 근거다.
 
 쉽게 말하면, 이 증거들은 “제가 열심히 했습니다”가 아니라 “어떤 종류의 어려운 문제를 어떤 방식으로 풀었습니다”를 말해준다.
 

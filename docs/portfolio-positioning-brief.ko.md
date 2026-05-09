@@ -19,7 +19,7 @@
 | 축 | 보여줄 것 | 근거 |
 |---|---|---|
 | Technical Knowledge | API, SDK, 데이터 구조, 결제/정산, worker, 장애 대응 흐름을 이해하고 설계할 수 있다. | Redprint의 Stripe/ledger/worker/admin 구조, AppsFlyer S2S Event Guide, SDK/API workflow 경험 |
-| Customer Success | 고객의 숨은 업무 흐름을 발견하고, 글로벌 이해관계자와 실행 조건을 맞춰본 경험이 있다. | Samsung 30+ offices, Bitmango, Woowa Brothers, SEA enterprise accounts, `$3M+ ARR`, 약 `98% retention` |
+| Customer Success | 고객의 숨은 업무 흐름을 발견하고, 글로벌 이해관계자와 실행 조건을 맞춰본 경험이 있다. | 글로벌/국내 enterprise accounts, APAC/SEA account operations, adoption bottleneck 해결 경험 |
 | Product Building | 요구사항을 문서에서 끝내지 않고 실제 제품, 내부 콘솔, 운영 가이드로 만든다. | Redprint, OneLink Management Console, S2S implementation guide |
 
 쉽게 말하면, 이 세 축은 각각 “기술을 안다”, “고객을 안다”, “직접 만든다”를 담당한다. 세 가지가 같이 보여야 포트폴리오가 평면적인 개발 프로젝트 소개에서 벗어난다.
@@ -55,10 +55,10 @@
 - 강조점: AFID-CUID mapping, S2S transmission condition, failure handling, security, monitoring.
 - 쉬운 설명: 공식 문서만 보고는 고객이 구현하기 어려운 빈칸을 데이터 매핑과 실패 처리 기준으로 메운 사례다.
 
-### Samsung / Bitmango / Woowa / SEA Enterprise
+### 글로벌 / 국내 / SEA Enterprise
 
 - 역할: customer success와 글로벌 실행 경험 증거.
-- 강조점: 30+ offices, regional stakeholder alignment, product adoption, usage bottleneck, enterprise account operations.
+- 강조점: multi-region stakeholder alignment, product adoption, usage bottleneck, enterprise account operations.
 - 쉬운 설명: 큰 고객과 여러 지역이 얽힌 상황에서도 문제를 정리하고, 제품팀과 고객이 같이 움직일 수 있게 만든 경험이다.
 
 ## 문장 톤

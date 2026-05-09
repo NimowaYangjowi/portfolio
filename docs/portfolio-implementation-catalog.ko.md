@@ -147,7 +147,7 @@
 | OneLink Management Console | 1, 2, 12, 13 | API-heavy workflow를 비개발자도 안전하게 실행할 수 있는 운영 도구로 바꾼다. |
 | AppsFlyer S2S Event Guide | 4, 10, 12, 14 | 고객 데이터 구조, 전송 조건, 실패 처리, 모니터링을 구현 가능한 가이드로 번역한다. |
 | Commerce Program Manager 포지셔닝 | 4, 5, 12, 13 | 결제, 정산, 파트너 운영, 정책 차이를 product requirement로 쪼갤 수 있다. |
-| Samsung/SEA Enterprise 운영 | 7, 10, 13, 14 | 여러 지역과 이해관계자가 있는 환경에서도 운영 상태와 고객 영향을 정리해 실행한다. |
+| 글로벌/SEA Enterprise 운영 | 7, 10, 13, 14 | 여러 지역과 이해관계자가 있는 환경에서도 운영 상태와 고객 영향을 정리해 실행한다. |
 
 쉽게 말하면, Redprint 구현 항목은 혼자 만든 프로젝트로 끝나는 것이 아니라 실제 고객성공 업무에서 해온 technical translation의 증거와 연결된다.
 
