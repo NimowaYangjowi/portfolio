@@ -210,7 +210,6 @@ void i18n.use(initReactI18next).init({
               skills: [
                 'Product Feedback',
                 'Engineering Handoff',
-                'Security Collaboration',
                 'Slack Agent Automation',
                 'Runbooks',
                 'Technical Guides',
@@ -247,7 +246,7 @@ void i18n.use(initReactI18next).init({
               details: [
                 '프리미엄 계정의 온보딩, 기술 디스커버리, 요구사항 정리, 구현 계획, 이슈 에스컬레이션, 임원 이해관계자 커뮤니케이션까지 엔터프라이즈 engagement를 end-to-end로 담당했습니다.',
                 'SDK implementation, API integration, data discrepancy, platform configuration 영역에서 trusted technical advisor로서 고객팀의 아키텍처 의사결정을 도왔습니다.',
-                'Product, Engineering, Security 팀과 협업해 복잡한 고객 blocker를 해결하고, 현장 피드백을 제품 개선으로 연결하며 실제 구현 니즈가 roadmap 결정에 반영되도록 조율했습니다.',
+                'Product, Engineering 팀과 협업해 복잡한 고객 blocker를 해결하고, 현장 피드백을 제품 개선으로 연결하며 실제 구현 니즈가 roadmap 결정에 반영되도록 조율했습니다.',
                 '맞춤형 기술 솔루션, Executive Business Review, adoption strategy를 통해 pre-sales와 expansion 논의를 지원했고, $3M+ ARR 포트폴리오에서 98% client retention 유지에 기여했습니다.',
                 '내부 팀과 고객이 함께 쓰는 technical guide, troubleshooting playbook, best-practice 자료를 만들어 CS 조직 전반의 구현 일관성을 높였습니다.',
               ],
@@ -433,7 +432,6 @@ void i18n.use(initReactI18next).init({
               skills: [
                 'Product Feedback',
                 'Engineering Handoff',
-                'Security Collaboration',
                 'Slack Agent Automation',
                 'Runbooks',
                 'Technical Guides',
@@ -470,7 +468,7 @@ void i18n.use(initReactI18next).init({
               details: [
                 'Owned enterprise engagements end to end, covering onboarding, technical discovery, requirements gathering, implementation planning, issue escalation, and executive stakeholder communication for premium accounts.',
                 'Acted as a trusted technical advisor on SDK implementation, API integration, data discrepancies, and platform configuration, helping customer teams make architecture decisions.',
-                'Partnered with Product, Engineering, and Security teams to resolve complex customer blockers, translate field feedback into product improvements, and align roadmap decisions with real implementation needs.',
+                'Partnered with Product and Engineering teams to resolve complex customer blockers, translate field feedback into product improvements, and align roadmap decisions with real implementation needs.',
                 'Supported pre-sales and expansion discussions with tailored technical solutions, Executive Business Reviews, and adoption strategies that helped maintain 98% client retention across a $3M+ ARR portfolio.',
                 'Created internal and customer-facing technical guides, troubleshooting playbooks, and best-practice materials that improved implementation consistency across the whole CS organization.',
               ],
