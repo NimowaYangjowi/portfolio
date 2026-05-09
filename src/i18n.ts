@@ -215,8 +215,9 @@ void i18n.use(initReactI18next).init({
                   title: 'Customer Engagement Manager',
                   skills: ['Customer Engagement', 'Enablement', 'Training', 'Support'],
                   details: [
-                    '고객의 초기 사용 맥락을 파악하고 제품 활용을 돕는 engagement 업무를 담당했습니다.',
-                    '고객 문의와 반복 이슈를 정리해 이후 Customer Success와 technical enablement 업무의 기반을 만들었습니다.',
+                    'Intercom과 Zendesk를 활용해 많은 고객을 관리하고, 이를 효율적으로 운영할 수 있는 온보딩 플로우를 설계했습니다.',
+                    '고객의 니즈, 행동, 온보딩 진행 단계에 따라 적절한 안내 메시지가 자동으로 전달되도록 단계별 인게이지먼트 캠페인을 기획하고 운영했습니다.',
+                    '신규 유저의 제품 이해도와 사용 전환을 높이기 위해 온보딩 웨비나를 정기적으로 진행했습니다.',
                   ],
                 },
               ],
@@ -407,8 +408,9 @@ void i18n.use(initReactI18next).init({
                   title: 'Customer Engagement Manager',
                   skills: ['Customer Engagement', 'Enablement', 'Training', 'Support'],
                   details: [
-                    'Owned engagement work that helped customers understand their initial usage context and adopt the product.',
-                    'Organized customer inquiries and recurring issues, creating the foundation for later Customer Success and technical enablement work.',
+                    'Designed onboarding flows across Intercom and Zendesk to manage a high volume of customers more efficiently.',
+                    'Planned and operated stage-based engagement campaigns that automatically delivered relevant guidance based on customer needs, behavior, and onboarding progress.',
+                    'Ran recurring onboarding webinars to improve new user education and activation.',
                   ],
                 },
               ],
