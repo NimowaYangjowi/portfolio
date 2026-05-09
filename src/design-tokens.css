@@ -19,8 +19,9 @@
   --color-coral-400: #ff642f;
   --color-coral-500: #facb00;
   --color-coral-600: #e6ba00;
+  --color-aura-purple: #c9b8ea;
   --color-cyan-300: #78bae6;
-  --gradient-gradient-aura: linear-gradient(255deg, rgb(250, 203, 14), rgb(240, 107, 168) 30%, rgb(120, 186, 230) 65%, rgb(255, 255, 255));
+  --gradient-gradient-aura: linear-gradient(255deg, rgb(250, 203, 14), rgb(240, 107, 168) 30%, rgb(201, 184, 234) 48%, rgb(120, 186, 230) 65%, rgb(255, 255, 255));
   --color-shadow-cool: 206 208 205;
   --color-shadow-ink: 32 35 38;
 

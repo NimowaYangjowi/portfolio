@@ -11,7 +11,8 @@
   --color-secondary: 250, 203, 0;
   --brand-pink-rgb: 250, 203, 0;
   --brand-blue-rgb: 120, 186, 230;
-  --gradient-gradient-aura: linear-gradient(255deg, rgb(250, 203, 14), rgb(240, 107, 168) 30%, rgb(120, 186, 230) 65%, rgb(255, 255, 255));
+  --brand-purple-rgb: 201, 184, 234;
+  --gradient-gradient-aura: linear-gradient(255deg, rgb(250, 203, 14), rgb(240, 107, 168) 30%, rgb(var(--brand-purple-rgb)) 48%, rgb(120, 186, 230) 65%, rgb(255, 255, 255));
   --brand-teal-rgb: 26, 58, 58;
   --brand-lavender-rgb: 184, 164, 237;
   --brand-peach-rgb: 255, 176, 132;
