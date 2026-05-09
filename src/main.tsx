@@ -44,22 +44,22 @@ type ProjectDetail = {
 
 const features: Feature[] = [
   {
-    title: '엔터프라이즈 고객성공',
+    title: '기술 커뮤니케이션',
     description:
-      'APAC과 SEA의 electronics, gaming, fintech, e-commerce, banking 영역 엔터프라이즈 고객의 온보딩, adoption, EBR, stakeholder communication을 담당했습니다.',
-    iconLabel: 'CS',
-  },
-  {
-    title: '기술 디스커버리와 구현 전략',
-    description:
-      'SDK, API, data discrepancy, platform configuration 이슈를 고객 개발팀과 함께 풀고 구현 계획으로 정리했습니다.',
+      'API 및 SDK의 개발, 여러 플랫폼 간의 연동 과정에서 필요한 여러 부서 간의 기술적인 요구사항을 파악하고 매끄러운 내부/외부 커뮤니케이션이 이루어질 수 있도록 조율합니다.',
     iconLabel: 'API',
   },
   {
-    title: '제품과 운영 시스템 빌딩',
+    title: '고객성공',
     description:
-      '고객 업무를 요구사항, 제품 플로우, 내부 콘솔, 운영 정책으로 바꾸고 필요할 때는 직접 웹 애플리케이션으로 구현합니다.',
-    iconLabel: 'OPS',
+      '고객의 문제를 파악하고 가장 적합한 솔루션을 찾아 제시합니다. 기술적인 문제를 쉬운 언어로 설명하는 것에 능숙하며 국내외 여러 엔터프라이즈 고객사들을 관리해왔습니다. 해결책을 제시하는 데서 그치지 않고 커스텀 솔루션을 직접 제작해 제공한 사례들이 있습니다.',
+    iconLabel: 'CS',
+  },
+  {
+    title: '풀스택 프로젝트 빌딩',
+    description:
+      '프론트엔드, 백엔드, 데이터베이스를 포함한 풀스택 프로젝트를 직접 빌드하고 운영했습니다. Vercel, Railway, Upstash Redis, Cloudflare R2, Stripe, Sentry를 조합해 배포, 스토리지, 결제, 분산락, rate limiting, 에러 대응 자동화를 구성했고, 로컬 worker 장애 시 Railway backup worker가 작업을 이어받는 failover 구조까지 설계했습니다.',
+    iconLabel: 'FS',
   },
 ];
 
