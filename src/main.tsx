@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { Badge } from './components/ui/badge';
 import { Button } from './components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
-import { ArrowUpRight, Code2, Mail, PanelsTopLeft, Sparkles } from './components/ui/icons';
+import { ArrowUpRight, Mail, Sparkles } from './components/ui/icons';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import TextType from './components/TextType';
 import './styles.css';
@@ -419,27 +419,9 @@ function App() {
           </div>
         </section>
 
-        <section id="blog" className="section empty-section">
-          <SectionHeading eyebrow="블로그" title="" />
-          <Card className="empty-card" aria-label="No matching blog content">
-            <Code2 aria-hidden="true" />
-          </Card>
-        </section>
-
-        <section id="education" className="section empty-section">
-          <SectionHeading eyebrow="교육 및 어학" title="" />
-          <Card className="empty-card" aria-label="No matching education content">
-            <PanelsTopLeft aria-hidden="true" />
-          </Card>
-        </section>
-
         <section id="contact" className="thanks-section">
-          <Badge variant="outline">감사합니다</Badge>
-          <h2>
-            더 궁금한 점이 있다면
-            <br />
-            편하게 연락주세요
-          </h2>
+          <h2>감사합니다</h2>
+          <p>더 궁금한 점이 있다면 편하게 연락주세요</p>
           <div className="contact-links">
             <Button href="mailto:jiwoohan92@gmail.com" size="lg">
               <Mail size={18} aria-hidden="true" />
