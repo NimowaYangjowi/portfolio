@@ -390,6 +390,7 @@ button {
 
 .feature-title-icon {
   flex: 0 0 auto;
+  margin-top: 4px;
   color: rgb(var(--foreground-rgb));
 }
 
@@ -534,6 +535,7 @@ button {
   align-items: center;
   justify-content: center;
   color: rgb(var(--foreground-rgb));
+  transform: translateY(-3px);
 }
 
 .experience-body {
@@ -629,7 +631,7 @@ button {
 }
 
 .experience-bullet-icon {
-  margin-top: 7px;
+  margin-top: 6px;
   color: rgb(var(--foreground-rgb));
 }
 
