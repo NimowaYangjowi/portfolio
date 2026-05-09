@@ -109,7 +109,7 @@ void i18n.use(initReactI18next).init({
             },
             skill: {
               eyebrow: '전문영역 및 스킬셋',
-              title: '문제 해결을 위해 기술적 구현을 넘어 비즈니스 솔루션을 설계하고 실행합니다.',
+              title: '고객 문제를 해결하기 위해 실제 업무에서 활용해온 역량과 도구입니다.',
             },
             career: {
               eyebrow: '경력 사항',

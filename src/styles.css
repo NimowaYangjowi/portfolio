@@ -245,6 +245,7 @@ button {
   font-weight: 500;
   line-height: 1.12;
   letter-spacing: 0;
+  white-space: pre-line;
   word-break: keep-all;
 }
 
