@@ -19,7 +19,8 @@
   --color-coral-400: #ff642f;
   --color-coral-500: #facb00;
   --color-coral-600: #e6ba00;
-  --color-cyan-300: #77e7ee;
+  --color-cyan-300: #78bae6;
+  --gradient-gradient-aura: linear-gradient(255deg, rgb(250, 203, 14), rgb(240, 107, 168) 30%, rgb(120, 186, 230) 65%, rgb(255, 255, 255));
   --color-shadow-cool: 206 208 205;
   --color-shadow-ink: 32 35 38;
 
@@ -60,7 +61,7 @@
   --color-separator-bg: rgba(32, 35, 38, 0.08);
   --color-index-bg: rgba(32, 35, 38, 0.06);
   --color-meta-warm: var(--color-coral-600);
-  --color-flow-entry-border: rgba(119, 231, 238, 0.34);
+  --color-flow-entry-border: rgba(120, 186, 230, 0.34);
   --color-flow-process-border: var(--color-accent-border);
   --color-flow-decision-border: rgba(230, 186, 0, 0.3);
   --color-flow-decision-bg: rgba(250, 203, 0, 0.08);

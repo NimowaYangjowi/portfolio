@@ -10,6 +10,8 @@
   --color-primary: 10, 10, 10;
   --color-secondary: 250, 203, 0;
   --brand-pink-rgb: 250, 203, 0;
+  --brand-blue-rgb: 120, 186, 230;
+  --gradient-gradient-aura: linear-gradient(255deg, rgb(250, 203, 14), rgb(240, 107, 168) 30%, rgb(120, 186, 230) 65%, rgb(255, 255, 255));
   --brand-teal-rgb: 26, 58, 58;
   --brand-lavender-rgb: 184, 164, 237;
   --brand-peach-rgb: 255, 176, 132;
@@ -479,25 +481,13 @@ button {
 
 .skill-badge {
   min-height: 42px;
+  background-image: var(--gradient-gradient-aura);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100vw 100vh;
   padding-left: 7px;
   padding-right: 14px;
   font-size: 13px;
-}
-
-.skill-grid .skill-reveal:nth-child(4n + 1) .skill-badge {
-  background: rgba(var(--color-secondary), 0.3);
-}
-
-.skill-grid .skill-reveal:nth-child(4n + 2) .skill-badge {
-  background: rgba(var(--color-secondary), 0.18);
-}
-
-.skill-grid .skill-reveal:nth-child(4n + 3) .skill-badge {
-  background: rgba(var(--brand-coral-rgb), 0.14);
-}
-
-.skill-grid .skill-reveal:nth-child(4n) .skill-badge {
-  background: rgb(var(--surface-card-rgb));
 }
 
 .skill-icon {
