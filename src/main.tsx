@@ -366,83 +366,83 @@ function App() {
   return (
     <ClickSpark sparkColor="rgba(10, 10, 10, 0.82)" sparkSize={16} sparkRadius={22} duration={420}>
       <div className="page">
-      <main>
-        <section id="intro" className="hero-section">
-          <div className="hero-content">
-            <Badge variant="accent" className="hero-badge">
-              <Sparkles size={15} aria-hidden="true" />
-              Enterprise CS · Product Builder
-            </Badge>
-            <TextType
-              as="h1"
-              className="hero-title hero-rise hero-rise-1"
-              text={'안녕하세요,\n고객의 복잡한 일을\n기술과 제품 플로우로 바꾸는\n한지우입니다.'}
-              typingSpeed={58}
-              initialDelay={300}
-              pauseDuration={1800}
-              loop={false}
-              showCursor
-              cursorCharacter="|"
-              cursorClassName="hero-cursor"
-              cursorBlinkDuration={0.55}
-              variableSpeed={{ min: 34, max: 86 }}
-            />
-            <p className="hero-rise hero-rise-2">
-              Customer Success를 기반으로 기술 디스커버리, 구현 전략, 제품/엔지니어링 협업까지 연결합니다.
-              고객이 겪는 모호한 문제를 실행 가능한 기술 계획과 운영 시스템으로 바꿉니다.
-            </p>
-          </div>
-        </section>
+        <main>
+          <section id="intro" className="hero-section">
+            <div className="hero-content">
+              <Badge variant="accent" className="hero-badge">
+                <Sparkles size={15} aria-hidden="true" />
+                Enterprise CS · Product Builder
+              </Badge>
+              <TextType
+                as="h1"
+                className="hero-title hero-rise hero-rise-1"
+                text={'안녕하세요,\n고객의 복잡한 일을\n기술과 제품 플로우로 바꾸는\n한지우입니다.'}
+                typingSpeed={58}
+                initialDelay={300}
+                pauseDuration={1800}
+                loop={false}
+                showCursor
+                cursorCharacter="|"
+                cursorClassName="hero-cursor"
+                cursorBlinkDuration={0.55}
+                variableSpeed={{ min: 34, max: 86 }}
+              />
+              <p className="hero-rise hero-rise-2">
+                Customer Success를 기반으로 기술 디스커버리, 구현 전략, 제품/엔지니어링 협업까지 연결합니다.
+                고객이 겪는 모호한 문제를 실행 가능한 기술 계획과 운영 시스템으로 바꿉니다.
+              </p>
+            </div>
+          </section>
 
-        <section id="feature" className="section">
-          <SectionHeading eyebrow="핵심 역량" title="고객의 문제를 듣고, 기술의 언어로 정리하고, 실행 가능한 시스템으로 만듭니다." />
-          <div className="feature-grid">
-            {features.map((feature) => (
-              <FeatureCard feature={feature} key={feature.title} />
-            ))}
-          </div>
-        </section>
+          <section id="feature" className="section">
+            <SectionHeading eyebrow="핵심 역량" title="고객의 문제를 듣고, 기술의 언어로 정리하고, 실행 가능한 시스템으로 만듭니다." />
+            <div className="feature-grid">
+              {features.map((feature) => (
+                <FeatureCard feature={feature} key={feature.title} />
+              ))}
+            </div>
+          </section>
 
-        <section id="skill" className="section">
-          <SectionHeading eyebrow="전문영역 및 스킬셋, Expertise & skillset" title="문제 해결을 위해 기술적 구현을 넘어 비즈니스 솔루션을 설계하고 실행합니다." />
-          <Reveal>
-            <SkillTabs />
-          </Reveal>
-        </section>
+          <section id="skill" className="section">
+            <SectionHeading eyebrow="전문영역 및 스킬셋, Expertise & skillset" title="문제 해결을 위해 기술적 구현을 넘어 비즈니스 솔루션을 설계하고 실행합니다." />
+            <Reveal>
+              <SkillTabs />
+            </Reveal>
+          </section>
 
-        <section id="career" className="section">
-          <SectionHeading eyebrow="경력 사항" title="고객성공을 중심으로 기술과 제품 실행 경험을 쌓아왔습니다." />
-          <div className="experience-list">
-            {experiences.map((experience, index) => (
-              <ExperienceEntry experience={experience} index={index} key={experience.company} />
-            ))}
-          </div>
-        </section>
+          <section id="career" className="section">
+            <SectionHeading eyebrow="경력 사항" title="고객성공을 중심으로 기술과 제품 실행 경험을 쌓아왔습니다." />
+            <div className="experience-list">
+              {experiences.map((experience, index) => (
+                <ExperienceEntry experience={experience} index={index} key={experience.company} />
+              ))}
+            </div>
+          </section>
 
-        <section id="project" className="section">
-          <SectionHeading eyebrow="프로젝트 상세" title="주요 프로젝트의 세부 사항을 확인해보세요" />
-          <div className="project-grid">
-            {projectDetails.map((project, index) => (
-              <ProjectCard project={project} index={index} key={project.title} />
-            ))}
-          </div>
-        </section>
+          <section id="project" className="section">
+            <SectionHeading eyebrow="프로젝트 상세" title="주요 프로젝트의 세부 사항을 확인해보세요" />
+            <div className="project-grid">
+              {projectDetails.map((project, index) => (
+                <ProjectCard project={project} index={index} key={project.title} />
+              ))}
+            </div>
+          </section>
 
-        <section id="contact" className="thanks-section">
-          <h2>감사합니다</h2>
-          <p>더 궁금한 점이 있다면 편하게 연락주세요</p>
-          <div className="contact-links">
-            <Button href="mailto:jiwoohan92@gmail.com" size="lg">
-              <Mail size={18} aria-hidden="true" />
-              이메일
-            </Button>
-            <Button href="https://www.linkedin.com/in/jiwoo-han-557289143/" size="lg" variant="secondary">
-              LinkedIn
-              <ArrowUpRight size={18} aria-hidden="true" />
-            </Button>
-          </div>
-        </section>
-      </main>
+          <section id="contact" className="thanks-section">
+            <h2>감사합니다</h2>
+            <p>더 궁금한 점이 있다면 편하게 연락주세요</p>
+            <div className="contact-links">
+              <Button href="mailto:jiwoohan92@gmail.com" size="lg">
+                <Mail size={18} aria-hidden="true" />
+                이메일
+              </Button>
+              <Button href="https://www.linkedin.com/in/jiwoo-han-557289143/" size="lg" variant="secondary">
+                LinkedIn
+                <ArrowUpRight size={18} aria-hidden="true" />
+              </Button>
+            </div>
+          </section>
+        </main>
       </div>
     </ClickSpark>
   );

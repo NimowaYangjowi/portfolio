@@ -39,7 +39,7 @@ export default function ClickSpark({
     const parent = canvas.parentElement;
     if (!parent) return undefined;
 
-    let resizeTimeout: ReturnType<typeof setTimeout>;
+    let resizeTimeout: number | undefined;
 
     const resizeCanvas = () => {
       const { width, height } = parent.getBoundingClientRect();
@@ -57,8 +57,8 @@ export default function ClickSpark({
     };
 
     const handleResize = () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(resizeCanvas, 100);
+      window.clearTimeout(resizeTimeout);
+      resizeTimeout = window.setTimeout(resizeCanvas, 100);
     };
 
     const resizeObserver = new ResizeObserver(handleResize);
@@ -67,7 +67,7 @@ export default function ClickSpark({
 
     return () => {
       resizeObserver.disconnect();
-      clearTimeout(resizeTimeout);
+      window.clearTimeout(resizeTimeout);
     };
   }, []);
 
