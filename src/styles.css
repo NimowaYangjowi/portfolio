@@ -525,6 +525,7 @@ button {
   padding-left: 7px;
   padding-right: 14px;
   font-size: 13px;
+  font-weight: 700;
 }
 
 .skill-grid .skill-reveal:nth-child(2) .skill-badge {
