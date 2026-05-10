@@ -22,15 +22,15 @@
     };
   }
 
-  window.exportProjectDiagramScene = (skeletons) => JSON.stringify(createProjectDiagramScene(skeletons), null, 2);
-
-  window.renderProjectDiagram = async (skeletons) => {
-    const scene = createProjectDiagramScene(skeletons);
+  async function renderSceneToPng(scene) {
     const svgElement = await exportToSvg({
       elements: scene.elements,
-      files: scene.files,
+      files: scene.files ?? {},
       exportPadding: 42,
-      appState,
+      appState: {
+        ...appState,
+        ...(scene.appState ?? {}),
+      },
     });
     const svg = new XMLSerializer().serializeToString(svgElement);
     const image = new Image();
@@ -47,7 +47,7 @@
     canvas.height = 920;
 
     const context = canvas.getContext('2d');
-    context.fillStyle = '#fffaf0';
+    context.fillStyle = scene.appState?.viewBackgroundColor ?? appState.viewBackgroundColor;
     context.fillRect(0, 0, canvas.width, canvas.height);
 
     const scale = Math.min(canvas.width / image.width, canvas.height / image.height);
@@ -59,6 +59,13 @@
     URL.revokeObjectURL(svgUrl);
 
     return canvas.toDataURL('image/png').replace(/^data:image\/png;base64,/, '');
+  }
+
+  window.exportProjectDiagramScene = (skeletons) => JSON.stringify(createProjectDiagramScene(skeletons), null, 2);
+  window.renderProjectDiagramScene = renderSceneToPng;
+
+  window.renderProjectDiagram = async (skeletons) => {
+    return renderSceneToPng(createProjectDiagramScene(skeletons));
   };
 
   window.__projectDiagramExporterReady = true;
