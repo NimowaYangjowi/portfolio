@@ -1,0 +1,65 @@
+<!doctype html>
+<meta charset="utf-8" />
+<script type="module">
+  import { convertToExcalidrawElements, exportToSvg } from '@excalidraw/excalidraw';
+
+  const appState = {
+    exportBackground: true,
+    exportWithDarkMode: false,
+    gridSize: null,
+    viewBackgroundColor: '#fffaf0',
+  };
+
+  function createProjectDiagramScene(skeletons) {
+    const elements = convertToExcalidrawElements(skeletons, { regenerateIds: false });
+    return {
+      type: 'excalidraw',
+      version: 2,
+      source: 'https://excalidraw.com',
+      elements,
+      appState,
+      files: {},
+    };
+  }
+
+  window.exportProjectDiagramScene = (skeletons) => JSON.stringify(createProjectDiagramScene(skeletons), null, 2);
+
+  window.renderProjectDiagram = async (skeletons) => {
+    const scene = createProjectDiagramScene(skeletons);
+    const svgElement = await exportToSvg({
+      elements: scene.elements,
+      files: scene.files,
+      exportPadding: 42,
+      appState,
+    });
+    const svg = new XMLSerializer().serializeToString(svgElement);
+    const image = new Image();
+    const svgUrl = URL.createObjectURL(new Blob([svg], { type: 'image/svg+xml' }));
+
+    await new Promise((resolve, reject) => {
+      image.onload = resolve;
+      image.onerror = reject;
+      image.src = svgUrl;
+    });
+
+    const canvas = document.createElement('canvas');
+    canvas.width = 1600;
+    canvas.height = 920;
+
+    const context = canvas.getContext('2d');
+    context.fillStyle = '#fffaf0';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    const scale = Math.min(canvas.width / image.width, canvas.height / image.height);
+    const drawWidth = image.width * scale;
+    const drawHeight = image.height * scale;
+    const x = (canvas.width - drawWidth) / 2;
+    const y = (canvas.height - drawHeight) / 2;
+    context.drawImage(image, x, y, drawWidth, drawHeight);
+    URL.revokeObjectURL(svgUrl);
+
+    return canvas.toDataURL('image/png').replace(/^data:image\/png;base64,/, '');
+  };
+
+  window.__projectDiagramExporterReady = true;
+</script>
