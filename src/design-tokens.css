@@ -16,12 +16,12 @@
   --color-gray-600: #6f7473;
   --color-gray-700: #4b5050;
   --color-gray-900: #202326;
-  --color-coral-400: #ff642f;
-  --color-coral-500: #facb00;
-  --color-coral-600: #e6ba00;
-  --color-aura-purple: #c9b8ea;
-  --color-cyan-300: #78bae6;
-  --gradient-gradient-aura: linear-gradient(255deg, rgb(250, 203, 14), rgb(240, 107, 168) 30%, rgb(201, 184, 234) 48%, rgb(120, 186, 230) 65%, rgb(255, 255, 255));
+  --color-coral-400: #ff894f;
+  --color-coral-500: #ffcb61;
+  --color-coral-600: #ff894f;
+  --color-aura-purple: #ea5b6f;
+  --color-cyan-300: #77bef0;
+  --gradient-gradient-aura: linear-gradient(255deg, rgb(255, 203, 97), rgb(234, 91, 111) 30%, rgb(255, 137, 79) 48%, rgb(119, 190, 240) 65%, rgb(255, 255, 255));
   --color-shadow-cool: 206 208 205;
   --color-shadow-ink: 32 35 38;
 
@@ -47,10 +47,10 @@
   --color-text-inverse-muted: var(--color-gray-200);
   --color-accent-strong: var(--color-brand-sun);
   --color-accent-hover: var(--color-brand-sun-hover);
-  --color-accent-soft: rgba(250, 203, 0, 0.1);
-  --color-accent-border: rgba(250, 203, 0, 0.26);
-  --color-accent-border-strong: rgba(250, 203, 0, 0.5);
-  --color-accent-focus: rgba(250, 203, 0, 0.35);
+  --color-accent-soft: rgba(255, 203, 97, 0.1);
+  --color-accent-border: rgba(255, 203, 97, 0.26);
+  --color-accent-border-strong: rgba(255, 203, 97, 0.5);
+  --color-accent-focus: rgba(255, 203, 97, 0.35);
   --color-glass-bg: rgba(255, 255, 255, 0.74);
   --color-chip-bg: rgba(255, 255, 255, 0.76);
   --color-card-bg: rgba(255, 255, 255, 0.72);
@@ -62,23 +62,23 @@
   --color-separator-bg: rgba(32, 35, 38, 0.08);
   --color-index-bg: rgba(32, 35, 38, 0.06);
   --color-meta-warm: var(--color-coral-600);
-  --color-flow-entry-border: rgba(120, 186, 230, 0.34);
+  --color-flow-entry-border: rgba(119, 190, 240, 0.34);
   --color-flow-process-border: var(--color-accent-border);
-  --color-flow-decision-border: rgba(230, 186, 0, 0.3);
-  --color-flow-decision-bg: rgba(250, 203, 0, 0.08);
+  --color-flow-decision-border: rgba(255, 203, 97, 0.3);
+  --color-flow-decision-bg: rgba(255, 203, 97, 0.08);
   --color-flow-output-border: rgba(32, 35, 38, 0.18);
   --color-flow-output-bg: rgba(242, 243, 242, 0.92);
-  --color-flow-recovery-border: rgba(230, 186, 0, 0.22);
-  --color-flow-recovery-bg: rgba(250, 203, 0, 0.08);
+  --color-flow-recovery-border: rgba(255, 203, 97, 0.22);
+  --color-flow-recovery-bg: rgba(255, 203, 97, 0.08);
   --color-flow-recovery-text: var(--color-coral-600);
 
   /* Typography tokens */
   --font-sans:
-    "Avenir Next", "Inter", "Noto Sans JP", "Pretendard", ui-sans-serif, system-ui, -apple-system,
+    "Pretendard Variable", "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-display:
-    "Avenir Next", "Inter", "Helvetica Neue", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
-  --font-ja: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "Pretendard", sans-serif;
+    "Pretendard Variable", "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", ui-sans-serif, system-ui, sans-serif;
+  --font-ja: "Pretendard Variable", "Pretendard", "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
   --font-size-caption: 12px;
   --font-size-body: 15px;
   --font-size-title: 42px;

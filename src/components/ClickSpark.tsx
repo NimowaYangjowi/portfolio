@@ -1,184 +1,145 @@
-import { useCallback, useEffect, useRef, type MouseEvent, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type CSSProperties, type MouseEvent, type ReactNode } from 'react';
+import { FlowerBadge, FlowerBurst, FlowerCluster, FlowerDaisy } from './ui/icons';
 import './ClickSpark.css';
 
-type Spark = {
+type FlowerIconName = 'badge' | 'burst' | 'cluster' | 'daisy';
+
+export type ClickSparkFlowerItem = {
+  icon: FlowerIconName;
+  color: string;
+  rotation?: number;
+};
+
+type ClickBloom = {
+  id: number;
   x: number;
   y: number;
-  angle: number;
-  startTime: number;
+  size: number;
+  flower: ClickSparkFlowerItem;
+};
+
+type ClickBloomStyle = CSSProperties & {
+  '--click-bloom-color': string;
+  '--click-bloom-duration': string;
+  '--click-bloom-rotation': string;
 };
 
 type ClickSparkProps = {
+  flowerItems?: ClickSparkFlowerItem[];
   sparkColor?: string;
   sparkSize?: number;
-  sparkRadius?: number;
   sparkCount?: number;
   duration?: number;
-  easing?: 'linear' | 'ease-in' | 'ease-in-out' | 'ease-out' | string;
   extraScale?: number;
   shouldSpark?: (event: MouseEvent<HTMLDivElement>) => boolean;
   children: ReactNode;
 };
 
+const flowerIcons = {
+  badge: FlowerBadge,
+  burst: FlowerBurst,
+  cluster: FlowerCluster,
+  daisy: FlowerDaisy,
+} satisfies Record<FlowerIconName, typeof FlowerBadge>;
+
+const defaultFlowerItems: ClickSparkFlowerItem[] = [
+  { icon: 'daisy', color: 'rgb(var(--brand-coral-rgb))', rotation: -18 },
+  { icon: 'burst', color: 'rgb(var(--brand-aura-pink-rgb))', rotation: -8 },
+  { icon: 'badge', color: 'rgb(var(--brand-peach-rgb))', rotation: 22 },
+  { icon: 'cluster', color: 'rgb(var(--brand-mint-rgb))', rotation: -24 },
+];
+
 export default function ClickSpark({
-  sparkColor = '#fff',
-  sparkSize = 10,
-  sparkRadius = 15,
-  sparkCount = 8,
-  duration = 400,
-  easing = 'ease-out',
-  extraScale = 1.0,
+  flowerItems = defaultFlowerItems,
+  sparkColor = 'rgb(var(--foreground-rgb))',
+  sparkSize = 82,
+  sparkCount = 1,
+  duration = 1020,
+  extraScale = 1,
   shouldSpark,
   children,
 }: ClickSparkProps) {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const sparksRef = useRef<Spark[]>([]);
-  const animationFrameRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return undefined;
-
-    const parent = canvas.parentElement;
-    if (!parent) return undefined;
-
-    let resizeTimeout: number | undefined;
-
-    const resizeCanvas = () => {
-      const { width, height } = parent.getBoundingClientRect();
-      const dpr = window.devicePixelRatio || 1;
-      const nextWidth = Math.max(1, Math.round(width * dpr));
-      const nextHeight = Math.max(1, Math.round(height * dpr));
-
-      if (canvas.width !== nextWidth || canvas.height !== nextHeight) {
-        canvas.width = nextWidth;
-        canvas.height = nextHeight;
-      }
-
-      const ctx = canvas.getContext('2d');
-      if (ctx) {
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        ctx.clearRect(0, 0, width, height);
-      }
-    };
-
-    const handleResize = () => {
-      window.clearTimeout(resizeTimeout);
-      resizeTimeout = window.setTimeout(resizeCanvas, 100);
-    };
-
-    const resizeObserver = new ResizeObserver(handleResize);
-    resizeObserver.observe(parent);
-    resizeCanvas();
-
-    return () => {
-      resizeObserver.disconnect();
-      window.clearTimeout(resizeTimeout);
-    };
-  }, []);
-
-  const easeFunc = useCallback(
-    (progress: number) => {
-      switch (easing) {
-        case 'linear':
-          return progress;
-        case 'ease-in':
-          return progress * progress;
-        case 'ease-in-out':
-          return progress < 0.5 ? 2 * progress * progress : -1 + (4 - 2 * progress) * progress;
-        default:
-          return progress * (2 - progress);
-      }
-    },
-    [easing],
-  );
+  const [blooms, setBlooms] = useState<ClickBloom[]>([]);
+  const nextBloomIdRef = useRef(0);
+  const lastFlowerIndexRef = useRef<number | null>(null);
+  const timeoutRefs = useRef<number[]>([]);
 
   useEffect(() => {
     return () => {
-      if (animationFrameRef.current !== null) {
-        cancelAnimationFrame(animationFrameRef.current);
-        animationFrameRef.current = null;
-      }
+      timeoutRefs.current.forEach((timeoutId) => window.clearTimeout(timeoutId));
+      timeoutRefs.current = [];
     };
   }, []);
-
-  const drawSparks = useCallback(
-    (timestamp: number) => {
-      const canvas = canvasRef.current;
-      const ctx = canvas?.getContext('2d');
-
-      if (!canvas || !ctx) {
-        animationFrameRef.current = null;
-        return;
-      }
-
-      const width = canvas.clientWidth;
-      const height = canvas.clientHeight;
-
-      ctx.clearRect(0, 0, width, height);
-
-      sparksRef.current = sparksRef.current.filter((spark) => {
-        const elapsed = timestamp - spark.startTime;
-        if (elapsed >= duration) {
-          return false;
-        }
-
-        const progress = elapsed / duration;
-        const eased = easeFunc(progress);
-        const distance = eased * sparkRadius * extraScale;
-        const lineLength = sparkSize * (1 - eased);
-        const x1 = spark.x + distance * Math.cos(spark.angle);
-        const y1 = spark.y + distance * Math.sin(spark.angle);
-        const x2 = spark.x + (distance + lineLength) * Math.cos(spark.angle);
-        const y2 = spark.y + (distance + lineLength) * Math.sin(spark.angle);
-
-        ctx.strokeStyle = sparkColor;
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(x1, y1);
-        ctx.lineTo(x2, y2);
-        ctx.stroke();
-
-        return true;
-      });
-
-      if (sparksRef.current.length === 0) {
-        ctx.clearRect(0, 0, width, height);
-        animationFrameRef.current = null;
-        return;
-      }
-
-      animationFrameRef.current = requestAnimationFrame(drawSparks);
-    },
-    [duration, easeFunc, extraScale, sparkColor, sparkRadius, sparkSize],
-  );
 
   const handleClick = (event: MouseEvent<HTMLDivElement>) => {
-    const canvas = canvasRef.current;
-    if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     if (shouldSpark && !shouldSpark(event)) return;
 
-    const rect = canvas.getBoundingClientRect();
+    const rect = event.currentTarget.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
-    const now = performance.now();
-    const newSparks = Array.from({ length: sparkCount }, (_, index) => ({
-      x,
-      y,
-      angle: (2 * Math.PI * index) / sparkCount,
-      startTime: now,
-    }));
+    const flowers = flowerItems.length > 0 ? flowerItems : defaultFlowerItems;
+    const count = Math.max(1, sparkCount);
+    let lastPickedIndex = lastFlowerIndexRef.current;
 
-    sparksRef.current.push(...newSparks);
+    const nextBlooms = Array.from({ length: count }, () => {
+      let flowerIndex = Math.floor(Math.random() * flowers.length);
 
-    if (animationFrameRef.current === null) {
-      animationFrameRef.current = requestAnimationFrame(drawSparks);
-    }
+      while (flowers.length > 1 && flowerIndex === lastPickedIndex) {
+        flowerIndex = Math.floor(Math.random() * flowers.length);
+      }
+
+      lastPickedIndex = flowerIndex;
+      lastFlowerIndexRef.current = flowerIndex;
+
+      const flower = flowers[flowerIndex] ?? {
+        icon: 'daisy',
+        color: sparkColor,
+      };
+
+      return {
+        id: nextBloomIdRef.current++,
+        x,
+        y,
+        size: sparkSize * extraScale,
+        flower,
+      };
+    });
+
+    setBlooms((currentBlooms) => [...currentBlooms, ...nextBlooms]);
+
+    const cleanupDelay = duration + 120;
+    const timeoutId = window.setTimeout(() => {
+      const bloomIds = new Set(nextBlooms.map((bloom) => bloom.id));
+      setBlooms((currentBlooms) => currentBlooms.filter((bloom) => !bloomIds.has(bloom.id)));
+      timeoutRefs.current = timeoutRefs.current.filter((id) => id !== timeoutId);
+    }, cleanupDelay);
+
+    timeoutRefs.current.push(timeoutId);
   };
 
   return (
     <div className="click-spark" onClick={handleClick}>
-      <canvas ref={canvasRef} className="click-spark__canvas" aria-hidden="true" />
+      <div className="click-spark__stage" aria-hidden="true">
+        {blooms.map((bloom) => {
+          const Icon = flowerIcons[bloom.flower.icon];
+          const style: ClickBloomStyle = {
+            left: bloom.x,
+            top: bloom.y,
+            width: bloom.size,
+            height: bloom.size,
+            '--click-bloom-color': bloom.flower.color,
+            '--click-bloom-duration': `${duration}ms`,
+            '--click-bloom-rotation': `${bloom.flower.rotation ?? 0}deg`,
+          };
+
+          return (
+            <span className="click-spark__flower-anchor" key={bloom.id} style={style}>
+              <Icon className="click-spark__flower" size={bloom.size} />
+            </span>
+          );
+        })}
+      </div>
       <div className="click-spark__content">{children}</div>
     </div>
   );

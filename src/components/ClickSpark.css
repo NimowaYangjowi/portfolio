@@ -4,19 +4,85 @@
   min-height: 100vh;
 }
 
-.click-spark__canvas {
+.click-spark__stage {
   position: absolute;
-  top: 0;
+  inset: 0;
+  z-index: 30;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.click-spark__flower-anchor {
+  position: absolute;
   left: 0;
-  z-index: 2;
+  top: 0;
+  display: block;
+  background: transparent;
+  opacity: 0;
+  clip-path: inset(76% 0% 0% 0%);
+  transform-origin: 50% 100%;
+  filter: none;
+  animation: click-flower-sprout var(--click-bloom-duration) cubic-bezier(0.2, 0.8, 0.22, 1) forwards;
+  will-change: clip-path, opacity, transform;
+}
+
+.click-spark__flower {
   display: block;
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  user-select: none;
+  background: transparent;
+  color: var(--click-bloom-color);
+  filter: none;
+  transform: rotate(var(--click-bloom-rotation));
+  transform-origin: 50% 100%;
 }
 
 .click-spark__content {
   position: relative;
   z-index: 1;
+}
+
+@keyframes click-flower-sprout {
+  0% {
+    clip-path: inset(76% 0% 0% 0%);
+    opacity: 1;
+    transform:
+      translate(-50%, calc(-100% + 20px))
+      scale(1);
+  }
+
+  49% {
+    clip-path: inset(0% 0% 0% 0%);
+    opacity: 1;
+    transform:
+      translate(-50%, calc(-100% - 4px))
+      scale(1);
+  }
+
+  72% {
+    clip-path: inset(0% 0% 0% 0%);
+    opacity: 1;
+    transform:
+      translate(-50%, -100%)
+      scale(1);
+  }
+
+  99% {
+    clip-path: inset(0% 0% 0% 0%);
+    opacity: 1;
+    transform:
+      translate(-50%, -100%)
+      scale(1);
+  }
+
+  100% {
+    clip-path: inset(0% 0% 0% 0%);
+    opacity: 0;
+    transform:
+      translate(-50%, -100%)
+      scale(1);
+  }
 }

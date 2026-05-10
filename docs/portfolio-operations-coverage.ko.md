@@ -2,13 +2,13 @@
 
 이 문서는 Admin Operations Hub와 Worker Operations Plane을 포트폴리오에서 어떻게 보여줄지 정리한다. 원본 `redprint-admin-worker-coverage.*.md`의 세부 기능 목록은 유지하되, 웹사이트에 넣을 수 있는 묶음 단위로 압축했다.
 
-또한 AppsFlyer에서 해온 customer-facing technical operations 경험과 Redprint의 운영 시스템을 연결한다. 쉽게 말하면, 이 문서는 서비스 뒤편의 조종석과 작업반을 설명하는 지도이면서, 고객 업무를 기술 도구로 바꿔온 경험의 연결표다.
+또한 AppsFlyer에서 해온 customer-facing technical operations 경험과 Redprint의 운영 시스템을 연결한다. 이 문서는 서비스 뒤편의 조종석과 작업반을 설명하는 지도이면서, 고객 업무를 기술 도구로 바꿔온 경험의 연결표다.
 
 ## Customer-facing Operations Lens
 
 운영은 admin page만 뜻하지 않는다. 고객이 실제로 일하는 방식, 고객사의 데이터 구조, 파트너의 제약, 내부 운영자의 판단 기준을 기술 시스템 안에 넣는 일까지 포함한다.
 
-개발자 용어로는 workflow discovery, API/data mapping, operational tooling, rollout impact management다. 쉽게 말하면, 고객이 종이에 적어오거나 회의에서 말한 복잡한 일을 컴퓨터가 처리할 수 있는 순서표와 조종석으로 바꾸는 것이다.
+개발자 용어로는 workflow discovery, API/data mapping, operational tooling, rollout impact management다. 고객이 종이에 적어오거나 회의에서 말한 복잡한 일을 컴퓨터가 처리할 수 있는 순서표와 조종석으로 바꾸는 것이다.
 
 | 근거 | 보여주는 역량 | 포트폴리오에서 연결할 위치 |
 |---|---|---|
@@ -18,7 +18,7 @@
 | 국내 엔터프라이즈 adoption 사례 | 사용량 병목과 고객 업무 흐름을 찾아 재사용 가능한 해결책으로 만든 경험 | Customer Success pillar |
 | SEA Enterprise 계정 운영 | gaming, e-commerce, fintech, banking 등 복잡한 enterprise 환경에서 기술 이슈와 비즈니스 우선순위를 함께 다룬 경험 | Hero, Proof Pillars |
 
-쉽게 말하면, 이 표는 “고객과 일해봤다”를 넘어서 “고객의 일을 시스템으로 바꿔봤다”는 증거다.
+이 표는 “고객과 일해봤다”를 넘어서 “고객의 일을 시스템으로 바꿔봤다”는 증거다.
 
 ## Admin Operations Hub
 
@@ -26,7 +26,7 @@
 
 > Redprint의 admin surface는 콘텐츠 심사, 결제·정산 운영, 스토리지 점검, worker 상태 확인, 알림 발송, 베타 운영, 피드백 관리까지 묶은 operations hub다. 운영자가 문제를 발견하고, 상태를 검증하고, 필요한 조치를 실행할 수 있도록 API, audit log, status card, table, modal, dry-run flow를 연결했다.
 
-쉽게 말하면, 사용자는 매장만 보지만 운영자는 뒤편 조종석에서 상품, 돈, 창고, 고객 문의, 작업 상태를 한꺼번에 확인한다. 매번 개발자에게 물어보지 않아도 운영자가 스스로 상태를 보고 판단할 수 있게 만든 것이다.
+사용자는 매장만 보지만 운영자는 뒤편 조종석에서 상품, 돈, 창고, 고객 문의, 작업 상태를 한꺼번에 확인한다. 매번 개발자에게 물어보지 않아도 운영자가 스스로 상태를 보고 판단할 수 있게 만든 것이다.
 
 ### 포트폴리오에서 묶어 보여줄 영역
 
@@ -54,7 +54,7 @@
 
 > Redprint의 worker 기능은 업로드 후처리만 담당하지 않는다. media tagging, image derivative, video transcode, upload session cleanup, stale processing recovery, stuck checkout reconciliation, scheduled payout planning/execution/retry, webhook cleanup, support timeout policy, worker heartbeat, failover control까지 포함하는 background operations plane이다.
 
-쉽게 말하면, 사용자가 버튼을 누른 뒤 화면 밖에서 계속 일하는 작업반이다. 이미지에 태그를 붙이고, 영상을 변환하고, 멈춘 결제를 복구하고, 정산을 예약하며, worker가 죽으면 backup으로 넘기는 일까지 담당한다. 고객 관점에서는 “버튼을 눌렀는데 결과가 안 나오는” 불안한 순간을 줄이는 장치다.
+사용자가 버튼을 누른 뒤 화면 밖에서 계속 일하는 작업반이다. 이미지에 태그를 붙이고, 영상을 변환하고, 멈춘 결제를 복구하고, 정산을 예약하며, worker가 죽으면 backup으로 넘기는 일까지 담당한다. 고객 관점에서는 “버튼을 눌렀는데 결과가 안 나오는” 불안한 순간을 줄이는 장치다.
 
 ### 포트폴리오에서 묶어 보여줄 영역
 
@@ -83,7 +83,7 @@
 - `Admin Operations Hub`: 운영자가 상태를 확인하고 조치를 실행하는 조종석
 - `Worker Operations Plane`: 사용자 요청 뒤에서 오래 걸리는 작업과 복구를 맡는 백그라운드 시스템
 
-세부 기능 목록은 상세 페이지의 accordion, tab, coverage table로 열어 보여준다. 쉽게 말하면, 첫 화면에는 큰 지도만 보여주고, 필요한 사람에게 자세한 방 목록을 펼쳐 주는 방식이다.
+세부 기능 목록은 상세 페이지의 accordion, tab, coverage table로 열어 보여준다. 첫 화면에는 큰 지도만 보여주고, 필요한 사람에게 자세한 방 목록을 펼쳐 주는 방식이다.
 
 ## 문구 작성 기준
 
@@ -91,4 +91,4 @@
 - `worker를 만들었다`보다 `사용자가 기다리지 않아도 오래 걸리는 작업을 뒤에서 끝내고 복구할 수 있게 했다`라고 쓴다.
 - `고객사 대응`보다 `고객 업무를 기술 요구사항과 실행 가능한 운영 도구로 번역했다`라고 쓴다.
 
-쉽게 말하면, 만든 물건의 이름보다 그 물건 때문에 사람이 덜 막히는 장면을 먼저 말한다.
+만든 물건의 이름보다 그 물건 때문에 사람이 덜 막히는 장면을 먼저 말한다.

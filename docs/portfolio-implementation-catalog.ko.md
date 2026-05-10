@@ -2,7 +2,7 @@
 
 이 문서는 Redprint 구현 항목을 포트폴리오에 넣기 좋은 단위로 정리한 카탈로그다. 원본 문서의 반복 설명은 줄이고, 각 항목을 `화면 제목`, `사용자 화면`, `기술 구현`, `고객/운영 관점`, `시각화 아이디어`, `코드 근거` 중심으로 압축했다.
 
-쉽게 말하면, 이 문서는 포트폴리오 카드와 상세 섹션을 만들 때 꺼내 쓰는 부품 목록이다.
+이 문서는 포트폴리오 카드와 상세 섹션을 만들 때 꺼내 쓰는 부품 목록이다.
 
 ## 읽는 기준
 
@@ -12,7 +12,7 @@
 2. **기술 구현**: 그 문제를 API, 데이터, 상태 관리, worker, 결제 흐름으로 어떻게 풀었는지.
 3. **고객/제품 메시지**: 그래서 고객지원, 운영자, 구매자, 판매자에게 어떤 변화가 생기는지.
 
-쉽게 말하면, “무슨 기능을 만들었다”보다 “누가 덜 고생하게 됐는지”를 먼저 보이게 하는 기준이다.
+“무슨 기능을 만들었다”보다 “누가 덜 고생하게 됐는지”를 먼저 보이게 하는 기준이다.
 
 ## 1. 복구 가능한 콘텐츠 등록 흐름
 
@@ -36,9 +36,9 @@
 
 - 사용자 화면: Explore 카드 벽, 검색 dock, preview modal
 - 기술 구현: adaptive discovery feed, row packing, presentation descriptor, offset pagination, batched preview prefetch
-- 보여줄 역량: 반응형 UI, 긴 스크롤 성능, 네트워크 요청 예산 관리
+- 보여줄 역량: 반응형 UI, 긴 스크롤 성능, 네트워크 요청 허용량 관리
 - 고객/운영 관점: 구매자는 미디어가 많은 상품을 빠르게 훑을 수 있고, 제품팀은 카드 노출과 미리보기 요청이 과하게 늘어나지 않도록 제어할 수 있다.
-- 시각화: viewport slider, card descriptor inspector, prefetch budget meter
+- 시각화: viewport slider, card descriptor inspector, prefetch allowance meter
 - 코드 근거: `ExplorePackedFeed.tsx`, `explorePackedLayout.ts`, `useExplorePreviewPrefetch.ts`, `assets/previews/batch/route.ts`
 
 ## 4. 결제부터 정산까지 이어지는 돈의 흐름
@@ -149,10 +149,10 @@
 | Commerce Program Manager 포지셔닝 | 4, 5, 12, 13 | 결제, 정산, 파트너 운영, 정책 차이를 product requirement로 쪼갤 수 있다. |
 | 글로벌/SEA Enterprise 운영 | 7, 10, 13, 14 | 여러 지역과 이해관계자가 있는 환경에서도 운영 상태와 고객 영향을 정리해 실행한다. |
 
-쉽게 말하면, Redprint 구현 항목은 혼자 만든 프로젝트로 끝나는 것이 아니라 실제 고객성공 업무에서 해온 technical translation의 증거와 연결된다.
+Redprint 구현 항목은 혼자 만든 프로젝트로 끝나는 것이 아니라 실제 고객성공 업무에서 해온 technical translation의 증거와 연결된다.
 
 ## 우선 구현 권장
 
 웹사이트 첫 버전에서는 1~6번을 메인 showcase로 사용한다. 7~14번은 상세 case study나 operations coverage에서 확장한다.
 
-쉽게 말하면, 처음부터 모든 방을 다 보여주기보다 현관에서 가장 중요한 방 6개만 먼저 보여주고, 관심 있는 방문자에게 전체 지도를 열어주는 방식이다.
+처음부터 모든 방을 다 보여주기보다 현관에서 가장 중요한 방 6개만 먼저 보여주고, 관심 있는 방문자에게 전체 지도를 열어주는 방식이다.
