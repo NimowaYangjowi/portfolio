@@ -717,47 +717,47 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
   {
     id: 'adobe-integration-issue-resolution',
     title: localize(
-      '부서 간 협업: Adobe 연동 이슈 해결',
-      'Cross-Functional Collaboration: Adobe Integration Issue Resolution',
+      '고객 니즈에서 시작된 Adobe 리인게이지먼트 표준 연동화',
+      'Customer-Led Product Improvement: Adobe Re-engagement Integration',
     ),
     customerContext: localize(
-      'Adobe를 핵심 마케팅 분석 플랫폼으로 사용하는 고객사가 AppsFlyer 도입 과정에서 Adobe 연동 이슈를 해결해야 했습니다. 단일 설정 문제가 아니라 고객사, 제품, 서포트, 기술 담당자가 함께 원인과 해결 경로를 맞춰야 하는 과제였습니다.',
-      'A customer using Adobe as a core marketing analytics platform needed to resolve an Adobe integration issue during AppsFlyer adoption. This was not a single configuration problem; it required alignment across the customer team, product, support, and technical stakeholders.',
+      '고객 온보딩 중 Adobe 리인게이지먼트 연동이 당시 지원 범위 밖이라는 점을 발견했습니다. 고객에게도 생소한 영역이었기 때문에, 먼저 왜 이 연동이 필요한지 함께 정리하고 제품 개선 기회로 연결했습니다.',
+      'During customer onboarding, we discovered that Adobe re-engagement integration was not yet supported. Because the concept was new to the customer as well, we first aligned on why the integration was needed and connected that need to a product improvement opportunity.',
     ),
     focus: localize('부서 간 협업', 'Cross-Functional Collaboration'),
     contribution: [
       localize(
-        '고객사의 Adobe 분석 환경과 AppsFlyer 데이터 흐름을 함께 확인해 문제가 생기는 지점과 담당 범위를 정리했습니다.',
-        'Clarified the failure points and ownership boundaries across the customer’s Adobe analytics environment and AppsFlyer data flow.',
+        '고객 온보딩 과정에서 Adobe 리인게이지먼트 연동 니즈를 발견하고, 고객과 함께 왜 필요한지 정리했습니다.',
+        'Identified the need for Adobe re-engagement integration during customer onboarding and aligned with the customer on why it mattered.',
       ),
       localize(
-        '제품, 서포트, 기술 담당자와 협업해 설정 문제와 연동 한계를 구분하고 해결 가능한 액션으로 나눴습니다.',
-        'Worked with product, support, and technical stakeholders to separate configuration issues from integration limitations and turn them into actionable next steps.',
+        '개선 기회를 내부에 공유하고 Partnerships, Product, Adobe와 협업해 연동 개발을 앞으로 밀어붙였습니다.',
+        'Shared the improvement opportunity internally and worked with Partnerships, Product, and Adobe to move the integration forward.',
       ),
       localize(
-        '고객이 바로 검증할 수 있도록 구현 확인 항목, 데이터 확인 방식, 후속 조치 기준을 정리했습니다.',
-        'Prepared implementation checks, data validation steps, and follow-up criteria so the customer could verify the resolution.',
+        '고객 요구를 일회성 요청으로 끝내지 않고, 표준 연동으로 확장될 수 있는 제품 개선 맥락으로 구조화했습니다.',
+        'Structured the customer request as a product improvement opportunity that could grow into a standard integration rather than a one-off request.',
       ),
     ],
     outcome: localize(
-      'Adobe 연동 이슈의 원인과 해결 경로를 정리해 고객사의 AppsFlyer 도입을 계속 진행할 수 있게 했고, 마케팅 팀과 기술 담당자 사이의 불확실성을 줄였습니다.',
-      'Clarified the cause and resolution path for the Adobe integration issue, kept AppsFlyer adoption moving, and reduced uncertainty between marketing and technical stakeholders.',
+      'Adobe 리인게이지먼트 연동은 이후 표준 연동으로 편입되었고, Amplitude 등 다른 애널리틱스 파트너로 확장되는 기반이 되었습니다.',
+      'The Adobe re-engagement integration eventually became a standard integration and helped create a foundation for expansion to additional analytics partners such as Amplitude.',
     ),
     skills: [
-      localize('Adobe 연동', 'Adobe Integration'),
-      localize('이슈 분류', 'Issue Triage'),
-      localize('기술 에스컬레이션', 'Technical Escalation'),
+      localize('Adobe 리인게이지먼트 연동', 'Adobe Re-engagement Integration'),
+      localize('제품 개선 기회 발굴', 'Product Improvement Discovery'),
+      localize('파트너십 협업', 'Partnership Collaboration'),
       localize('이해관계자 조율', 'Stakeholder Alignment'),
     ],
     modal: {
       eyebrow: localize('고객성공 사례 04', 'Customer Success Case 04'),
       title: localize(
-        '부서 간 협업: Adobe 연동 이슈 해결',
-        'Cross-Functional Collaboration: Adobe Integration Issue Resolution',
+        '고객 니즈에서 시작된 Adobe 리인게이지먼트 표준 연동화',
+        'Customer-Led Product Improvement: Adobe Re-engagement Integration',
       ),
       summary: localize(
-        'Adobe를 핵심 마케팅 분석 플랫폼으로 사용하는 고객사의 연동 이슈를 고객사, 제품, 서포트, 기술 담당자와 함께 풀어낸 사례입니다.',
-        'A case where an Adobe integration issue for a customer using Adobe as a core marketing analytics platform was resolved through collaboration across the customer team, product, support, and technical stakeholders.',
+        '고객 온보딩 중 발견한 Adobe 리인게이지먼트 연동 미지원 갭을 고객, Partnerships, Product, Adobe와 함께 제품 개선 기회로 발전시킨 사례입니다.',
+        'A case where an unsupported Adobe re-engagement integration gap discovered during customer onboarding became a product improvement opportunity through collaboration with the customer, Partnerships, Product, and Adobe.',
       ),
       closeLabel: commonCloseLabel,
       openLabel: commonOpenLabel,
@@ -768,16 +768,16 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
           style: 'bullet',
           items: [
             localize(
-              '고객사는 Adobe를 주요 마케팅 분석 플랫폼으로 사용하고 있었고, 앱 마케팅 데이터와 AppsFlyer 도입 흐름을 안정적으로 연결해야 했습니다.',
-              'The customer used Adobe as a primary marketing analytics platform and needed a reliable connection between app marketing data and AppsFlyer adoption workflows.',
+              '고객 온보딩 중 Adobe 리인게이지먼트 연동이 당시 지원되지 않는다는 점을 발견했습니다.',
+              'During customer onboarding, we discovered that Adobe re-engagement integration was not yet supported.',
             ),
             localize(
-              '문제가 한 화면의 설정값만으로 끝나지 않아 고객사, 제품, 서포트, 기술 담당자가 함께 원인을 확인해야 했습니다.',
-              'The issue could not be solved through a single dashboard setting, so the customer team, product, support, and technical stakeholders needed to investigate it together.',
+              '리인게이지먼트 연동은 고객에게도 새로운 개념이었기 때문에, 기능 요청 전에 먼저 왜 필요한지 공감대를 만들어야 했습니다.',
+              'Because re-engagement integration was also a new concept for the customer, we first needed to align on why it was necessary before treating it as a feature request.',
             ),
             localize(
-              '해결 경로가 명확하지 않으면 현지 마케팅 팀과 기술 담당자 모두 연동 신뢰도를 낮게 볼 수 있는 상황이었습니다.',
-              'Without a clear resolution path, local marketing and technical teams could lose confidence in the integration.',
+              'AppsFlyer 리인게이지먼트 데이터를 Adobe 쪽 분석 흐름과 연결하지 못하면, 고객은 리타게팅 캠페인 이후의 사용자 행동을 온전히 보기 어려웠습니다.',
+              'Without connecting AppsFlyer re-engagement data to Adobe-side analytics workflows, the customer would have limited visibility into user behavior after retargeting campaigns.',
             ),
           ],
         },
@@ -787,12 +787,12 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
           style: 'bullet',
           items: [
             localize(
-              'Adobe 기반 리포팅 흐름에서 AppsFlyer 데이터를 안정적으로 활용할 수 있는 연동 경로를 확보합니다.',
-              'Establish a reliable integration path for using AppsFlyer data in Adobe-based reporting workflows.',
+              '리인게이지먼트 캠페인 이후의 사용자 행동을 Adobe 분석 흐름에서 확인할 수 있도록 연동 가능성을 확보합니다.',
+              'Enable visibility into user behavior after re-engagement campaigns inside Adobe analytics workflows.',
             ),
             localize(
-              '설정 변경, 구현 수정, 내부 에스컬레이션 중 무엇으로 풀어야 하는지 판단 기준을 명확히 합니다.',
-              'Clarify whether the issue should be handled through configuration changes, implementation fixes, or internal escalation.',
+              '고객의 실제 니즈를 제품팀과 파트너십팀이 이해할 수 있는 개선 기회로 정리합니다.',
+              'Translate the customer’s real need into an improvement opportunity that Product and Partnerships teams could act on.',
             ),
           ],
         },
@@ -802,12 +802,12 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
           style: 'bullet',
           items: [
             localize(
-              '고객사의 데이터 흐름을 처음부터 다시 따라가며 증상, 기대 결과, 실제 결과를 분리했습니다.',
-              'Reconstructed the customer’s data flow and separated symptoms, expected behavior, and actual behavior.',
+              '고객과 함께 리인게이지먼트 연동이 필요한 이유와 기대되는 분석 가치를 먼저 정리했습니다.',
+              'Aligned with the customer on why re-engagement integration was needed and what analytics value it would unlock.',
             ),
             localize(
-              '고객 대응과 내부 기술 논의를 동시에 정리해 각 담당자가 다음에 무엇을 확인해야 하는지 분명하게 만들었습니다.',
-              'Coordinated customer-facing communication and internal technical discussion so each stakeholder knew the next check to perform.',
+              '일회성 고객 요청이 아니라 제품의 기본 분석 역량을 강화하는 개선안으로 내부에 공유했습니다.',
+              'Positioned the request internally as an improvement to a fundamental analytics capability, not just a one-off customer request.',
             ),
           ],
         },
@@ -817,16 +817,16 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
           style: 'bullet',
           items: [
             localize(
-              '재현 예시, 설정 정보, 기대 데이터와 실제 데이터의 차이를 모아 원인 분석에 필요한 자료를 정리했습니다.',
-              'Collected reproduction examples, configuration details, and expected-versus-actual data behavior for root-cause analysis.',
+              'Adobe 리인게이지먼트 연동 미지원으로 생기는 고객 경험상의 공백을 정리했습니다.',
+              'Documented the customer experience gap created by the lack of Adobe re-engagement integration support.',
             ),
             localize(
-              '문제가 설정, 데이터 매핑, 연동 제약 중 어디에서 발생하는지 내부 팀과 함께 검증했습니다.',
-              'Worked with internal teams to validate whether the issue came from setup, data mapping, or an integration limitation.',
+              'Partnerships, Product, Adobe와 협업하며 연동을 제품화할 수 있는 방향으로 논의를 이어갔습니다.',
+              'Worked with Partnerships, Product, and Adobe to move the integration toward a productized path.',
             ),
             localize(
-              '고객에게 해결안, 검증 단계, 후속 확인 기준을 전달해 실행 가능한 형태로 마무리했습니다.',
-              'Shared the resolution plan, validation steps, and follow-up criteria with the customer in an actionable format.',
+              '고객 니즈, 연동 필요성, 제품 개선 가능성을 연결해 내부 우선순위 논의에 올렸습니다.',
+              'Connected the customer need, integration rationale, and product improvement opportunity for internal prioritization.',
             ),
           ],
         },
@@ -836,16 +836,16 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
           style: 'bullet',
           items: [
             localize(
-              'Adobe 연동 이슈의 원인과 해결 방향을 정리해 고객사가 AppsFlyer 도입을 계속 진행할 수 있게 했습니다.',
-              'Clarified the cause and resolution direction for the Adobe integration issue so the customer could continue AppsFlyer adoption.',
+              'Adobe 리인게이지먼트 연동은 이후 표준 연동으로 편입되었습니다.',
+              'The Adobe re-engagement integration later became a standard integration.',
             ),
             localize(
-              '이슈, 담당자, 검증 경로를 문서화해 반복적인 질의와 내부 왕복 커뮤니케이션을 줄였습니다.',
-              'Documented the issue, owner, and validation path to reduce repeated questions and internal back-and-forth.',
+              '이 개선은 Amplitude 등 다른 애널리틱스 파트너로 확장되는 기반이 되었습니다.',
+              'The improvement helped create a foundation for expansion to additional analytics partners such as Amplitude.',
             ),
             localize(
-              '여러 팀이 얽힌 장애물을 실행 가능한 해결 계획으로 바꾸며 고객 신뢰를 높였습니다.',
-              'Strengthened customer trust by turning a cross-functional blocker into an actionable resolution plan.',
+              '고객 온보딩 중 발견한 작은 니즈를 제품의 핵심 분석 역량을 강화하는 개선으로 연결했습니다.',
+              'Connected a need discovered during customer onboarding to an improvement that strengthened a core analytics capability.',
             ),
           ],
         },
