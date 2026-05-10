@@ -632,80 +632,6 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
     },
   },
   {
-    id: 'insider-integration-customization',
-    title: 'Cross-Functional Collaboration: Insider Integration Customization',
-    customerContext:
-      'The client required an Insider integration scenario that was not officially supported by the standard product and is still available only as an account-specific customization for this one client.',
-    focus: 'Cross-Functional Collaboration',
-    contribution: [
-      'Documented the client’s specific integration needs and technical requirements.',
-      'Presented the client’s strategic value and non-renewal risk to internal stakeholders.',
-      'Collaborated with the product team to design and implement a bespoke Insider integration customization.',
-    ],
-    outcome:
-      'Delivered a customer-specific Insider integration customization, strengthened the client relationship, and supported renewal and upsell.',
-    skills: ['Insider Integration', 'Product Advocacy', 'Stakeholder Alignment', 'Customization'],
-    modal: {
-      eyebrow: 'Customer Success Case 03',
-      title: 'Cross-Functional Collaboration: Insider Integration Customization',
-      summary:
-        'A strategically important enterprise client needed an Insider integration path that was not officially supported as a standard product feature, requiring alignment across customer success, product, and leadership teams.',
-      closeLabel: commonCloseLabel,
-      openLabel: commonOpenLabel,
-      contentBlocks: [
-        { type: 'heading', level: 2, text: 'Challenges' },
-        {
-          type: 'list',
-          style: 'bullet',
-          items: [
-            'The client required an Insider integration scenario that was not officially supported by the standard product and is still available only as an account-specific customization for this one client.',
-            'The lack of this integration hindered the client’s ability to meet key operational needs, risking dissatisfaction and potential churn.',
-            'Internal development constraints made immediate full-scale development of the requested integration unfeasible.',
-          ],
-        },
-        { type: 'heading', level: 2, text: 'Customer Goals' },
-        {
-          type: 'list',
-          style: 'bullet',
-          items: [
-            'Secure a tailored integration with Insider to fulfill critical operational requirements.',
-            'Establish a reliable integration path that supports continued platform adoption and expanded use.',
-          ],
-        },
-        { type: 'heading', level: 2, text: 'Approach' },
-        {
-          type: 'list',
-          style: 'bullet',
-          items: [
-            'Leveraged the client’s strategic importance to advocate for a customized solution, proposing account-specific customization as a practical alternative to full productization.',
-            'Engaged internal stakeholders, including product and leadership teams, to align on the need for customization to meet the client’s urgent requirements.',
-          ],
-        },
-        { type: 'heading', level: 2, text: 'Actions' },
-        {
-          type: 'list',
-          style: 'bullet',
-          items: [
-            'Conducted in-depth discussions with the client to fully understand their specific integration needs and document technical requirements.',
-            'Presented a compelling case to internal stakeholders, emphasizing the client’s strategic value and the risk of non-renewal without the customization.',
-            'Collaborated with the product team to design and implement a bespoke customization for the Insider integration, aligning scope with the client’s operational workflow.',
-            'Monitored the implementation process, facilitating communication between the client and internal teams to ensure the solution met expectations.',
-          ],
-        },
-        { type: 'heading', level: 2, text: 'Outcomes' },
-        {
-          type: 'list',
-          style: 'bullet',
-          items: [
-            'Delivered a customized Insider integration that addressed the client’s core operational needs.',
-            'Strengthened the client relationship and contributed to renewal, broader platform usage, and an upsell opportunity.',
-            'Demonstrated the organization’s commitment to meeting high-priority client needs, reinforcing trust and partnership longevity.',
-          ],
-        },
-      ],
-    },
-  },
-  {
     id: 'private-customer-workshop',
     title: 'Global AppsFlyer Adoption Workshops for a Global Tech Giant with 30+ Local Offices',
     customerContext:
@@ -720,7 +646,7 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
       'The workshops supported the renewal process, which included a 300K+ USD upsell, while improving product knowledge and confidence for 130+ participants.',
     skills: ['Workshop Design', 'Global Enablement', 'Adoption Strategy', 'Project Management'],
     modal: {
-      eyebrow: 'Customer Success Case 04',
+      eyebrow: 'Customer Success Case 03',
       title: 'Global AppsFlyer Adoption Workshops for a Global Tech Giant with 30+ Local Offices',
       summary:
         'The customer’s HQ needed global enablement support to drive AppsFlyer adoption across 30+ local sales offices.',
@@ -784,6 +710,218 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
           src: workshopSurveyImage,
           alt: 'Pre vs Post workshop survey showing increased product knowledge and confidence',
           caption: 'Pre vs Post workshop survey showing increased product knowledge and confidence',
+        },
+      ],
+    },
+  },
+  {
+    id: 'adobe-integration-issue-resolution',
+    title: localize(
+      '부서 간 협업: Adobe 연동 이슈 해결',
+      'Cross-Functional Collaboration: Adobe Integration Issue Resolution',
+    ),
+    customerContext: localize(
+      'Adobe를 핵심 마케팅 분석 플랫폼으로 사용하는 고객사가 AppsFlyer 도입 과정에서 Adobe 연동 이슈를 해결해야 했습니다. 단일 설정 문제가 아니라 고객사, 제품, 서포트, 기술 담당자가 함께 원인과 해결 경로를 맞춰야 하는 과제였습니다.',
+      'A customer using Adobe as a core marketing analytics platform needed to resolve an Adobe integration issue during AppsFlyer adoption. This was not a single configuration problem; it required alignment across the customer team, product, support, and technical stakeholders.',
+    ),
+    focus: localize('부서 간 협업', 'Cross-Functional Collaboration'),
+    contribution: [
+      localize(
+        '고객사의 Adobe 분석 환경과 AppsFlyer 데이터 흐름을 함께 확인해 문제가 생기는 지점과 담당 범위를 정리했습니다.',
+        'Clarified the failure points and ownership boundaries across the customer’s Adobe analytics environment and AppsFlyer data flow.',
+      ),
+      localize(
+        '제품, 서포트, 기술 담당자와 협업해 설정 문제와 연동 한계를 구분하고 해결 가능한 액션으로 나눴습니다.',
+        'Worked with product, support, and technical stakeholders to separate configuration issues from integration limitations and turn them into actionable next steps.',
+      ),
+      localize(
+        '고객이 바로 검증할 수 있도록 구현 확인 항목, 데이터 확인 방식, 후속 조치 기준을 정리했습니다.',
+        'Prepared implementation checks, data validation steps, and follow-up criteria so the customer could verify the resolution.',
+      ),
+    ],
+    outcome: localize(
+      'Adobe 연동 이슈의 원인과 해결 경로를 정리해 고객사의 AppsFlyer 도입을 계속 진행할 수 있게 했고, 마케팅 팀과 기술 담당자 사이의 불확실성을 줄였습니다.',
+      'Clarified the cause and resolution path for the Adobe integration issue, kept AppsFlyer adoption moving, and reduced uncertainty between marketing and technical stakeholders.',
+    ),
+    skills: [
+      localize('Adobe 연동', 'Adobe Integration'),
+      localize('이슈 분류', 'Issue Triage'),
+      localize('기술 에스컬레이션', 'Technical Escalation'),
+      localize('이해관계자 조율', 'Stakeholder Alignment'),
+    ],
+    modal: {
+      eyebrow: localize('고객성공 사례 04', 'Customer Success Case 04'),
+      title: localize(
+        '부서 간 협업: Adobe 연동 이슈 해결',
+        'Cross-Functional Collaboration: Adobe Integration Issue Resolution',
+      ),
+      summary: localize(
+        'Adobe를 핵심 마케팅 분석 플랫폼으로 사용하는 고객사의 연동 이슈를 고객사, 제품, 서포트, 기술 담당자와 함께 풀어낸 사례입니다.',
+        'A case where an Adobe integration issue for a customer using Adobe as a core marketing analytics platform was resolved through collaboration across the customer team, product, support, and technical stakeholders.',
+      ),
+      closeLabel: commonCloseLabel,
+      openLabel: commonOpenLabel,
+      contentBlocks: [
+        { type: 'heading', level: 2, text: localize('과제', 'Challenges') },
+        {
+          type: 'list',
+          style: 'bullet',
+          items: [
+            localize(
+              '고객사는 Adobe를 주요 마케팅 분석 플랫폼으로 사용하고 있었고, 앱 마케팅 데이터와 AppsFlyer 도입 흐름을 안정적으로 연결해야 했습니다.',
+              'The customer used Adobe as a primary marketing analytics platform and needed a reliable connection between app marketing data and AppsFlyer adoption workflows.',
+            ),
+            localize(
+              '문제가 한 화면의 설정값만으로 끝나지 않아 고객사, 제품, 서포트, 기술 담당자가 함께 원인을 확인해야 했습니다.',
+              'The issue could not be solved through a single dashboard setting, so the customer team, product, support, and technical stakeholders needed to investigate it together.',
+            ),
+            localize(
+              '해결 경로가 명확하지 않으면 현지 마케팅 팀과 기술 담당자 모두 연동 신뢰도를 낮게 볼 수 있는 상황이었습니다.',
+              'Without a clear resolution path, local marketing and technical teams could lose confidence in the integration.',
+            ),
+          ],
+        },
+        { type: 'heading', level: 2, text: localize('고객 목표', 'Customer Goals') },
+        {
+          type: 'list',
+          style: 'bullet',
+          items: [
+            localize(
+              'Adobe 기반 리포팅 흐름에서 AppsFlyer 데이터를 안정적으로 활용할 수 있는 연동 경로를 확보합니다.',
+              'Establish a reliable integration path for using AppsFlyer data in Adobe-based reporting workflows.',
+            ),
+            localize(
+              '설정 변경, 구현 수정, 내부 에스컬레이션 중 무엇으로 풀어야 하는지 판단 기준을 명확히 합니다.',
+              'Clarify whether the issue should be handled through configuration changes, implementation fixes, or internal escalation.',
+            ),
+          ],
+        },
+        { type: 'heading', level: 2, text: localize('접근 방식', 'Approach') },
+        {
+          type: 'list',
+          style: 'bullet',
+          items: [
+            localize(
+              '고객사의 데이터 흐름을 처음부터 다시 따라가며 증상, 기대 결과, 실제 결과를 분리했습니다.',
+              'Reconstructed the customer’s data flow and separated symptoms, expected behavior, and actual behavior.',
+            ),
+            localize(
+              '고객 대응과 내부 기술 논의를 동시에 정리해 각 담당자가 다음에 무엇을 확인해야 하는지 분명하게 만들었습니다.',
+              'Coordinated customer-facing communication and internal technical discussion so each stakeholder knew the next check to perform.',
+            ),
+          ],
+        },
+        { type: 'heading', level: 2, text: localize('실행 내용', 'Actions') },
+        {
+          type: 'list',
+          style: 'bullet',
+          items: [
+            localize(
+              '재현 예시, 설정 정보, 기대 데이터와 실제 데이터의 차이를 모아 원인 분석에 필요한 자료를 정리했습니다.',
+              'Collected reproduction examples, configuration details, and expected-versus-actual data behavior for root-cause analysis.',
+            ),
+            localize(
+              '문제가 설정, 데이터 매핑, 연동 제약 중 어디에서 발생하는지 내부 팀과 함께 검증했습니다.',
+              'Worked with internal teams to validate whether the issue came from setup, data mapping, or an integration limitation.',
+            ),
+            localize(
+              '고객에게 해결안, 검증 단계, 후속 확인 기준을 전달해 실행 가능한 형태로 마무리했습니다.',
+              'Shared the resolution plan, validation steps, and follow-up criteria with the customer in an actionable format.',
+            ),
+          ],
+        },
+        { type: 'heading', level: 2, text: localize('성과', 'Outcomes') },
+        {
+          type: 'list',
+          style: 'bullet',
+          items: [
+            localize(
+              'Adobe 연동 이슈의 원인과 해결 방향을 정리해 고객사가 AppsFlyer 도입을 계속 진행할 수 있게 했습니다.',
+              'Clarified the cause and resolution direction for the Adobe integration issue so the customer could continue AppsFlyer adoption.',
+            ),
+            localize(
+              '이슈, 담당자, 검증 경로를 문서화해 반복적인 질의와 내부 왕복 커뮤니케이션을 줄였습니다.',
+              'Documented the issue, owner, and validation path to reduce repeated questions and internal back-and-forth.',
+            ),
+            localize(
+              '여러 팀이 얽힌 장애물을 실행 가능한 해결 계획으로 바꾸며 고객 신뢰를 높였습니다.',
+              'Strengthened customer trust by turning a cross-functional blocker into an actionable resolution plan.',
+            ),
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: 'insider-integration-customization',
+    title: 'Cross-Functional Collaboration: Insider Integration Customization',
+    customerContext:
+      'The client required an Insider integration scenario that was not officially supported by the standard product and is still available only as an account-specific customization for this one client.',
+    focus: 'Cross-Functional Collaboration',
+    contribution: [
+      'Documented the client’s specific integration needs and technical requirements.',
+      'Presented the client’s strategic value and non-renewal risk to internal stakeholders.',
+      'Collaborated with the product team to design and implement a bespoke Insider integration customization.',
+    ],
+    outcome:
+      'Delivered a customer-specific Insider integration customization, strengthened the client relationship, and supported renewal and upsell.',
+    skills: ['Insider Integration', 'Product Advocacy', 'Stakeholder Alignment', 'Customization'],
+    modal: {
+      eyebrow: localize('고객성공 사례 05', 'Customer Success Case 05'),
+      title: 'Cross-Functional Collaboration: Insider Integration Customization',
+      summary:
+        'A strategically important enterprise client needed an Insider integration path that was not officially supported as a standard product feature, requiring alignment across customer success, product, and leadership teams.',
+      closeLabel: commonCloseLabel,
+      openLabel: commonOpenLabel,
+      contentBlocks: [
+        { type: 'heading', level: 2, text: 'Challenges' },
+        {
+          type: 'list',
+          style: 'bullet',
+          items: [
+            'The client required an Insider integration scenario that was not officially supported by the standard product and is still available only as an account-specific customization for this one client.',
+            'The lack of this integration hindered the client’s ability to meet key operational needs, risking dissatisfaction and potential churn.',
+            'Internal development constraints made immediate full-scale development of the requested integration unfeasible.',
+          ],
+        },
+        { type: 'heading', level: 2, text: 'Customer Goals' },
+        {
+          type: 'list',
+          style: 'bullet',
+          items: [
+            'Secure a tailored integration with Insider to fulfill critical operational requirements.',
+            'Establish a reliable integration path that supports continued platform adoption and expanded use.',
+          ],
+        },
+        { type: 'heading', level: 2, text: 'Approach' },
+        {
+          type: 'list',
+          style: 'bullet',
+          items: [
+            'Leveraged the client’s strategic importance to advocate for a customized solution, proposing account-specific customization as a practical alternative to full productization.',
+            'Engaged internal stakeholders, including product and leadership teams, to align on the need for customization to meet the client’s urgent requirements.',
+          ],
+        },
+        { type: 'heading', level: 2, text: 'Actions' },
+        {
+          type: 'list',
+          style: 'bullet',
+          items: [
+            'Conducted in-depth discussions with the client to fully understand their specific integration needs and document technical requirements.',
+            'Presented a compelling case to internal stakeholders, emphasizing the client’s strategic value and the risk of non-renewal without the customization.',
+            'Collaborated with the product team to design and implement a bespoke customization for the Insider integration, aligning scope with the client’s operational workflow.',
+            'Monitored the implementation process, facilitating communication between the client and internal teams to ensure the solution met expectations.',
+          ],
+        },
+        { type: 'heading', level: 2, text: 'Outcomes' },
+        {
+          type: 'list',
+          style: 'bullet',
+          items: [
+            'Delivered a customized Insider integration that addressed the client’s core operational needs.',
+            'Strengthened the client relationship and contributed to renewal, broader platform usage, and an upsell opportunity.',
+            'Demonstrated the organization’s commitment to meeting high-priority client needs, reinforcing trust and partnership longevity.',
+          ],
         },
       ],
     },
