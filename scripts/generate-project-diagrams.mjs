@@ -622,22 +622,26 @@ async function main() {
     }
 
     for (const diagram of diagrams) {
-      const sceneResult = await client.send('Runtime.evaluate', {
-        expression: `window.exportProjectDiagramScene(${JSON.stringify(diagram.skeletons)})`,
-        awaitPromise: true,
-        returnByValue: true,
-      });
+      if (!diagram.slug.endsWith('-en')) {
+        const sceneResult = await client.send('Runtime.evaluate', {
+          expression: `window.exportProjectDiagramScene(${JSON.stringify(diagram.skeletons)})`,
+          awaitPromise: true,
+          returnByValue: true,
+        });
 
-      if (sceneResult.exceptionDetails) {
-        throw new Error(JSON.stringify(sceneResult.exceptionDetails));
-      }
+        if (sceneResult.exceptionDetails) {
+          throw new Error(JSON.stringify(sceneResult.exceptionDetails));
+        }
 
-      const scenePath = join(editableOutputDir, `${diagram.slug}.excalidraw`);
-      if (shouldOverwriteEditableDiagrams || !existsSync(scenePath)) {
-        writeFileSync(scenePath, sceneResult.result.value);
-        console.log(`wrote ${scenePath}`);
+        const scenePath = join(editableOutputDir, `${diagram.slug}.excalidraw`);
+        if (shouldOverwriteEditableDiagrams || !existsSync(scenePath)) {
+          writeFileSync(scenePath, sceneResult.result.value);
+          console.log(`wrote ${scenePath}`);
+        } else {
+          console.log(`skipped existing editable ${scenePath}`);
+        }
       } else {
-        console.log(`skipped existing editable ${scenePath}`);
+        console.log(`skipped editable source for ${diagram.slug}`);
       }
 
       const result = await client.send('Runtime.evaluate', {
