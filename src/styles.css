@@ -1057,14 +1057,13 @@ button {
 .customer-case-card .ui-card-header {
   align-content: start;
   gap: 16px;
-  min-height: 300px;
 }
 
 .customer-case-card .ui-card-content {
   display: grid;
-  grid-template-rows: 206px 1fr auto;
+  grid-template-rows: auto 1fr auto;
   align-content: start;
-  gap: 18px;
+  gap: 16px;
 }
 
 .customer-case-card .ui-card-title,
