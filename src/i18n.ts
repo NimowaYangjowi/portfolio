@@ -117,7 +117,7 @@ void i18n.use(initReactI18next).init({
             },
             customerCase: {
               eyebrow: '고객성공 케이스',
-              title: '고객사의 기술 과제를 이해하고 \n실행 가능한 해결 흐름으로 연결한 사례입니다.',
+              title: '고객사의 기술 과제를 이해하고 \n실행 가능한 해결 방안으로 연결한 사례입니다.',
             },
             project: {
               eyebrow: '개인 프로젝트 상세',
