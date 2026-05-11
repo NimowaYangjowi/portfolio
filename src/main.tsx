@@ -31,7 +31,6 @@ import {
   FlowerCluster,
   FlowerDaisy,
   FlowerFiveTraced,
-  Mail,
 } from './components/ui/icons';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import ClickSpark from './components/ClickSpark';
@@ -958,10 +957,22 @@ function App() {
   );
   const [selectedProject, setSelectedProject] = useState<ProjectDetail | null>(null);
   const [selectedCustomerCaseId, setSelectedCustomerCaseId] = useState<string | null>(null);
+  const [isEmailCopyToastVisible, setIsEmailCopyToastVisible] = useState(false);
+  const emailCopyToastTimeoutRef = useRef<number | null>(null);
   const selectedCustomerCase =
     customerSuccessCases.find((customerCase) => customerCase.id === selectedCustomerCaseId) ?? null;
   const copyContactEmail = () => {
-    void copyTextToClipboard(contactEmail);
+    void copyTextToClipboard(contactEmail).then(() => {
+      if (emailCopyToastTimeoutRef.current) {
+        window.clearTimeout(emailCopyToastTimeoutRef.current);
+      }
+
+      setIsEmailCopyToastVisible(true);
+      emailCopyToastTimeoutRef.current = window.setTimeout(() => {
+        setIsEmailCopyToastVisible(false);
+        emailCopyToastTimeoutRef.current = null;
+      }, 1800);
+    });
   };
 
   useEffect(() => {
@@ -983,6 +994,14 @@ function App() {
 
     return () => window.removeEventListener('popstate', handlePopState);
   }, [currentLanguage, i18n]);
+
+  useEffect(() => {
+    return () => {
+      if (emailCopyToastTimeoutRef.current) {
+        window.clearTimeout(emailCopyToastTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <ClickSpark
@@ -1081,25 +1100,30 @@ function App() {
               <p>{content.thanks.description}</p>
               <div className="contact-card" aria-label="Contact links">
                 <button className="contact-card-row" type="button" onClick={copyContactEmail}>
-                  <span className="contact-card-icon">
-                    <Mail size={18} aria-hidden="true" />
-                  </span>
                   <span className="contact-card-copy">
                     <span className="contact-card-label">{t('contactEmailLabel')}</span>
-                    <span className="contact-card-value">{contactEmail}</span>
+                    <span className="contact-card-value">
+                      {contactEmail}
+                      <Copy className="contact-card-action" size={18} aria-hidden="true" />
+                    </span>
                   </span>
-                  <Copy className="contact-card-action" size={18} aria-hidden="true" />
                 </button>
                 <a className="contact-card-row" href={linkedInUrl} target="_blank" rel="noopener noreferrer">
-                  <span className="contact-card-icon">
-                    <ArrowUpRight size={18} aria-hidden="true" />
-                  </span>
                   <span className="contact-card-copy">
                     <span className="contact-card-label">LinkedIn</span>
-                    <span className="contact-card-value">{linkedInUrl}</span>
+                    <span className="contact-card-value">
+                      {linkedInUrl}
+                      <ArrowUpRight className="contact-card-action" size={18} aria-hidden="true" />
+                    </span>
                   </span>
-                  <ArrowUpRight className="contact-card-action" size={18} aria-hidden="true" />
                 </a>
+              </div>
+              <div
+                className={`contact-copy-toast ${isEmailCopyToastVisible ? 'contact-copy-toast-visible' : ''}`}
+                role="status"
+                aria-live="polite"
+              >
+                {currentLanguage === 'ko' ? '이메일이 복사됐습니다.' : 'Email copied.'}
               </div>
             </section>
           </main>

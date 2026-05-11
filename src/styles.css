@@ -1665,10 +1665,7 @@ button {
 }
 
 .contact-card-row {
-  display: grid;
-  grid-template-columns: 40px minmax(0, 1fr) 32px;
-  gap: 14px;
-  align-items: center;
+  display: block;
   width: 100%;
   border: 0;
   background: transparent;
@@ -1691,19 +1688,10 @@ button {
   outline-offset: 4px;
 }
 
-.contact-card-icon {
-  display: inline-flex;
-  width: 40px;
-  height: 40px;
-  align-items: center;
-  justify-content: center;
-  color: rgba(var(--foreground-rgb), 0.76);
-}
-
 .contact-card-copy {
-  display: grid;
+  display: inline-grid;
   gap: 5px;
-  min-width: 0;
+  max-width: 100%;
 }
 
 .contact-card-label {
@@ -1714,6 +1702,10 @@ button {
 }
 
 .contact-card-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
   overflow-wrap: anywhere;
   color: rgb(var(--foreground-rgb));
   font-size: 17px;
@@ -1722,8 +1714,33 @@ button {
 }
 
 .contact-card-action {
-  justify-self: end;
+  flex: 0 0 auto;
   color: rgba(58, 58, 58, 0.68);
+}
+
+.contact-copy-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  z-index: 60;
+  transform: translate(-50%, 12px);
+  border-radius: 999px;
+  background: rgb(var(--foreground-rgb));
+  color: rgb(var(--background-rgb));
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.contact-copy-toast-visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
 }
 
 @media (max-width: 900px) {
@@ -1932,14 +1949,7 @@ button {
   }
 
   .contact-card-row {
-    grid-template-columns: 36px minmax(0, 1fr) 28px;
-    gap: 12px;
     padding: 4px 0;
-  }
-
-  .contact-card-icon {
-    width: 36px;
-    height: 36px;
   }
 
   .contact-card-value {
