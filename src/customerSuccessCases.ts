@@ -776,20 +776,16 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
               'The customer came from a web analytics background, had little context for mobile app analytics, and was unfamiliar with the concept of re-engagement.',
             ),
             localize(
-              '리인게이지먼트 데이터가 없으면 리타겟팅 캠페인의 성과가 애널리틱스 파트너 리포팅에 반영되지 않아, 캠페인 이후 사용자의 행동과 성과를 제대로 측정하기 어려웠습니다.',
-              'Without re-engagement data, retargeting campaign performance would not be reflected in analytics partner reporting, making it difficult to measure user behavior and results after the campaign.',
+              '리인게이지먼트와 리어트리뷰션 postback이 애널리틱스 파트너로 전달되지 않으면 리타겟팅 캠페인의 성과가 파트너 리포팅에 반영되지 않고, 캠페인 터치포인트와 앱 안 행동, 전환이 끊겨 보여 성과를 제대로 측정하기 어려웠습니다.',
+              'Without re-engagement and re-attribution postbacks being sent to analytics partners, retargeting campaign performance would not appear in partner reporting, leaving the journey from campaign touchpoint to in-app behavior and conversion disconnected.',
             ),
             localize(
-              '기존 사용자에게 리타겟팅 캠페인을 집행해도, 리인게이지먼트와 리어트리뷰션 postback이 애널리틱스 파트너로 전달되지 않으면 캠페인 터치포인트와 앱 안 행동, 전환이 끊겨 보였습니다.',
-              'Even when retargeting campaigns brought existing users back, the journey from campaign touchpoint to in-app behavior and conversion remained disconnected unless re-engagement and re-attribution postbacks were sent to analytics partners.',
-            ),
-            localize(
-              '이 문제는 Adobe 한 곳의 예외가 아니라, 당시 애널리틱스 파트너 연동 전반에서 아직 전사적으로 구현되지 않은 제품 갭이었습니다.',
-              'This was not an Adobe-only exception; it was a product gap that had not yet been implemented company-wide across analytics partner integrations.',
+              '이 문제는 Adobe 한 곳의 예외가 아니라, 당시 애널리틱스 파트너 연동 전반에서 아직 전사적으로 구현되지 않은 제품 갭이었습니다. 필요성은 공감대가 있었지만, Product R&D 범위가 크고 내부 파트너팀과 외부 파트너까지 조율해야 해 구현이 시작되지 못하고 있었습니다.',
+              'This was not an Adobe-only exception; it was a product gap that had not yet been implemented company-wide across analytics partner integrations. There was broad agreement on the need, but implementation had not started because it required significant Product R&D and coordination across internal partner teams and external partners.',
             ),
           ],
         },
-        { type: 'heading', level: 2, text: localize('고객 목표', 'Customer Goals') },
+        { type: 'heading', level: 2, text: localize('목표', 'Goals') },
         {
           type: 'list',
           style: 'bullet',
@@ -807,8 +803,8 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
               'Clarify the concept and need so a customer unfamiliar with mobile app analytics could understand why this data mattered.',
             ),
             localize(
-              'Adobe 요청을 출발점으로 삼아 애널리틱스 파트너 전반에 적용 가능한 제품 개선 과제로 확장합니다.',
-              'Use the Adobe request as a starting point for a product improvement that could apply across analytics partners.',
+              '효과적인 사내 커뮤니케이션과 리더십 에스컬레이션으로 Product와 파트너팀이 움직일 수 있는 실행 근거를 만듭니다.',
+              'Build the internal rationale needed to move Product and partner teams through effective internal communication and leadership escalation.',
             ),
           ],
         },
@@ -866,6 +862,10 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
             localize(
               '이 개선은 Amplitude 등 다른 애널리틱스 파트너로 확장되는 기반이 되었습니다.',
               'The improvement helped create a foundation for expansion to additional analytics partners such as Amplitude.',
+            ),
+            localize(
+              'Adobe 요청을 출발점으로 삼아 애널리틱스 파트너 전반에 적용할 수 있는 제품 개선 흐름을 만들었습니다.',
+              'Used the Adobe request as the starting point for a product improvement path that could apply across analytics partners.',
             ),
             localize(
               '고객 온보딩 중 발견한 작은 니즈를 제품의 핵심 분석 역량을 강화하는 개선으로 연결했습니다.',
