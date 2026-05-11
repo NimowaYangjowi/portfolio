@@ -176,8 +176,15 @@ button {
   font-weight: 700;
   line-height: 1.03;
   letter-spacing: 0;
-  white-space: pre-line;
   word-break: keep-all;
+}
+
+.hero-title-line {
+  display: block;
+}
+
+.hero-title-line-compact {
+  font-size: 0.88em;
 }
 
 .hero-title-accent {

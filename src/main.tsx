@@ -247,20 +247,30 @@ function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) 
 }
 
 function renderHeroTitle(title: string) {
-  const accentText = '한지우';
-  const accentStart = title.indexOf(accentText);
+  const titleParts = title.split('\n');
+  const accentText = title.includes('Jiwoo Han') ? 'Jiwoo Han' : '한지우';
 
-  if (accentStart === -1) {
-    return title;
-  }
+  return titleParts.map((part, index) => {
+    const accentStart = part.indexOf(accentText);
+    const isEnglishConnectLine = part === 'I connect technology and people.';
+    const lineClassName = isEnglishConnectLine ? 'hero-title-line hero-title-line-compact' : 'hero-title-line';
+    const lineContent =
+      accentStart === -1 ? (
+        part
+      ) : (
+        <>
+          {part.slice(0, accentStart)}
+          <span className="hero-title-accent">{accentText}</span>
+          {part.slice(accentStart + accentText.length)}
+        </>
+      );
 
-  return (
-    <>
-      {title.slice(0, accentStart)}
-      <span className="hero-title-accent">{accentText}</span>
-      {title.slice(accentStart + accentText.length)}
-    </>
-  );
+    return (
+      <span className={lineClassName} key={`${part}-${index}`}>
+        {lineContent}
+      </span>
+    );
+  });
 }
 
 function useInView<T extends HTMLElement>() {
