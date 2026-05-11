@@ -1006,23 +1006,23 @@ void i18n.use(initReactI18next).init({
         content: {
           heroTitle: "Hello.\nI connect technology and people.\nI'm Jiwoo Han.",
           heroDescription:
-            'I have supported enterprise customers across Korea and Southeast Asia through onboarding, education, feature adoption, and business reviews. I translate complex customer problems into clear, actionable solutions that product and engineering teams can execute.',
+            'I support enterprise customers across Korea and Southeast Asia\nthrough onboarding, education, feature adoption, and business reviews.\nI turn complex customer problems into actionable product and engineering solutions.',
           sections: {
             feature: {
               eyebrow: 'Core Strengths',
-              title: 'I listen to customer problems, translate them into technical language, and build systems that can be executed.',
+              title: 'I understand context and turn product, engineering,\nand business needs into executable plans.',
             },
             skill: {
               eyebrow: 'Expertise & skillset',
-              title: 'I design and execute business solutions that go beyond technical implementation.',
+              title: 'The capabilities and tools I have used in real work\nto solve customer problems.',
             },
             career: {
               eyebrow: 'Career',
-              title: 'My experience sits at the intersection of Customer Success, technology, and product execution.',
+              title: 'I have built experience around Customer Success,\ntechnology, and product execution.',
             },
             customerCase: {
               eyebrow: 'Customer Success Cases',
-              title: 'Selected customer work where I turned technical complexity into executable next steps.',
+              title: 'Cases where I understood customer technical challenges\nand turned them into executable solution flows.',
             },
             project: {
               eyebrow: 'Project Details',
@@ -1458,7 +1458,7 @@ void i18n.use(initReactI18next).init({
             {
               title: 'Responsive Marketplace Discovery Feed',
               subtitle: 'An adaptive discovery feed that separates item fetch, card descriptors, row packing, and preview prefetch.',
-              skills: ['row packing', 'presentation descriptor', 'offset pagination', 'batched prefetch'],
+              skills: ['row packing', 'presentation descriptor', 'offset pagination', 'preview prefetch'],
               details: [
                 'Preserved offset-based pagination across initial and infinite-scroll fetches so items do not duplicate or disappear.',
                 'Aligned the card renderer and row packer around one presentation descriptor so layouts stay stable across viewport sizes.',
