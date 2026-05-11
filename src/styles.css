@@ -1004,8 +1004,8 @@ button {
 
 .customer-case-grid {
   display: grid;
-  align-items: start;
-  grid-auto-rows: auto;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 18px;
 }
@@ -1028,7 +1028,8 @@ button {
   align-content: start;
   gap: 12px;
   width: 100%;
-  min-height: 300px;
+  height: 100%;
+  min-height: 360px;
   border: 1px solid rgb(229, 229, 229);
   border-radius: 24px;
   background:
