@@ -505,6 +505,7 @@ function CustomerCaseContent({ blocks }: { blocks: CustomerCaseContentBlock[] })
     }
 
     const nodes: ReactNode[] = [];
+    const renderedLinkIndexes = new Set<number>();
     let cursor = 0;
 
     links.forEach((link, index) => {
@@ -529,11 +530,36 @@ function CustomerCaseContent({ blocks }: { blocks: CustomerCaseContentBlock[] })
           {link.text}
         </a>,
       );
+      renderedLinkIndexes.add(index);
 
       cursor = startIndex + link.text.length;
     });
 
     nodes.push(text.slice(cursor));
+
+    const appendedLinks = links.filter((_, index) => !renderedLinkIndexes.has(index));
+
+    if (appendedLinks.length > 0) {
+      nodes.push(' ');
+
+      appendedLinks.forEach((link, index) => {
+        if (index > 0) {
+          nodes.push(' ');
+        }
+
+        nodes.push(
+          <a
+            className="customer-case-source-link"
+            href={link.href}
+            key={`appended-${link.href}-${index}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {link.text}
+          </a>,
+        );
+      });
+    }
 
     return nodes;
   };
