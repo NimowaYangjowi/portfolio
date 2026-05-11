@@ -877,14 +877,14 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
         {
           type: 'paragraph',
           text: localize(
-            'Mixpanel의 AppsFlyer 리인게이지먼트 연동 업데이트는 이 사례와 같은 문제의식을 보여줍니다. 리타겟팅 터치포인트, 앱 안 행동, 전환 데이터를 연결해야 리인게이지먼트 성과를 온전히 볼 수 있다는 내용입니다.',
-            'Mixpanel’s AppsFlyer re-engagement integration update reflects the same product problem: re-engagement performance becomes complete only when the retargeting touchpoint, in-app behavior, and conversion data are connected.',
+            '이 기사는 Adobe 프로젝트를 통해 개발된 AppsFlyer 리인게이지먼트 지원이 이후 Mixpanel로 확장된 사례를 다룹니다. 리타겟팅 터치포인트, 앱 안 행동, 전환 데이터를 연결해야 리인게이지먼트 성과를 온전히 볼 수 있다는 내용입니다.',
+            'This article covers how AppsFlyer re-engagement support developed through the Adobe project later expanded to Mixpanel. It explains why re-engagement performance becomes complete only when the retargeting touchpoint, in-app behavior, and conversion data are connected.',
           ),
           links: [
             {
               text: localize(
-                'Mixpanel: AppsFlyer 리인게이지먼트 연동 업데이트',
-                'Mixpanel: AppsFlyer re-engagement integration update',
+                '관련 기사: Mixpanel의 AppsFlyer 리인게이지먼트 연동 업데이트',
+                'Related article: Mixpanel’s AppsFlyer re-engagement integration update',
               ),
               href: 'https://mixpanel.com/blog/appsflyer-integration/',
             },
