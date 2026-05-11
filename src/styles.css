@@ -1656,12 +1656,84 @@ button {
   word-break: keep-all;
 }
 
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
+.contact-card {
+  display: grid;
+  width: min(100%, 620px);
+  margin: 36px auto 0;
+  overflow: hidden;
+  border: 1px solid rgba(var(--foreground-rgb), 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.42);
+  box-shadow: 0 18px 44px rgba(var(--foreground-rgb), 0.08);
+  text-align: left;
+}
+
+.contact-card-row {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 32px;
+  gap: 14px;
+  align-items: center;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 18px 20px;
+  color: rgb(var(--foreground-rgb));
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.contact-card-row + .contact-card-row {
+  border-top: 1px solid rgba(var(--foreground-rgb), 0.1);
+}
+
+.contact-card-row:hover {
+  background: rgba(var(--foreground-rgb), 0.045);
+}
+
+.contact-card-row:focus-visible {
+  outline: 3px solid rgba(var(--brand-lavender-rgb), 0.72);
+  outline-offset: -3px;
+}
+
+.contact-card-icon {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin-top: 36px;
+  border-radius: 50%;
+  background: rgb(var(--foreground-rgb));
+  color: rgb(var(--background-rgb));
+}
+
+.contact-card-copy {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.contact-card-label {
+  color: rgba(58, 58, 58, 0.72);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.contact-card-value {
+  overflow-wrap: anywhere;
+  color: rgb(var(--foreground-rgb));
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.contact-card-action {
+  justify-self: end;
+  color: rgba(58, 58, 58, 0.68);
 }
 
 @media (max-width: 900px) {
@@ -1867,6 +1939,21 @@ button {
 
   .thanks-section p {
     font-size: 16px;
+  }
+
+  .contact-card-row {
+    grid-template-columns: 36px minmax(0, 1fr) 28px;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .contact-card-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .contact-card-value {
+    font-size: 15px;
   }
 }
 

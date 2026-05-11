@@ -23,9 +23,16 @@ import {
   SiZod,
 } from 'react-icons/si';
 import { Badge } from './components/ui/badge';
-import { Button } from './components/ui/button';
 import { Card, CardDescription, CardHeader, CardTitle } from './components/ui/card';
-import { ArrowUpRight, FlowerBadge, FlowerCluster, FlowerDaisy, FlowerFiveTraced, Mail } from './components/ui/icons';
+import {
+  ArrowUpRight,
+  Copy,
+  FlowerBadge,
+  FlowerCluster,
+  FlowerDaisy,
+  FlowerFiveTraced,
+  Mail,
+} from './components/ui/icons';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import ClickSpark from './components/ClickSpark';
 import ImageTrail, { type ImageTrailItem } from './components/ImageTrail';
@@ -179,6 +186,25 @@ const heroTrailItems: HeroTrailFlowerItem[] = heroTrailIcons.flatMap((icon, icon
 const fullStackFeatureTitles = new Set(['풀스택 프로젝트 빌딩', 'Full-stack Project Building']);
 const technicalCommunicationFeatureTitles = new Set(['기술 커뮤니케이션', 'Technical Communication']);
 const customerSuccessFeatureTitles = new Set(['고객성공', 'Customer Success']);
+const contactEmail = 'jiwoohan92@gmail.com';
+const linkedInUrl = 'https://www.linkedin.com/in/jiwoo-han-557289143/';
+
+async function copyTextToClipboard(text: string) {
+  if (navigator.clipboard) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textArea = document.createElement('textarea');
+  textArea.value = text;
+  textArea.setAttribute('readonly', '');
+  textArea.style.position = 'fixed';
+  textArea.style.opacity = '0';
+  document.body.append(textArea);
+  textArea.select();
+  document.execCommand('copy');
+  textArea.remove();
+}
 
 const redprintLogoRowPrimary: LogoItem[] = [
   { node: <SiNextdotjs style={{ color: '#000000' }} />, title: 'Next.js' },
@@ -934,6 +960,9 @@ function App() {
   const [selectedCustomerCaseId, setSelectedCustomerCaseId] = useState<string | null>(null);
   const selectedCustomerCase =
     customerSuccessCases.find((customerCase) => customerCase.id === selectedCustomerCaseId) ?? null;
+  const copyContactEmail = () => {
+    void copyTextToClipboard(contactEmail);
+  };
 
   useEffect(() => {
     syncLanguagePath(currentLanguage, true);
@@ -1050,15 +1079,27 @@ function App() {
               />
               <h2>{content.thanks.title}</h2>
               <p>{content.thanks.description}</p>
-              <div className="contact-links">
-                <Button href="mailto:jiwoohan92@gmail.com" size="lg">
-                  <Mail size={18} aria-hidden="true" />
-                  {t('contactEmailLabel')}
-                </Button>
-                <Button href="https://www.linkedin.com/in/jiwoo-han-557289143/" size="lg" variant="secondary">
-                  LinkedIn
-                  <ArrowUpRight size={18} aria-hidden="true" />
-                </Button>
+              <div className="contact-card" aria-label="Contact links">
+                <button className="contact-card-row" type="button" onClick={copyContactEmail}>
+                  <span className="contact-card-icon">
+                    <Mail size={18} aria-hidden="true" />
+                  </span>
+                  <span className="contact-card-copy">
+                    <span className="contact-card-label">{t('contactEmailLabel')}</span>
+                    <span className="contact-card-value">{contactEmail}</span>
+                  </span>
+                  <Copy className="contact-card-action" size={18} aria-hidden="true" />
+                </button>
+                <a className="contact-card-row" href={linkedInUrl} target="_blank" rel="noopener noreferrer">
+                  <span className="contact-card-icon">
+                    <ArrowUpRight size={18} aria-hidden="true" />
+                  </span>
+                  <span className="contact-card-copy">
+                    <span className="contact-card-label">LinkedIn</span>
+                    <span className="contact-card-value">{linkedInUrl}</span>
+                  </span>
+                  <ArrowUpRight className="contact-card-action" size={18} aria-hidden="true" />
+                </a>
               </div>
             </section>
           </main>

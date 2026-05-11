@@ -30,12 +30,20 @@ type ButtonProps =
   | (ButtonBaseProps & ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined })
   | (ButtonBaseProps & AnchorHTMLAttributes<HTMLAnchorElement> & { href: string });
 
+function isExternalHref(href: string) {
+  return /^https?:\/\//.test(href);
+}
+
 export function Button({ children, className, variant, size, href, ...props }: ButtonProps) {
   const classes = cn(buttonVariants({ variant, size }), className);
 
   if (href) {
+    const anchorProps = props as AnchorHTMLAttributes<HTMLAnchorElement>;
+    const target = anchorProps.target ?? (isExternalHref(href) ? '_blank' : undefined);
+    const rel = target === '_blank' ? (anchorProps.rel ?? 'noopener noreferrer') : anchorProps.rel;
+
     return (
-      <a className={classes} href={href} {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}>
+      <a className={classes} href={href} {...anchorProps} target={target} rel={rel}>
         {children}
       </a>
     );
