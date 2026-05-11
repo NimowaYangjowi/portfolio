@@ -1022,7 +1022,7 @@ void i18n.use(initReactI18next).init({
             },
             customerCase: {
               eyebrow: 'Customer Success Cases',
-              title: 'Cases where I understood customer technical challenges\nand turned them into executable solution flows.',
+              title: 'Cases where I understood customer technical challenges\nand turned them into actionable solution plans.',
             },
             project: {
               eyebrow: 'Project Details',
