@@ -1071,6 +1071,11 @@ button {
   color: rgb(var(--foreground-rgb));
 }
 
+.customer-case-card .ui-card-description,
+.project-card .ui-card-description {
+  white-space: pre-line;
+}
+
 .customer-case-title-row {
   display: grid;
   grid-template-columns: 24px minmax(0, 1fr);

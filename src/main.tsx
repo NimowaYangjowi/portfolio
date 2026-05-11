@@ -449,11 +449,11 @@ function ProjectFlowStepList({ steps }: { steps: ProjectFlowStep[] }) {
   );
 }
 
-function mergeCardDescription(parts: string[]) {
+function formatCardDescription(parts: string[]) {
   return parts
     .map((part) => part.trim())
     .filter(Boolean)
-    .join(' ');
+    .join('\n');
 }
 
 function CustomerSuccessCaseCard({
@@ -472,9 +472,8 @@ function CustomerSuccessCaseCard({
     onOpen();
   };
 
-  const description = mergeCardDescription([
+  const description = formatCardDescription([
     customerCase.customerContext,
-    ...customerCase.contribution,
     customerCase.outcome,
   ]);
 
@@ -871,7 +870,10 @@ function ProjectCard({ project, onOpen }: { project: ProjectDetail; onOpen?: () 
     onOpen();
   };
 
-  const description = mergeCardDescription([project.subtitle, ...project.details]);
+  const description = formatCardDescription([
+    project.subtitle,
+    project.details[0] ?? '',
+  ]);
 
   return (
     <Reveal>
