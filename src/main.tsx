@@ -485,11 +485,6 @@ function CustomerSuccessCaseCard({
           <CardDescription>{customerCase.customerContext}</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="badge-row">
-            {customerCase.skills.map((skill) => (
-              <Badge key={skill} variant="accent">{skill}</Badge>
-            ))}
-          </div>
           <ul className="detail-list customer-case-detail-list">
             {customerCase.contribution.map((detail) => (
               <li key={detail}>{detail}</li>

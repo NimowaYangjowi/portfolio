@@ -1062,7 +1062,7 @@ button {
 
 .customer-case-card .ui-card-content {
   display: grid;
-  grid-template-rows: 68px 206px 1fr auto;
+  grid-template-rows: 206px 1fr auto;
   align-content: start;
   gap: 18px;
 }
@@ -1096,18 +1096,8 @@ button {
   text-transform: uppercase;
 }
 
-.customer-case-card .ui-badge-accent {
-  border: 1px solid rgba(var(--foreground-rgb), 0.12);
-  background: rgba(255, 250, 240, 0.72);
-}
-
 .customer-case-detail-list {
   padding-bottom: 0;
-}
-
-.customer-case-card .badge-row {
-  min-height: 68px;
-  align-content: start;
 }
 
 .customer-case-outcome {
