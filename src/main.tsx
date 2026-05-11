@@ -24,7 +24,7 @@ import {
 } from 'react-icons/si';
 import { Badge } from './components/ui/badge';
 import { Button } from './components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
+import { Card, CardDescription, CardHeader, CardTitle } from './components/ui/card';
 import { ArrowUpRight, FlowerBadge, FlowerCluster, FlowerDaisy, FlowerFiveTraced, Mail } from './components/ui/icons';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import ClickSpark from './components/ClickSpark';
@@ -449,6 +449,13 @@ function ProjectFlowStepList({ steps }: { steps: ProjectFlowStep[] }) {
   );
 }
 
+function mergeCardDescription(parts: string[]) {
+  return parts
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .join(' ');
+}
+
 function CustomerSuccessCaseCard({
   customerCase,
   onOpen,
@@ -465,6 +472,12 @@ function CustomerSuccessCaseCard({
     onOpen();
   };
 
+  const description = mergeCardDescription([
+    customerCase.customerContext,
+    ...customerCase.contribution,
+    customerCase.outcome,
+  ]);
+
   return (
     <Reveal>
       <Card
@@ -477,22 +490,10 @@ function CustomerSuccessCaseCard({
         <CardHeader>
           <div className="customer-case-title-row">
             <FlowerBadge className="customer-case-title-icon" size={22} />
-            <div>
-              <p className="customer-case-focus">{customerCase.focus}</p>
-              <CardTitle>{customerCase.title}</CardTitle>
-            </div>
+            <CardTitle>{customerCase.title}</CardTitle>
           </div>
-          <CardDescription>{customerCase.customerContext}</CardDescription>
+          <CardDescription>{description}</CardDescription>
         </CardHeader>
-        <CardContent>
-          <ul className="detail-list customer-case-detail-list">
-            {customerCase.contribution.map((detail) => (
-              <li key={detail}>{detail}</li>
-            ))}
-          </ul>
-          <p className="customer-case-outcome">{customerCase.outcome}</p>
-          {customerCase.modal ? <span className="customer-case-card-action">{customerCase.modal.openLabel}</span> : null}
-        </CardContent>
       </Card>
     </Reveal>
   );
@@ -870,6 +871,8 @@ function ProjectCard({ project, onOpen }: { project: ProjectDetail; onOpen?: () 
     onOpen();
   };
 
+  const description = mergeCardDescription([project.subtitle, ...project.details]);
+
   return (
     <Reveal>
       <Card
@@ -884,16 +887,8 @@ function ProjectCard({ project, onOpen }: { project: ProjectDetail; onOpen?: () 
             <FlowerDaisy className="project-title-icon" size={24} />
             <CardTitle>{project.title}</CardTitle>
           </div>
-          <CardDescription>{project.subtitle}</CardDescription>
+          <CardDescription>{description}</CardDescription>
         </CardHeader>
-        <CardContent>
-          <ul className="detail-list">
-            {project.details.map((detail) => (
-              <li key={detail}>{detail}</li>
-            ))}
-          </ul>
-          {project.modal ? <span className="project-card-action">{project.modal.openLabel}</span> : null}
-        </CardContent>
       </Card>
     </Reveal>
   );

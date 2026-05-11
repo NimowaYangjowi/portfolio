@@ -1021,9 +1021,8 @@ button {
 
 .customer-case-card {
   display: grid;
-  grid-template-rows: auto 1fr;
-  align-content: stretch;
-  gap: 22px;
+  align-content: start;
+  gap: 16px;
   width: 100%;
   height: 100%;
   min-height: 430px;
@@ -1077,50 +1076,12 @@ button {
   grid-template-columns: 24px minmax(0, 1fr);
   gap: 10px;
   align-items: start;
-  min-height: 120px;
+  min-height: 82px;
 }
 
 .customer-case-title-icon {
   margin-top: 2px;
   color: rgb(var(--brand-aura-pink-rgb));
-}
-
-.customer-case-focus {
-  margin: 0 0 8px;
-  color: rgb(var(--brand-teal-rgb));
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  line-height: 1.35;
-  text-transform: uppercase;
-}
-
-.customer-case-detail-list {
-  padding-bottom: 0;
-}
-
-.customer-case-outcome {
-  margin: 0;
-  border-top: 1px solid rgba(var(--foreground-rgb), 0.12);
-  padding-top: 16px;
-  color: rgba(58, 58, 58, 0.88);
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.65;
-  word-break: keep-all;
-}
-
-.customer-case-card-action {
-  display: inline-flex;
-  width: fit-content;
-  min-height: 36px;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid rgba(var(--foreground-rgb), 0.38);
-  color: rgb(var(--foreground-rgb));
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.2;
 }
 
 .customer-case-modal {
@@ -1240,8 +1201,8 @@ button {
 
 .project-card {
   display: grid;
-  grid-template-rows: auto 1fr;
-  gap: 20px;
+  align-content: start;
+  gap: 16px;
   width: 100%;
   height: 100%;
   min-height: 390px;
@@ -1253,17 +1214,6 @@ button {
     border-color 180ms ease,
     box-shadow 180ms ease,
     transform 180ms ease;
-}
-
-.project-card .ui-card-content {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  align-content: stretch;
-  gap: 18px;
-}
-
-.project-card .ui-card-header {
-  min-height: 156px;
 }
 
 .project-card-clickable {
@@ -1332,19 +1282,6 @@ button {
 .project-card .ui-badge-accent {
   border-color: rgba(var(--foreground-rgb), 0.14);
   background: rgba(255, 250, 240, 0.72);
-}
-
-.project-card-action {
-  display: inline-flex;
-  width: fit-content;
-  min-height: 36px;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid rgba(var(--foreground-rgb), 0.38);
-  color: rgb(var(--foreground-rgb));
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.2;
 }
 
 .project-modal-backdrop {
