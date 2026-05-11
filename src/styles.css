@@ -1012,11 +1012,15 @@ button {
 
 .customer-case-grid > .reveal {
   display: flex;
-  grid-column: span 3;
+  grid-column: span 2;
 }
 
-.customer-case-grid > .reveal:nth-child(n + 3) {
-  grid-column: span 2;
+.customer-case-grid > .reveal:nth-child(1) {
+  grid-column: 2 / span 2;
+}
+
+.customer-case-grid > .reveal:nth-child(2) {
+  grid-column: 4 / span 2;
 }
 
 .customer-case-card {
@@ -1686,7 +1690,9 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .customer-case-grid > .reveal {
+  .customer-case-grid > .reveal,
+  .customer-case-grid > .reveal:nth-child(1),
+  .customer-case-grid > .reveal:nth-child(2) {
     grid-column: auto;
   }
 
