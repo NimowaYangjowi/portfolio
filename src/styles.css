@@ -332,6 +332,7 @@ button {
 .ui-card-header {
   display: grid;
   gap: 12px;
+  align-content: start;
 }
 
 .ui-card-title {
@@ -355,6 +356,7 @@ button {
 .ui-card-content {
   display: grid;
   gap: 18px;
+  align-content: start;
 }
 
 .ui-badge {
@@ -390,6 +392,7 @@ button {
 .feature-grid {
   display: grid;
   align-items: stretch;
+  grid-auto-rows: 1fr;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
@@ -982,7 +985,7 @@ button {
 
 .detail-list {
   display: grid;
-  gap: 10px;
+  gap: 12px;
   margin: 0;
   padding: 0 0 18px 18px;
   color: var(--color-muted);
@@ -991,12 +994,18 @@ button {
   word-break: keep-all;
 }
 
+.detail-list li {
+  margin: 0;
+}
+
 .customer-case-section {
   width: min(100% - 48px, 1440px);
 }
 
 .customer-case-grid {
   display: grid;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 18px;
 }
@@ -1012,9 +1021,11 @@ button {
 
 .customer-case-card {
   display: grid;
-  align-content: start;
-  gap: 6px;
+  grid-template-rows: auto 1fr;
+  align-content: stretch;
+  gap: 22px;
   width: 100%;
+  height: 100%;
   min-height: 430px;
   border: 1px solid rgb(229, 229, 229);
   border-radius: 24px;
@@ -1044,10 +1055,14 @@ button {
 }
 
 .customer-case-card .ui-card-header {
+  align-content: start;
   gap: 16px;
+  min-height: 300px;
 }
 
 .customer-case-card .ui-card-content {
+  display: grid;
+  grid-template-rows: 68px 206px 1fr auto;
   align-content: start;
   gap: 18px;
 }
@@ -1063,6 +1078,7 @@ button {
   grid-template-columns: 24px minmax(0, 1fr);
   gap: 10px;
   align-items: start;
+  min-height: 120px;
 }
 
 .customer-case-title-icon {
@@ -1087,6 +1103,11 @@ button {
 
 .customer-case-detail-list {
   padding-bottom: 0;
+}
+
+.customer-case-card .badge-row {
+  min-height: 68px;
+  align-content: start;
 }
 
 .customer-case-outcome {
@@ -1252,6 +1273,10 @@ button {
   gap: 18px;
 }
 
+.project-card .ui-card-header {
+  min-height: 156px;
+}
+
 .project-card-clickable {
   cursor: pointer;
 }
@@ -1277,6 +1302,7 @@ button {
   display: flex;
   align-items: flex-start;
   gap: 8px;
+  min-height: 68px;
 }
 
 .project-title-icon {
@@ -1458,6 +1484,8 @@ button {
 
 .project-flow-detail-grid {
   display: grid;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
 }
@@ -1527,7 +1555,7 @@ button {
 
 .project-flow-list {
   display: grid;
-  gap: 0;
+  gap: 16px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1539,7 +1567,8 @@ button {
   display: grid;
   grid-template-columns: 38px minmax(0, 1fr);
   gap: 18px;
-  padding: 0 0 34px;
+  min-height: 132px;
+  padding: 0 0 30px;
 }
 
 .project-flow-step::after {
@@ -1557,7 +1586,7 @@ button {
 }
 
 .project-flow-step:last-child {
-  padding-bottom: 0;
+  padding-bottom: 30px;
 }
 
 .project-flow-step-entry {
@@ -1622,13 +1651,17 @@ button {
 
 .project-modal-note-grid {
   display: grid;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
 
 .project-modal-note {
   display: grid;
-  gap: 8px;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  height: 100%;
   border: 1px solid rgba(var(--foreground-rgb), 0.1);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.34);
@@ -1636,6 +1669,7 @@ button {
 }
 
 .project-modal-note h5 {
+  min-height: 42px;
   color: rgb(var(--foreground-rgb));
   font-size: 15px;
   font-weight: 700;
