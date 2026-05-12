@@ -36,6 +36,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import ImageTrail, { type ImageTrailItem } from './components/ImageTrail';
 import LogoLoop, { type LogoItem } from './components/LogoLoop';
 import marketingMeasurementCardImage from './assets/marketing-measurement-card.png';
+import technicalCommunicationDiagramImage from './assets/technical-communication-diagram.svg';
 import {
   getCustomerSuccessCases,
   type CustomerCaseContentBlock,
@@ -54,9 +55,6 @@ import {
 import './styles.css';
 
 const ProjectExcalidrawDiagram = lazy(() => import('./components/ProjectExcalidrawDiagram'));
-const TechnicalCommunicationExcalidrawDiagram = lazy(
-  () => import('./components/TechnicalCommunicationExcalidrawDiagram'),
-);
 
 type Feature = {
   title: string;
@@ -409,18 +407,14 @@ function normalizeWheelOffset(index: number, activeIndex: number, length: number
 }
 
 function TechnicalCommunicationVisual() {
-  const { ref, isVisible } = useInView<HTMLDivElement>();
-
   return (
-    <div ref={ref} className="technical-communication-shell">
-      {isVisible ? (
-        <Suspense fallback={<div className="technical-communication-state">Drawing diagram...</div>}>
-          <TechnicalCommunicationExcalidrawDiagram />
-        </Suspense>
-      ) : (
-        <div className="technical-communication-state">Drawing diagram...</div>
-      )}
-    </div>
+    <img
+      className="technical-communication-image"
+      src={technicalCommunicationDiagramImage}
+      alt=""
+      loading="lazy"
+      decoding="async"
+    />
   );
 }
 

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 450" role="img" aria-label="Technical communication stakeholder diagram">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+    <marker id="dot" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5">
+      <circle cx="5" cy="5" r="4" fill="currentColor" />
+    </marker>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#1a3a3a" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <rect width="760" height="450" fill="#fffaf0" />
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#8c8071" stroke-width="1.25" stroke-dasharray="4 6" color="#8c8071" marker-end="url(#arrow)">
+      <path d="M170 95 C235 55 262 50 304 50" />
+      <path d="M452 50 C508 78 530 94 564 109" stroke-dasharray="2 7" />
+      <path d="M633 140 C634 220 620 270 614 318" />
+      <path d="M548 349 C420 414 300 408 210 361" stroke-dasharray="2 7" />
+      <path d="M70 361 C52 238 70 172 104 126" />
+      <path d="M170 95 C300 120 384 184 450 246" stroke-dasharray="2 7" />
+      <path d="M318 226 C420 292 486 328 548 349" />
+      <path d="M210 361 C360 250 480 170 564 109" stroke-dasharray="2 7" />
+      <path d="M170 95 C330 232 448 312 548 349" />
+      <path d="M378 82 C270 150 210 236 140 330" stroke-dasharray="2 7" />
+      <path d="M610 233 C420 210 270 150 170 95" />
+    </g>
+
+    <g stroke="#1a3a3a" stroke-width="2.6" color="#1a3a3a" marker-end="url(#arrow)">
+      <path d="M318 226 C258 158 218 112 170 95" marker-start="url(#dot)" />
+      <path d="M384 184 C385 132 386 104 378 82" />
+      <path d="M450 226 C500 176 532 132 564 109" />
+      <path d="M450 246 C492 289 520 323 548 349" marker-start="url(#dot)" />
+      <path d="M318 244 C270 296 238 338 210 361" />
+      <path d="M450 228 C520 214 570 220 610 233" />
+    </g>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif" font-size="13" fill="#5d5247">
+    <text x="233" y="63" transform="rotate(-14 233 63)">needs</text>
+    <text x="507" y="79" transform="rotate(18 507 79)">roadmap</text>
+    <text x="626" y="223" transform="rotate(87 626 223)">API</text>
+    <text x="370" y="391" transform="rotate(-3 370 391)">QA</text>
+    <text x="71" y="234" transform="rotate(-77 71 234)">launch</text>
+    <text x="287" y="155" transform="rotate(17 287 155)">blocker</text>
+    <text x="432" y="303" transform="rotate(25 432 303)">issue</text>
+    <text x="379" y="245" transform="rotate(-28 379 245)">asset</text>
+    <text x="356" y="232" transform="rotate(35 356 232)">debug</text>
+    <text x="244" y="208" transform="rotate(-51 244 208)">brief</text>
+    <text x="385" y="180" transform="rotate(-168 385 180)">expectation</text>
+    <text x="236" y="158" transform="rotate(38 236 158)">scope</text>
+    <text x="391" y="124" transform="rotate(-88 391 124)">feedback</text>
+    <text x="506" y="167" transform="rotate(-41 506 167)">align</text>
+    <text x="499" y="294" transform="rotate(43 499 294)">handoff</text>
+    <text x="257" y="304" transform="rotate(-47 257 304)">launch</text>
+    <text x="531" y="221" transform="rotate(-6 531 221)">deal</text>
+  </g>
+
+  <g filter="url(#soft-shadow)" font-family="Inter, Arial, sans-serif" text-anchor="middle">
+    <rect x="38" y="64" width="132" height="62" rx="12" fill="#eff8ff" stroke="#77bef0" stroke-width="2" />
+    <text x="104" y="101" font-size="20" fill="#1a3a3a">Client</text>
+
+    <rect x="304" y="18" width="148" height="64" rx="12" fill="#fff0c9" stroke="#ffcb61" stroke-width="2" />
+    <text x="378" y="57" font-size="20" fill="#1a3a3a">Product</text>
+
+    <rect x="564" y="78" width="138" height="62" rx="12" fill="#fff1e7" stroke="#ff894f" stroke-width="2" />
+    <text x="633" y="115" font-size="20" fill="#1a3a3a">Partner</text>
+
+    <rect x="70" y="330" width="140" height="62" rx="12" fill="#fff8dc" stroke="#d8b84e" stroke-width="2" />
+    <text x="140" y="367" font-size="20" fill="#1a3a3a">Agency</text>
+
+    <rect x="548" y="318" width="132" height="62" rx="12" fill="#e8f4ef" stroke="#1a3a3a" stroke-width="2" />
+    <text x="614" y="355" font-size="20" fill="#1a3a3a">Dev</text>
+
+    <rect x="610" y="204" width="104" height="58" rx="12" fill="#ffeef2" stroke="#ea5b6f" stroke-width="2" />
+    <text x="662" y="239" font-size="19" fill="#1a3a3a">Sales</text>
+
+    <ellipse cx="384" cy="228" rx="66" ry="44" fill="#fffaf0" stroke="#ea5b6f" stroke-width="3" />
+    <text x="384" y="222" font-size="22" fill="#0a0a0a">Me</text>
+    <text x="384" y="248" font-size="22" fill="#0a0a0a">Jiwoo</text>
+  </g>
+
+  <text x="380" y="423" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" fill="#6a6259" opacity="0.72">
+    technical communication map
+  </text>
+</svg>
