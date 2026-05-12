@@ -112,7 +112,7 @@ void i18n.use(initReactI18next).init({
           sections: {
             feature: {
               eyebrow: '핵심 역량',
-              title: '맥락을 이해하고 제품·기술·비즈니스가 \n함께 움직일 수 있는 실행안을 제시합니다.',
+              title: '마케팅·제품·기술·비즈니스 맥락을 이해하고 \n함께 움직일 수 있는 실행안을 제시합니다.',
             },
             skill: {
               eyebrow: '전문영역 및 스킬셋',
@@ -124,7 +124,7 @@ void i18n.use(initReactI18next).init({
             },
             customerCase: {
               eyebrow: '고객성공 케이스',
-              title: '고객사의 기술 과제를 이해하고 \n실행 가능한 해결 방안으로 연결한 사례입니다.',
+              title: '고객사의 기술·마케팅 과제를 이해하고 \n실행 가능한 해결 방안으로 연결한 사례입니다.',
             },
             project: {
               eyebrow: '개인 프로젝트 상세',
@@ -150,6 +150,12 @@ void i18n.use(initReactI18next).init({
               iconLabel: 'CS',
             },
             {
+              title: '마케팅 전략과 측정 설계',
+              description:
+                '엔터프라이즈 마케팅 및 마테크 팀과 함께 캠페인 성장 전략, 성과 측정 구조, 어트리뷰션 셋업, 데이터 분석 기준을 정리해왔습니다. 단순히 툴 사용법을 안내하는 데서 그치지 않고, 고객의 실제 마케팅 운영 방식에 맞게 측정 방법과 실행 흐름을 설계합니다.',
+              iconLabel: 'MKT',
+            },
+            {
               title: '풀스택 프로젝트 빌딩',
               description:
                 '프론트엔드, 백엔드, 데이터베이스를 포함한 풀스택 프로젝트를 직접 빌드하고 운영했습니다. Vercel, Railway, Upstash Redis, Cloudflare R2, Stripe, Sentry를 조합해 배포, 스토리지, 결제, 분산락, 레이트 리밋, 에러 대응 자동화를 구성했고, 로컬 워커 장애 시 Railway 백업 워커가 작업을 이어받는 failover 구조까지 설계했습니다.',
@@ -170,6 +176,22 @@ void i18n.use(initReactI18next).init({
                 'Intercom',
                 'Zendesk',
                 'Escalation Management',
+              ],
+            },
+            {
+              id: 'marketing-measurement',
+              title: '마케팅 및 측정 전략',
+              skills: [
+                'Attribution Strategy',
+                'Campaign Measurement',
+                'Marketing Analytics',
+                'MMP',
+                'SKAN',
+                'Retargeting',
+                'Deep Linking',
+                'Audience Strategy',
+                'Incrementality',
+                'Meta Ads Collaboration',
               ],
             },
             {
@@ -258,6 +280,9 @@ void i18n.use(initReactI18next).init({
               details: [
                 '프리미엄 계정의 온보딩, 기술 디스커버리, 요구사항 정리, 구현 계획, 이슈 에스컬레이션, 임원 이해관계자 커뮤니케이션까지 엔터프라이즈 engagement를 end-to-end로 담당했습니다.',
                 'SDK implementation, API integration, data discrepancy, platform configuration 영역에서 trusted technical advisor로서 고객팀의 아키텍처 의사결정을 도왔습니다.',
+                '엔터프라이즈 마케팅 및 마테크 팀과 캠페인 성장 전략, 어트리뷰션 기준, 성과 측정 구조, 데이터 활용 방안을 함께 설계했습니다.',
+                'Meta Ads 등 주요 파트너 팀과 협업해 고객사의 성장 전략, 교육 세션, 워크숍을 공동 기획했습니다.',
+                'MVP, alpha, beta 단계의 신규 데이터 예측 제품 도입을 지원하며 상용 계약 전환까지 연결했습니다.',
                 'Product, Engineering 팀과 협업해 복잡한 고객 blocker를 해결하고, 현장 피드백을 제품 개선으로 연결하며 실제 구현 니즈가 roadmap 결정에 반영되도록 조율했습니다.',
                 '맞춤형 기술 솔루션, Executive Business Review, adoption strategy를 통해 pre-sales와 expansion 논의를 지원했고, $3M+ ARR 포트폴리오에서 98% client retention 유지에 기여했습니다.',
                 '내부 팀과 고객이 함께 쓰는 technical guide, troubleshooting playbook, best-practice 자료를 만들어 CS 조직 전반의 구현 일관성을 높였습니다.',
@@ -1017,7 +1042,7 @@ void i18n.use(initReactI18next).init({
           sections: {
             feature: {
               eyebrow: 'Core Strengths',
-              title: 'I understand context and turn product, engineering,\nand business needs into executable plans.',
+              title: 'I understand marketing, product, engineering,\nand business context, then turn it into executable plans.',
             },
             skill: {
               eyebrow: 'Expertise & skillset',
@@ -1029,7 +1054,7 @@ void i18n.use(initReactI18next).init({
             },
             customerCase: {
               eyebrow: 'Customer Success Cases',
-              title: 'Cases where I understood customer technical challenges\nand turned them into actionable solution plans.',
+              title: 'Cases where I understood customer technical and marketing challenges\nand turned them into actionable solution plans.',
             },
             project: {
               eyebrow: 'Project Details',
@@ -1055,6 +1080,12 @@ void i18n.use(initReactI18next).init({
               iconLabel: 'CS',
             },
             {
+              title: 'Marketing Strategy & Measurement',
+              description:
+                'I work with enterprise marketing and martech teams on growth strategy, campaign measurement, attribution setup, and data analysis. Rather than only explaining how to use a tool, I help shape measurement methods and operating flows around the customer’s real marketing environment.',
+              iconLabel: 'MKT',
+            },
+            {
               title: 'Full-stack Project Building',
               description:
                 'I have built and operated full-stack projects across frontend, backend, and database layers. I combined Vercel, Railway, Upstash Redis, Cloudflare R2, Stripe, and Sentry for deployment, storage, payments, distributed locking, rate limiting, and automated error response, including a failover structure where a Railway backup worker takes over when the local worker fails.',
@@ -1075,6 +1106,22 @@ void i18n.use(initReactI18next).init({
                 'Intercom',
                 'Zendesk',
                 'Escalation Management',
+              ],
+            },
+            {
+              id: 'marketing-measurement',
+              title: 'Marketing & Measurement',
+              skills: [
+                'Attribution Strategy',
+                'Campaign Measurement',
+                'Marketing Analytics',
+                'MMP',
+                'SKAN',
+                'Retargeting',
+                'Deep Linking',
+                'Audience Strategy',
+                'Incrementality',
+                'Meta Ads Collaboration',
               ],
             },
             {
@@ -1163,6 +1210,9 @@ void i18n.use(initReactI18next).init({
               details: [
                 'Owned enterprise engagements end to end, covering onboarding, technical discovery, requirements gathering, implementation planning, issue escalation, and executive stakeholder communication for premium accounts.',
                 'Acted as a trusted technical advisor on SDK implementation, API integration, data discrepancies, and platform configuration, helping customer teams make architecture decisions.',
+                'Worked with enterprise marketing and martech teams to shape growth strategy, attribution standards, campaign measurement structures, and data activation plans.',
+                'Co-planned customer growth sessions and workshops with major partner teams such as Meta Ads.',
+                'Guided adoption of a new data prediction product from MVP through alpha and beta stages into a commercial contract.',
                 'Partnered with Product and Engineering teams to resolve complex customer blockers, translate field feedback into product improvements, and align roadmap decisions with real implementation needs.',
                 'Supported pre-sales and expansion discussions with tailored technical solutions, Executive Business Reviews, and adoption strategies that helped maintain 98% client retention across a $3M+ ARR portfolio.',
                 'Created internal and customer-facing technical guides, troubleshooting playbooks, and best-practice materials that improved implementation consistency across the whole CS organization.',
