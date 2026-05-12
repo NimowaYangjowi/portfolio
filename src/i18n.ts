@@ -112,7 +112,7 @@ void i18n.use(initReactI18next).init({
           sections: {
             feature: {
               eyebrow: '핵심 역량',
-              title: '마케팅·제품·기술·비즈니스 맥락을 이해하고 \n함께 움직일 수 있는 실행안을 제시합니다.',
+              title: '맥락을 이해하고 제품·기술·비즈니스가 \n함께 움직일 수 있는 실행안을 제시합니다.',
             },
             skill: {
               eyebrow: '전문영역 및 스킬셋',
@@ -148,12 +148,6 @@ void i18n.use(initReactI18next).init({
               description:
                 '고객의 문제를 파악하고 가장 적합한 솔루션을 찾아 제시합니다. 기술적인 문제를 쉬운 언어로 설명하는 것에 능숙하며 국내외 여러 엔터프라이즈 고객사들을 관리해왔습니다. 해결책을 제시하는 데서 그치지 않고 커스텀 솔루션을 직접 제작해 제공한 사례들이 있습니다.',
               iconLabel: 'CS',
-            },
-            {
-              title: '마케팅 전략과 측정 설계',
-              description:
-                '엔터프라이즈 마케팅 및 마테크 팀과 함께 캠페인 성장 전략, 성과 측정 구조, 어트리뷰션 셋업, 데이터 분석 기준을 정리해왔습니다. 단순히 툴 사용법을 안내하는 데서 그치지 않고, 고객의 실제 마케팅 운영 방식에 맞게 측정 방법과 실행 흐름을 설계합니다.',
-              iconLabel: 'MKT',
             },
             {
               title: '풀스택 프로젝트 빌딩',
@@ -1042,7 +1036,7 @@ void i18n.use(initReactI18next).init({
           sections: {
             feature: {
               eyebrow: 'Core Strengths',
-              title: 'I understand marketing, product, engineering,\nand business context, then turn it into executable plans.',
+              title: 'I understand context and turn product, engineering,\nand business needs into executable plans.',
             },
             skill: {
               eyebrow: 'Expertise & skillset',
@@ -1078,12 +1072,6 @@ void i18n.use(initReactI18next).init({
               description:
                 'I understand customer problems and propose the right solution. I explain technical issues in plain language, have managed domestic and global enterprise customers, and have built custom solutions rather than stopping at advice.',
               iconLabel: 'CS',
-            },
-            {
-              title: 'Marketing Strategy & Measurement',
-              description:
-                'I work with enterprise marketing and martech teams on growth strategy, campaign measurement, attribution setup, and data analysis. Rather than only explaining how to use a tool, I help shape measurement methods and operating flows around the customer’s real marketing environment.',
-              iconLabel: 'MKT',
             },
             {
               title: 'Full-stack Project Building',

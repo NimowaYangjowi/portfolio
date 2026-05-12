@@ -400,7 +400,7 @@ button {
   display: grid;
   align-items: stretch;
   grid-auto-rows: 1fr;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 
@@ -1013,22 +1013,13 @@ button {
   display: grid;
   align-items: stretch;
   grid-auto-rows: 360px;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
 .customer-case-grid > .reveal {
   display: flex;
-  grid-column: span 2;
   min-height: 0;
-}
-
-.customer-case-grid > .reveal:nth-child(1) {
-  grid-column: 2 / span 2;
-}
-
-.customer-case-grid > .reveal:nth-child(2) {
-  grid-column: 4 / span 2;
 }
 
 .customer-case-card {
@@ -1775,9 +1766,7 @@ button {
     grid-auto-rows: auto;
   }
 
-  .customer-case-grid > .reveal,
-  .customer-case-grid > .reveal:nth-child(1),
-  .customer-case-grid > .reveal:nth-child(2) {
+  .customer-case-grid > .reveal {
     grid-column: auto;
   }
 
