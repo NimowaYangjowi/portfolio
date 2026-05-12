@@ -3,27 +3,34 @@ import { initReactI18next } from 'react-i18next';
 
 export const supportedLanguages = ['ko', 'en'] as const;
 export type SupportedLanguage = (typeof supportedLanguages)[number];
+export const defaultLanguage: SupportedLanguage = 'ko';
 
 function isSupportedLanguage(language: string): language is SupportedLanguage {
   return supportedLanguages.includes(language as SupportedLanguage);
 }
 
 export function getLanguageFromPathname(pathname: string) {
-  const firstSegment = pathname.split('/').filter(Boolean)[0];
+  const firstSegment = getAppPathSegments(pathname)[0];
 
   return firstSegment && isSupportedLanguage(firstSegment) ? firstSegment : null;
 }
 
-function readSavedLanguage() {
-  if (typeof window === 'undefined') {
-    return null;
-  }
+function getBasePathSegments() {
+  return import.meta.env.BASE_URL.split('/').filter(Boolean);
+}
 
-  try {
-    return window.localStorage.getItem('portfolio-language');
-  } catch {
-    return null;
-  }
+function getPathSegments(pathname: string) {
+  return pathname.split('/').filter(Boolean);
+}
+
+function getAppPathSegments(pathname: string) {
+  const basePathSegments = getBasePathSegments();
+  const pathSegments = getPathSegments(pathname);
+  const hasBasePath = basePathSegments.every(
+    (segment, index) => pathSegments[index] === segment,
+  );
+
+  return hasBasePath ? pathSegments.slice(basePathSegments.length) : pathSegments;
 }
 
 export function saveLanguagePreference(language: SupportedLanguage) {
@@ -43,15 +50,20 @@ export function getLanguagePath(language: SupportedLanguage) {
     return `/${language}`;
   }
 
-  const pathSegments = window.location.pathname.split('/').filter(Boolean);
+  const basePathSegments = getBasePathSegments();
+  const pathSegments = getPathSegments(window.location.pathname);
+  const hasBasePath = basePathSegments.every(
+    (segment, index) => pathSegments[index] === segment,
+  );
+  const appPathSegments = hasBasePath ? pathSegments.slice(basePathSegments.length) : pathSegments;
 
-  if (pathSegments.length > 0 && isSupportedLanguage(pathSegments[0])) {
-    pathSegments[0] = language;
+  if (appPathSegments.length > 0 && isSupportedLanguage(appPathSegments[0])) {
+    appPathSegments[0] = language;
   } else {
-    pathSegments.unshift(language);
+    appPathSegments.unshift(language);
   }
 
-  return `/${pathSegments.join('/')}${window.location.search}${window.location.hash}`;
+  return `/${[...basePathSegments, ...appPathSegments].join('/')}${window.location.search}${window.location.hash}`;
 }
 
 export function syncLanguagePath(language: SupportedLanguage, replace = false) {
@@ -79,14 +91,9 @@ export function syncDocumentLanguage(language: SupportedLanguage) {
   }
 }
 
-const savedLanguage = readSavedLanguage();
 const pathLanguage =
   typeof window === 'undefined' ? null : getLanguageFromPathname(window.location.pathname);
-const initialLanguage: SupportedLanguage = supportedLanguages.includes(
-  savedLanguage as SupportedLanguage,
-)
-  ? pathLanguage ?? (savedLanguage as SupportedLanguage)
-  : pathLanguage ?? 'ko';
+const initialLanguage: SupportedLanguage = pathLanguage ?? defaultLanguage;
 
 void i18n.use(initReactI18next).init({
   resources: {

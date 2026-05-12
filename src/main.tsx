@@ -43,6 +43,7 @@ import {
   type CustomerSuccessCase,
 } from './customerSuccessCases';
 import {
+  defaultLanguage,
   getLanguageFromPathname,
   saveLanguagePreference,
   supportedLanguages,
@@ -989,14 +990,15 @@ function App() {
 
     const handlePopState = () => {
       const pathLanguage = getLanguageFromPathname(window.location.pathname);
+      const nextLanguage = pathLanguage ?? defaultLanguage;
+
+      void i18n.changeLanguage(nextLanguage);
+      saveLanguagePreference(nextLanguage);
+      syncDocumentLanguage(nextLanguage);
 
       if (!pathLanguage) {
-        return;
+        syncLanguagePath(nextLanguage, true);
       }
-
-      void i18n.changeLanguage(pathLanguage);
-      saveLanguagePreference(pathLanguage);
-      syncDocumentLanguage(pathLanguage);
     };
 
     window.addEventListener('popstate', handlePopState);
