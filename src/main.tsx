@@ -449,7 +449,6 @@ function FeatureCard({ feature }: { feature: Feature }) {
         )}
         <CardHeader>
           <div className="feature-title-row">
-            <FlowerBadge className="feature-title-icon" size={22} />
             <CardTitle>{feature.title}</CardTitle>
           </div>
           <CardDescription>{feature.description}</CardDescription>
