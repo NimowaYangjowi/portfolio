@@ -150,6 +150,12 @@ void i18n.use(initReactI18next).init({
               iconLabel: 'CS',
             },
             {
+              title: '마케팅 전략과 측정 설계',
+              description:
+                '엔터프라이즈 마케팅 및 마테크 팀과 함께 캠페인 성장 전략, 성과 측정 구조, 어트리뷰션 셋업, 데이터 분석 기준을 정리해왔습니다. 단순히 툴 사용법을 안내하는 데서 그치지 않고, 고객의 실제 마케팅 운영 방식에 맞게 측정 방법과 실행 흐름을 설계합니다.',
+              iconLabel: 'MKT',
+            },
+            {
               title: '풀스택 프로젝트 빌딩',
               description:
                 '프론트엔드, 백엔드, 데이터베이스를 포함한 풀스택 프로젝트를 직접 빌드하고 운영했습니다. Vercel, Railway, Upstash Redis, Cloudflare R2, Stripe, Sentry를 조합해 배포, 스토리지, 결제, 분산락, 레이트 리밋, 에러 대응 자동화를 구성했고, 로컬 워커 장애 시 Railway 백업 워커가 작업을 이어받는 failover 구조까지 설계했습니다.',
@@ -1072,6 +1078,12 @@ void i18n.use(initReactI18next).init({
               description:
                 'I understand customer problems and propose the right solution. I explain technical issues in plain language, have managed domestic and global enterprise customers, and have built custom solutions rather than stopping at advice.',
               iconLabel: 'CS',
+            },
+            {
+              title: 'Marketing Strategy & Measurement',
+              description:
+                'I work with enterprise marketing and martech teams on growth strategy, campaign measurement, attribution setup, and data analysis. Rather than only explaining how to use a tool, I help shape measurement methods and operating flows around the customer’s real marketing environment.',
+              iconLabel: 'MKT',
             },
             {
               title: 'Full-stack Project Building',

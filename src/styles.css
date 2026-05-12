@@ -400,7 +400,7 @@ button {
   display: grid;
   align-items: stretch;
   grid-auto-rows: 1fr;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
 }
 
@@ -530,6 +530,8 @@ button {
 }
 
 .customer-wheel-visual {
+  --customer-wheel-pivot: clamp(16px, 7%, 28px);
+
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -549,7 +551,7 @@ button {
 .customer-wheel-axis {
   position: absolute;
   top: 18%;
-  right: 36px;
+  right: var(--customer-wheel-pivot);
   bottom: 18%;
   z-index: 4;
   width: 3px;
@@ -590,9 +592,9 @@ button {
 .feature-visual .customer-wheel-card {
   position: absolute;
   top: 50%;
-  right: 38px;
+  right: var(--customer-wheel-pivot);
   display: grid;
-  width: clamp(154px, 50%, 202px);
+  width: min(168px, calc(100% - 64px));
   min-height: 34px;
   align-content: start;
   gap: 8px;
@@ -601,7 +603,7 @@ button {
   background: transparent;
   padding: 0 0 10px;
   box-shadow: none;
-  transform-origin: calc(100% + 38px) 50%;
+  transform-origin: calc(100% + var(--customer-wheel-pivot)) 50%;
   transition:
     opacity 560ms ease,
     transform 560ms cubic-bezier(0.2, 0.8, 0.2, 1),
@@ -629,7 +631,7 @@ button {
 
 .feature-visual .customer-wheel-card-label {
   color: rgb(var(--foreground-rgb));
-  font-size: clamp(12px, 1.35vw, 15px);
+  font-size: clamp(10px, 0.9vw, 13px);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: 0;
@@ -642,39 +644,39 @@ button {
   opacity: 0;
   pointer-events: none;
   filter: blur(1px);
-  transform: translate3d(44px, calc(-50% - 150px), -90px) rotateY(-13deg) rotateZ(12deg) scale(0.72);
+  transform: translate3d(28px, calc(-50% - 132px), -90px) rotateY(-13deg) rotateZ(12deg) scale(0.72);
 }
 
 .customer-wheel-card-position-1 {
   opacity: 0.34;
-  transform: translate3d(20px, calc(-50% - 104px), -60px) rotateY(-9deg) rotateZ(8deg) scale(0.8);
+  transform: translate3d(14px, calc(-50% - 92px), -60px) rotateY(-9deg) rotateZ(8deg) scale(0.8);
 }
 
 .customer-wheel-card-position-2 {
   opacity: 0.72;
-  transform: translate3d(-10px, calc(-50% - 56px), -24px) rotateY(-5deg) rotateZ(4deg) scale(0.9);
+  transform: translate3d(0, calc(-50% - 50px), -24px) rotateY(-5deg) rotateZ(4deg) scale(0.9);
 }
 
 .customer-wheel-card-position-3 {
   opacity: 1;
-  transform: translate3d(-44px, -50%, 0) rotateY(0deg) rotateZ(0deg) scale(1);
+  transform: translate3d(-22px, -50%, 0) rotateY(0deg) rotateZ(0deg) scale(1);
 }
 
 .customer-wheel-card-position-4 {
   opacity: 0.72;
-  transform: translate3d(-10px, calc(-50% + 56px), -24px) rotateY(5deg) rotateZ(-4deg) scale(0.9);
+  transform: translate3d(0, calc(-50% + 50px), -24px) rotateY(5deg) rotateZ(-4deg) scale(0.9);
 }
 
 .customer-wheel-card-position-5 {
   opacity: 0.34;
-  transform: translate3d(20px, calc(-50% + 104px), -60px) rotateY(9deg) rotateZ(-8deg) scale(0.8);
+  transform: translate3d(14px, calc(-50% + 92px), -60px) rotateY(9deg) rotateZ(-8deg) scale(0.8);
 }
 
 .customer-wheel-card-position-6 {
   opacity: 0;
   pointer-events: none;
   filter: blur(1px);
-  transform: translate3d(44px, calc(-50% + 150px), -90px) rotateY(13deg) rotateZ(-12deg) scale(0.72);
+  transform: translate3d(28px, calc(-50% + 132px), -90px) rotateY(13deg) rotateZ(-12deg) scale(0.72);
 }
 
 .fullstack-logo-flow {
