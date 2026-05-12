@@ -35,7 +35,6 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import ImageTrail, { type ImageTrailItem } from './components/ImageTrail';
 import LogoLoop, { type LogoItem } from './components/LogoLoop';
-import thanksTeamPhoto from './assets/thanks-team-photo.jpg';
 import {
   getCustomerSuccessCases,
   type CustomerCaseContentBlock,
@@ -1093,15 +1092,6 @@ function App() {
             </section>
 
             <section id="contact" className="thanks-section">
-              <img
-                className="thanks-photo"
-                src={thanksTeamPhoto}
-                alt={content.thanks.photoAlt}
-                width={1600}
-                height={1200}
-                loading="lazy"
-                decoding="async"
-              />
               <h2>{content.thanks.title}</h2>
               <p>{content.thanks.description}</p>
               <div className="contact-card" aria-label="Contact links">

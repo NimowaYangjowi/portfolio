@@ -1635,16 +1635,6 @@ button {
   text-align: center;
 }
 
-.thanks-photo {
-  display: block;
-  width: min(100%, 760px);
-  height: auto;
-  margin: 0 auto 56px;
-  border: 1px solid rgba(var(--foreground-rgb), 0.12);
-  border-radius: 18px;
-  box-shadow: 0 28px 70px rgba(var(--foreground-rgb), 0.14);
-}
-
 .thanks-section h2 {
   margin: 0;
   color: rgb(var(--foreground-rgb));
@@ -1942,11 +1932,6 @@ button {
   .thanks-section {
     width: min(100% - 32px, 1080px);
     padding: 64px 18px 88px;
-  }
-
-  .thanks-photo {
-    margin-bottom: 40px;
-    border-radius: 14px;
   }
 
   .thanks-section h2 {
