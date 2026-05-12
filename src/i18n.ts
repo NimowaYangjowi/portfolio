@@ -551,92 +551,132 @@ void i18n.use(initReactI18next).init({
               },
             },
             {
-              title: '반응형 마켓플레이스 탐색 피드',
-              subtitle: '상품 fetch, 카드 descriptor, row packing, preview prefetch를 나눠 설계한 적응형 탐색 피드',
-              skills: ['row packing', 'presentation descriptor', '오프셋 페이지네이션', 'preview prefetch'],
+              title: '워커 운영·복구 컨트롤 플레인',
+              subtitle: 'heartbeat, active owner, 모듈 오케스트레이션, Railway failover를 묶은 로컬 우선 운영 플랫폼',
+              skills: ['워커 슈퍼바이저', 'DB 백업 검증', '주기 작업', 'Railway failover'],
               details: [
-                '초기 fetch와 스크롤 fetch가 같은 오프셋 규칙을 유지하도록 해서 같은 항목이 중복되거나 빠지지 않게 했습니다.',
-                '카드 렌더러와 row packer가 같은 presentation descriptor를 읽도록 맞춰 화면 폭에 따라 배치가 안정적으로 바뀌게 했습니다.',
-                '미리보기 모달용 미디어 prefetch를 목록 렌더링과 분리하고 세션별 prefetch 허용량으로 네트워크 요청을 제한했습니다.',
+                'heartbeat와 worker_control_state로 현재 active owner가 로컬인지 Railway인지 판단하도록 했습니다.',
+                '하나의 로컬 워커 슈퍼바이저 안에서 미디어 처리, 검증된 DB 백업, cleanup/stale/backfill 같은 주기 작업 라인을 모듈로 나눴습니다.',
+                'DB 백업은 파일 생성과 R2 업로드에서 끝내지 않고 검증 DB 복원과 manifest check를 통과해야 성공으로 기록했습니다.',
+                'Railway는 로컬 워커 down이 확인된 뒤 active owner를 넘겨받고, 로컬 회복 후 쿨다운을 거쳐 다시 park되도록 했습니다.',
               ],
               modal: {
-                eyebrow: 'Case 03 · 실제로 굴러가는 제품',
-                title: '반응형 마켓플레이스 탐색 피드',
+                eyebrow: 'Case 06 · 실제로 굴러가는 제품',
+                title: '워커 운영·복구 컨트롤 플레인',
                 summary:
-                  '미디어가 많은 상품 목록을 빠르게 탐색할 수 있도록 API fetch, 페이지네이션, 카드 descriptor, row packing, preview prefetch를 함께 설계한 탐색 피드입니다. 화면 폭이 바뀌어도 같은 상품이 중복되거나 요청이 과하게 늘어나지 않도록 조정했습니다.',
-                diagramVariant: 'marketplaceFeed',
-                mainFlowLabel: '탐색 피드 렌더링 흐름',
-                recoveryFlowLabel: '성능 보호 흐름',
+                  'Redprint의 워커는 미디어 후처리만 하는 단일 작업기가 아니라, 미디어 처리, 검증된 DB 백업, 주기 점검을 로컬 우선으로 실행하는 운영 플랫폼입니다. heartbeat와 active owner 상태로 누가 작업 책임자인지 정하고, 로컬 워커 장애가 확인되면 Railway 대기 백업을 가동해 작업 소유권을 넘기고 백업 워커가 대상 작업을 가져가게 합니다.',
+                diagramVariant: 'workerPlatform',
+                mermaidDefinition: [
+                  'flowchart LR',
+                  '  subgraph Control[워커 컨트롤 플레인]',
+                  '    Heartbeat[heartbeat + 모듈 상태] --> State[worker_control_state]',
+                  '    State --> Owner{active owner 확인}',
+                  '    Owner --> Ops[워커 운영 대시보드]',
+                  '  end',
+                  '  subgraph Local[로컬 워커 허브]',
+                  '    Owner -->|로컬 허용| Supervisor[로컬 슈퍼바이저]',
+                  '    Supervisor --> Modules{WORKER_MODULES 활성화}',
+                  '    Modules --> Media[미디어 라인: 태깅 / 파생 이미지 / 트랜스코딩]',
+                  '    Modules --> Backup[DB 백업: pg_dump / R2 / 검증 DB]',
+                  '    Modules --> Scheduled[주기 작업: cleanup / stale / backfill]',
+                  '    Media --> Status[상태 + 감사 기록]',
+                  '    Backup --> Status',
+                  '    Scheduled --> Status',
+                  '  end',
+                  '  subgraph BackupRailway[Railway 대기 백업]',
+                  '    Owner -->|local down| Down{장애 전환 가능 여부}',
+                  '    Down --> Wake[Railway 깨우기 /ready]',
+                  '    Down --> NoHandoff[넘겨주기 없음 / 관찰]',
+                  '    Wake --> Refresh[컨트롤 플레인 갱신]',
+                  '    Refresh --> OwnerRailway[active owner = Railway]',
+                  '    OwnerRailway --> Claim[백업 워커가 활성 작업 가져감]',
+                  '    Claim --> Park[장애 복귀 쿨다운 + park]',
+                  '  end',
+                ].join('\\n'),
+                mainFlowLabel: '워커 플랫폼 흐름',
+                recoveryFlowLabel: '장애 전환·park 흐름',
                 notesLabel: '구현 관점에서 고민한 점',
                 closeLabel: '닫기',
                 openLabel: '자세히 보기',
                 steps: [
                   {
-                    title: 'Initial / scroll fetch',
+                    title: '로컬 워커 슈퍼바이저',
                     description:
-                      '첫 로드와 무한 스크롤 로드가 같은 오프셋 규칙을 사용해 상품 목록을 이어서 가져오게 했습니다.',
+                      '로컬 워커가 슈퍼바이저로 실행되고 heartbeat, 모듈 상태, active owner 상태를 주기적으로 기록합니다.',
                     kind: 'entry',
                   },
                   {
-                    title: 'Presentation descriptor',
+                    title: '모듈 활성화',
                     description:
-                      '상품 카드가 어떤 미디어를 몇 장 보여줄지 descriptor로 계산해 렌더러와 레이아웃이 같은 기준을 보게 했습니다.',
+                      'WORKER_MODULES 기준으로 미디어 처리, DB 백업, 주기 작업 라인을 환경별로 켜고 끌 수 있게 했습니다.',
                     kind: 'process',
                   },
                   {
-                    title: 'Responsive row packing',
+                    title: '미디어 처리 라인',
                     description:
-                      '뷰포트 폭에 맞춰 카드 너비와 행 배치를 계산해 이미지 카드 벽이 자연스럽게 재배치되도록 했습니다.',
+                      '태깅, 파생 이미지, 영상 트랜스코딩 작업을 큐에서 가져와 처리하고 결과를 공유 상태 행에 기록합니다.',
                     kind: 'process',
                   },
                   {
-                    title: '카드 벽 렌더링',
+                    title: '검증된 DB 백업 라인',
                     description:
-                      '계산된 행 단위로 카드 벽을 그려 화면 폭이 바뀌어도 항목 식별값과 노출 순서를 유지합니다.',
+                      'PostgreSQL 백업 파일을 만들고 R2에 업로드한 뒤 검증 DB에 복원해 실제 복구 가능한 백업만 성공으로 기록합니다.',
                     kind: 'process',
                   },
                   {
-                    title: '미리보기 모달 연결',
+                    title: '주기 작업 라인',
                     description:
-                      '카드를 클릭하면 목록 렌더링과 별개로 미리보기 모달에 필요한 미디어 요청을 이어받게 했습니다.',
+                      'cleanup, stale-processing recovery, 태깅 backfill, 웹훅 cleanup 같은 주기 작업을 워커 소유 내부 경로 호출로 실행합니다.',
+                    kind: 'process',
+                  },
+                  {
+                    title: '워커 운영 가시성',
+                    description:
+                      '운영 화면과 상태 확인 엔드포인트에서 active owner, 모듈 상태, 큐 압력, 장애 전환 상태를 확인할 수 있게 했습니다.',
                     kind: 'output',
                   },
                 ],
                 recoverySteps: [
                   {
-                    title: '공유 옵저버 풀',
+                    title: 'down 이벤트 감지',
                     description:
-                      '카드마다 옵저버를 만들지 않고 공유 옵저버를 사용해 긴 스크롤에서 브라우저 부담을 줄였습니다.',
-                    kind: 'process',
-                  },
-                  {
-                    title: 'prefetch 허용량 판단',
-                    description:
-                      'prefetch를 실행해도 되는지 세션별 허용량을 먼저 확인해 네트워크 요청이 과하게 늘지 않게 했습니다.',
+                      '로컬 워커가 응답하지 않거나 장애 전환 웹훅이 들어오면 Railway로 전환할 조건이 맞는지 확인하고, 조건이 맞지 않으면 전환하지 않고 관찰 상태로 둡니다.',
                     kind: 'decision',
                   },
                   {
-                    title: 'preview prefetch / on-demand fetch',
+                    title: 'Railway 대기 백업 가동',
                     description:
-                      'prefetch 허용량이 남아 있으면 미리보기 미디어를 묶어서 가져오고, 허용량을 다 쓰면 모달을 열 때 필요한 미디어만 요청합니다.',
+                      '평소에는 비용을 아끼기 위해 대기 상태로 둔 Railway 백업 워커를 /ready probe와 refresh 경로를 호출해 가동합니다.',
                     kind: 'recovery',
+                  },
+                  {
+                    title: '작업 소유권 갱신',
+                    description:
+                      'worker_control_state의 active owner를 Railway로 바꾼 뒤 백업 워커만 대상 작업을 가져갈 수 있게 합니다.',
+                    kind: 'process',
+                  },
+                  {
+                    title: '복구 쿨다운 + 대기 전환',
+                    description:
+                      '로컬 워커가 회복돼도 바로 되돌리지 않고 안정화 시간을 둔 뒤 작업 소유권을 되돌리고 Railway를 다시 대기 상태로 전환합니다.',
+                    kind: 'output',
                   },
                 ],
                 notes: [
                   {
-                    title: '보기 좋은 배치와 데이터 정확성',
+                    title: '하나의 워커, 여러 내부 라인',
                     description:
-                      '카드가 예쁘게 배치되는 것만큼 같은 상품이 중복되거나 빠지지 않는 데이터 흐름도 중요하게 봤습니다.',
+                      '미디어 처리, 백업, 주기 작업을 한 워커 플랫폼 안에 두되 모듈 단위로 켜고 끄게 해 운영 복잡도를 줄였습니다.',
                   },
                   {
-                    title: '렌더링과 미리보기의 분리',
+                    title: '백업 성공 기준을 복원 검증으로 잡기',
                     description:
-                      '목록을 그리는 일과 미리보기 모달을 빠르게 여는 일을 다른 로딩 흐름으로 나눴습니다.',
+                      '백업 파일 업로드만 성공으로 보지 않고 검증 DB 복원까지 통과해야 성공으로 기록해 실제 복구 가능성을 확인했습니다.',
                   },
                   {
-                    title: '네트워크 비용 관리',
+                    title: '비용 효율과 장애 전환 경로',
                     description:
-                      '사용자가 볼 가능성이 높은 미디어만 prefetch하도록 범위를 제한했습니다.',
+                      'Railway를 항상 켜두지 않고 로컬 우선으로 운영하면서도, 장애 시 백업 워커 가동, 소유권 갱신, 작업 확보, 대기 전환 순서로 복구되게 했습니다.',
                   },
                 ],
               },
@@ -861,132 +901,92 @@ void i18n.use(initReactI18next).init({
               },
             },
             {
-              title: '워커 운영·복구 컨트롤 플레인',
-              subtitle: 'heartbeat, active owner, 모듈 오케스트레이션, Railway failover를 묶은 로컬 우선 운영 플랫폼',
-              skills: ['워커 슈퍼바이저', 'DB 백업 검증', '주기 작업', 'Railway failover'],
+              title: '반응형 마켓플레이스 탐색 피드',
+              subtitle: '상품 fetch, 카드 descriptor, row packing, preview prefetch를 나눠 설계한 적응형 탐색 피드',
+              skills: ['row packing', 'presentation descriptor', '오프셋 페이지네이션', 'preview prefetch'],
               details: [
-                'heartbeat와 worker_control_state로 현재 active owner가 로컬인지 Railway인지 판단하도록 했습니다.',
-                '하나의 로컬 워커 슈퍼바이저 안에서 미디어 처리, 검증된 DB 백업, cleanup/stale/backfill 같은 주기 작업 라인을 모듈로 나눴습니다.',
-                'DB 백업은 파일 생성과 R2 업로드에서 끝내지 않고 검증 DB 복원과 manifest check를 통과해야 성공으로 기록했습니다.',
-                'Railway는 로컬 워커 down이 확인된 뒤 active owner를 넘겨받고, 로컬 회복 후 쿨다운을 거쳐 다시 park되도록 했습니다.',
+                '초기 fetch와 스크롤 fetch가 같은 오프셋 규칙을 유지하도록 해서 같은 항목이 중복되거나 빠지지 않게 했습니다.',
+                '카드 렌더러와 row packer가 같은 presentation descriptor를 읽도록 맞춰 화면 폭에 따라 배치가 안정적으로 바뀌게 했습니다.',
+                '미리보기 모달용 미디어 prefetch를 목록 렌더링과 분리하고 세션별 prefetch 허용량으로 네트워크 요청을 제한했습니다.',
               ],
               modal: {
-                eyebrow: 'Case 06 · 실제로 굴러가는 제품',
-                title: '워커 운영·복구 컨트롤 플레인',
+                eyebrow: 'Case 03 · 실제로 굴러가는 제품',
+                title: '반응형 마켓플레이스 탐색 피드',
                 summary:
-                  'Redprint의 워커는 미디어 후처리만 하는 단일 작업기가 아니라, 미디어 처리, 검증된 DB 백업, 주기 점검을 로컬 우선으로 실행하는 운영 플랫폼입니다. heartbeat와 active owner 상태로 누가 작업 책임자인지 정하고, 로컬 워커 장애가 확인되면 Railway 대기 백업을 가동해 작업 소유권을 넘기고 백업 워커가 대상 작업을 가져가게 합니다.',
-                diagramVariant: 'workerPlatform',
-                mermaidDefinition: [
-                  'flowchart LR',
-                  '  subgraph Control[워커 컨트롤 플레인]',
-                  '    Heartbeat[heartbeat + 모듈 상태] --> State[worker_control_state]',
-                  '    State --> Owner{active owner 확인}',
-                  '    Owner --> Ops[워커 운영 대시보드]',
-                  '  end',
-                  '  subgraph Local[로컬 워커 허브]',
-                  '    Owner -->|로컬 허용| Supervisor[로컬 슈퍼바이저]',
-                  '    Supervisor --> Modules{WORKER_MODULES 활성화}',
-                  '    Modules --> Media[미디어 라인: 태깅 / 파생 이미지 / 트랜스코딩]',
-                  '    Modules --> Backup[DB 백업: pg_dump / R2 / 검증 DB]',
-                  '    Modules --> Scheduled[주기 작업: cleanup / stale / backfill]',
-                  '    Media --> Status[상태 + 감사 기록]',
-                  '    Backup --> Status',
-                  '    Scheduled --> Status',
-                  '  end',
-                  '  subgraph BackupRailway[Railway 대기 백업]',
-                  '    Owner -->|local down| Down{장애 전환 가능 여부}',
-                  '    Down --> Wake[Railway 깨우기 /ready]',
-                  '    Down --> NoHandoff[넘겨주기 없음 / 관찰]',
-                  '    Wake --> Refresh[컨트롤 플레인 갱신]',
-                  '    Refresh --> OwnerRailway[active owner = Railway]',
-                  '    OwnerRailway --> Claim[백업 워커가 활성 작업 가져감]',
-                  '    Claim --> Park[장애 복귀 쿨다운 + park]',
-                  '  end',
-                ].join('\\n'),
-                mainFlowLabel: '워커 플랫폼 흐름',
-                recoveryFlowLabel: '장애 전환·park 흐름',
+                  '미디어가 많은 상품 목록을 빠르게 탐색할 수 있도록 API fetch, 페이지네이션, 카드 descriptor, row packing, preview prefetch를 함께 설계한 탐색 피드입니다. 화면 폭이 바뀌어도 같은 상품이 중복되거나 요청이 과하게 늘어나지 않도록 조정했습니다.',
+                diagramVariant: 'marketplaceFeed',
+                mainFlowLabel: '탐색 피드 렌더링 흐름',
+                recoveryFlowLabel: '성능 보호 흐름',
                 notesLabel: '구현 관점에서 고민한 점',
                 closeLabel: '닫기',
                 openLabel: '자세히 보기',
                 steps: [
                   {
-                    title: '로컬 워커 슈퍼바이저',
+                    title: 'Initial / scroll fetch',
                     description:
-                      '로컬 워커가 슈퍼바이저로 실행되고 heartbeat, 모듈 상태, active owner 상태를 주기적으로 기록합니다.',
+                      '첫 로드와 무한 스크롤 로드가 같은 오프셋 규칙을 사용해 상품 목록을 이어서 가져오게 했습니다.',
                     kind: 'entry',
                   },
                   {
-                    title: '모듈 활성화',
+                    title: 'Presentation descriptor',
                     description:
-                      'WORKER_MODULES 기준으로 미디어 처리, DB 백업, 주기 작업 라인을 환경별로 켜고 끌 수 있게 했습니다.',
+                      '상품 카드가 어떤 미디어를 몇 장 보여줄지 descriptor로 계산해 렌더러와 레이아웃이 같은 기준을 보게 했습니다.',
                     kind: 'process',
                   },
                   {
-                    title: '미디어 처리 라인',
+                    title: 'Responsive row packing',
                     description:
-                      '태깅, 파생 이미지, 영상 트랜스코딩 작업을 큐에서 가져와 처리하고 결과를 공유 상태 행에 기록합니다.',
+                      '뷰포트 폭에 맞춰 카드 너비와 행 배치를 계산해 이미지 카드 벽이 자연스럽게 재배치되도록 했습니다.',
                     kind: 'process',
                   },
                   {
-                    title: '검증된 DB 백업 라인',
+                    title: '카드 벽 렌더링',
                     description:
-                      'PostgreSQL 백업 파일을 만들고 R2에 업로드한 뒤 검증 DB에 복원해 실제 복구 가능한 백업만 성공으로 기록합니다.',
+                      '계산된 행 단위로 카드 벽을 그려 화면 폭이 바뀌어도 항목 식별값과 노출 순서를 유지합니다.',
                     kind: 'process',
                   },
                   {
-                    title: '주기 작업 라인',
+                    title: '미리보기 모달 연결',
                     description:
-                      'cleanup, stale-processing recovery, 태깅 backfill, 웹훅 cleanup 같은 주기 작업을 워커 소유 내부 경로 호출로 실행합니다.',
-                    kind: 'process',
-                  },
-                  {
-                    title: '워커 운영 가시성',
-                    description:
-                      '운영 화면과 상태 확인 엔드포인트에서 active owner, 모듈 상태, 큐 압력, 장애 전환 상태를 확인할 수 있게 했습니다.',
+                      '카드를 클릭하면 목록 렌더링과 별개로 미리보기 모달에 필요한 미디어 요청을 이어받게 했습니다.',
                     kind: 'output',
                   },
                 ],
                 recoverySteps: [
                   {
-                    title: 'down 이벤트 감지',
+                    title: '공유 옵저버 풀',
                     description:
-                      '로컬 워커가 응답하지 않거나 장애 전환 웹훅이 들어오면 Railway로 전환할 조건이 맞는지 확인하고, 조건이 맞지 않으면 전환하지 않고 관찰 상태로 둡니다.',
-                    kind: 'decision',
-                  },
-                  {
-                    title: 'Railway 대기 백업 가동',
-                    description:
-                      '평소에는 비용을 아끼기 위해 대기 상태로 둔 Railway 백업 워커를 /ready probe와 refresh 경로를 호출해 가동합니다.',
-                    kind: 'recovery',
-                  },
-                  {
-                    title: '작업 소유권 갱신',
-                    description:
-                      'worker_control_state의 active owner를 Railway로 바꾼 뒤 백업 워커만 대상 작업을 가져갈 수 있게 합니다.',
+                      '카드마다 옵저버를 만들지 않고 공유 옵저버를 사용해 긴 스크롤에서 브라우저 부담을 줄였습니다.',
                     kind: 'process',
                   },
                   {
-                    title: '복구 쿨다운 + 대기 전환',
+                    title: 'prefetch 허용량 판단',
                     description:
-                      '로컬 워커가 회복돼도 바로 되돌리지 않고 안정화 시간을 둔 뒤 작업 소유권을 되돌리고 Railway를 다시 대기 상태로 전환합니다.',
-                    kind: 'output',
+                      'prefetch를 실행해도 되는지 세션별 허용량을 먼저 확인해 네트워크 요청이 과하게 늘지 않게 했습니다.',
+                    kind: 'decision',
+                  },
+                  {
+                    title: 'preview prefetch / on-demand fetch',
+                    description:
+                      'prefetch 허용량이 남아 있으면 미리보기 미디어를 묶어서 가져오고, 허용량을 다 쓰면 모달을 열 때 필요한 미디어만 요청합니다.',
+                    kind: 'recovery',
                   },
                 ],
                 notes: [
                   {
-                    title: '하나의 워커, 여러 내부 라인',
+                    title: '보기 좋은 배치와 데이터 정확성',
                     description:
-                      '미디어 처리, 백업, 주기 작업을 한 워커 플랫폼 안에 두되 모듈 단위로 켜고 끄게 해 운영 복잡도를 줄였습니다.',
+                      '카드가 예쁘게 배치되는 것만큼 같은 상품이 중복되거나 빠지지 않는 데이터 흐름도 중요하게 봤습니다.',
                   },
                   {
-                    title: '백업 성공 기준을 복원 검증으로 잡기',
+                    title: '렌더링과 미리보기의 분리',
                     description:
-                      '백업 파일 업로드만 성공으로 보지 않고 검증 DB 복원까지 통과해야 성공으로 기록해 실제 복구 가능성을 확인했습니다.',
+                      '목록을 그리는 일과 미리보기 모달을 빠르게 여는 일을 다른 로딩 흐름으로 나눴습니다.',
                   },
                   {
-                    title: '비용 효율과 장애 전환 경로',
+                    title: '네트워크 비용 관리',
                     description:
-                      'Railway를 항상 켜두지 않고 로컬 우선으로 운영하면서도, 장애 시 백업 워커 가동, 소유권 갱신, 작업 확보, 대기 전환 순서로 복구되게 했습니다.',
+                      '사용자가 볼 가능성이 높은 미디어만 prefetch하도록 범위를 제한했습니다.',
                   },
                 ],
               },
@@ -1004,7 +1004,7 @@ void i18n.use(initReactI18next).init({
         experienceBadge: 'Experience',
         contactEmailLabel: 'Email',
         content: {
-          heroTitle: "Hello.\nI connect technology and people.\nI'm Jiwoo Han.",
+          heroTitle: "Hello.\nI'm Jiwoo Han.\nI connect technology and people.",
           heroDescription:
             'I support enterprise customers across Korea and Southeast Asia\nthrough onboarding, education, feature adoption, and business reviews.\nI turn complex customer problems into actionable product and engineering solutions.',
           sections: {
@@ -1014,7 +1014,7 @@ void i18n.use(initReactI18next).init({
             },
             skill: {
               eyebrow: 'Expertise & skillset',
-              title: 'The capabilities and tools I have used in real work\nto solve customer problems.',
+              title: 'The capabilities and tools I have used in work\nto solve customer problems.',
             },
             career: {
               eyebrow: 'Career',
@@ -1456,92 +1456,132 @@ void i18n.use(initReactI18next).init({
               },
             },
             {
-              title: 'Responsive Marketplace Discovery Feed',
-              subtitle: 'An adaptive discovery feed that separates item fetch, card descriptors, row packing, and preview prefetch.',
-              skills: ['row packing', 'presentation descriptor', 'offset pagination', 'preview prefetch'],
+              title: 'Worker Operations and Recovery Control Plane',
+              subtitle: 'A local-first operations platform for heartbeat, active ownership, module orchestration, and Railway failover.',
+              skills: ['worker supervisor', 'DB backup verify', 'scheduled ops', 'Railway failover'],
               details: [
-                'Preserved offset-based pagination across initial and infinite-scroll fetches so items do not duplicate or disappear.',
-                'Aligned the card renderer and row packer around one presentation descriptor so layouts stay stable across viewport sizes.',
-                'Separated preview-modal media prefetch from wall rendering and capped network requests with a per-session prefetch allowance.',
+                'Used heartbeat and worker_control_state to decide whether the active owner is local or Railway.',
+                'Organized media processing, verified DB backup, and cleanup/stale/backfill scheduled operations as separate lines under one local worker supervisor.',
+                'Defined backup success as successful R2 upload plus restore verification into a dedicated verify database.',
+                'Kept Railway sleeping until local failure is confirmed, then transferred ownership and parked it again after local recovery cooldown.',
               ],
               modal: {
-                eyebrow: 'Case 03 · Real Product Work',
-                title: 'Responsive Marketplace Discovery Feed',
+                eyebrow: 'Case 06 · Real Product Work',
+                title: 'Worker Operations and Recovery Control Plane',
                 summary:
-                  'A discovery feed that combines API fetch, pagination, card descriptors, row packing, and preview prefetching for media-heavy browsing. It keeps the wall visually adaptive without duplicating items or overspending network requests.',
-                diagramVariant: 'marketplaceFeed',
-                mainFlowLabel: 'Feed rendering flow',
-                recoveryFlowLabel: 'Performance protection flow',
+                  'Redprint’s worker is not just a media processor; it is a local-first operations platform for media processing, verified DB backup, and scheduled maintenance. Heartbeat and active-owner state decide who is responsible for work, and Railway wakes as a sleeping backup only after local failure detection.',
+                diagramVariant: 'workerPlatform',
+                mermaidDefinition: [
+                  'flowchart LR',
+                  '  subgraph Control[Worker control plane]',
+                  '    Heartbeat[Heartbeat + module health] --> State[worker_control_state]',
+                  '    State --> Owner{Active owner check}',
+                  '    Owner --> Ops[Worker Ops dashboard]',
+                  '  end',
+                  '  subgraph Local[Local worker hub]',
+                  '    Owner -->|local allowed| Supervisor[Local supervisor]',
+                  '    Supervisor --> Modules{WORKER_MODULES activation}',
+                  '    Modules --> Media[Media line: tagging / derivative / transcode]',
+                  '    Modules --> Backup[DB backup: pg_dump / R2 / verify DB]',
+                  '    Modules --> Scheduled[Scheduled ops: cleanup / stale / backfill]',
+                  '    Media --> Status[Status + audit writeback]',
+                  '    Backup --> Status',
+                  '    Scheduled --> Status',
+                  '  end',
+                  '  subgraph BackupRailway[Railway sleeping backup]',
+                  '    Owner -->|local down| Down{Failover eligibility}',
+                  '    Down --> Wake[Wake Railway /ready]',
+                  '    Down --> NoHandoff[No handoff / monitor]',
+                  '    Wake --> Refresh[Control-plane refresh]',
+                  '    Refresh --> OwnerRailway[Active owner = Railway]',
+                  '    OwnerRailway --> Claim[Backup claims active jobs]',
+                  '    Claim --> Park[Failback cooldown + park]',
+                  '  end',
+                ].join('\\n'),
+                mainFlowLabel: 'Worker platform flow',
+                recoveryFlowLabel: 'Failover and park flow',
                 notesLabel: 'Implementation considerations',
                 closeLabel: 'Close',
                 openLabel: 'View details',
                 steps: [
                   {
-                    title: 'Initial / scroll fetch',
+                    title: 'Local worker supervisor',
                     description:
-                      'Initial page load and infinite scroll use the same offset rule to fetch the next marketplace items.',
+                      'The local worker runs under a supervisor that reports heartbeat, enabled modules, health state, and active ownership.',
                     kind: 'entry',
                   },
                   {
-                    title: 'Presentation descriptor',
+                    title: 'Module activation',
                     description:
-                      'Each marketplace item gets a descriptor that tells both renderer and layout logic what media should be shown.',
+                      'WORKER_MODULES controls whether media processing, DB backup, and scheduled operations are active in a given runtime.',
                     kind: 'process',
                   },
                   {
-                    title: 'Responsive row packing',
+                    title: 'Media processing line',
                     description:
-                      'Rows are packed according to viewport width so the media wall adapts without breaking item identity.',
+                      'The worker claims tagging, image derivative, and video transcode jobs from queues and writes results back into shared status rows.',
                     kind: 'process',
                   },
                   {
-                    title: 'Render card wall',
+                    title: 'Verified DB backup line',
                     description:
-                      'Packed rows render the card wall while preserving item identity and ordering across viewport changes.',
+                      'The worker creates PostgreSQL backup artifacts, uploads them to R2, restores them into a verify database, and records success only after restore checks pass.',
                     kind: 'process',
                   },
                   {
-                    title: 'Preview modal handoff',
+                    title: 'Scheduled operations line',
                     description:
-                      'Opening a card hands media loading to the preview modal without blocking the wall renderer.',
+                      'Cleanup, stale-processing recovery, tagging backfill, and webhook cleanup run through worker-owned internal route calls.',
+                    kind: 'process',
+                  },
+                  {
+                    title: 'Worker ops visibility',
+                    description:
+                      'Operators can inspect active owner, module health, queue pressure, and failover state from health and ops surfaces.',
                     kind: 'output',
                   },
                 ],
                 recoverySteps: [
                   {
-                    title: 'Shared observer pool',
+                    title: 'Down event detection',
                     description:
-                      'A shared observer avoids creating one visibility observer per card in long scrolling sessions.',
-                    kind: 'process',
-                  },
-                  {
-                    title: 'Prefetch allowance check',
-                    description:
-                      'The feed checks the per-session prefetch allowance before starting preview prefetch work.',
+                      'When the local worker stops responding or a failover webhook arrives, the system checks whether Railway handoff should start; if conditions are not met, it keeps monitoring without handoff.',
                     kind: 'decision',
                   },
                   {
-                    title: 'Batched prefetch / on-demand fetch',
+                    title: 'Railway sleeping backup wake',
                     description:
-                      'When allowance remains, preview media is fetched in batches; after it is spent, the modal fetches only what it needs on demand.',
+                      'The Railway backup worker stays quiet until the system wakes it through the ready probe and refresh path.',
                     kind: 'recovery',
+                  },
+                  {
+                    title: 'Ownership refresh',
+                    description:
+                      'worker_control_state changes active ownership so only the Railway backup can claim eligible jobs.',
+                    kind: 'process',
+                  },
+                  {
+                    title: 'Failback cooldown + park',
+                    description:
+                      'After the local worker recovers, the system waits through a stabilization window before returning ownership and parking Railway again.',
+                    kind: 'output',
                   },
                 ],
                 notes: [
                   {
-                    title: 'Layout quality and data correctness',
+                    title: 'One worker platform, several internal lines',
                     description:
-                      'The feed needed to look fluid while still preserving exact item identity and pagination order.',
+                      'Media processing, backups, and scheduled operations share one operational platform while remaining separately switchable by module.',
                   },
                   {
-                    title: 'Separate wall rendering from preview loading',
+                    title: 'Treat backup success as restore-verified',
                     description:
-                      'The card wall and preview modal use different loading tracks so one surface does not slow the other.',
+                      'A backup is not counted as successful until the artifact can be restored and checked in the verify database.',
                   },
                   {
-                    title: 'Control network spend',
+                    title: 'Balance cost with failover readiness',
                     description:
-                      'The app prefetches likely-needed media, not every possible preview asset.',
+                      'Railway is not kept warm all the time; wake, refresh, claim, and park stages preserve a recovery path without constant backup cost.',
                   },
                 ],
               },
@@ -1766,132 +1806,92 @@ void i18n.use(initReactI18next).init({
               },
             },
             {
-              title: 'Worker Operations and Recovery Control Plane',
-              subtitle: 'A local-first operations platform for heartbeat, active ownership, module orchestration, and Railway failover.',
-              skills: ['worker supervisor', 'DB backup verify', 'scheduled ops', 'Railway failover'],
+              title: 'Responsive Marketplace Discovery Feed',
+              subtitle: 'An adaptive discovery feed that separates item fetch, card descriptors, row packing, and preview prefetch.',
+              skills: ['row packing', 'presentation descriptor', 'offset pagination', 'preview prefetch'],
               details: [
-                'Used heartbeat and worker_control_state to decide whether the active owner is local or Railway.',
-                'Organized media processing, verified DB backup, and cleanup/stale/backfill scheduled operations as separate lines under one local worker supervisor.',
-                'Defined backup success as successful R2 upload plus restore verification into a dedicated verify database.',
-                'Kept Railway sleeping until local failure is confirmed, then transferred ownership and parked it again after local recovery cooldown.',
+                'Preserved offset-based pagination across initial and infinite-scroll fetches so items do not duplicate or disappear.',
+                'Aligned the card renderer and row packer around one presentation descriptor so layouts stay stable across viewport sizes.',
+                'Separated preview-modal media prefetch from wall rendering and capped network requests with a per-session prefetch allowance.',
               ],
               modal: {
-                eyebrow: 'Case 06 · Real Product Work',
-                title: 'Worker Operations and Recovery Control Plane',
+                eyebrow: 'Case 03 · Real Product Work',
+                title: 'Responsive Marketplace Discovery Feed',
                 summary:
-                  'Redprint’s worker is not just a media processor; it is a local-first operations platform for media processing, verified DB backup, and scheduled maintenance. Heartbeat and active-owner state decide who is responsible for work, and Railway wakes as a sleeping backup only after local failure detection.',
-                diagramVariant: 'workerPlatform',
-                mermaidDefinition: [
-                  'flowchart LR',
-                  '  subgraph Control[Worker control plane]',
-                  '    Heartbeat[Heartbeat + module health] --> State[worker_control_state]',
-                  '    State --> Owner{Active owner check}',
-                  '    Owner --> Ops[Worker Ops dashboard]',
-                  '  end',
-                  '  subgraph Local[Local worker hub]',
-                  '    Owner -->|local allowed| Supervisor[Local supervisor]',
-                  '    Supervisor --> Modules{WORKER_MODULES activation}',
-                  '    Modules --> Media[Media line: tagging / derivative / transcode]',
-                  '    Modules --> Backup[DB backup: pg_dump / R2 / verify DB]',
-                  '    Modules --> Scheduled[Scheduled ops: cleanup / stale / backfill]',
-                  '    Media --> Status[Status + audit writeback]',
-                  '    Backup --> Status',
-                  '    Scheduled --> Status',
-                  '  end',
-                  '  subgraph BackupRailway[Railway sleeping backup]',
-                  '    Owner -->|local down| Down{Failover eligibility}',
-                  '    Down --> Wake[Wake Railway /ready]',
-                  '    Down --> NoHandoff[No handoff / monitor]',
-                  '    Wake --> Refresh[Control-plane refresh]',
-                  '    Refresh --> OwnerRailway[Active owner = Railway]',
-                  '    OwnerRailway --> Claim[Backup claims active jobs]',
-                  '    Claim --> Park[Failback cooldown + park]',
-                  '  end',
-                ].join('\\n'),
-                mainFlowLabel: 'Worker platform flow',
-                recoveryFlowLabel: 'Failover and park flow',
+                  'A discovery feed that combines API fetch, pagination, card descriptors, row packing, and preview prefetching for media-heavy browsing. It keeps the wall visually adaptive without duplicating items or overspending network requests.',
+                diagramVariant: 'marketplaceFeed',
+                mainFlowLabel: 'Feed rendering flow',
+                recoveryFlowLabel: 'Performance protection flow',
                 notesLabel: 'Implementation considerations',
                 closeLabel: 'Close',
                 openLabel: 'View details',
                 steps: [
                   {
-                    title: 'Local worker supervisor',
+                    title: 'Initial / scroll fetch',
                     description:
-                      'The local worker runs under a supervisor that reports heartbeat, enabled modules, health state, and active ownership.',
+                      'Initial page load and infinite scroll use the same offset rule to fetch the next marketplace items.',
                     kind: 'entry',
                   },
                   {
-                    title: 'Module activation',
+                    title: 'Presentation descriptor',
                     description:
-                      'WORKER_MODULES controls whether media processing, DB backup, and scheduled operations are active in a given runtime.',
+                      'Each marketplace item gets a descriptor that tells both renderer and layout logic what media should be shown.',
                     kind: 'process',
                   },
                   {
-                    title: 'Media processing line',
+                    title: 'Responsive row packing',
                     description:
-                      'The worker claims tagging, image derivative, and video transcode jobs from queues and writes results back into shared status rows.',
+                      'Rows are packed according to viewport width so the media wall adapts without breaking item identity.',
                     kind: 'process',
                   },
                   {
-                    title: 'Verified DB backup line',
+                    title: 'Render card wall',
                     description:
-                      'The worker creates PostgreSQL backup artifacts, uploads them to R2, restores them into a verify database, and records success only after restore checks pass.',
+                      'Packed rows render the card wall while preserving item identity and ordering across viewport changes.',
                     kind: 'process',
                   },
                   {
-                    title: 'Scheduled operations line',
+                    title: 'Preview modal handoff',
                     description:
-                      'Cleanup, stale-processing recovery, tagging backfill, and webhook cleanup run through worker-owned internal route calls.',
-                    kind: 'process',
-                  },
-                  {
-                    title: 'Worker ops visibility',
-                    description:
-                      'Operators can inspect active owner, module health, queue pressure, and failover state from health and ops surfaces.',
+                      'Opening a card hands media loading to the preview modal without blocking the wall renderer.',
                     kind: 'output',
                   },
                 ],
                 recoverySteps: [
                   {
-                    title: 'Down event detection',
+                    title: 'Shared observer pool',
                     description:
-                      'When the local worker stops responding or a failover webhook arrives, the system checks whether Railway handoff should start; if conditions are not met, it keeps monitoring without handoff.',
-                    kind: 'decision',
-                  },
-                  {
-                    title: 'Railway sleeping backup wake',
-                    description:
-                      'The Railway backup worker stays quiet until the system wakes it through the ready probe and refresh path.',
-                    kind: 'recovery',
-                  },
-                  {
-                    title: 'Ownership refresh',
-                    description:
-                      'worker_control_state changes active ownership so only the Railway backup can claim eligible jobs.',
+                      'A shared observer avoids creating one visibility observer per card in long scrolling sessions.',
                     kind: 'process',
                   },
                   {
-                    title: 'Failback cooldown + park',
+                    title: 'Prefetch allowance check',
                     description:
-                      'After the local worker recovers, the system waits through a stabilization window before returning ownership and parking Railway again.',
-                    kind: 'output',
+                      'The feed checks the per-session prefetch allowance before starting preview prefetch work.',
+                    kind: 'decision',
+                  },
+                  {
+                    title: 'Batched prefetch / on-demand fetch',
+                    description:
+                      'When allowance remains, preview media is fetched in batches; after it is spent, the modal fetches only what it needs on demand.',
+                    kind: 'recovery',
                   },
                 ],
                 notes: [
                   {
-                    title: 'One worker platform, several internal lines',
+                    title: 'Layout quality and data correctness',
                     description:
-                      'Media processing, backups, and scheduled operations share one operational platform while remaining separately switchable by module.',
+                      'The feed needed to look fluid while still preserving exact item identity and pagination order.',
                   },
                   {
-                    title: 'Treat backup success as restore-verified',
+                    title: 'Separate wall rendering from preview loading',
                     description:
-                      'A backup is not counted as successful until the artifact can be restored and checked in the verify database.',
+                      'The card wall and preview modal use different loading tracks so one surface does not slow the other.',
                   },
                   {
-                    title: 'Balance cost with failover readiness',
+                    title: 'Control network spend',
                     description:
-                      'Railway is not kept warm all the time; wake, refresh, claim, and park stages preserve a recovery path without constant backup cost.',
+                      'The app prefetches likely-needed media, not every possible preview asset.',
                   },
                 ],
               },

@@ -33,7 +33,6 @@ import {
   FlowerFiveTraced,
 } from './components/ui/icons';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
-import ClickSpark from './components/ClickSpark';
 import ImageTrail, { type ImageTrailItem } from './components/ImageTrail';
 import LogoLoop, { type LogoItem } from './components/LogoLoop';
 import thanksTeamPhoto from './assets/thanks-team-photo.jpg';
@@ -1014,12 +1013,7 @@ function App() {
   }, []);
 
   return (
-    <ClickSpark
-      flowerItems={heroTrailItems}
-      sparkSize={82}
-      sparkCount={1}
-      duration={1020}
-    >
+    <>
       <LanguageToggle />
       <div className="page">
           <main>
@@ -1147,7 +1141,7 @@ function App() {
             onClose={() => setSelectedCustomerCaseId(null)}
           />
         ) : null}
-      </ClickSpark>
+    </>
   );
 }
 

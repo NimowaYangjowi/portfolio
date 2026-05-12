@@ -184,7 +184,7 @@ button {
 }
 
 .hero-title-line-compact {
-  font-size: 0.88em;
+  font-size: 0.66em;
 }
 
 .hero-title-accent {
@@ -1668,7 +1668,7 @@ button {
   gap: 14px;
   width: min(100%, 560px);
   margin: 36px auto 0;
-  text-align: left;
+  text-align: center;
 }
 
 .contact-card-row {
@@ -1679,7 +1679,7 @@ button {
   padding: 4px 0;
   color: rgb(var(--foreground-rgb));
   font: inherit;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   transition:
     background-color 160ms ease,
@@ -1698,6 +1698,7 @@ button {
 .contact-card-copy {
   display: inline-grid;
   gap: 5px;
+  justify-items: center;
   max-width: 100%;
 }
 
@@ -1711,6 +1712,7 @@ button {
 .contact-card-value {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   min-width: 0;
   overflow-wrap: anywhere;

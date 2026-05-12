@@ -718,11 +718,11 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
     id: 'adobe-integration-issue-resolution',
     title: localize(
       '고객 니즈에서 시작된 Adobe 리인게이지먼트 표준 연동화',
-      'Customer-Led Product Improvement: Adobe Re-engagement Integration',
+      'Adobe Integration Improvement',
     ),
     customerContext: localize(
       '웹 기반 분석에서 시작한 고객 온보딩 중 Adobe 리인게이지먼트 연동이 당시 지원 범위 밖이라는 점을 발견했습니다. 리인게이지먼트는 리타겟팅 성과 측정에 필수적인 데이터였지만, Adobe뿐 아니라 애널리틱스 파트너 연동 전반에서 아직 전사적으로 지원되지 않던 영역이었습니다.',
-      'During onboarding for a customer that came from a web analytics background, we discovered that Adobe re-engagement integration was not yet supported. Re-engagement data was essential for measuring retargeting performance, but this capability was not yet supported company-wide across analytics partner integrations, not just Adobe.',
+      'During onboarding, we identified a gap in Adobe re-engagement support. Re-engagement data was essential for measuring retargeting performance, but this capability was not yet supported company-wide across analytics partner integrations, not just Adobe.',
     ),
     focus: localize('부서 간 협업', 'Cross-Functional Collaboration'),
     contribution: [
@@ -753,7 +753,7 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
       eyebrow: localize('고객성공 사례 04', 'Customer Success Case 04'),
       title: localize(
         '고객 니즈에서 시작된 Adobe 리인게이지먼트 표준 연동화',
-        'Customer-Led Product Improvement: Adobe Re-engagement Integration',
+        'Adobe Integration Improvement',
       ),
       summary: localize(
         '웹 기반 분석에서 출발한 고객의 온보딩 중 Adobe 리인게이지먼트 연동 미지원 갭을 발견하고, 리더십 에스컬레이션과 Partnerships, Product, Adobe 협업으로 표준 연동 구현까지 이어간 사례입니다.',
