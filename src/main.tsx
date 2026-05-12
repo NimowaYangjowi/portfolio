@@ -35,6 +35,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import ImageTrail, { type ImageTrailItem } from './components/ImageTrail';
 import LogoLoop, { type LogoItem } from './components/LogoLoop';
+import marketingMeasurementCardImage from './assets/marketing-measurement-card.png';
 import {
   getCustomerSuccessCases,
   type CustomerCaseContentBlock,
@@ -184,6 +185,7 @@ const heroTrailItems: HeroTrailFlowerItem[] = heroTrailIcons.flatMap((icon, icon
 const fullStackFeatureTitles = new Set(['풀스택 프로젝트 빌딩', 'Full-stack Project Building']);
 const technicalCommunicationFeatureTitles = new Set(['기술 커뮤니케이션', 'Technical Communication']);
 const customerSuccessFeatureTitles = new Set(['고객성공', 'Customer Success']);
+const marketingFeatureTitles = new Set(['마케팅 전략과 측정 설계', 'Marketing Strategy & Measurement']);
 const contactEmail = 'jiwoohan92@gmail.com';
 const linkedInUrl = 'https://www.linkedin.com/in/jiwoo-han-557289143/';
 
@@ -426,6 +428,7 @@ function FeatureCard({ feature }: { feature: Feature }) {
   const hasLogoFlow = fullStackFeatureTitles.has(feature.title);
   const hasTechnicalCommunicationVisual = technicalCommunicationFeatureTitles.has(feature.title);
   const hasCustomerSuccessVisual = customerSuccessFeatureTitles.has(feature.title);
+  const hasMarketingVisual = marketingFeatureTitles.has(feature.title);
 
   return (
     <Reveal>
@@ -441,6 +444,10 @@ function FeatureCard({ feature }: { feature: Feature }) {
         ) : hasCustomerSuccessVisual ? (
           <div className="feature-visual feature-visual-customer" aria-hidden="true">
             <CustomerSuccessVisual />
+          </div>
+        ) : hasMarketingVisual ? (
+          <div className="feature-visual feature-visual-marketing" aria-hidden="true">
+            <img src={marketingMeasurementCardImage} alt="" />
           </div>
         ) : (
           <div className="feature-visual" aria-hidden="true">

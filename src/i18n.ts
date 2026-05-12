@@ -158,7 +158,7 @@ void i18n.use(initReactI18next).init({
             {
               title: '풀스택 프로젝트 빌딩',
               description:
-                '프론트엔드, 백엔드, 데이터베이스를 포함한 풀스택 프로젝트를 직접 빌드하고 운영했습니다. Vercel, Railway, Upstash Redis, Cloudflare R2, Stripe, Sentry를 조합해 배포, 스토리지, 결제, 분산락, 레이트 리밋, 에러 대응 자동화를 구성했고, 로컬 워커 장애 시 Railway 백업 워커가 작업을 이어받는 failover 구조까지 설계했습니다.',
+                '프론트엔드, 백엔드, 데이터베이스를 포함한 풀스택 프로젝트를 직접 빌드하고 운영했습니다. Vercel과 Railway로 배포를 구성하고, Cloudflare R2로 스토리지, Stripe로 결제, Upstash Redis로 분산락과 레이트 리밋, Sentry로 에러 대응 자동화를 구성했습니다. 로컬 워커 장애 시 Railway 백업 워커가 작업을 이어받는 failover 구조까지 설계했습니다.',
               iconLabel: 'FS',
             },
           ],
@@ -1088,7 +1088,7 @@ void i18n.use(initReactI18next).init({
             {
               title: 'Full-stack Project Building',
               description:
-                'I have built and operated full-stack projects across frontend, backend, and database layers. I combined Vercel, Railway, Upstash Redis, Cloudflare R2, Stripe, and Sentry for deployment, storage, payments, distributed locking, rate limiting, and automated error response, including a failover structure where a Railway backup worker takes over when the local worker fails.',
+                'I have built and operated full-stack projects across frontend, backend, and database layers. I use Vercel and Railway for deployment, Cloudflare R2 for storage, Stripe for payments, Upstash Redis for distributed locking and rate limiting, and Sentry for automated error response. I also designed a failover structure where a Railway backup worker takes over when the local worker fails.',
               iconLabel: 'FS',
             },
           ],
