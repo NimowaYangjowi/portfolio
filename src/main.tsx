@@ -236,6 +236,28 @@ function getSupportedLanguage(language?: string): SupportedLanguage {
     : 'ko';
 }
 
+function getCurrentHashTargetId() {
+  if (typeof window === 'undefined' || !window.location.hash) {
+    return null;
+  }
+
+  try {
+    return decodeURIComponent(window.location.hash.slice(1));
+  } catch {
+    return window.location.hash.slice(1);
+  }
+}
+
+function scrollToCurrentHashTarget() {
+  const targetId = getCurrentHashTargetId();
+
+  if (!targetId) {
+    return;
+  }
+
+  document.getElementById(targetId)?.scrollIntoView({ block: 'start' });
+}
+
 function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
     <Reveal className="section-heading">
@@ -1001,6 +1023,22 @@ function App() {
 
     return () => window.removeEventListener('popstate', handlePopState);
   }, [currentLanguage, i18n]);
+
+  useEffect(() => {
+    const timeoutIds: number[] = [];
+    const queueHashScroll = () => {
+      timeoutIds.push(window.setTimeout(scrollToCurrentHashTarget, 0));
+      timeoutIds.push(window.setTimeout(scrollToCurrentHashTarget, 150));
+    };
+
+    queueHashScroll();
+    window.addEventListener('hashchange', queueHashScroll);
+
+    return () => {
+      timeoutIds.forEach((timeoutId) => window.clearTimeout(timeoutId));
+      window.removeEventListener('hashchange', queueHashScroll);
+    };
+  }, [currentLanguage]);
 
   useEffect(() => {
     return () => {

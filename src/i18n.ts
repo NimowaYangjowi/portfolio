@@ -51,19 +51,9 @@ export function getLanguagePath(language: SupportedLanguage) {
   }
 
   const basePathSegments = getBasePathSegments();
-  const pathSegments = getPathSegments(window.location.pathname);
-  const hasBasePath = basePathSegments.every(
-    (segment, index) => pathSegments[index] === segment,
-  );
-  const appPathSegments = hasBasePath ? pathSegments.slice(basePathSegments.length) : pathSegments;
+  const nextPathSegments = [...basePathSegments, language];
 
-  if (appPathSegments.length > 0 && isSupportedLanguage(appPathSegments[0])) {
-    appPathSegments[0] = language;
-  } else {
-    appPathSegments.unshift(language);
-  }
-
-  return `/${[...basePathSegments, ...appPathSegments].join('/')}${window.location.search}${window.location.hash}`;
+  return `/${nextPathSegments.join('/')}${window.location.search}${window.location.hash}`;
 }
 
 export function syncLanguagePath(language: SupportedLanguage, replace = false) {
