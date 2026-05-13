@@ -306,7 +306,7 @@ void i18n.use(initReactI18next).init({
                 '자동 승인과 수동 검토 모두 감사 기록을 남겨 운영자가 나중에 어떤 근거로 결정됐는지 확인할 수 있게 했습니다.',
               ],
               modal: {
-                eyebrow: 'Case 01 · 실제로 굴러가는 제품',
+                eyebrow: '구현 시스템 01 · 상세 흐름',
                 title: '제출·승인 자동화 플로우',
                 summary:
                   '크리에이터가 항목을 제출하면 검증과 media readiness를 확인한 뒤 관리자 검토 대기열로 넘기고, 슬랙 에이전트가 제출 근거를 확인해 자동 승인 가능 여부를 판단하는 워크플로우입니다. 근거가 충분하면 에이전트가 승인하고, 애매하거나 수정이 필요한 케이스는 관리자 검토 또는 크리에이터 수정으로 돌려보냅니다.',
@@ -434,7 +434,7 @@ void i18n.use(initReactI18next).init({
                 '잘못 올라간 파일은 업로드 재시도로, 후처리 실패는 워커 재시도/backfill로 나눠 업로드 완료와 공개 가능 상태를 끝까지 추적했습니다.',
               ],
               modal: {
-                eyebrow: 'Case 02 · 실제로 굴러가는 제품',
+                eyebrow: '구현 시스템 02 · 상세 흐름',
                 title: '미디어 업로드·백그라운드 처리 파이프라인',
                 summary:
                   '이미지와 영상이 선택되는 순간부터 공개 상품 화면에 안전하게 보이는 상태가 되기까지의 흐름을 연결한 미디어 파이프라인입니다. 브라우저는 R2로 직접 업로드하고, 앱 서버는 실제 객체를 다시 검증한 뒤 검증된 미디어만 큐로 넘기며, 워커는 태깅, 파생 이미지, 영상 트랜스코딩을 처리합니다.',
@@ -582,7 +582,7 @@ void i18n.use(initReactI18next).init({
                 'Railway는 로컬 워커 down이 확인된 뒤 active owner를 넘겨받고, 로컬 회복 후 쿨다운을 거쳐 다시 park되도록 했습니다.',
               ],
               modal: {
-                eyebrow: 'Case 06 · 실제로 굴러가는 제품',
+                eyebrow: '구현 시스템 06 · 상세 흐름',
                 title: '워커 운영·복구 컨트롤 플레인',
                 summary:
                   'Redprint의 워커는 미디어 후처리만 하는 단일 작업기가 아니라, 미디어 처리, 검증된 DB 백업, 주기 점검을 로컬 우선으로 실행하는 운영 플랫폼입니다. heartbeat와 active owner 상태로 누가 작업 책임자인지 정하고, 로컬 워커 장애가 확인되면 Railway 대기 백업을 가동해 작업 소유권을 넘기고 백업 워커가 대상 작업을 가져가게 합니다.',
@@ -712,7 +712,7 @@ void i18n.use(initReactI18next).init({
                 '슬랙 thread를 받은 에이전트가 접수, 근거 수집, GitHub 이슈, 수정 브랜치, 드래프트 PR, NEEDS_REVIEW 보고까지 이어가게 했습니다.',
               ],
               modal: {
-                eyebrow: 'Case 04 · 실제로 굴러가는 제품',
+                eyebrow: '구현 시스템 04 · 상세 흐름',
                 title: 'Sentry → 슬랙 → 에이전트 장애 대응 자동화',
                 summary:
                   'Sentry에서 들어오는 프로덕션 에러를 슬랙 알림으로 끝내지 않고, 검증·필터링·중복 제거·도메인 라우팅을 거쳐 에이전트가 GitHub 이슈, 수정 브랜치, 드래프트 PR까지 이어가는 장애 대응 워크플로우입니다. 처리하면 안 되는 이벤트는 제외하고, 자동화 범위를 넘는 케이스는 휴먼리뷰로 남깁니다.',
@@ -846,7 +846,7 @@ void i18n.use(initReactI18next).init({
                 '관리자 사용량 대시보드에서 명령 사용량, 쿼터 소진, 진단 이력을 확인할 수 있게 연결했습니다.',
               ],
               modal: {
-                eyebrow: 'Case 05 · 실제로 굴러가는 제품',
+                eyebrow: '구현 시스템 05 · 상세 흐름',
                 title: 'Redis 기반 트래픽 보호·진단 레이어',
                 summary:
                   'Upstash Redis를 무조건 많이 쓰는 것이 아니라, route policy와 actor scope로 보호 대상을 정하고, 필요한 순간에만 on-demand diagnostic을 켜서 명령 사용량과 레이트 리밋 근거를 확인하는 백엔드 운영 레이어입니다.',
@@ -931,7 +931,7 @@ void i18n.use(initReactI18next).init({
                 '미리보기 모달용 미디어 prefetch를 목록 렌더링과 분리하고 세션별 prefetch 허용량으로 네트워크 요청을 제한했습니다.',
               ],
               modal: {
-                eyebrow: 'Case 03 · 실제로 굴러가는 제품',
+                eyebrow: '구현 시스템 03 · 상세 흐름',
                 title: '반응형 마켓플레이스 탐색 피드',
                 summary:
                   '미디어가 많은 상품 목록을 빠르게 탐색할 수 있도록 API fetch, 페이지네이션, 카드 descriptor, row packing, preview prefetch를 함께 설계한 탐색 피드입니다. 화면 폭이 바뀌어도 같은 상품이 중복되거나 요청이 과하게 늘어나지 않도록 조정했습니다.',
@@ -1235,7 +1235,7 @@ void i18n.use(initReactI18next).init({
                 'Recorded both automated and manual decisions in the audit trail so operators can inspect the evidence later.',
               ],
               modal: {
-                eyebrow: 'Case 01 · Real Product Work',
+                eyebrow: 'Implementation System 01 · Detailed Flow',
                 title: 'Submission and Approval Automation Flow',
                 summary:
                   'A workflow that takes a creator submission beyond the submit button: validation and media readiness move the item into an admin review queue, while a Slack agent checks the evidence and decides whether automated approval is safe. Clear cases can be approved by the agent; ambiguous or incomplete cases move to manual review or creator revision.',
@@ -1363,7 +1363,7 @@ void i18n.use(initReactI18next).init({
                 'Separated invalid-upload retry from worker retry/backfill so upload completion did not automatically imply publishability.',
               ],
               modal: {
-                eyebrow: 'Case 02 · Real Product Work',
+                eyebrow: 'Implementation System 02 · Detailed Flow',
                 title: 'Media Upload and Background Processing Pipeline',
                 summary:
                   'An end-to-end media pipeline from the moment a user selects an image or video until safe public media is available. The browser uploads directly to R2, the app server verifies the object before queue handoff, and the worker handles tagging, image derivatives, and video transcodes.',
@@ -1511,7 +1511,7 @@ void i18n.use(initReactI18next).init({
                 'Kept Railway sleeping until local failure is confirmed, then transferred ownership and parked it again after local recovery cooldown.',
               ],
               modal: {
-                eyebrow: 'Case 06 · Real Product Work',
+                eyebrow: 'Implementation System 06 · Detailed Flow',
                 title: 'Worker Operations and Recovery Control Plane',
                 summary:
                   'Redprint’s worker is not just a media processor; it is a local-first operations platform for media processing, verified DB backup, and scheduled maintenance. Heartbeat and active-owner state decide who is responsible for work, and Railway wakes as a sleeping backup only after local failure detection.',
@@ -1641,7 +1641,7 @@ void i18n.use(initReactI18next).init({
                 'Let the Slack-watching agent acknowledge the thread, gather evidence, create the GitHub issue, open a fix branch, draft a PR, and report NEEDS_REVIEW.',
               ],
               modal: {
-                eyebrow: 'Case 04 · Real Product Work',
+                eyebrow: 'Implementation System 04 · Detailed Flow',
                 title: 'Sentry to Slack to Agent Incident Automation',
                 summary:
                   'An incident workflow that does not stop at Slack notification. Production errors are verified, filtered, deduped, routed into the right Slack thread, and then picked up by an agent that turns the incident into a GitHub issue, fix branch, draft PR, and NEEDS_REVIEW handoff. Events outside the automation boundary are ignored or left for human review.',
@@ -1775,7 +1775,7 @@ void i18n.use(initReactI18next).init({
                 'Connected command usage, quota exhaustion, and diagnostic history into an admin usage dashboard.',
               ],
               modal: {
-                eyebrow: 'Case 05 · Real Product Work',
+                eyebrow: 'Implementation System 05 · Detailed Flow',
                 title: 'Redis-backed Traffic Control and Diagnostics',
                 summary:
                   'A backend operations layer that uses Upstash Redis for controlled rate limiting, route-level diagnostics, and command usage visibility. Route policy and actor scope decide what should be protected, while diagnostics stay on demand so every request does not become expensive to observe.',
@@ -1860,7 +1860,7 @@ void i18n.use(initReactI18next).init({
                 'Separated preview-modal media prefetch from wall rendering and capped network requests with a per-session prefetch allowance.',
               ],
               modal: {
-                eyebrow: 'Case 03 · Real Product Work',
+                eyebrow: 'Implementation System 03 · Detailed Flow',
                 title: 'Responsive Marketplace Discovery Feed',
                 summary:
                   'A discovery feed that combines API fetch, pagination, card descriptors, row packing, and preview prefetching for media-heavy browsing. It keeps the wall visually adaptive without duplicating items or overspending network requests.',
