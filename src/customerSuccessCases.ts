@@ -633,34 +633,84 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
   },
   {
     id: 'private-customer-workshop',
-    title: 'Global AppsFlyer Adoption Workshops for a Global Tech Giant with 30+ Local Offices',
-    customerContext:
-      'The customer’s HQ needed global enablement support to drive AppsFlyer adoption across 30+ local sales offices.',
-    focus: 'Private Customer Workshop',
+    title: localize(
+      '30개 이상 현지 오피스를 보유한 글로벌 이커머스 기업의 앱 전환 워크숍',
+      'Global App Adoption Workshops for an E-commerce Enterprise with 30+ Local Offices',
+    ),
+    customerContext: localize(
+      '한국 본사의 글로벌 이커머스 엔터프라이즈가 웹 중심 운영에서 앱 중심 성장으로 전환하기 위해, 본사와 30개 이상 현지 오피스에 앱 마케팅 성과 측정 체계를 도입해야 했던 사례입니다.',
+      'A Korea-headquartered global e-commerce enterprise needed to shift from web-led operations to app-led growth and roll out app marketing measurement across HQ and 30+ local offices.',
+    ),
+    focus: localize('글로벌 앱 전환 워크숍', 'Global App Adoption Workshop'),
     contribution: [
-      'Designed and delivered three two-day regional workshops in London, Bangkok, and Sao Paulo.',
-      'Managed venue sourcing, catering, agenda and timetable setup, custom content creation, speaker assignment, and engagement quizzes.',
-      'Supported adoption across APAC, EMEA, and LATAM by bringing local subsidiary marketing teams into regional workshops.',
+      localize(
+        '본사 의사결정자부터 현지 마케팅·CRM·데이터 담당자까지 같은 기준으로 이해할 수 있도록 앱 마케팅 측정, attribution, deep linking, SKAN, fraud protection, Adobe 연동 이슈를 교육 흐름으로 재구성했습니다.',
+        'Reframed app marketing measurement, attribution, deep linking, SKAN, fraud protection, and Adobe integration issues into an enablement flow that HQ decision-makers and local marketing, CRM, and data teams could understand together.',
+      ),
+      localize(
+        '런던, 방콕, 상파울루에서 각각 이틀짜리 권역별 워크숍을 세 차례 설계하고, 아젠다, 맞춤 콘텐츠, 발표자 배정, 사전·사후 설문, 참여형 퀴즈, 후속 액션 정리를 맡았습니다.',
+        'Designed three two-day regional workshops in London, Bangkok, and Sao Paulo, owning the agenda, custom content, speaker assignment, pre/post surveys, engagement quizzes, and follow-up actions.',
+      ),
+      localize(
+        'APAC, EMEA, LATAM 현지 오피스의 지식 수준, KPI, 데이터 정의, 캠페인 운영 방식 차이를 본사 메시지와 연결해 전사 도입을 위한 공통 언어를 만들었습니다.',
+        'Connected local differences in knowledge level, KPIs, data definitions, and campaign operations across APAC, EMEA, and LATAM back to the HQ message, creating a shared language for global adoption.',
+      ),
     ],
-    outcome:
-      'The workshops supported the renewal process, which included a 300K+ USD upsell, while improving product knowledge and confidence for 130+ participants.',
-    skills: ['Workshop Design', 'Global Enablement', 'Adoption Strategy', 'Project Management'],
+    outcome: localize(
+      '130명 이상 참가자의 제품 이해도와 사용 자신감이 높아졌고, 고객사가 권역별 교육·정착 지원에 만족하면서 300K+ USD 업셀이 포함된 갱신 과정에도 긍정적으로 기여했습니다.',
+      'The workshops improved product knowledge and confidence for 130+ participants and positively supported a renewal process that included a 300K+ USD upsell by demonstrating strong regional enablement support.',
+    ),
+    skills: [
+      localize('글로벌 교육·정착 지원', 'Global Enablement'),
+      localize('워크숍 설계', 'Workshop Design'),
+      localize('복잡한 이해관계자 조율', 'Complex Stakeholder Alignment'),
+      localize('앱 마케팅 측정 교육', 'App Marketing Measurement Enablement'),
+    ],
     modal: {
       eyebrow: 'Customer Success Case 03',
-      title: 'Global AppsFlyer Adoption Workshops for a Global Tech Giant with 30+ Local Offices',
-      summary:
-        'The customer’s HQ needed global enablement support to drive AppsFlyer adoption across 30+ local sales offices.',
+      title: localize(
+        '30개 이상 현지 오피스를 보유한 글로벌 이커머스 기업의 앱 전환 워크숍',
+        'Global App Adoption Workshops for an E-commerce Enterprise with 30+ Local Offices',
+      ),
+      summary: localize(
+        '웹 중심으로 성장해 온 글로벌 이커머스 고객사가 앱 중심 성장으로 전환하려면, 본사와 현지 오피스가 앱 광고 성과 측정 방식을 먼저 이해해야 했습니다. 이 케이스는 런던, 방콕, 상파울루에서 진행한 세 차례의 권역별 워크숍으로 본사 의사결정자와 현지 마케팅·CRM·데이터 팀의 지식 격차를 줄인 글로벌 교육·정착 지원 프로젝트입니다.',
+        'A web-led global e-commerce customer needed HQ and local offices to understand app marketing measurement before shifting toward app-led growth. This case covers three regional workshops in London, Bangkok, and Sao Paulo that reduced the knowledge gap between HQ decision-makers and local marketing, CRM, and data teams.',
+      ),
       closeLabel: commonCloseLabel,
       openLabel: commonOpenLabel,
       contentBlocks: [
+        { type: 'heading', level: 2, text: localize('상황', 'Context') },
+        {
+          type: 'paragraph',
+          text: localize(
+            '고객사는 한국에 본사를 둔 글로벌 이커머스 엔터프라이즈였습니다. 웹 기반으로 사업을 키워왔지만, 사용자 경험과 구매 전환율을 높이려면 앱 중심 운영으로 전환해야 하는 상황이었습니다.',
+            'The customer was a Korea-headquartered global e-commerce enterprise. Its business had grown around web-based commerce, but improving user experience and purchase conversion required a shift toward app-led operations.',
+          ),
+        },
+        {
+          type: 'paragraph',
+          text: localize(
+            '문제는 앱 마케팅 성과 측정 방식이 웹 분석과 크게 달랐다는 점입니다. 고객사의 주 분석 환경은 Adobe 중심이었고, 본사 의사결정자부터 현지 오피스까지 앱 attribution, campaign measurement, deep linking 같은 개념을 업무 언어로 이해하는 사람이 거의 없었습니다.',
+            'The challenge was that app marketing measurement worked very differently from web analytics. The customer’s analytics environment was centered on Adobe, and almost no one from HQ decision-makers to local offices had a working understanding of app attribution, campaign measurement, or deep linking.',
+          ),
+        },
         { type: 'heading', level: 2, text: 'Challenges' },
         {
           type: 'list',
           style: 'bullet',
           items: [
-            'The client had limited experience in the mobile app marketing ecosystem and needed strategic guidance.',
-            'The customer’s HQ needed global enablement support to drive AppsFlyer adoption across 30+ local sales offices.',
-            'Client’s primary platform for marketing analytics was Adobe, which was optimized for web analytics and had limited capabilities for app marketing analytics.',
+            localize(
+              '본사부터 앱 광고 성과 측정에 대한 이해가 부족해, 먼저 의사결정자들이 AppsFlyer와 앱 마케팅 측정 구조를 이해해야 했습니다.',
+              'HQ first needed to understand AppsFlyer and the structure of app marketing measurement before it could make rollout decisions.',
+            ),
+            localize(
+              '30개 이상 현지 오피스는 지식 수준, KPI, 데이터 정의, 캠페인 운영 방식이 서로 달라 같은 교육 자료만 배포해서는 도입이 어려웠습니다.',
+              'The 30+ local offices differed in knowledge level, KPIs, data definitions, and campaign operations, so adoption could not be solved by simply distributing the same training material.',
+            ),
+            localize(
+              'Adobe는 기존 웹 분석에는 익숙한 도구였지만, 앱 attribution과 캠페인 성과 측정에서는 한계와 연동 특이사항이 있어 원인과 대응 방향을 함께 설명해야 했습니다.',
+              'Adobe was familiar for web analytics, but app attribution and campaign measurement introduced limitations and integration-specific behavior that needed clear explanation and direction.',
+            ),
           ],
         },
         { type: 'heading', level: 2, text: 'Customer Goals' },
@@ -668,8 +718,18 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
           type: 'list',
           style: 'bullet',
           items: [
-            'Expand app business and drive sales growth.',
-            'Achieve consistent adoption of AppsFlyer across all local subsidiaries',
+            localize(
+              '웹 중심 이커머스 운영에서 앱 중심 성장 모델로 전환하고, 앱에서 더 높은 구매 전환을 만들 수 있는 기반을 마련합니다.',
+              'Shift from web-led e-commerce operations toward an app-led growth model that could support stronger purchase conversion in the app.',
+            ),
+            localize(
+              '본사와 현지 오피스가 같은 기준으로 AppsFlyer 데이터를 읽고, 캠페인 성과를 비교하고, 지역별 실행 계획을 세울 수 있게 만듭니다.',
+              'Enable HQ and local offices to read AppsFlyer data with the same baseline, compare campaign performance, and build regional execution plans.',
+            ),
+            localize(
+              'Adobe 중심의 기존 분석 환경과 AppsFlyer의 역할 차이를 이해하고, 연동 이슈의 원인과 해결 방향을 내부에 설명할 수 있게 합니다.',
+              'Help teams understand the difference between the existing Adobe-centered analytics environment and AppsFlyer’s role, including the causes and resolution direction for integration issues.',
+            ),
           ],
         },
         { type: 'heading', level: 2, text: 'Approach' },
@@ -677,8 +737,18 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
           type: 'list',
           style: 'bullet',
           items: [
-            'Designed and delivered three two-day regional workshops tailored for the client in London, Bangkok, and Sao Paulo.',
-            'Led three regional in-person workshops by assembling marketing teams from local subsidiaries across APAC, EMEA, and LATAM in centralized venues.',
+            localize(
+              '본사 교육을 먼저 설계해 의사결정자들이 앱 마케팅 측정의 기본 구조를 이해하도록 한 뒤, 같은 메시지를 권역별 워크숍으로 확장했습니다.',
+              'Started with HQ enablement so decision-makers could understand the fundamentals of app marketing measurement, then expanded the same message into regional workshops.',
+            ),
+            localize(
+              '런던, 방콕, 상파울루에서 APAC, EMEA, LATAM 현지 오피스의 마케팅, 마케팅 데이터, CRM 담당자를 모아 각각 이틀짜리 오프라인 워크숍을 진행했습니다.',
+              'Ran two-day in-person workshops in London, Bangkok, and Sao Paulo for marketing, marketing data, and CRM teams from APAC, EMEA, and LATAM offices.',
+            ),
+            localize(
+              'AppsFlyer 기본 구조, attribution, deep linking, SKAN, fraud protection, dashboard 활용, campaign measurement, Adobe와의 차이, 리포트 활용, 실습 세션을 고객사 맥락에 맞게 묶었습니다.',
+              'Tailored the curriculum around AppsFlyer fundamentals, attribution, deep linking, SKAN, fraud protection, dashboard usage, campaign measurement, Adobe differences, reporting, and hands-on sessions.',
+            ),
           ],
         },
         { type: 'heading', level: 2, text: 'Action' },
@@ -686,7 +756,18 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
           type: 'list',
           style: 'bullet',
           items: [
-            'Served as the workshop project manager, overseeing venue sourcing, catering, agenda and timetable setup, custom content creation, speaker assignment, and engagement quizzes.',
+            localize(
+              '워크숍 PM으로서 전체 기획, 예산 승인 설득, 권역별 일정 조율, 아젠다와 시간표 구성, 고객 맞춤 콘텐츠 제작, 발표자 배정, 내부 팀 조율, 본사 메시지 정렬, 참여형 퀴즈와 사전·사후 설문 설계를 맡았습니다.',
+              'Served as the workshop PM, owning program planning, budget approval alignment, regional scheduling, agenda and timetable design, custom content creation, speaker assignment, internal coordination, HQ message alignment, engagement quizzes, and pre/post survey design.',
+            ),
+            localize(
+              '가장 어려웠던 부분은 세 권역의 일정과 이해관계자를 맞추면서도, 각 지역이 바로 이해할 수 있는 수준의 맞춤형 콘텐츠를 만드는 일이었습니다.',
+              'The hardest part was aligning schedules and stakeholders across three regions while creating custom content that each local team could understand and apply.',
+            ),
+            localize(
+              '현지 장소 예약, 케이터링, 당일 현장 운영은 현지 팀이 맡았고, 저는 교육 설계와 이해관계자 조율, 메시지 품질을 책임졌습니다.',
+              'Local teams handled venue booking, catering, and on-site operations; my ownership was enablement design, stakeholder alignment, and message quality.',
+            ),
           ],
         },
         { type: 'heading', level: 2, text: 'Outcomes' },
@@ -694,9 +775,18 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
           type: 'list',
           style: 'bullet',
           items: [
-            'Post-workshop survey results showed higher product knowledge and confidence across 130+ participants.',
-            'The workshops supported the renewal process, which included a 300K+ USD upsell, by demonstrating dedicated regional enablement support.',
-            'The three workshops helped local marketing teams build stronger product knowledge and confidence.',
+            localize(
+              '130명 이상 참가자의 사전·사후 설문에서 AppsFlyer와 앱 마케팅 측정에 대한 이해도와 사용 자신감이 높아진 것으로 나타났습니다.',
+              'Pre/post surveys across 130+ participants showed improved understanding and confidence around AppsFlyer and app marketing measurement.',
+            ),
+            localize(
+              '본사와 현지 오피스가 앱 캠페인 성과, 대시보드, 리포트, Adobe 연동 특이사항을 같은 언어로 이야기할 수 있는 기반을 만들었습니다.',
+              'Created a shared language for HQ and local offices to discuss app campaign performance, dashboards, reporting, and Adobe integration behavior.',
+            ),
+            localize(
+              '워크숍 결과에 대한 고객 만족도가 높았고, 권역별 전담 지원을 보여준 점이 300K+ USD 업셀이 포함된 갱신 과정에 긍정적으로 작용했습니다.',
+              'Customer satisfaction with the workshops was strong, and the demonstrated regional enablement support positively influenced a renewal process that included a 300K+ USD upsell.',
+            ),
           ],
         },
         {
@@ -1747,76 +1837,7 @@ const customerCaseTranslationPairs: Array<readonly [string, string]> = [
     `Demonstrated the organization’s commitment to meeting high-priority client needs, reinforcing trust and partnership longevity.`,
     `우선순위가 높은 고객 니즈를 해결하려는 조직의 의지를 보여주며 신뢰와 장기 파트너십을 강화했습니다.`,
   ],
-  [
-    `Global AppsFlyer Adoption Workshops for a Global Tech Giant with 30+ Local Offices`,
-    `30개 이상 현지 오피스를 보유한 글로벌 테크 기업을 위한 AppsFlyer 도입 워크숍`,
-  ],
-  [
-    `The customer’s HQ needed global enablement support to drive AppsFlyer adoption across 30+ local sales offices.`,
-    `고객사 본사는 30개 이상의 현지 판매 조직에서 AppsFlyer를 일관되게 도입할 수 있도록 글로벌 교육·정착 지원이 필요했습니다.`,
-  ],
-  [
-    `Designed and delivered three two-day regional workshops in London, Bangkok, and Sao Paulo.`,
-    `런던, 방콕, 상파울루에서 각각 이틀짜리 권역별 워크숍을 세 차례 설계하고 운영했습니다.`,
-  ],
-  [
-    `Managed venue sourcing, catering, agenda and timetable setup, custom content creation, speaker assignment, and engagement quizzes.`,
-    `장소 섭외, 케이터링, 진행 안건과 시간표 구성, 맞춤 콘텐츠 제작, 발표자 배정, 참여 유도용 퀴즈까지 관리했습니다.`,
-  ],
-  [
-    `Supported adoption across APAC, EMEA, and LATAM by bringing local subsidiary marketing teams into regional workshops.`,
-    `APAC, EMEA, LATAM 현지 법인의 마케팅 팀을 권역별 워크숍으로 모아 제품 도입을 지원했습니다.`,
-  ],
-  [
-    `The workshops supported the renewal process, which included a 300K+ USD upsell, while improving product knowledge and confidence for 130+ participants.`,
-    `워크숍은 300K+ USD 업셀이 포함된 갱신 과정에 기여했고, 130명 이상의 참가자가 제품 이해도와 사용 자신감을 높이는 데 도움을 줬습니다.`,
-  ],
-  [
-    `The customer’s HQ needed global enablement support to drive AppsFlyer adoption across 30+ local sales offices.`,
-    `고객사 본사는 30개 이상의 현지 판매 조직에서 AppsFlyer를 일관되게 도입할 수 있도록 글로벌 교육·정착 지원이 필요했습니다.`,
-  ],
-  [
-    `The client had limited experience in the mobile app marketing ecosystem and needed strategic guidance.`,
-    `고객사는 모바일 앱 마케팅 생태계 경험이 많지 않아 전략적인 안내가 필요했습니다.`,
-  ],
-  [
-    `The customer’s HQ needed global enablement support to drive AppsFlyer adoption across 30+ local sales offices.`,
-    `고객사 본사는 30개 이상의 현지 판매 조직에서 AppsFlyer를 일관되게 도입할 수 있도록 글로벌 교육·정착 지원이 필요했습니다.`,
-  ],
-  [
-    `Client’s primary platform for marketing analytics was Adobe, which was optimized for web analytics and had limited capabilities for app marketing analytics.`,
-    `고객사의 주 분석 플랫폼은 Adobe였고 웹 분석에는 적합했지만 앱 마케팅 분석 기능은 제한적이었습니다.`,
-  ],
-  [`Expand app business and drive sales growth.`, `앱 비즈니스를 확장하고 매출 성장을 이끄는 것이 목표였습니다.`],
-  [
-    `Achieve consistent adoption of AppsFlyer across all local subsidiaries`,
-    `모든 현지 법인에서 AppsFlyer를 일관되게 도입하도록 만드는 것이 목표였습니다.`,
-  ],
-  [
-    `Designed and delivered three two-day regional workshops tailored for the client in London, Bangkok, and Sao Paulo.`,
-    `런던, 방콕, 상파울루에서 고객사에 맞춘 이틀짜리 권역별 워크숍을 세 차례 설계하고 진행했습니다.`,
-  ],
-  [
-    `Led three regional in-person workshops by assembling marketing teams from local subsidiaries across APAC, EMEA, and LATAM in centralized venues.`,
-    `APAC, EMEA, LATAM 현지 법인의 마케팅 팀을 거점 도시로 모아 세 차례의 권역별 오프라인 워크숍을 이끌었습니다.`,
-  ],
   [`Action`, `실행 내용`],
-  [
-    `Served as the workshop project manager, overseeing venue sourcing, catering, agenda and timetable setup, custom content creation, speaker assignment, and engagement quizzes.`,
-    `워크숍 프로젝트 매니저로서 장소 섭외, 케이터링, 진행 안건과 시간표 구성, 맞춤 콘텐츠 제작, 발표자 배정, 참여 유도용 퀴즈까지 운영 전반을 총괄했습니다.`,
-  ],
-  [
-    `Post-workshop survey results showed higher product knowledge and confidence across 130+ participants.`,
-    `사후 설문에서 130명 이상의 참가자가 제품 이해도와 사용 자신감이 향상됐다고 응답했습니다.`,
-  ],
-  [
-    `The workshops supported the renewal process, which included a 300K+ USD upsell, by demonstrating dedicated regional enablement support.`,
-    `워크숍은 권역별 전담 교육·정착 지원 역량을 보여주며 300K+ USD 업셀이 포함된 갱신 과정에 기여했습니다.`,
-  ],
-  [
-    `The three workshops helped local marketing teams build stronger product knowledge and confidence.`,
-    `세 차례 워크숍은 현지 마케팅 팀이 제품 이해도와 사용 자신감을 높이는 데 도움을 줬습니다.`,
-  ],
   [`Photo after the London workshop`, `런던 워크숍 이후 촬영한 사진`],
   [
     `Pre vs Post workshop survey showing increased product knowledge and confidence`,
