@@ -97,11 +97,11 @@ void i18n.use(initReactI18next).init({
         content: {
           heroTitle: '안녕하세요.\n기술과 사람을 연결하는\n한지우입니다.',
           heroDescription:
-            '한국과 동남아시아 시장에서 엔터프라이즈 고객의 \n온보딩, 교육, 기능 adoption, 비즈니스 리뷰를 담당해왔습니다.\n고객이 겪는 복잡한 문제를 쉽게 풀어내고, 제품과 기술팀이 실행할 수 있는 솔루션으로 연결합니다.',
+            '한국과 동남아시아 시장에서 엔터프라이즈 고객의 \n온보딩, 기술 구현, 교육, 비즈니스 리뷰를 담당해왔습니다.\n복잡한 고객 문제를 업무 언어로 풀어내고, 제품·기술팀이 실행할 수 있는 해결 방향으로 연결합니다.',
           sections: {
             feature: {
               eyebrow: '핵심 역량',
-              title: '맥락을 이해하고 제품·기술·비즈니스가 \n함께 움직일 수 있는 실행안을 제시합니다.',
+              title: '고객 문제를 제품·기술·비즈니스가 \n함께 실행할 수 있는 형태로 바꿉니다.',
             },
             skill: {
               eyebrow: '전문영역 및 스킬셋',
@@ -109,7 +109,7 @@ void i18n.use(initReactI18next).init({
             },
             career: {
               eyebrow: '경력 사항',
-              title: '고객성공을 중심으로 \n기술과 제품 실행 경험을 쌓아왔습니다.',
+              title: '고객성공을 중심으로 \n기술 구현과 제품 실행을 연결해왔습니다.',
             },
             customerCase: {
               eyebrow: '고객성공 케이스',
@@ -117,25 +117,25 @@ void i18n.use(initReactI18next).init({
             },
             project: {
               eyebrow: '개인 프로젝트 상세',
-              title: '개인적으로 진행한 사이드 프로젝트의 핵심 구현 시스템입니다.',
+              title: '직접 만든 사이드 프로젝트의 핵심 구현 시스템입니다.',
             },
           },
           thanks: {
             title: '감사합니다',
-            description: '더 궁금한 점이 있다면 편하게 연락주세요',
+            description: '더 궁금한 점이 있다면 편하게 연락 주세요',
             photoAlt: 'AppsFlyer 행사에서 함께 찍은 팀 사진',
           },
           features: [
             {
               title: '기술 커뮤니케이션',
               description:
-                'API 및 SDK의 개발, 여러 플랫폼 간의 연동 과정에서 필요한 여러 부서 간의 기술적인 요구사항을 파악하고 매끄러운 내부/외부 커뮤니케이션이 이루어질 수 있도록 조율합니다.',
+                'API·SDK 구현과 플랫폼 연동 과정에서 각 팀이 맞춰야 할 기술 요구사항을 정리하고, 고객·제품·엔지니어링 사이의 커뮤니케이션이 끊기지 않도록 조율합니다.',
               iconLabel: 'API',
             },
             {
               title: '고객성공',
               description:
-                '고객의 문제를 파악하고 가장 적합한 솔루션을 찾아 제시합니다. 기술적인 문제를 쉬운 언어로 설명하는 것에 능숙하며 국내외 여러 엔터프라이즈 고객사들을 관리해왔습니다. 해결책을 제시하는 데서 그치지 않고 커스텀 솔루션을 직접 제작해 제공한 사례들이 있습니다.',
+                '엔터프라이즈 고객의 문제를 파악하고, 제품 사용법 안내를 넘어 구현 방향과 운영 기준까지 함께 제시합니다. 기술 이슈를 쉬운 언어로 풀어 설명하고, 필요할 때는 고객 맞춤 레퍼런스나 워크플로우까지 만들어 도입을 돕습니다.',
               iconLabel: 'CS',
             },
             {
@@ -147,7 +147,7 @@ void i18n.use(initReactI18next).init({
             {
               title: '풀스택 프로젝트 빌딩',
               description:
-                '프론트엔드, 백엔드, 데이터베이스, 배포까지 직접 설계하고 운영했습니다. 결제, 스토리지, 레이트 리밋, 장애 대응, 백업 워커 failover까지 실제 운영 흐름을 기준으로 구성했습니다.',
+                '개인 프로젝트에서 프론트엔드, 백엔드, 데이터베이스, 배포까지 직접 설계했습니다. 결제, 스토리지, 레이트 리밋, 장애 대응, 백업 워커 failover처럼 실제 운영에 필요한 흐름까지 함께 구성했습니다.',
               iconLabel: 'FS',
             },
           ],
@@ -158,7 +158,7 @@ void i18n.use(initReactI18next).init({
               skills: [
                 'Enterprise Onboarding',
                 'Customer Education',
-                '도입 전략',
+                'Adoption Strategy',
                 'Beta Programs',
                 'EBR',
                 'Executive Communication',
@@ -180,7 +180,7 @@ void i18n.use(initReactI18next).init({
                 'Deep Linking',
                 'Audience Strategy',
                 'Incrementality',
-                'Meta Ads Collaboration',
+                'Data Collaboration Platform',
               ],
             },
             {
@@ -207,7 +207,7 @@ void i18n.use(initReactI18next).init({
                 'PostgreSQL',
                 'Drizzle ORM',
                 'Zod',
-                '워크플로우 설계',
+                'Workflow Design',
                 'Admin Approval Tools',
                 'Media Pipeline',
               ],
@@ -222,8 +222,8 @@ void i18n.use(initReactI18next).init({
                 'Upstash Redis',
                 'Sentry',
                 'Stripe Webhooks',
-                '워커',
-                '레이트 리밋',
+                'Worker Architecture',
+                'Rate Limiting',
                 'Failover Control',
               ],
             },
@@ -233,7 +233,7 @@ void i18n.use(initReactI18next).init({
               skills: [
                 'Product Feedback',
                 'Engineering Handoff',
-                '슬랙 에이전트 자동화',
+                'Slack Agent Automation',
                 'Runbooks',
                 'Technical Guides',
                 'Documentation',
@@ -247,7 +247,7 @@ void i18n.use(initReactI18next).init({
               company: 'AppsFlyer',
               period: '2019.04 - 현재',
               summary:
-                '한국에서 5년간 경력을 쌓고 현재는 방콕에서 동남아시아 엔터프라이즈 고객사를 대상으로 고객성공 업무를 하고 있습니다. 고객사의 온보딩, 교육, 새로운 기능 adoption 및 베타 프로그램을 진행하고, 정기적인 비즈니스 리뷰를 통해 알맞은 솔루션을 제공합니다.',
+                '한국과 동남아시아 시장에서 엔터프라이즈 고객 온보딩, 기술 구현, 마케팅 성과 측정 환경 구축을 담당해왔습니다. 300만 달러 이상 ARR 포트폴리오에서 98% 고객 유지율을 유지하며 고객 이슈 해결, 제품 피드백, 갱신·확장 논의를 조율했습니다.',
               roles: [
                 {
                   period: '2024.08 - 현재',
@@ -267,29 +267,29 @@ void i18n.use(initReactI18next).init({
                 },
               ],
               details: [
-                '프리미엄 계정의 온보딩, 기술 디스커버리, 요구사항 정리, 구현 계획, 이슈 에스컬레이션, 임원 이해관계자 커뮤니케이션까지 엔터프라이즈 engagement를 end-to-end로 담당했습니다.',
-                'SDK implementation, API integration, data discrepancy, platform configuration 영역에서 trusted technical advisor로서 고객팀의 아키텍처 의사결정을 도왔습니다.',
-                '엔터프라이즈 마케팅 및 마테크 팀과 캠페인 성장 전략, 어트리뷰션 기준, 성과 측정 구조, 데이터 활용 방안을 함께 설계했습니다.',
-                'Meta Ads 등 주요 파트너 팀과 협업해 고객사의 성장 전략, 교육 세션, 워크숍을 공동 기획했습니다.',
-                'MVP, alpha, beta 단계의 신규 데이터 예측 제품 도입을 지원하며 상용 계약 전환까지 연결했습니다.',
-                'Product, Engineering 팀과 협업해 복잡한 고객 blocker를 해결하고, 현장 피드백을 제품 개선으로 연결하며 실제 구현 니즈가 roadmap 결정에 반영되도록 조율했습니다.',
-                '맞춤형 기술 솔루션, Executive Business Review, adoption strategy를 통해 pre-sales와 expansion 논의를 지원했고, $3M+ ARR 포트폴리오에서 98% client retention 유지에 기여했습니다.',
-                '내부 팀과 고객이 함께 쓰는 technical guide, troubleshooting playbook, best-practice 자료를 만들어 CS 조직 전반의 구현 일관성을 높였습니다.',
+                '300만 달러 이상 ARR 규모의 한국·동남아시아 엔터프라이즈 포트폴리오를 담당하며, 온보딩부터 기술 요구사항 정리, 이슈 에스컬레이션, 임원 커뮤니케이션까지 account lifecycle 전반을 관리했습니다.',
+                '고객 목표를 SDK 구현, API 연동, 딥링킹, 데이터 측정 환경 구축, 비용 데이터 집계, 원시 데이터 파이프라인, 대시보드 설정, 데이터 검증까지 포함한 도입 계획과 기술 구현 단계로 구체화했습니다.',
+                '엔터프라이즈 마케팅 및 마테크 팀에 어트리뷰션 전략, 캠페인 측정 프레임워크, 이벤트 택소노미, ROAS 최적화, 코호트 분석, 데이터 검증, 리인게이지먼트와 라이프사이클 관리까지 이어지는 마케팅 성과 측정과 최적화 방안을 제시했습니다.',
+                '반복적으로 설명되던 API 구현 요구사항을 공개 API 문서와 고객 캠페인 워크플로우 기반의 레퍼런스 콘솔로 제품화하여 마케팅 사용자와 개발자가 구현 요구사항을 함께 이해할 수 있도록 지원했습니다.',
+                'Product, Engineering, Security 팀과 협업해 복잡한 고객 장애 요인을 해결하고, 현장 피드백을 제품 개선으로 연결했으며, 로드맵 논의가 실제 구현 요구와 맞물리도록 조율했습니다.',
+                '고객 교육, 신규 기능 도입, 베타 프로그램 지원, 정기 비즈니스 리뷰를 주도하며 제품 가치, 구현 준비도, account health signals를 종합해 고객별 다음 액션과 확장 기회를 제시했습니다.',
+                '게임, 핀테크, 이커머스 등 다양한 고객을 대상으로 맞춤형 기술 솔루션과 도입 전략을 제시하고, 고객 의사결정자와 내부 관련 부서를 조율하며 프리세일즈, 갱신, 확장 논의를 지원했습니다.',
+                '글로벌 조직 전반의 구현 일관성을 높이기 위해 내부 및 고객 대상 기술 가이드, 트러블슈팅 플레이북, 베스트 프랙티스 자료를 제작했습니다.',
               ],
             },
             {
               company: 'Gameberry',
               period: '2017.09 - 2019.03',
               summary:
-                'Business Development로 광고 플랫폼 연동, 파트너 온보딩, 게임 제품 운영을 경험하며 수익과 연결되는 플랫폼 구조를 다뤘습니다.',
+                'Business Development로 광고 플랫폼 연동, 파트너 온보딩, 게임 제품 운영을 경험하며 광고 수익과 연결되는 플랫폼 연동 구조를 다뤘습니다.',
               roles: [
                 {
                   period: '2017.09 - 2019.03',
                   title: 'Business Development',
                   details: [
                     'DSP/SSP/Ad Exchange 연동을 위한 플랫폼 도입을 관리하고, 기술 온보딩 이슈를 해결하며 파트너 측 설정을 성과와 운영 안정성에 맞게 최적화했습니다.',
-                    'Affiliate 및 ad network 생태계의 공급 측 업무를 맡아 트래픽 라우팅, 파트너 연동, DSP 측을 관리했습니다.',
-                    '앱 개발의 QA, 출시, 운영 전반에 참여하며 소프트웨어 전달 과정, 프로덕션 지원, 수익을 관리했고 이후 앱의 매각을 담당했습니다.',
+                    'Affiliate 및 ad network 생태계의 공급 측 업무를 맡아 트래픽 라우팅, 파트너 연동, DSP 파트너 운영을 관리했습니다.',
+                    '앱 개발의 QA, 출시, 운영 전반에 참여하며 소프트웨어 전달 과정, 프로덕션 지원, 앱 수익 관리와 매각 과정에도 참여했습니다.',
                   ],
                 },
               ],
@@ -849,7 +849,7 @@ void i18n.use(initReactI18next).init({
                 eyebrow: '구현 시스템 05 · 상세 흐름',
                 title: 'Redis 기반 트래픽 보호·진단 레이어',
                 summary:
-                  'Upstash Redis를 무조건 많이 쓰는 것이 아니라, route policy와 actor scope로 보호 대상을 정하고, 필요한 순간에만 on-demand diagnostic을 켜서 명령 사용량과 레이트 리밋 근거를 확인하는 백엔드 운영 레이어입니다.',
+                  'Upstash Redis를 무조건 많이 쓰는 것이 아니라, route policy와 actor scope로 보호 대상을 정하고, 필요한 순간에만 on-demand diagnostic을 켜서 명령 사용량과 레이트 리밋 근거를 확인하는 백엔드 운영 레이어입니다. 모든 요청을 무겁게 감시하는 대신 문제가 생겼을 때만 근거를 남겨, 비용을 아끼면서도 운영자가 차단 원인을 확인할 수 있게 했습니다.',
                 diagramVariant: 'redisTraffic',
                 mainFlowLabel: '요청 보호 흐름',
                 recoveryFlowLabel: '진단과 비용 제어',
@@ -1026,11 +1026,11 @@ void i18n.use(initReactI18next).init({
         content: {
           heroTitle: "Hello.\nI'm Jiwoo Han.\nI connect technology and people.",
           heroDescription:
-            'I support enterprise customers across Korea and Southeast Asia\nthrough onboarding, education, feature adoption, and business reviews.\nI turn complex customer problems into actionable product and engineering solutions.',
+            'I support enterprise customers across Korea and Southeast Asia\nthrough onboarding, technical implementation, education, and business reviews.\nI translate complex customer problems into practical business language and connect them to product and engineering actions.',
           sections: {
             feature: {
               eyebrow: 'Core Strengths',
-              title: 'I understand context and turn product, engineering,\nand business needs into executable plans.',
+              title: 'I turn customer problems into plans that product,\nengineering, and business teams can execute together.',
             },
             skill: {
               eyebrow: 'Expertise & skillset',
@@ -1038,7 +1038,7 @@ void i18n.use(initReactI18next).init({
             },
             career: {
               eyebrow: 'Career',
-              title: 'I have built experience around Customer Success,\ntechnology, and product execution.',
+              title: 'I connect Customer Success with technical implementation\nand product execution.',
             },
             customerCase: {
               eyebrow: 'Customer Success Cases',
@@ -1058,13 +1058,13 @@ void i18n.use(initReactI18next).init({
             {
               title: 'Technical Communication',
               description:
-                'I identify technical requirements across teams during API and SDK development and platform integrations, then coordinate smooth internal and external communication.',
+                'I clarify technical requirements across API and SDK implementation and platform integration work, keeping communication connected between customers, Product, and Engineering.',
               iconLabel: 'API',
             },
             {
               title: 'Customer Success',
               description:
-                'I understand customer problems and propose the right solution. I explain technical issues in plain language, have managed domestic and global enterprise customers, and have built custom solutions rather than stopping at advice.',
+                'I work with enterprise customers beyond product guidance, shaping implementation direction and operating standards. I explain technical issues in plain language and build customer-specific references or workflows when they help adoption.',
               iconLabel: 'CS',
             },
             {
@@ -1076,7 +1076,7 @@ void i18n.use(initReactI18next).init({
             {
               title: 'Full-stack Project Building',
               description:
-                'I have built and operated full-stack projects across frontend, backend, and database layers. I use Vercel and Railway for deployment, Cloudflare R2 for storage, Stripe for payments, Upstash Redis for distributed locking and rate limiting, and Sentry for automated error response. I also designed a failover structure where a Railway backup worker takes over when the local worker fails.',
+                'In my own side project, I designed the frontend, backend, database, and deployment flow end to end. I also built operational paths for payments, storage, rate limiting, incident response, and backup-worker failover.',
               iconLabel: 'FS',
             },
           ],
@@ -1109,7 +1109,7 @@ void i18n.use(initReactI18next).init({
                 'Deep Linking',
                 'Audience Strategy',
                 'Incrementality',
-                'Meta Ads Collaboration',
+                'Data Collaboration Platform',
               ],
             },
             {
@@ -1151,7 +1151,7 @@ void i18n.use(initReactI18next).init({
                 'Upstash Redis',
                 'Sentry',
                 'Stripe Webhooks',
-                'Workers',
+                'Worker Architecture',
                 'Rate Limiting',
                 'Failover Control',
               ],
@@ -1176,7 +1176,7 @@ void i18n.use(initReactI18next).init({
               company: 'AppsFlyer',
               period: 'Apr 2019 - Present',
               summary:
-                'After building five years of experience in Korea, I now work from Bangkok with Southeast Asian enterprise customers. I support customer onboarding, education, new feature adoption, beta programs, and regular business reviews to provide the right solutions for each account.',
+                'Customer-facing solutions specialist with 7+ years of experience across enterprise onboarding, technical implementation, and marketing measurement setup in Korea and Southeast Asia. I manage a $3M+ ARR enterprise portfolio with 98% customer retention, coordinating issue resolution, product feedback, renewals, and expansion discussions.',
               roles: [
                 {
                   period: 'Aug 2024 - Present',
@@ -1196,29 +1196,29 @@ void i18n.use(initReactI18next).init({
                 },
               ],
               details: [
-                'Owned enterprise engagements end to end, covering onboarding, technical discovery, requirements gathering, implementation planning, issue escalation, and executive stakeholder communication for premium accounts.',
-                'Acted as a trusted technical advisor on SDK implementation, API integration, data discrepancies, and platform configuration, helping customer teams make architecture decisions.',
-                'Worked with enterprise marketing and martech teams to shape growth strategy, attribution standards, campaign measurement structures, and data activation plans.',
-                'Co-planned customer growth sessions and workshops with major partner teams such as Meta Ads.',
-                'Guided adoption of a new data prediction product from MVP through alpha and beta stages into a commercial contract.',
-                'Partnered with Product and Engineering teams to resolve complex customer blockers, translate field feedback into product improvements, and align roadmap decisions with real implementation needs.',
-                'Supported pre-sales and expansion discussions with tailored technical solutions, Executive Business Reviews, and adoption strategies that helped maintain 98% client retention across a $3M+ ARR portfolio.',
-                'Created internal and customer-facing technical guides, troubleshooting playbooks, and best-practice materials that improved implementation consistency across the whole CS organization.',
+                'Managed the full account lifecycle for a $3M+ ARR enterprise portfolio across Korea and Southeast Asia, from onboarding and technical requirements discovery to escalation management and executive communication.',
+                'Translated customer goals into implementation plans and technical execution steps covering SDK implementation, API integration, deep linking, measurement environment setup, cost data aggregation, raw data pipelines, dashboard configuration, and data verification.',
+                'Advised enterprise marketing and martech teams on attribution strategy, campaign measurement frameworks, event taxonomy, ROAS optimization, cohort analysis, data validation, re-engagement, and lifecycle management to improve marketing performance measurement and optimization.',
+                'Built a productized reference console, translating public API documentation and customer campaign workflows into a business-friendly operating sample project that helped marketing users and developers understand implementation requirements together.',
+                'Partnered with Product, Engineering, and Security teams to resolve complex customer blockers, turn field feedback into product improvements, and align roadmap decisions with real implementation needs.',
+                'Led customer education, new feature adoption, beta program support, and recurring business reviews, combining product value, implementation readiness, and account health signals to define customer-specific next actions and expansion opportunities.',
+                'Supported pre-sales, renewal, and expansion discussions across gaming, fintech, e-commerce, and other enterprise accounts by aligning customer decision-makers with internal product and technical teams.',
+                'Created internal and customer-facing technical guides, troubleshooting playbooks, and best-practice materials that improved implementation consistency across the company globally.',
               ],
             },
             {
               company: 'Gameberry',
               period: 'Sep 2017 - Mar 2019',
               summary:
-                'In Business Development, I worked on ad platform integrations, partner onboarding, and game product operations, gaining hands-on experience with platform structures tied to revenue.',
+                'In Business Development, I worked on ad platform integrations, partner onboarding, and game product operations, gaining hands-on experience with platform integration structures tied to advertising revenue.',
               roles: [
                 {
                   period: 'Sep 2017 - Mar 2019',
                   title: 'Business Development',
                   details: [
                     'Managed platform adoption for DSP/SSP/Ad Exchange integrations, troubleshooting technical onboarding issues and optimizing partner-side configurations for performance and operational stability.',
-                    'Managed supply-side operations in the affiliate and ad network ecosystem, including traffic routing, partner integrations, and DSP-side coordination.',
-                    'Worked across QA, launch, and operations for app development, managing software delivery, production support, revenue operations, and the later sale of the app.',
+                    'Managed supply-side operations in the affiliate and ad network ecosystem, including traffic routing, partner integrations, and DSP partner operations.',
+                    'Worked across QA, launch, and operations for app development, including software delivery, production support, app revenue management, and the later sale of the app.',
                   ],
                 },
               ],
@@ -1778,7 +1778,7 @@ void i18n.use(initReactI18next).init({
                 eyebrow: 'Implementation System 05 · Detailed Flow',
                 title: 'Redis-backed Traffic Control and Diagnostics',
                 summary:
-                  'A backend operations layer that uses Upstash Redis for controlled rate limiting, route-level diagnostics, and command usage visibility. Route policy and actor scope decide what should be protected, while diagnostics stay on demand so every request does not become expensive to observe.',
+                  'A backend operations layer that uses Upstash Redis for controlled rate limiting, route-level diagnostics, and command usage visibility. Route policy and actor scope decide what should be protected, while diagnostics stay on demand so every request does not become expensive to observe. This keeps costs low while still giving operators evidence when they need to understand why traffic was blocked.',
                 diagramVariant: 'redisTraffic',
                 mainFlowLabel: 'Request protection flow',
                 recoveryFlowLabel: 'Diagnostic and cost-control flow',

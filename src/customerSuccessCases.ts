@@ -820,120 +820,6 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
     },
   },
   {
-    id: 'gaming-meta-growth-workshop',
-    title: localize(
-      'Meta Ads와 함께 글로벌 게임사의 성장 워크숍을 공동 기획한 사례',
-      'Tri-party Growth Workshop with Meta Ads for a Global Puzzle Gaming Company',
-    ),
-    customerContext: localize(
-      '6M+ MAU와 월 2M 다운로드를 보유한 글로벌 퍼즐 게임사를 대상으로, AppsFlyer의 데이터 예측 제품 도입과 Meta Ads 성장 워크숍을 함께 지원한 사례입니다.',
-      'A global puzzle gaming company with 6M+ MAU and 2M monthly downloads needed support adopting a data prediction product and aligning growth strategy with Meta Ads and AppsFlyer.',
-    ),
-    focus: localize('마케팅 전략 및 측정 설계', 'Marketing Strategy & Measurement'),
-    contribution: [
-      localize(
-        'MVP 단계부터 alpha, beta, final launch까지 데이터 예측 제품 도입을 지원했습니다.',
-        'Guided the customer through adoption of a data prediction product from MVP through alpha, beta, and final launch.',
-      ),
-      localize(
-        '고객사, Meta Ads 팀, AppsFlyer가 함께 참여하는 3자 공동 세미나를 기획해 성장 전략과 측정 방법을 정리했습니다.',
-        'Co-hosted a tri-party seminar with the customer, Meta Ads, and AppsFlyer to align growth strategy and measurement practices.',
-      ),
-      localize(
-        '핵심 제품 활용 사례를 case study로 작성하고 고객 testimonial을 확보했습니다.',
-        'Authored a case study covering multiple core products and secured a client testimonial.',
-      ),
-    ],
-    outcome: localize(
-      '신규 데이터 예측 제품의 상용 계약을 확보했고, 고객사의 성장 전략 논의를 파트너 협업과 공개 가능한 사례 자산으로 확장했습니다.',
-      'Secured a commercial contract for the new data prediction product and turned the growth discussion into partner collaboration and reusable case-study proof.',
-    ),
-    skills: [
-      localize('마케팅 전략', 'Marketing Strategy'),
-      localize('성과 측정 설계', 'Measurement Design'),
-      localize('예측 데이터 제품', 'Predictive Data Product'),
-      'Meta Ads',
-      localize('제품 도입', 'Product Adoption'),
-      localize('고객 사례 작성', 'Case Study Writing'),
-    ],
-    modal: {
-      eyebrow: localize('고객성공 사례 04', 'Customer Success Case 04'),
-      title: localize(
-        'Meta Ads와 함께 글로벌 게임사의 성장 워크숍을 공동 기획한 사례',
-        'Tri-party Growth Workshop with Meta Ads for a Global Puzzle Gaming Company',
-      ),
-      summary: localize(
-        '6M+ MAU와 월 2M 다운로드를 보유한 글로벌 퍼즐 게임사를 대상으로, 데이터 예측 제품 도입과 Meta Ads 공동 성장 세미나를 함께 이끈 사례입니다.',
-        'A case where a global puzzle gaming company with 6M+ MAU and 2M monthly downloads adopted a data prediction product while joining a growth seminar co-hosted with Meta Ads.',
-      ),
-      closeLabel: commonCloseLabel,
-      openLabel: commonOpenLabel,
-      contentBlocks: [
-        { type: 'heading', level: 2, text: localize('고객 맥락', 'Customer Context') },
-        {
-          type: 'paragraph',
-          text: localize(
-            '고객사는 글로벌 퍼즐 게임사로, 6M+ MAU와 월 2M 다운로드를 보유한 규모 있는 모바일 게임 비즈니스였습니다. 성장 여지가 큰 계정이었지만, 새로운 데이터 예측 제품은 아직 MVP에서 alpha, beta, final launch로 넘어가는 초기 단계였습니다.',
-            'The customer was a global puzzle gaming company with 6M+ MAU and 2M monthly downloads. It was a high-growth account, while the data prediction product was still moving from MVP through alpha, beta, and final launch.',
-          ),
-        },
-        {
-          type: 'paragraph',
-          text: localize(
-            '단순히 기능을 켜는 문제가 아니라, 고객사의 마케팅 팀이 어떤 성장 목표를 가지고 있고 어떤 측정 기준으로 제품 가치를 판단할지 함께 정리해야 했습니다.',
-            'The work was not just about enabling a feature. We needed to clarify the customer’s growth goals and the measurement criteria the marketing team would use to judge product value.',
-          ),
-        },
-        { type: 'heading', level: 2, text: localize('접근 방식', 'Approach') },
-        {
-          type: 'list',
-          style: 'bullet',
-          items: [
-            localize(
-              'MVP, alpha, beta 단계에서 고객 피드백을 모아 제품 활용 방식과 상용 계약 전환 조건을 구체화했습니다.',
-              'Collected customer feedback through the MVP, alpha, and beta stages to clarify usage patterns and the conditions needed for commercial adoption.',
-            ),
-            localize(
-              '고객사, Meta Ads 팀, AppsFlyer가 함께 참여하는 3자 공동 세미나를 기획해 성장 전략, 캠페인 측정, 제품 활용 방안을 한 자리에서 논의했습니다.',
-              'Co-planned a tri-party seminar with the customer, Meta Ads, and AppsFlyer to discuss growth strategy, campaign measurement, and product usage in one shared forum.',
-            ),
-            localize(
-              '데이터 예측 제품뿐 아니라 여러 핵심 제품이 고객사의 실제 마케팅 운영에서 어떻게 함께 쓰이는지 case study로 정리했습니다.',
-              'Documented how the data prediction product and multiple core products worked together in the customer’s real marketing operation.',
-            ),
-          ],
-        },
-        { type: 'heading', level: 2, text: localize('성과', 'Outcomes') },
-        {
-          type: 'list',
-          style: 'bullet',
-          items: [
-            localize(
-              '데이터 예측 제품의 상용 계약을 확보했습니다.',
-              'Secured a commercial contract for the data prediction product.',
-            ),
-            localize(
-              'Meta Ads 팀과의 공동 세미나를 통해 고객사의 성장 논의를 제품 교육이 아니라 실제 캠페인 전략과 측정 설계로 확장했습니다.',
-              'Expanded the customer conversation from product education into real campaign strategy and measurement design through the joint seminar with Meta Ads.',
-            ),
-            localize(
-              '여러 핵심 제품을 다룬 case study를 작성하고 고객 testimonial을 확보해, 이후 다른 엔터프라이즈 고객에게 보여줄 수 있는 신뢰 자산으로 만들었습니다.',
-              'Authored a case study covering multiple core products and secured a client testimonial, creating proof that could support future enterprise conversations.',
-            ),
-          ],
-        },
-        { type: 'heading', level: 2, text: localize('포트폴리오에서 보여주는 점', 'What This Shows') },
-        {
-          type: 'paragraph',
-          text: localize(
-            '이 사례는 제가 고객성공을 단순 지원 업무로 보지 않고, 마케팅 전략, 측정 구조, 제품 도입, 파트너 협업을 함께 묶어 실행하는 방식으로 일한다는 점을 보여줍니다. 새 도구를 고객에게 소개하는 데서 끝내지 않고, 그 도구를 언제, 왜, 어떻게 써야 성과가 나는지까지 함께 설계한 사례입니다.',
-            'This case shows how I treat Customer Success as more than support: I connect marketing strategy, measurement structure, product adoption, and partner collaboration into execution. Put simply, I did not just hand the customer a new tool. I helped map when, why, and how to use it so it could create growth.',
-          ),
-        },
-      ],
-    },
-  },
-  {
     id: 'adobe-integration-issue-resolution',
     title: localize(
       '온보딩 중 발견한 Adobe 리인게이지먼트 연동 갭 해결',
@@ -969,7 +855,7 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
       localize('리더십 에스컬레이션', 'Leadership Escalation'),
     ],
     modal: {
-      eyebrow: localize('고객성공 사례 05', 'Customer Success Case 05'),
+      eyebrow: localize('고객성공 사례 04', 'Customer Success Case 04'),
       title: localize(
         '온보딩 중 발견한 Adobe 리인게이지먼트 연동 갭 해결',
         'Resolving an Adobe Re-engagement Integration Gap Found During Onboarding',
@@ -1178,7 +1064,7 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
       localize('커스텀 솔루션 범위 조율', 'Custom Solution Scoping'),
     ],
     modal: {
-      eyebrow: localize('고객성공 사례 06', 'Customer Success Case 06'),
+      eyebrow: localize('고객성공 사례 05', 'Customer Success Case 05'),
       title: localize(
         '전략 고객을 위한 Insider 다계정 연동 커스터마이징',
         'Custom Insider Multi-account Integration for a Strategic Enterprise Customer',

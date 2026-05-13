@@ -186,6 +186,16 @@ const customerSuccessFeatureTitles = new Set(['고객성공', 'Customer Success'
 const marketingFeatureTitles = new Set(['마케팅 전략과 측정 설계', 'Marketing Strategy & Measurement']);
 const contactEmail = 'jiwoohan92@gmail.com';
 const linkedInUrl = 'https://www.linkedin.com/in/jiwoo-han-557289143/';
+const customerSuccessCaseOrder = [
+  'onelink-console-solution',
+  'private-customer-workshop',
+  's2s-implementation-guide',
+  'adobe-integration-issue-resolution',
+  'insider-integration-customization',
+] as const;
+const customerSuccessCaseOrderMap = new Map<string, number>(
+  customerSuccessCaseOrder.map((customerCaseId, index) => [customerCaseId, index]),
+);
 
 async function copyTextToClipboard(text: string) {
   if (navigator.clipboard) {
@@ -980,7 +990,12 @@ function App() {
   const content = t('content', { returnObjects: true }) as PortfolioContent;
   const currentLanguage = getSupportedLanguage(i18n.resolvedLanguage ?? i18n.language);
   const customerSuccessCases = useMemo(
-    () => getCustomerSuccessCases(currentLanguage),
+    () =>
+      [...getCustomerSuccessCases(currentLanguage)].sort(
+        (firstCase, secondCase) =>
+          (customerSuccessCaseOrderMap.get(firstCase.id) ?? Number.MAX_SAFE_INTEGER) -
+          (customerSuccessCaseOrderMap.get(secondCase.id) ?? Number.MAX_SAFE_INTEGER),
+      ),
     [currentLanguage],
   );
   const [selectedProject, setSelectedProject] = useState<ProjectDetail | null>(null);
