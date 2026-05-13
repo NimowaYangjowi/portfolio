@@ -171,21 +171,21 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
     id: 'onelink-console-solution',
     title: '고객사의 API 도입 과제를 커스텀 콘솔로 풀어낸 사례',
     customerContext:
-      '고객사의 OneLink API 도입 과정에서 반복적으로 나타나는 운영 마찰을 공개 문서 기반 레퍼런스 콘솔로 재구성한 사례입니다.',
+      '공개 API 문서만으로는 고객의 실제 캠페인 운영 방식을 설명하기 어려웠기 때문에, OneLink API를 마케팅 사용자가 이해할 수 있는 콘솔형 워크플로우로 재구성한 사례입니다.',
     focus: 'API Integration',
     contribution: [
       'OneLink CRUD API를 실제 업무에 도입하는 과정에서 생기는 이해도, 운영 방식, 개발 우선순위의 간극을 줄였습니다.',
-      '마케팅 팀에는 반복적인 캠페인 링크 운영을 직접 처리할 수 있는 제품형 워크플로우를, 개발팀에는 구현에 참고할 수 있는 작동 가능한 패턴을 제공했습니다.',
+      '반복 링크 생성, 네이밍 규칙, 대량 운영, 예외 처리를 화면 흐름으로 풀어내 마케팅 사용자와 개발팀이 같은 구현 기준을 공유할 수 있게 했습니다.',
       '설정, 생성, 대량 실행, 그룹 단위 업데이트, 개별 링크 추적까지 운영 전체 흐름을 다뤘습니다.',
     ],
     outcome:
-      '추상적인 API 개념을 비즈니스 사용자와 개발자가 함께 이해할 수 있는 제품형 워크플로우로 바꿨습니다.',
+      '추상적인 API 개념을 실제 캠페인 운영에 연결되는 제품형 워크플로우로 바꿔, 비즈니스 사용자와 개발자가 같은 언어로 도입 범위를 논의할 수 있게 했습니다.',
     skills: ['API Workflow', 'OneLink', 'Productized Console', 'Operational UX'],
     modal: {
       eyebrow: 'Customer Success Case 01',
       title: '고객사의 API 도입 과제를 커스텀 콘솔로 풀어낸 사례',
       summary:
-        '고객사의 OneLink API 도입 과정에서 반복적으로 나타나는 운영 마찰을 공개 문서 기반 레퍼런스 콘솔로 재구성한 사례입니다.',
+        '공개 API 문서만으로는 고객의 실제 캠페인 운영 방식을 설명하기 어려웠기 때문에, OneLink API를 마케팅 사용자가 이해할 수 있는 콘솔형 워크플로우로 재구성한 사례입니다. 반복 링크 생성, 네이밍 규칙, 대량 운영, 예외 처리를 화면 흐름으로 풀어내며 비즈니스 사용자와 개발팀이 같은 구현 기준을 공유할 수 있도록 했습니다.',
       closeLabel: commonCloseLabel,
       openLabel: commonOpenLabel,
       contentBlocks: [
@@ -202,19 +202,19 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
         { type: 'heading', level: 2, text: '프로젝트 개요' },
         {
           type: 'paragraph',
-          text: '이 프로젝트는 고객사가 OneLink CRUD API를 실제 업무에 도입하는 과정에서 겪는 이해도, 운영 방식, 개발 우선순위의 간극을 줄이기 위해 시작했습니다.',
+          text: '이 프로젝트는 OneLink CRUD API를 고객사의 실제 캠페인 운영 방식으로 설명하기 위해 시작했습니다. 공개 API 문서에는 엔드포인트와 파라미터가 정리되어 있었지만, 마케팅 팀이 매일 처리하는 링크 생성, 네이밍, 대량 운영, 예외 처리 흐름은 별도로 풀어내야 했습니다.',
         },
         {
           type: 'paragraph',
-          text: 'API 자체의 가치는 비기술 사용자에게 추상적으로 느껴질 수 있지만, 마케팅 팀에서 반복적으로 나타나는 운영 니즈는 매우 구체적이었습니다. 대량의 캠페인 링크를 빠르게 만들고, 일관된 규칙으로 관리하며, 매번 개발팀에 수동 작업을 요청하지 않아도 되는 흐름이 필요했습니다.',
+          text: 'API 자체의 가치는 비기술 사용자에게 추상적으로 느껴질 수 있지만, 마케팅 팀의 운영 니즈는 구체적이었습니다. 대량의 캠페인 링크를 빠르게 만들고, 일관된 규칙으로 관리하며, 매번 개발팀에 수동 작업을 요청하지 않아도 되는 흐름이 필요했습니다.',
         },
         {
           type: 'paragraph',
-          text: '이 프로젝트는 그 두 지점을 연결합니다. 마케팅 팀에는 OneLink API가 캠페인 운영의 어떤 병목을 줄일 수 있는지 보여주고, 개발팀에는 실제 구현에 참고할 수 있는 작동 가능한 패턴을 제공합니다.',
+          text: '이 프로젝트는 그 두 지점을 연결합니다. 마케팅 팀에는 OneLink API가 캠페인 운영의 어떤 병목을 줄일 수 있는지 보여주고, 개발팀에는 실제 구현에 참고할 수 있는 작동 가능한 패턴을 제공합니다. 문서만으로는 보이지 않는 도입 범위를 제품 화면과 데이터 흐름으로 바꾼 것입니다.',
         },
         {
           type: 'paragraph',
-          text: '추상적인 API 개념을 비즈니스 사용자와 개발자가 함께 이해할 수 있는 제품형 워크플로우로 바꾼 프로젝트입니다.',
+          text: '추상적인 API 개념을 실제 캠페인 운영에 연결되는 제품형 워크플로우로 바꾼 프로젝트입니다.',
         },
         { type: 'heading', level: 2, text: '이 사례에서 보여주고 싶은 점' },
         {
@@ -222,15 +222,16 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
           style: 'bullet',
           items: [
             '이 프로젝트는 단순한 데모 UI가 아니라, 고객사의 OneLink API 도입을 막는 운영상의 병목을 공개 문서 기반 레퍼런스 콘솔로 재구성한 사례입니다.',
-            '비즈니스 사용자가 이해할 수 있는 화면과 개발팀이 참고할 수 있는 구현 패턴을 동시에 설계했습니다.',
+            '비즈니스 사용자가 이해할 수 있는 화면 흐름과 개발팀이 참고할 수 있는 구현 패턴을 동시에 설계했습니다.',
             '설정, 생성, 대량 실행, 그룹 단위 업데이트, 개별 링크 추적까지 운영 전체 흐름을 다룹니다.',
             'API 문서, 고객의 실제 업무 방식, 제품 UI, 개발 구현 기준 사이의 간극을 줄인 경험을 보여줍니다.',
+            '고객성공 관점에서는 기술 기능을 설명하는 데서 끝내지 않고, 고객이 실제로 도입 여부와 구현 범위를 판단할 수 있는 운영 모델로 바꾼 사례입니다.',
           ],
         },
         { type: 'heading', level: 2, text: '포트폴리오 전체 맥락에서의 연결점' },
         {
           type: 'paragraph',
-          text: '이 프로젝트는 제가 고객성공 업무와 제품 구현 경험을 연결하는 방식을 보여줍니다. 고객사의 업무 흐름에서 API 도입을 어렵게 만드는 지점을 찾고, 이를 기술 조직과 비즈니스 사용자가 함께 이해할 수 있는 솔루션으로 바꿨습니다.',
+          text: '이 프로젝트는 고객성공 업무에서 파악한 운영 문제를 제품 구현 경험과 연결한 사례입니다. 고객사의 업무 흐름에서 API 도입을 어렵게 만드는 지점을 찾고, 이를 기술 조직과 비즈니스 사용자가 함께 이해할 수 있는 솔루션으로 바꿨습니다.',
         },
         {
           type: 'list',
@@ -241,6 +242,7 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
             '구현과 협업: Next.js, TypeScript, React, MUI, SQLite 기반의 작동 가능한 앱으로 구현했습니다.',
             '도입 관점: 비즈니스 사용자와 개발팀 모두가 API의 유용성을 이해하고, 실제 운영에 연결할 수 있도록 설계했습니다.',
             '포트폴리오 연결점: 고객 인터뷰, 기술 요구사항 정리, UI 설계, 작동 가능한 레퍼런스 구현까지 이어지는 엔드투엔드 문제 해결 방식을 보여줍니다.',
+            '쉽게 말하면, 설명서만으로는 조립하기 어려운 기능을 실제로 만져볼 수 있는 업무용 예시로 바꾼 작업입니다.',
           ],
         },
         { type: 'heading', level: 2, text: '범위와 프로덕션 도입에 대한 노트' },
@@ -262,7 +264,7 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
         },
         {
           type: 'paragraph',
-          text: '그래서 저는 템플릿 등록을 설정 화면의 첫 단계로 만들었습니다. 사용자는 템플릿을 한 번 저장해두고 이후 링크 생성 워크플로우에서 반복해서 사용할 수 있습니다.',
+          text: '이 선행 조건을 놓치지 않도록 템플릿 등록을 설정 화면의 첫 단계로 배치했습니다. 사용자는 템플릿을 한 번 저장해두고 이후 링크 생성 워크플로우에서 반복해서 사용할 수 있습니다.',
         },
         {
           type: 'image',
@@ -410,7 +412,7 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
         },
         {
           type: 'paragraph',
-          text: '저는 링크 그룹 플로우를 미디어 소스 -> 캠페인 -> 광고 세트 -> 광고의 4단계 위계 구조를 중심으로 설계했습니다. 이를 통해 사용자는 같은 설정을 반복 입력하지 않고도 하나의 캠페인 구조에서 여러 링크 변형을 만들 수 있습니다.',
+          text: '링크 그룹 플로우는 미디어 소스 -> 캠페인 -> 광고 세트 -> 광고의 4단계 위계 구조를 중심으로 설계했습니다. 이를 통해 사용자는 같은 설정을 반복 입력하지 않고도 하나의 캠페인 구조에서 여러 링크 변형을 만들 수 있습니다.',
         },
         {
           type: 'image',
@@ -473,6 +475,19 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
             '미리보기는 생성될 링크 수와 각 링크가 속한 위치를 계속 확인할 수 있게 합니다.',
           ],
         },
+        { type: 'heading', level: 2, text: '고객성공 관점에서의 의미' },
+        {
+          type: 'paragraph',
+          text: '이 프로젝트의 핵심은 OneLink API를 새로 설명하는 것이 아니라, 고객이 실제로 도입 여부와 구현 범위를 판단할 수 있는 운영 모델로 바꾼 데 있습니다.',
+        },
+        {
+          type: 'paragraph',
+          text: '마케팅 팀에는 반복적인 캠페인 링크 운영을 직접 상상하고 검증할 수 있는 화면을 제공했고, 개발팀에는 API 문서를 실제 구현 흐름으로 옮길 때 참고할 수 있는 기준을 제공했습니다.',
+        },
+        {
+          type: 'paragraph',
+          text: '결과적으로 이 콘솔은 API 기능 소개와 실제 도입 사이의 빈칸을 줄이는 레퍼런스가 되었습니다. 고객성공 관점에서는 기술 기능을 고객의 업무 언어로 번역하고, 도입 논의를 실행 가능한 형태로 바꾼 사례입니다.',
+        },
       ],
     },
   },
@@ -480,36 +495,36 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
     id: 's2s-implementation-guide',
     title: '공식 문서와 고객사 데이터 구조 사이를 잇는 S2S 구현 가이드',
     customerContext:
-      '공식 문서는 API 스펙을 설명하지만, 실제 고객 구현에서는 CUID와 AFID를 어떻게 연결하고 운영할지 먼저 정해야 했습니다.',
+      '고객사는 서버에서 발생한 핵심 이벤트를 AppsFlyer로 보내 Audience와 미디어 연동에 활용하려 했지만, 내부 사용자 ID인 CUID와 AppsFlyer 식별자인 AFID를 어떻게 연결해야 하는지에서 막혀 있었습니다.',
     focus: 'Server-to-Server Integration',
     contribution: [
       'AppsFlyer S2S Event API의 엔드포인트, 인증, 파라미터를 고객사 구현 맥락으로 다시 정리했습니다.',
-      'AFID-CUID 매핑 테이블 설계, Data Locker 기반 로데이터 적재, 전송 조건을 실행 가능한 가이드로 만들었습니다.',
+      'AFID-CUID 매핑, 즉 고객사의 회원 ID와 AppsFlyer의 디바이스 ID를 연결하는 기준을 데이터 흐름과 운영 정책으로 정리했습니다.',
       '에러 처리, 보안, 모니터링 기준까지 포함해 고객 개발팀이 실제로 따라갈 수 있는 기준을 제시했습니다.',
     ],
     outcome:
-      '고객사의 실제 데이터 구조와 AppsFlyer의 필수 식별자 체계 사이에 생기는 이해의 간극을 줄였습니다.',
+      '공식 API 문서에 없는 운영 판단 기준을 구현 가이드로 정리해, 고객 개발팀이 S2S 이벤트 전송 범위와 데이터 검증 방식을 결정할 수 있게 했습니다.',
     skills: ['S2S Event API', 'AFID-CUID Mapping', 'Data Locker', 'Monitoring'],
     modal: {
       eyebrow: 'Customer Success Case 02',
       title: '공식 문서와 고객사 데이터 구조 사이를 잇는 S2S 구현 가이드',
       summary:
-        '공식 문서는 API 스펙을 설명합니다. 실제 고객 구현에서는 다른 지점에서 먼저 막힙니다. 고객사의 내부 사용자 ID인 CUID를 AppsFlyer ID인 AFID와 어떻게 연결하고 운영할지 정해야 합니다. 이 케이스는 그 빈칸을 구현 가능한 가이드로 바꾼 사례입니다.',
+        '고객사는 서버에서 발생한 핵심 이벤트를 AppsFlyer로 보내 Audience와 미디어 연동에 활용하려 했지만, 내부 사용자 ID인 CUID와 AppsFlyer 식별자인 AFID를 어떻게 연결해야 하는지에서 막혀 있었습니다. 이 사례는 공식 API 문서에 없는 운영 판단 기준을 데이터 흐름, 매핑 정책, 전송 조건, 에러 처리, 보안, 모니터링 기준으로 정리해 고객 개발팀이 바로 구현할 수 있는 가이드로 만든 프로젝트입니다.',
       closeLabel: commonCloseLabel,
       openLabel: commonOpenLabel,
       contentBlocks: [
         { type: 'heading', level: 2, text: 'Summary' },
         {
           type: 'paragraph',
-          text: 'AppsFlyer S2S Event API를 도입하려는 고객사는 내부 데이터 플랫폼에 있는 백엔드 이벤트를 AppsFlyer로 보내고 싶어 했습니다. 대상은 앱 안에서 안정적으로 측정하기 어렵거나 서버 측 검증이 필요한 이벤트였고, 이 이벤트를 Audience 룰과 외부 미디어 연동에 활용해야 했습니다.',
+          text: 'AppsFlyer S2S Event API를 도입하려는 고객사는 내부 데이터 플랫폼에 있는 백엔드 이벤트를 AppsFlyer로 보내고 싶어 했습니다. 대상은 앱 안에서 안정적으로 측정하기 어렵거나 서버 측 검증이 필요한 핵심 이벤트였고, 이 이벤트를 Audience 룰과 외부 미디어 연동에 활용해야 했습니다.',
         },
         {
           type: 'paragraph',
-          text: '문제는 API 호출 자체가 아니었습니다. AppsFlyer S2S API는 appsflyer_id를 필수 키로 요구하지만, 고객사의 내부 데이터 플랫폼은 customer_user_id를 기준으로 움직입니다. 두 식별자를 연결하는 운영 로직이 없으면 이벤트를 안정적으로 보낼 수 없습니다.',
+          text: '문제는 API 호출 자체가 아니었습니다. AppsFlyer S2S API는 appsflyer_id를 필수 키로 요구하지만, 고객사의 내부 데이터 플랫폼은 customer_user_id를 기준으로 움직입니다. 쉽게 말하면 고객사의 회원 ID와 AppsFlyer의 디바이스 ID가 서로 다른 이름표였고, 두 이름표를 연결하는 운영 로직이 없으면 이벤트를 안정적으로 보낼 수 없었습니다.',
         },
         {
           type: 'paragraph',
-          text: '저는 공식 문서의 엔드포인트, 인증, 파라미터 설명을 고객사 구현 맥락으로 다시 정리하고, AFID-CUID 매핑 테이블 설계, Data Locker 기반 로데이터 적재, 전송 조건, 에러 처리, 보안, 모니터링 기준까지 포함한 고객사 환경에 적용 가능한 구현 가이드를 만들었습니다.',
+          text: '공식 문서의 엔드포인트, 인증, 파라미터 설명을 고객사 구현 맥락으로 다시 정리하고, AFID-CUID 매핑 테이블 설계, Data Locker 기반 로데이터 적재, 전송 조건, 에러 처리, 보안, 모니터링 기준까지 포함한 고객사 환경에 적용 가능한 구현 가이드로 구성했습니다.',
         },
         { type: 'heading', level: 2, text: '고객이 막힌 지점' },
         {
@@ -530,7 +545,7 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
         },
         {
           type: 'paragraph',
-          text: '고객사는 “우리 회사 사용자 번호”를 알고 있고 AppsFlyer는 “AppsFlyer가 붙인 디바이스 번호”를 요구하는 상황이었습니다. 두 번호를 연결하는 명단을 만들고 계속 최신 상태로 유지해야 했습니다.',
+          text: '고객사는 “우리 회사 사용자 번호”를 알고 있고 AppsFlyer는 “AppsFlyer가 붙인 디바이스 번호”를 요구하는 상황이었습니다. 두 번호를 연결하는 명단을 만들고 계속 최신 상태로 유지해야 했습니다. 이 명단이 곧 AFID-CUID 매핑 테이블입니다.',
         },
         { type: 'heading', level: 2, text: '제공한 해결책' },
         { type: 'heading', level: 3, text: '1. 엔드투엔드 데이터 흐름 정리' },
@@ -608,11 +623,11 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
         { type: 'heading', level: 2, text: '왜 이 사례가 중요한가' },
         {
           type: 'paragraph',
-          text: '이 케이스는 단순히 API 문서를 요약한 일이 아닙니다. 고객사의 실제 데이터 구조와 AppsFlyer의 필수 식별자 체계 사이에 생기는 이해의 간극을 줄인 일입니다.',
+          text: '이 케이스는 단순히 API 문서를 요약한 일이 아닙니다. 고객사의 실제 데이터 구조와 AppsFlyer의 필수 식별자 체계 사이에 생기는 이해의 간극을 줄이고, 개발팀이 구현 전에 결정해야 할 운영 기준을 정리한 일입니다.',
         },
         {
           type: 'paragraph',
-          text: '공식 문서가 말하는 것은 “무엇을 보내야 하는가”입니다. 고객이 어려워한 것은 “우리 시스템에서 그 값을 어떻게 찾아 안정적으로 운영할 것인가”였습니다. 저는 그 질문을 데이터 플로우, 매핑 정책, 전송 조건, 예외 처리, 모니터링 기준으로 나눠 실행 가능한 형태로 정리했습니다.',
+          text: '공식 문서가 말하는 것은 “무엇을 보내야 하는가”입니다. 고객이 어려워한 것은 “우리 시스템에서 그 값을 어떻게 찾아 안정적으로 운영할 것인가”였습니다. 그 질문을 데이터 플로우, 매핑 정책, 전송 조건, 예외 처리, 모니터링 기준으로 나눠 실행 가능한 형태로 정리했습니다.',
         },
         { type: 'heading', level: 2, text: 'Source artifact' },
         {
@@ -1308,42 +1323,46 @@ const customerCaseTranslationPairs: Array<readonly [string, string]> = [
     `Solving a client's API adoption challenge with a custom console`,
   ],
   [
-    `고객사의 OneLink API 도입 과정에서 반복적으로 나타나는 운영 마찰을 공개 문서 기반 레퍼런스 콘솔로 재구성한 사례입니다.`,
-    `A case study that reconstructs recurring operational friction in a client's OneLink API adoption as a public-documentation-based reference console.`,
+    `공개 API 문서만으로는 고객의 실제 캠페인 운영 방식을 설명하기 어려웠기 때문에, OneLink API를 마케팅 사용자가 이해할 수 있는 콘솔형 워크플로우로 재구성한 사례입니다.`,
+    `Because public API documentation alone could not explain the customer's real campaign workflow, this case restructured the OneLink API into a console-style workflow that marketing users could understand.`,
+  ],
+  [
+    `공개 API 문서만으로는 고객의 실제 캠페인 운영 방식을 설명하기 어려웠기 때문에, OneLink API를 마케팅 사용자가 이해할 수 있는 콘솔형 워크플로우로 재구성한 사례입니다. 반복 링크 생성, 네이밍 규칙, 대량 운영, 예외 처리를 화면 흐름으로 풀어내며 비즈니스 사용자와 개발팀이 같은 구현 기준을 공유할 수 있도록 했습니다.`,
+    `Because public API documentation alone could not explain the customer's real campaign workflow, this case restructured the OneLink API into a console-style workflow that marketing users could understand. Recurring link creation, naming rules, bulk operations, and exception handling were translated into screen flows so business users and developers could share the same implementation baseline.`,
   ],
   [
     `OneLink CRUD API를 실제 업무에 도입하는 과정에서 생기는 이해도, 운영 방식, 개발 우선순위의 간극을 줄였습니다.`,
     `Reduced the gap between understanding, operations, and development priorities when adopting the OneLink CRUD API in real work.`,
   ],
   [
-    `마케팅 팀에는 반복적인 캠페인 링크 운영을 직접 처리할 수 있는 제품형 워크플로우를, 개발팀에는 구현에 참고할 수 있는 작동 가능한 패턴을 제공했습니다.`,
-    `Provided marketing teams with a productized workflow for handling recurring campaign link operations directly and gave developers a working implementation pattern to reference.`,
+    `반복 링크 생성, 네이밍 규칙, 대량 운영, 예외 처리를 화면 흐름으로 풀어내 마케팅 사용자와 개발팀이 같은 구현 기준을 공유할 수 있게 했습니다.`,
+    `Translated recurring link creation, naming rules, bulk operations, and exception handling into screen flows so marketing users and developers could share the same implementation baseline.`,
   ],
   [
     `설정, 생성, 대량 실행, 그룹 단위 업데이트, 개별 링크 추적까지 운영 전체 흐름을 다뤘습니다.`,
     `Covered the full operational flow, from setup and creation to bulk execution, group-level updates, and individual link tracking.`,
   ],
   [
-    `추상적인 API 개념을 비즈니스 사용자와 개발자가 함께 이해할 수 있는 제품형 워크플로우로 바꿨습니다.`,
-    `Turned an abstract API concept into a productized workflow that business users and developers could understand together.`,
+    `추상적인 API 개념을 실제 캠페인 운영에 연결되는 제품형 워크플로우로 바꿔, 비즈니스 사용자와 개발자가 같은 언어로 도입 범위를 논의할 수 있게 했습니다.`,
+    `Turned an abstract API concept into a productized workflow connected to real campaign operations, enabling business users and developers to discuss adoption scope in the same language.`,
   ],
   [`프로젝트 개요`, `Project overview`],
   [`원본 구현 저장소: OneLink Management Console`, `Source repository: OneLink Management Console`],
   [
-    `이 프로젝트는 고객사가 OneLink CRUD API를 실제 업무에 도입하는 과정에서 겪는 이해도, 운영 방식, 개발 우선순위의 간극을 줄이기 위해 시작했습니다.`,
-    `This project began to reduce the gap between understanding, operating model, and development priorities that appeared while a client was adopting the OneLink CRUD API in real work.`,
+    `이 프로젝트는 OneLink CRUD API를 고객사의 실제 캠페인 운영 방식으로 설명하기 위해 시작했습니다. 공개 API 문서에는 엔드포인트와 파라미터가 정리되어 있었지만, 마케팅 팀이 매일 처리하는 링크 생성, 네이밍, 대량 운영, 예외 처리 흐름은 별도로 풀어내야 했습니다.`,
+    `This project began as a way to explain the OneLink CRUD API through a customer's real campaign operations. Public API documentation covered endpoints and parameters, but the daily marketing workflow around link creation, naming, bulk operations, and exception handling needed to be translated separately.`,
   ],
   [
-    `API 자체의 가치는 비기술 사용자에게 추상적으로 느껴질 수 있지만, 마케팅 팀에서 반복적으로 나타나는 운영 니즈는 매우 구체적이었습니다. 대량의 캠페인 링크를 빠르게 만들고, 일관된 규칙으로 관리하며, 매번 개발팀에 수동 작업을 요청하지 않아도 되는 흐름이 필요했습니다.`,
-    `The value of the API itself could feel abstract to non-technical users, but the recurring operational need inside marketing teams was very concrete: they needed a flow for creating many campaign links quickly, managing them with consistent rules, and avoiding manual developer requests each time.`,
+    `API 자체의 가치는 비기술 사용자에게 추상적으로 느껴질 수 있지만, 마케팅 팀의 운영 니즈는 구체적이었습니다. 대량의 캠페인 링크를 빠르게 만들고, 일관된 규칙으로 관리하며, 매번 개발팀에 수동 작업을 요청하지 않아도 되는 흐름이 필요했습니다.`,
+    `The value of the API itself could feel abstract to non-technical users, but the marketing team's operational needs were concrete: they needed a flow for creating many campaign links quickly, managing them with consistent rules, and avoiding manual developer requests each time.`,
   ],
   [
-    `이 프로젝트는 그 두 지점을 연결합니다. 마케팅 팀에는 OneLink API가 캠페인 운영의 어떤 병목을 줄일 수 있는지 보여주고, 개발팀에는 실제 구현에 참고할 수 있는 작동 가능한 패턴을 제공합니다.`,
-    `This project connects those two points. It shows marketing teams which campaign operations bottlenecks the OneLink API can reduce, while giving developers a working pattern they can reference for implementation.`,
+    `이 프로젝트는 그 두 지점을 연결합니다. 마케팅 팀에는 OneLink API가 캠페인 운영의 어떤 병목을 줄일 수 있는지 보여주고, 개발팀에는 실제 구현에 참고할 수 있는 작동 가능한 패턴을 제공합니다. 문서만으로는 보이지 않는 도입 범위를 제품 화면과 데이터 흐름으로 바꾼 것입니다.`,
+    `This project connects those two points. It shows marketing teams which campaign bottlenecks the OneLink API can reduce while giving developers a working pattern for implementation. It turns adoption scope that is hard to see in documentation alone into product screens and data flows.`,
   ],
   [
-    `추상적인 API 개념을 비즈니스 사용자와 개발자가 함께 이해할 수 있는 제품형 워크플로우로 바꾼 프로젝트입니다.`,
-    `Put simply, this project turns an abstract API concept into a productized workflow that business users and developers can understand together.`,
+    `추상적인 API 개념을 실제 캠페인 운영에 연결되는 제품형 워크플로우로 바꾼 프로젝트입니다.`,
+    `Put simply, this project turns an abstract API concept into a productized workflow connected to real campaign operations.`,
   ],
   [`이 사례에서 보여주고 싶은 점`, `What this case demonstrates`],
   [
@@ -1351,8 +1370,8 @@ const customerCaseTranslationPairs: Array<readonly [string, string]> = [
     `This was not just a demo UI. It reconstructed the operational bottlenecks blocking a client's OneLink API adoption as a public-documentation-based reference console.`,
   ],
   [
-    `비즈니스 사용자가 이해할 수 있는 화면과 개발팀이 참고할 수 있는 구현 패턴을 동시에 설계했습니다.`,
-    `Designed screens that business users could understand and implementation patterns that the development team could reference.`,
+    `비즈니스 사용자가 이해할 수 있는 화면 흐름과 개발팀이 참고할 수 있는 구현 패턴을 동시에 설계했습니다.`,
+    `Designed screen flows that business users could understand and implementation patterns that the development team could reference.`,
   ],
   [
     `설정, 생성, 대량 실행, 그룹 단위 업데이트, 개별 링크 추적까지 운영 전체 흐름을 다룹니다.`,
@@ -1362,10 +1381,14 @@ const customerCaseTranslationPairs: Array<readonly [string, string]> = [
     `API 문서, 고객의 실제 업무 방식, 제품 UI, 개발 구현 기준 사이의 간극을 줄인 경험을 보여줍니다.`,
     `Shows experience reducing the gap between API documentation, the client's actual workflow, product UI, and development implementation standards.`,
   ],
+  [
+    `고객성공 관점에서는 기술 기능을 설명하는 데서 끝내지 않고, 고객이 실제로 도입 여부와 구현 범위를 판단할 수 있는 운영 모델로 바꾼 사례입니다.`,
+    `From a Customer Success perspective, this case goes beyond explaining a technical feature and turns it into an operating model the customer could use to judge adoption readiness and implementation scope.`,
+  ],
   [`포트폴리오 전체 맥락에서의 연결점`, `How this connects to the broader portfolio`],
   [
-    `이 프로젝트는 제가 고객성공 업무와 제품 구현 경험을 연결하는 방식을 보여줍니다. 고객사의 업무 흐름에서 API 도입을 어렵게 만드는 지점을 찾고, 이를 기술 조직과 비즈니스 사용자가 함께 이해할 수 있는 솔루션으로 바꿨습니다.`,
-    `This project shows how I connect customer success work with product implementation experience. I identified where the client's workflow made API adoption difficult and turned that problem into a solution that technical teams and business users could understand together.`,
+    `이 프로젝트는 고객성공 업무에서 파악한 운영 문제를 제품 구현 경험과 연결한 사례입니다. 고객사의 업무 흐름에서 API 도입을 어렵게 만드는 지점을 찾고, 이를 기술 조직과 비즈니스 사용자가 함께 이해할 수 있는 솔루션으로 바꿨습니다.`,
+    `This project connects an operational problem identified through Customer Success work with product implementation experience. It identifies where the customer's workflow made API adoption difficult and turns that problem into a solution that technical teams and business users could understand together.`,
   ],
   [
     `문제 발견: 마케팅 팀에서 반복되는 캠페인 링크 운영 니즈에서 출발했습니다.`,
@@ -1386,6 +1409,10 @@ const customerCaseTranslationPairs: Array<readonly [string, string]> = [
   [
     `포트폴리오 연결점: 고객 인터뷰, 기술 요구사항 정리, UI 설계, 작동 가능한 레퍼런스 구현까지 이어지는 엔드투엔드 문제 해결 방식을 보여줍니다.`,
     `Portfolio connection: Demonstrates an end-to-end problem-solving approach that moves from customer interviews and technical requirement definition to UI design and a working reference implementation.`,
+  ],
+  [
+    `쉽게 말하면, 설명서만으로는 조립하기 어려운 기능을 실제로 만져볼 수 있는 업무용 예시로 바꾼 작업입니다.`,
+    `Put simply, this turned a feature that was hard to assemble from documentation alone into a working business example users could actually interact with.`,
   ],
   [`범위와 프로덕션 도입에 대한 노트`, `Notes on scope and production adoption`],
   [
@@ -1414,8 +1441,8 @@ const customerCaseTranslationPairs: Array<readonly [string, string]> = [
     `A OneLink cannot be created without any context. It needs a template that defines the connected app, deep linking behavior, and routing settings. This template is identified by a four-character alphanumeric Template ID such as A7k9.`,
   ],
   [
-    `그래서 저는 템플릿 등록을 설정 화면의 첫 단계로 만들었습니다. 사용자는 템플릿을 한 번 저장해두고 이후 링크 생성 워크플로우에서 반복해서 사용할 수 있습니다.`,
-    `I made template registration the first step in the Settings page. Users can save a template once and reuse it throughout later link creation workflows.`,
+    `이 선행 조건을 놓치지 않도록 템플릿 등록을 설정 화면의 첫 단계로 배치했습니다. 사용자는 템플릿을 한 번 저장해두고 이후 링크 생성 워크플로우에서 반복해서 사용할 수 있습니다.`,
+    `Template registration was placed as the first step in Settings so this prerequisite would not be missed. Users can save a template once and reuse it throughout later link creation workflows.`,
   ],
   [`구현 관점에서 고려한 점`, `Implementation considerations`],
   [
@@ -1561,8 +1588,8 @@ const customerCaseTranslationPairs: Array<readonly [string, string]> = [
     `The recurring need inside marketing teams does not end with creating one link. They need many campaign links across media sources, campaigns, ad sets, and ads.`,
   ],
   [
-    `저는 링크 그룹 플로우를 미디어 소스 -> 캠페인 -> 광고 세트 -> 광고의 4단계 위계 구조를 중심으로 설계했습니다. 이를 통해 사용자는 같은 설정을 반복 입력하지 않고도 하나의 캠페인 구조에서 여러 링크 변형을 만들 수 있습니다.`,
-    `I designed the link-group flow around a four-level hierarchy: Media Source -> Campaign -> Ad Set -> Ad. This lets users branch one campaign structure into multiple link variations without repeatedly entering the same settings.`,
+    `링크 그룹 플로우는 미디어 소스 -> 캠페인 -> 광고 세트 -> 광고의 4단계 위계 구조를 중심으로 설계했습니다. 이를 통해 사용자는 같은 설정을 반복 입력하지 않고도 하나의 캠페인 구조에서 여러 링크 변형을 만들 수 있습니다.`,
+    `The link-group flow was designed around a four-level hierarchy: Media Source -> Campaign -> Ad Set -> Ad. This lets users branch one campaign structure into multiple link variations without repeatedly entering the same settings.`,
   ],
   [
     `현재 구현에서는 사용자가 위계를 점진적으로 만듭니다. 먼저 미디어 소스 값을 추가하고, 하위 값을 받을 칩을 선택한 뒤 캠페인, 광고 세트, 광고 단계로 트리를 확장합니다.`,
@@ -1578,7 +1605,7 @@ const customerCaseTranslationPairs: Array<readonly [string, string]> = [
   ],
   [
     `편집 속도와 실수 복구도 함께 고려했습니다. 사용자는 위계 칩을 선택하고, 범위 선택이나 드래그 선택을 사용하며, 전체 트리를 다시 만들지 않고도 그룹 항목을 확인 후 삭제할 수 있습니다.`,
-    `I also considered editing speed and recovery from mistakes. Users can select hierarchy chips, use range or lasso selection, and delete group items after reviewing them without rebuilding the whole tree.`,
+    `Editing speed and recovery from mistakes were also considered. Users can select hierarchy chips, use range or lasso selection, and delete group items after reviewing them without rebuilding the whole tree.`,
   ],
   [
     `파라미터는 전체 링크에 적용하거나 선택한 브랜치에만 적용할 수 있습니다. 특정 캠페인, 애드셋, 광고만 다른 트래킹 값을 써야 할 때 유연하게 대응할 수 있습니다.`,
@@ -1612,45 +1639,58 @@ const customerCaseTranslationPairs: Array<readonly [string, string]> = [
     `미리보기는 생성될 링크 수와 각 링크가 속한 위치를 계속 확인할 수 있게 합니다.`,
     `The Preview keeps users aware of how many links will be created and where each link belongs.`,
   ],
+  [`고객성공 관점에서의 의미`, `What this means from a Customer Success perspective`],
+  [
+    `이 프로젝트의 핵심은 OneLink API를 새로 설명하는 것이 아니라, 고객이 실제로 도입 여부와 구현 범위를 판단할 수 있는 운영 모델로 바꾼 데 있습니다.`,
+    `The core of this project was not to explain the OneLink API again, but to turn it into an operating model the customer could use to judge adoption readiness and implementation scope.`,
+  ],
+  [
+    `마케팅 팀에는 반복적인 캠페인 링크 운영을 직접 상상하고 검증할 수 있는 화면을 제공했고, 개발팀에는 API 문서를 실제 구현 흐름으로 옮길 때 참고할 수 있는 기준을 제공했습니다.`,
+    `It gave the marketing team screens they could use to imagine and validate recurring campaign link operations, while giving the development team a practical baseline for translating API documentation into an implementation flow.`,
+  ],
+  [
+    `결과적으로 이 콘솔은 API 기능 소개와 실제 도입 사이의 빈칸을 줄이는 레퍼런스가 되었습니다. 고객성공 관점에서는 기술 기능을 고객의 업무 언어로 번역하고, 도입 논의를 실행 가능한 형태로 바꾼 사례입니다.`,
+    `As a result, the console became a reference that reduced the gap between API feature introduction and real adoption. From a Customer Success perspective, it shows how a technical capability can be translated into the customer's working language and turned into an actionable adoption discussion.`,
+  ],
   [
     `공식 문서와 고객사 데이터 구조 사이를 잇는 S2S 구현 가이드`,
     `S2S implementation guide bridging official documentation and client data structure`,
   ],
   [
-    `공식 문서는 API 스펙을 설명하지만, 실제 고객 구현에서는 CUID와 AFID를 어떻게 연결하고 운영할지 먼저 정해야 했습니다.`,
-    `Official documentation explains the API specification, but in real client implementations, the first decision was how to connect and operate CUID and AFID.`,
+    `고객사는 서버에서 발생한 핵심 이벤트를 AppsFlyer로 보내 Audience와 미디어 연동에 활용하려 했지만, 내부 사용자 ID인 CUID와 AppsFlyer 식별자인 AFID를 어떻게 연결해야 하는지에서 막혀 있었습니다.`,
+    `The customer wanted to send key server-side events to AppsFlyer for Audiences and media integrations, but was blocked on how to connect its internal user ID, CUID, with AppsFlyer's identifier, AFID.`,
   ],
   [
     `AppsFlyer S2S Event API의 엔드포인트, 인증, 파라미터를 고객사 구현 맥락으로 다시 정리했습니다.`,
     `Reorganized the AppsFlyer S2S Event API endpoint, authentication, and parameters around the client's implementation context.`,
   ],
   [
-    `AFID-CUID 매핑 테이블 설계, Data Locker 기반 로데이터 적재, 전송 조건을 실행 가능한 가이드로 만들었습니다.`,
-    `Turned AFID-CUID mapping table design, Data Locker raw-data ingestion, and event sending conditions into an actionable guide.`,
+    `AFID-CUID 매핑, 즉 고객사의 회원 ID와 AppsFlyer의 디바이스 ID를 연결하는 기준을 데이터 흐름과 운영 정책으로 정리했습니다.`,
+    `Defined AFID-CUID mapping, the standard for connecting the customer's member ID with AppsFlyer's device ID, as a data flow and operating policy.`,
   ],
   [
     `에러 처리, 보안, 모니터링 기준까지 포함해 고객 개발팀이 실제로 따라갈 수 있는 기준을 제시했습니다.`,
     `Provided practical standards the client's development team could follow, including error handling, security, and monitoring criteria.`,
   ],
   [
-    `고객사의 실제 데이터 구조와 AppsFlyer의 필수 식별자 체계 사이에 생기는 이해의 간극을 줄였습니다.`,
-    `Reduced the understanding gap between the client's real data structure and AppsFlyer's required identifier system.`,
+    `공식 API 문서에 없는 운영 판단 기준을 구현 가이드로 정리해, 고객 개발팀이 S2S 이벤트 전송 범위와 데이터 검증 방식을 결정할 수 있게 했습니다.`,
+    `Turned operating decisions not covered in the official API documentation into an implementation guide, helping the customer's development team decide S2S event scope and data validation methods.`,
   ],
   [
-    `공식 문서는 API 스펙을 설명합니다. 실제 고객 구현에서는 다른 지점에서 먼저 막힙니다. 고객사의 내부 사용자 ID인 CUID를 AppsFlyer ID인 AFID와 어떻게 연결하고 운영할지 정해야 합니다. 이 케이스는 그 빈칸을 구현 가능한 가이드로 바꾼 사례입니다.`,
-    `Official documentation explains the API specification. In real client implementations, a different issue often appears first: how to map the client's internal user ID, CUID, to AppsFlyer's ID, AFID, and keep that mapping operational. This case turned that blank space into an implementable guide.`,
+    `고객사는 서버에서 발생한 핵심 이벤트를 AppsFlyer로 보내 Audience와 미디어 연동에 활용하려 했지만, 내부 사용자 ID인 CUID와 AppsFlyer 식별자인 AFID를 어떻게 연결해야 하는지에서 막혀 있었습니다. 이 사례는 공식 API 문서에 없는 운영 판단 기준을 데이터 흐름, 매핑 정책, 전송 조건, 에러 처리, 보안, 모니터링 기준으로 정리해 고객 개발팀이 바로 구현할 수 있는 가이드로 만든 프로젝트입니다.`,
+    `The customer wanted to send key server-side events to AppsFlyer for Audiences and media integrations, but was blocked on how to connect its internal user ID, CUID, with AppsFlyer's identifier, AFID. This project turned operating decisions not covered in the official API documentation into an implementation guide covering data flow, mapping policy, sending conditions, error handling, security, and monitoring standards.`,
   ],
   [
-    `AppsFlyer S2S Event API를 도입하려는 고객사는 내부 데이터 플랫폼에 있는 백엔드 이벤트를 AppsFlyer로 보내고 싶어 했습니다. 대상은 앱 안에서 안정적으로 측정하기 어렵거나 서버 측 검증이 필요한 이벤트였고, 이 이벤트를 Audience 룰과 외부 미디어 연동에 활용해야 했습니다.`,
-    `The client wanted to send backend events from its internal data platform to AppsFlyer through the AppsFlyer S2S Event API. The target events were those that were difficult to measure reliably inside the app or required server-side validation, and the client needed to use them for Audience rules and external media integrations.`,
+    `AppsFlyer S2S Event API를 도입하려는 고객사는 내부 데이터 플랫폼에 있는 백엔드 이벤트를 AppsFlyer로 보내고 싶어 했습니다. 대상은 앱 안에서 안정적으로 측정하기 어렵거나 서버 측 검증이 필요한 핵심 이벤트였고, 이 이벤트를 Audience 룰과 외부 미디어 연동에 활용해야 했습니다.`,
+    `The customer wanted to send backend events from its internal data platform to AppsFlyer through the AppsFlyer S2S Event API. The target events were key events that were difficult to measure reliably inside the app or required server-side validation, and the customer needed to use them for Audience rules and external media integrations.`,
   ],
   [
-    `문제는 API 호출 자체가 아니었습니다. AppsFlyer S2S API는 appsflyer_id를 필수 키로 요구하지만, 고객사의 내부 데이터 플랫폼은 customer_user_id를 기준으로 움직입니다. 두 식별자를 연결하는 운영 로직이 없으면 이벤트를 안정적으로 보낼 수 없습니다.`,
-    `The issue was not the API call itself. The AppsFlyer S2S API requires appsflyer_id as a mandatory key, while the client's internal data platform operates around customer_user_id. Without operating logic to connect the two identifiers, events cannot be sent reliably.`,
+    `문제는 API 호출 자체가 아니었습니다. AppsFlyer S2S API는 appsflyer_id를 필수 키로 요구하지만, 고객사의 내부 데이터 플랫폼은 customer_user_id를 기준으로 움직입니다. 쉽게 말하면 고객사의 회원 ID와 AppsFlyer의 디바이스 ID가 서로 다른 이름표였고, 두 이름표를 연결하는 운영 로직이 없으면 이벤트를 안정적으로 보낼 수 없었습니다.`,
+    `The issue was not the API call itself. The AppsFlyer S2S API requires appsflyer_id as a mandatory key, while the customer's internal data platform operates around customer_user_id. Put simply, the customer's member ID and AppsFlyer's device ID were different name tags, and without operating logic to connect them, events could not be sent reliably.`,
   ],
   [
-    `저는 공식 문서의 엔드포인트, 인증, 파라미터 설명을 고객사 구현 맥락으로 다시 정리하고, AFID-CUID 매핑 테이블 설계, Data Locker 기반 로데이터 적재, 전송 조건, 에러 처리, 보안, 모니터링 기준까지 포함한 고객사 환경에 적용 가능한 구현 가이드를 만들었습니다.`,
-    `I reorganized the official documentation's endpoint, authentication, and parameter explanations around the client's implementation context, then created an implementation guide that could be applied to the client's environment, covering AFID-CUID mapping table design, Data Locker raw-data ingestion, sending conditions, error handling, security, and monitoring standards.`,
+    `공식 문서의 엔드포인트, 인증, 파라미터 설명을 고객사 구현 맥락으로 다시 정리하고, AFID-CUID 매핑 테이블 설계, Data Locker 기반 로데이터 적재, 전송 조건, 에러 처리, 보안, 모니터링 기준까지 포함한 고객사 환경에 적용 가능한 구현 가이드로 구성했습니다.`,
+    `The official documentation's endpoint, authentication, and parameter explanations were reorganized around the customer's implementation context, then structured into an implementation guide covering AFID-CUID mapping table design, Data Locker raw-data ingestion, sending conditions, error handling, security, and monitoring standards.`,
   ],
   [`고객이 막힌 지점`, `Where the client got stuck`],
   [
@@ -1682,8 +1722,8 @@ const customerCaseTranslationPairs: Array<readonly [string, string]> = [
     `Does a 200 OK response mean the event is actually reflected in Audiences and dashboards?`,
   ],
   [
-    `고객사는 “우리 회사 사용자 번호”를 알고 있고 AppsFlyer는 “AppsFlyer가 붙인 디바이스 번호”를 요구하는 상황이었습니다. 두 번호를 연결하는 명단을 만들고 계속 최신 상태로 유지해야 했습니다.`,
-    `Put simply, the client knew "our company's user number," while AppsFlyer required "the device number assigned by AppsFlyer." The team needed a list that connected the two numbers and kept it up to date.`,
+    `고객사는 “우리 회사 사용자 번호”를 알고 있고 AppsFlyer는 “AppsFlyer가 붙인 디바이스 번호”를 요구하는 상황이었습니다. 두 번호를 연결하는 명단을 만들고 계속 최신 상태로 유지해야 했습니다. 이 명단이 곧 AFID-CUID 매핑 테이블입니다.`,
+    `Put simply, the customer knew "our company's user number," while AppsFlyer required "the device number assigned by AppsFlyer." The team needed a list that connected the two numbers and kept it up to date. That list is the AFID-CUID mapping table.`,
   ],
   [`제공한 해결책`, `Solution provided`],
   [`1. 엔드투엔드 데이터 흐름 정리`, `1. Define the end-to-end data flow`],
@@ -1799,12 +1839,12 @@ const customerCaseTranslationPairs: Array<readonly [string, string]> = [
   ],
   [`왜 이 사례가 중요한가`, `Why this case matters`],
   [
-    `이 케이스는 단순히 API 문서를 요약한 일이 아닙니다. 고객사의 실제 데이터 구조와 AppsFlyer의 필수 식별자 체계 사이에 생기는 이해의 간극을 줄인 일입니다.`,
-    `This case was not just a summary of API documentation. It reduced the understanding gap between the client's real data structure and AppsFlyer's required identifier system.`,
+    `이 케이스는 단순히 API 문서를 요약한 일이 아닙니다. 고객사의 실제 데이터 구조와 AppsFlyer의 필수 식별자 체계 사이에 생기는 이해의 간극을 줄이고, 개발팀이 구현 전에 결정해야 할 운영 기준을 정리한 일입니다.`,
+    `This case was not just a summary of API documentation. It reduced the understanding gap between the customer's real data structure and AppsFlyer's required identifier system, and clarified the operating standards the development team needed to decide before implementation.`,
   ],
   [
-    `공식 문서가 말하는 것은 “무엇을 보내야 하는가”입니다. 고객이 어려워한 것은 “우리 시스템에서 그 값을 어떻게 찾아 안정적으로 운영할 것인가”였습니다. 저는 그 질문을 데이터 플로우, 매핑 정책, 전송 조건, 예외 처리, 모니터링 기준으로 나눠 실행 가능한 형태로 정리했습니다.`,
-    `Official documentation explains "what to send." The client's harder question was "how do we find that value in our system and operate it reliably?" I broke that question into data flow, mapping policy, sending conditions, exception handling, and monitoring standards, then turned it into an actionable guide.`,
+    `공식 문서가 말하는 것은 “무엇을 보내야 하는가”입니다. 고객이 어려워한 것은 “우리 시스템에서 그 값을 어떻게 찾아 안정적으로 운영할 것인가”였습니다. 그 질문을 데이터 플로우, 매핑 정책, 전송 조건, 예외 처리, 모니터링 기준으로 나눠 실행 가능한 형태로 정리했습니다.`,
+    `Official documentation explains "what to send." The customer's harder question was "how do we find that value in our system and operate it reliably?" That question was broken down into data flow, mapping policy, sending conditions, exception handling, and monitoring standards, then turned into an actionable guide.`,
   ],
   [`원본 가이드: AppsFlyer S2S 구현 가이드`, `Source: AppsFlyer S2S implementation guide`],
   [`API 연동`, `API Integration`],
