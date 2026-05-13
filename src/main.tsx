@@ -759,8 +759,6 @@ function SkillTabs({ skillGroups }: { skillGroups: SkillGroup[] }) {
 }
 
 function ExperienceEntry({ experience }: { experience: Experience }) {
-  const { t } = useTranslation();
-
   return (
     <Reveal className="experience-entry">
       <span className="experience-marker" aria-hidden="true">
@@ -772,7 +770,6 @@ function ExperienceEntry({ experience }: { experience: Experience }) {
             <p className="experience-period">{experience.period}</p>
             <h3 className="experience-company">{experience.company}</h3>
           </div>
-          <Badge variant="outline">{t('experienceBadge')}</Badge>
         </div>
         <p className="experience-summary">{experience.summary}</p>
         <div className="experience-role-list">

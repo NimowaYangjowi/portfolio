@@ -103,7 +103,6 @@ void i18n.use(initReactI18next).init({
         languageOptionKo: '한국어',
         languageOptionEn: 'English',
         skillCategoriesLabel: '스킬 카테고리',
-        experienceBadge: 'Experience',
         contactEmailLabel: '이메일',
         content: {
           heroTitle: '안녕하세요.\n기술과 사람을 연결하는\n한지우입니다.',
@@ -1033,7 +1032,6 @@ void i18n.use(initReactI18next).init({
         languageOptionKo: '한국어',
         languageOptionEn: 'English',
         skillCategoriesLabel: 'Skill categories',
-        experienceBadge: 'Experience',
         contactEmailLabel: 'Email',
         content: {
           heroTitle: "Hello.\nI'm Jiwoo Han.\nI connect technology and people.",
