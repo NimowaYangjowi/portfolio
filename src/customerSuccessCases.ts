@@ -648,8 +648,8 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
         'Reframed app marketing measurement, attribution, deep linking, SKAN, fraud protection, and Adobe integration issues into an enablement flow that HQ decision-makers and local marketing, CRM, and data teams could understand together.',
       ),
       localize(
-        '런던, 방콕, 상파울루에서 각각 이틀짜리 권역별 워크숍을 세 차례 설계하고, 아젠다, 맞춤 콘텐츠, 발표자 배정, 사전·사후 설문, 참여형 퀴즈, 후속 액션 정리를 맡았습니다.',
-        'Designed three two-day regional workshops in London, Bangkok, and Sao Paulo, owning the agenda, custom content, speaker assignment, pre/post surveys, engagement quizzes, and follow-up actions.',
+        '런던, 방콕, 상파울루에서 각각 이틀짜리 권역별 워크숍을 세 차례 설계하고, 아젠다, 맞춤 콘텐츠, 발표자 배정, 사전·사후 설문, 참여형 퀴즈, 후속 액션까지 교육 흐름에 포함했습니다.',
+        'Designed three two-day regional workshops in London, Bangkok, and Sao Paulo, with the enablement flow covering the agenda, custom content, speaker assignment, pre/post surveys, engagement quizzes, and follow-up actions.',
       ),
       localize(
         'APAC, EMEA, LATAM 현지 오피스의 지식 수준, KPI, 데이터 정의, 캠페인 운영 방식 차이를 본사 메시지와 연결해 전사 도입을 위한 공통 언어를 만들었습니다.',
@@ -757,16 +757,16 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
           style: 'bullet',
           items: [
             localize(
-              '워크숍 PM으로서 전체 기획, 예산 승인 설득, 권역별 일정 조율, 아젠다와 시간표 구성, 고객 맞춤 콘텐츠 제작, 발표자 배정, 내부 팀 조율, 본사 메시지 정렬, 참여형 퀴즈와 사전·사후 설문 설계를 맡았습니다.',
-              'Served as the workshop PM, owning program planning, budget approval alignment, regional scheduling, agenda and timetable design, custom content creation, speaker assignment, internal coordination, HQ message alignment, engagement quizzes, and pre/post survey design.',
+              '권역별 워크숍은 아젠다, 예산 승인, 일정 조율, 맞춤 콘텐츠, 발표자 구성, 내부 팀 조율, 본사 메시지 정렬, 참여형 퀴즈, 사전·사후 설문까지 하나의 교육 흐름으로 설계했습니다.',
+              'The regional workshops were designed as one enablement flow, covering agenda structure, budget approval alignment, scheduling, custom content, speaker planning, internal coordination, HQ message alignment, engagement quizzes, and pre/post survey design.',
             ),
             localize(
               '가장 어려웠던 부분은 세 권역의 일정과 이해관계자를 맞추면서도, 각 지역이 바로 이해할 수 있는 수준의 맞춤형 콘텐츠를 만드는 일이었습니다.',
               'The hardest part was aligning schedules and stakeholders across three regions while creating custom content that each local team could understand and apply.',
             ),
             localize(
-              '현지 장소 예약, 케이터링, 당일 현장 운영은 현지 팀이 맡았고, 저는 교육 설계와 이해관계자 조율, 메시지 품질을 책임졌습니다.',
-              'Local teams handled venue booking, catering, and on-site operations; my ownership was enablement design, stakeholder alignment, and message quality.',
+              '현지 장소 예약, 케이터링, 당일 현장 운영은 지역 팀과 분담하고, 교육 설계, 이해관계자 조율, 메시지 일관성 관리에 집중했습니다.',
+              'Local operations such as venue booking, catering, and on-site execution were shared with regional teams, while the core focus stayed on enablement design, stakeholder alignment, and message consistency.',
             ),
           ],
         },
@@ -925,22 +925,22 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
       'Resolving an Adobe Re-engagement Integration Gap Found During Onboarding',
     ),
     customerContext: localize(
-      '같은 글로벌 이커머스 고객사의 온보딩 스코프를 검토하던 중, Adobe로 리인게이지먼트와 리어트리뷰션 데이터를 보내는 연동이 당시 지원되지 않는다는 점을 먼저 발견했습니다.',
-      'While reviewing onboarding scope for the same global e-commerce customer, I proactively found that re-engagement and re-attribution data could not yet be sent to Adobe.',
+      '같은 글로벌 이커머스 고객사의 온보딩 스코프 검토 과정에서, Adobe로 리인게이지먼트와 리어트리뷰션 데이터를 보내는 연동 공백이 확인되었습니다.',
+      'During onboarding-scope review for the same global e-commerce customer, a gap was identified in sending re-engagement and re-attribution data to Adobe.',
     ),
     focus: localize('부서 간 협업', 'Cross-Functional Collaboration'),
     contribution: [
       localize(
-        '고객이 문제를 제기하기 전에 제품 지원 범위를 확인해 gap을 발견하고, 리더십과 상의한 뒤 고객에게 지원되지 않는 부분을 투명하게 공유했습니다.',
-        'Identified the product gap before the customer raised it, aligned with leadership, and transparently shared the unsupported scope with the customer.',
+        '제품 지원 범위와 고객 영향도를 확인한 뒤, 리더십과 논의해 지원 범위를 고객에게 투명하게 공유했습니다.',
+        'Clarified the product-support scope and customer impact, aligned with leadership, and transparently shared the supported scope with the customer.',
       ),
       localize(
         '리인게이지먼트 데이터가 Adobe에 반영되지 않으면 리타겟팅 이후 앱 재방문과 다운퍼널 이벤트가 계속 최초 오가닉처럼 보이는 문제를 고객과 내부 팀이 이해할 수 있게 정리했습니다.',
         'Clarified for the customer and internal teams that without re-engagement data in Adobe, app revisits and downstream events after retargeting would continue to appear as the original organic path.',
       ),
       localize(
-        '파트너팀, Product, 고객성공 리더십, Adobe 담당자와 이해도를 맞추는 미팅을 주도하고 관리 문서를 만들어 구현 논의가 진행되도록 조율했습니다.',
-        'Led alignment across Partnerships, Product, Customer Success leadership, and Adobe stakeholders, using a working document to move the implementation discussion forward.',
+        '파트너팀, Product, 고객성공 리더십, Adobe 담당자 간의 구현 논의가 진행될 수 있도록 요구사항, 고객 영향, 협업 범위를 관리 문서로 정리했습니다.',
+        'Documented requirements, customer impact, and collaboration scope so implementation discussions could move forward across Partnerships, Product, Customer Success leadership, and Adobe stakeholders.',
       ),
     ],
     outcome: localize(
@@ -960,8 +960,8 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
         'Resolving an Adobe Re-engagement Integration Gap Found During Onboarding',
       ),
       summary: localize(
-        '고객이 먼저 문제를 제기한 것이 아니라, 온보딩 스코프를 확인하던 중 Adobe 리인게이지먼트 연동이 지원되지 않는다는 점을 제가 먼저 발견한 사례입니다. 리더십과 논의해 고객에게 gap을 솔직히 공유했고, 그 영향과 필요성을 설명한 뒤 고객 니즈를 근거로 Product, 파트너팀, Adobe 담당자를 움직였습니다.',
-        'This was not a case where the customer first raised a complaint. While reviewing onboarding scope, I proactively found that Adobe re-engagement support was missing. After aligning with leadership, I transparently shared the gap with the customer, explained the business impact, and used the customer need to mobilize Product, Partnerships, and Adobe stakeholders.',
+        '온보딩 스코프 검토 과정에서 Adobe 리인게이지먼트 연동 미지원 범위가 확인되었고, 이 공백이 리타겟팅 성과 측정에 미치는 영향을 고객과 내부 팀이 함께 이해할 수 있도록 정리한 사례입니다. 리더십과 논의한 뒤 지원 범위와 영향도를 고객에게 투명하게 공유하고, Product, 파트너팀, Adobe 담당자 간의 구현 논의가 진행될 수 있도록 요구사항을 구조화했습니다.',
+        'During onboarding-scope review, an unsupported area in Adobe re-engagement integration was identified and framed so the customer and internal teams could understand its impact on retargeting measurement. After aligning with leadership, the supported scope and business impact were shared transparently with the customer, and the requirements were structured so implementation discussions could move forward across Product, Partnerships, and Adobe stakeholders.',
       ),
       closeLabel: commonCloseLabel,
       openLabel: commonOpenLabel,
@@ -970,15 +970,15 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
         {
           type: 'paragraph',
           text: localize(
-            '이 이슈는 30개 이상 현지 오피스를 보유한 같은 글로벌 이커머스 고객사의 앱 전환 온보딩 과정에서 나왔습니다. 고객사는 웹 분석 중심으로 일해왔기 때문에, 모바일 앱에서 리인게이지먼트와 리어트리뷰션 데이터가 왜 중요한지 아직 알지 못했습니다.',
-            'This issue came up during app onboarding for the same global e-commerce customer with 30+ local offices. Because the customer had been operating from a web analytics mindset, they did not yet know why re-engagement and re-attribution data mattered in mobile app measurement.',
+            '이 이슈는 30개 이상 현지 오피스를 보유한 같은 글로벌 이커머스 고객사의 앱 전환 온보딩 과정에서 나왔습니다. 고객사는 웹 분석 중심으로 일해왔기 때문에, 모바일 앱에서 리인게이지먼트와 리어트리뷰션 데이터가 어떤 의사결정에 연결되는지 먼저 정렬할 필요가 있었습니다.',
+            'This issue came up during app onboarding for the same global e-commerce customer with 30+ local offices. Because the customer had been operating from a web analytics mindset, the team first needed alignment on how re-engagement and re-attribution data connected to mobile app decisions.',
           ),
         },
         {
           type: 'paragraph',
           text: localize(
-            '연동 스코프를 확인하던 중, 당시 제품이 Adobe로 리인게이지먼트 데이터를 보내지 못한다는 점을 먼저 발견했습니다. 고객이 문제를 찾아낸 것이 아니라, 제가 제품팀과 확인해 지원되지 않는 범위를 파악한 뒤 리더십과 먼저 논의했습니다.',
-            'While reviewing integration scope, I found that the product could not yet send re-engagement data to Adobe. The customer did not discover the issue first; I confirmed the unsupported scope with Product and discussed it with leadership before taking it back to the customer.',
+            '연동 스코프를 확인하던 중, 당시 제품이 Adobe로 리인게이지먼트 데이터를 보내지 못하는 범위가 확인되었습니다. 제품팀과 지원 범위를 검증한 뒤, 고객에게 공유할 영향도와 내부 조율 방향을 리더십과 먼저 정리했습니다.',
+            'During integration-scope review, it became clear that the product could not yet send re-engagement data to Adobe. After validating the supported scope with Product, the customer impact and internal alignment path were clarified with leadership.',
           ),
         },
         { type: 'heading', level: 2, text: localize('과제', 'Challenges') },
@@ -995,8 +995,8 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
               'Without re-engagement and re-attribution data flowing into Adobe, purchases, conversions, and downstream events after app revisits would not connect back to retargeting performance.',
             ),
             localize(
-              '고객은 리인게이지먼트의 중요성을 처음부터 알고 있지 않았기 때문에, 지원되지 않는다고 말하는 것만으로는 부족했습니다. 왜 이 데이터가 필요한지 먼저 설명해야 했습니다.',
-              'Because the customer did not already understand the importance of re-engagement, it was not enough to simply say the feature was unsupported. I first had to explain why the data mattered.',
+              '웹 분석 중심으로 운영해 온 고객 조직에는 앱 리인게이지먼트와 리어트리뷰션 개념 정렬이 먼저 필요했습니다. 지원 범위만 전달하는 것으로는 부족했고, 이 데이터가 왜 필요한지 업무 관점에서 설명해야 했습니다.',
+              'For a customer organization that had operated around web analytics, app re-engagement and re-attribution concepts first needed alignment. Sharing the support scope alone was not enough; the business reason for the data had to be explained.',
             ),
             localize(
               '제품의 큰 시스템 근간과 연결된 영역이라 Product 쪽에서도 쉽게 개발 진척이 나지 않았고, 파트너팀, Product, Adobe 담당자, 고객성공 리더십 조율이 필요했습니다.',
@@ -1018,8 +1018,8 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
               'Explain the role of re-engagement and re-attribution in practical business language so the customer could understand why Adobe needed the data.',
             ),
             localize(
-              '지원되지 않는 범위를 숨기지 않고 고객에게 투명하게 공유하되, 동시에 해결 가능성을 만들기 위해 내부 제품 논의를 움직입니다.',
-              'Transparently share the unsupported scope with the customer while also moving internal product discussions toward a path to resolution.',
+              '지원되지 않는 범위와 고객 영향도를 투명하게 공유하되, 동시에 해결 가능성을 만들기 위해 내부 제품 논의가 이어지도록 합니다.',
+              'Transparently share the unsupported scope and customer impact while also creating a path for internal product discussions to continue toward resolution.',
             ),
             localize(
               '당장 필요한 Adobe 연동을 우선 해결하고, 이후 다른 애널리틱스 파트너로 확장될 수 있는 제품 기반을 남깁니다.',
@@ -1033,12 +1033,12 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
           style: 'bullet',
           items: [
             localize(
-              '먼저 제품팀과 지원 범위를 확인해 Adobe 리인게이지먼트 연동이 실제로 지원되지 않는다는 점을 검증했습니다.',
-              'First confirmed with Product that Adobe re-engagement support was genuinely unsupported.',
+              '제품팀과 지원 범위를 확인해 Adobe 리인게이지먼트 연동의 미지원 범위를 검증했습니다.',
+              'Validated the unsupported scope of Adobe re-engagement support with Product.',
             ),
             localize(
-              '리더십과 상의해 “지원되지 않는 부분을 고객에게 솔직히 말하자”는 방향을 정하고, 고객에게 영향과 필요성을 설명했습니다.',
-              'Aligned with leadership on transparently telling the customer what was unsupported, then explained the impact and need to the customer.',
+              '리더십과 논의해 지원되지 않는 범위와 고객 영향도를 투명하게 공유하는 방향을 정하고, 고객에게 리포팅 공백과 해결 방향을 설명했습니다.',
+              'Aligned with leadership on transparently sharing the unsupported scope and customer impact, then explained the reporting gap and resolution direction to the customer.',
             ),
             localize(
               '고객의 이해와 동의를 바탕으로, 이 문제가 리타겟팅 성과 측정과 앱 전환 전략에 미치는 영향을 내부 설득 근거로 만들었습니다.',
@@ -1064,8 +1064,8 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
               'Narrowed the discussion around delivering the Adobe integration the customer needed first, then aligned the roles of the internal partner team and Product.',
             ),
             localize(
-              '고객에게는 단순히 “안 된다”고 끝내지 않고, 왜 필요한지와 어떤 방향으로 해결을 추진할지 설명해 고객을 제품 개선 논의의 강한 근거로 만들었습니다.',
-              'For the customer, I did not stop at saying it was unsupported; I explained why it mattered and how we would pursue a resolution, turning the customer need into a strong product-improvement rationale.',
+              '고객에게는 미지원 범위만 전달하는 데서 끝내지 않고, 이 데이터가 필요한 이유와 해결 방향을 설명해 제품 논의의 비즈니스 근거를 명확히 했습니다.',
+              'The customer conversation went beyond the unsupported scope by explaining why the data mattered and how a resolution could be pursued, clarifying the business rationale for product discussion.',
             ),
           ],
         },
@@ -1083,8 +1083,8 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
               'The project itself prioritized Adobe support, and Product later expanded the same capability to other analytics partners such as Mixpanel.',
             ),
             localize(
-              '고객이 몰랐던 제품 gap을 먼저 찾아내고, 고객에게 투명하게 공유한 뒤, 고객 영향과 내부 제품 논의를 연결한 사례가 되었습니다.',
-              'This became a case of proactively finding a product gap the customer did not yet know about, sharing it transparently, and connecting customer impact to internal product action.',
+              '온보딩 과정에서 확인된 제품 공백을 고객 영향과 내부 실행 과제로 연결한 사례가 되었습니다.',
+              'The case connected a product gap identified during onboarding to customer impact and an internal execution path.',
             ),
             localize(
               '기술적 지원 범위의 빈칸을 단순 support ticket으로 남기지 않고, 파트너와 제품팀이 함께 풀어야 할 실행 과제로 만들었습니다.',
@@ -1139,16 +1139,16 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
     focus: localize('부서 간 협업', 'Cross-Functional Collaboration'),
     contribution: [
       localize(
-        'Insider 기술팀이 강하게 요청한 다계정 연동 니즈를 고객 운영 영향, 보안 제약, 제품 지원 범위로 나눠 기술 요건으로 정리했습니다.',
-        'Translated a strongly requested multi-account integration need from Insider’s technical team into technical requirements covering customer impact, security constraints, and product scope.',
+        'Insider 기술팀과 확인한 다계정 연동 요구사항을 고객 운영 영향, 보안 제약, 제품 지원 범위로 나눠 기술 요건으로 정리했습니다.',
+        'Translated the multi-account integration requirement confirmed with Insider’s technical team into technical requirements covering customer impact, security constraints, and product scope.',
       ),
       localize(
         '앱 코드에 민감한 계정 정보를 넣지 않고 서버 측 매핑으로 필요한 값을 연결해야 한다는 방향을 Product, 파트너팀, 고객성공 리더십과 조율했습니다.',
         'Aligned Product, Partnerships, and Customer Success leadership around a server-side mapping approach that avoided placing sensitive account information in app code.',
       ),
       localize(
-        '제품 디자인과 실제 개발은 Product/Engineering이 맡고, 저는 요구사항 정리, 내부 설득, 범위 조율, 고객·파트너 커뮤니케이션, 검증과 모니터링을 담당했습니다.',
-        'Product and Engineering owned product design and development, while I handled requirements documentation, internal advocacy, scope alignment, customer and partner communication, validation, and monitoring.',
+        '제품 디자인과 실제 개발은 Product/Engineering이 맡았고, 요구사항 정리, 내부 설득, 범위 조율, 고객·파트너 커뮤니케이션, 검증과 모니터링은 고객성공 측 실행 범위로 관리했습니다.',
+        'Product and Engineering owned product design and development, while requirements documentation, internal advocacy, scope alignment, customer and partner communication, validation, and monitoring were managed from the Customer Success side.',
       ),
     ],
     outcome:
@@ -1169,8 +1169,8 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
         'Custom Insider Multi-account Integration for a Strategic Enterprise Customer',
       ),
       summary: localize(
-        '표준 1:1 Insider 연동으로는 고객사의 다계정 운영 구조를 처리할 수 없었습니다. Insider 기술팀의 강한 요청을 바탕으로 고객 운영상 필요한 성과 측정 데이터 흐름을 정리하고, 보안상 민감한 계정 정보가 앱 코드에 노출되지 않도록 서버 측 매핑 기반의 고객 전용 커스터마이징을 조율한 사례입니다.',
-        'The standard one-to-one Insider integration could not support the customer’s multi-account operating structure. Based on a strong request from Insider’s technical team, I clarified the performance-measurement data flow the customer needed and coordinated a customer-specific customization based on server-side mapping so sensitive account information would not be exposed in app code.',
+        '표준 1:1 Insider 연동으로는 고객사의 다계정 운영 구조를 처리할 수 없었습니다. 고객 운영상 필요한 성과 측정 데이터 흐름을 정리하고, 계정별 민감 정보가 앱 코드에 노출되지 않도록 서버 측 매핑 기반의 고객 전용 커스터마이징 범위를 조율한 사례입니다.',
+        'The standard one-to-one Insider integration could not support the customer’s multi-account operating structure. The case clarified the performance-measurement data flow the customer needed and aligned the scope for a customer-specific customization based on server-side mapping so account-specific sensitive information would not be exposed in app code.',
       ),
       closeLabel: commonCloseLabel,
       openLabel: commonOpenLabel,
@@ -1179,15 +1179,15 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
         {
           type: 'paragraph',
           text: localize(
-            '고객사는 Insider를 CRM, 개인화 메시지, 푸시·인앱 메시지 운영에 사용하고 있었습니다. Insider 쪽에서는 고객사의 운영 구조를 지원하려면 AppsFlyer와 Insider 사이의 표준 1:1 연동을 넘어서는 방식이 필요하다고 강하게 요청했습니다.',
-            'The customer used Insider for CRM, personalized messaging, and push/in-app messaging. Insider’s technical team strongly requested support beyond the standard one-to-one AppsFlyer-to-Insider integration to match the customer’s operating structure.',
+            '고객사는 Insider를 CRM, 개인화 메시지, 푸시·인앱 메시지 운영에 사용하고 있었습니다. Insider와의 연동 논의에서 표준 1:1 구조만으로는 고객사의 운영 구조를 지원하기 어렵다는 점이 확인되었습니다.',
+            'The customer used Insider for CRM, personalized messaging, and push/in-app messaging. Integration discussions with Insider showed that the standard one-to-one structure could not fully support the customer’s operating model.',
           ),
         },
         {
           type: 'paragraph',
           text: localize(
-            '공개 포트폴리오에서는 보안상 민감한 계정 값, 실제 매핑 규칙, postback 세부 파라미터를 드러내지 않고, 다계정 라우팅과 서버 측 매핑이 필요했던 문제 구조만 설명합니다.',
-            'For the public portfolio, this case intentionally avoids exposing sensitive account values, exact mapping rules, or postback parameters, and instead explains the higher-level need for multi-account routing and server-side mapping.',
+            '이 구조에서는 계정별 민감 정보가 앱 코드에 노출되지 않도록, 서버 측에서 안전하게 라우팅 기준을 매핑하는 방식이 필요했습니다.',
+            'The structure required routing criteria to be mapped safely on the server side so account-specific sensitive information would not be exposed in app code.',
           ),
         },
         { type: 'heading', level: 2, text: localize('과제', 'Challenges') },
@@ -1238,8 +1238,8 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
           style: 'bullet',
           items: [
             localize(
-              'Insider 기술팀의 요청을 그대로 전달하는 데서 멈추지 않고, 고객 운영 흐름과 성과 측정 데이터 공백을 기준으로 요구사항을 다시 정리했습니다.',
-              'Rather than simply relaying Insider’s technical request, I reframed it around the customer’s operating workflow and performance-measurement data gap.',
+              'Insider와 확인한 기술 요구사항을 고객 운영 흐름과 성과 측정 데이터 공백 기준으로 다시 정리했습니다.',
+              'Reframed the technical requirements confirmed with Insider around the customer’s operating workflow and performance-measurement data gap.',
             ),
             localize(
               '고객의 전략적 가치, 미갱신 리스크, 업셀 가능성, 플랫폼 사용 확대 가능성, 운영상 필수 요건을 내부 설득 논리로 정리했습니다.',
@@ -1265,12 +1265,12 @@ const customerSuccessCases: CustomerSuccessCaseSource[] = [
               'Documented the customer requirement as technical requirements and used server-side mapping, avoiding exposure of sensitive information in app code, as the baseline for internal discussion.',
             ),
             localize(
-              '제품 디자인과 실제 개발은 Product/Engineering이 맡았고, 저는 내부 설득, 구현 범위 조율, 고객·파트너 커뮤니케이션, QA/검증, 출시 후 모니터링을 담당했습니다.',
-              'Product and Engineering owned product design and development, while I handled internal advocacy, implementation-scope alignment, customer and partner communication, QA/validation, and post-launch monitoring.',
+              '제품 디자인과 실제 개발은 Product/Engineering이 맡았고, 내부 설득, 구현 범위 조율, 고객·파트너 커뮤니케이션, QA/검증, 출시 후 모니터링은 고객성공 측 실행 범위로 관리했습니다.',
+              'Product and Engineering owned product design and development, while internal advocacy, implementation-scope alignment, customer and partner communication, QA/validation, and post-launch monitoring were managed from the Customer Success side.',
             ),
             localize(
-              '정식 제품 기능으로 확대할지, 고객 전용 커스터마이징으로 처리할지의 경계를 명확히 해 불필요한 개발 범위 확장을 막았습니다.',
-              'Clarified the boundary between full productization and customer-specific customization, preventing unnecessary expansion of development scope.',
+              '고객 전용 커스터마이징으로 범위를 제한해 구현 가능성과 운영 안정성을 함께 맞췄습니다.',
+              'Scoped the work as a customer-specific customization to balance implementation feasibility with operational stability.',
             ),
           ],
         },
